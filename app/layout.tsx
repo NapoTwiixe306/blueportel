@@ -33,6 +33,17 @@ export const metadata: Metadata = {
     template: `%s | ${siteName}`,
   },
   description: defaultDescription,
+  keywords: [
+    'location mobil-home Le Portel',
+    'mobil-home face à la mer',
+    'location mobil-home Côte d\'Opale',
+    'mobil-home 3 chambres',
+    'location vacances Le Portel',
+    'hébergement mobil-home',
+  ],
+  authors: [{ name: siteName }],
+  creator: siteName,
+  publisher: siteName,
   openGraph: {
     type: 'website',
     locale: 'fr_FR',
@@ -40,16 +51,37 @@ export const metadata: Metadata = {
     siteName: siteName,
     title: defaultTitle,
     description: defaultDescription,
+    images: [
+      {
+        url: `${siteUrl}/og-image.jpg`,
+        width: 1200,
+        height: 630,
+        alt: 'Blueportel Mobil-Home Prestige Face à la Mer',
+      },
+    ],
   },
   twitter: {
     card: 'summary_large_image',
     title: defaultTitle,
     description: defaultDescription,
+    images: [`${siteUrl}/og-image.jpg`],
   },
   robots: {
     index: true,
     follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
   },
+  alternates: {
+    canonical: siteUrl,
+  },
+  category: 'Tourisme',
+  classification: 'Location de mobil-home',
 };
 
 export default function RootLayout({
