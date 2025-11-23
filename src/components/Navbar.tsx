@@ -38,7 +38,7 @@ const navItems: NavItem[] = [
   {
     label: "À Proximité",
     items: [
-      { label: "Nausicaa", href: "#" },
+      { label: "Nausicaa", href: "/pages/nausicaa-proche-le-portel" },
       { label: "Guide touristique", href: "#" },
     ],
   },
