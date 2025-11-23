@@ -63,6 +63,12 @@ export default function Footer() {
         <div className="mt-8 sm:mt-12 pt-6 sm:pt-8 border-t border-gray-200">
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6 mb-4">
             <Link 
+              href="/pages/information-marvilla-tohapi" 
+              className="text-xs sm:text-sm text-gray-600 hover:text-blue-500 transition-colors"
+            >
+              Information Marvilla Tohapi
+            </Link>
+            <Link 
               href="/pages/politique-tdm" 
               className="text-xs sm:text-sm text-gray-600 hover:text-blue-500 transition-colors"
             >
