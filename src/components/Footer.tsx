@@ -43,7 +43,7 @@ export default function Footer() {
                 className="flex items-center gap-2 sm:gap-3 hover:text-blue-500 transition-colors"
               >
                 <Mail className="w-4 h-4 sm:w-5 sm:h-5 text-blue-500 flex-shrink-0" />
-                <span>infos@blueportel.fr</span>
+                <span>info@blueportel.fr</span>
               </a>
             </div>
           </div>
