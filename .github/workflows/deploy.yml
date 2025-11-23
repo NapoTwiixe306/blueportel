@@ -28,5 +28,5 @@ jobs:
           ssh -o StrictHostKeyChecking=no ubuntu@${{ secrets.VPS_IP }} "
             cd $DEPLOY_DIR &&
             git pull &&
-            docker-compose up -d --build --remove-orphans --force-recreate
+            docker compose up -d --build --remove-orphans --force-recreate
           "
