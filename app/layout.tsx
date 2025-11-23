@@ -57,11 +57,39 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  // Structured Data Organization pour toutes les pages
+  const organizationSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'Organization',
+    name: siteName,
+    url: siteUrl,
+    logo: `${siteUrl}/logo.png`,
+    description: defaultDescription,
+    contactPoint: {
+      '@type': 'ContactPoint',
+      telephone: '+32488832091',
+      contactType: 'Customer Service',
+      availableLanguage: ['French'],
+      email: 'infos@blueportel.fr',
+    },
+    address: {
+      '@type': 'PostalAddress',
+      streetAddress: 'rue du Vinâve 32',
+      addressLocality: 'Liers',
+      addressCountry: 'BE',
+      postalCode: '4042',
+    },
+  };
+
   return (
     <html lang="fr">
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${gluten.variable} antialiased flex flex-col min-h-screen`}
       >
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
+        />
         <Navbar />
         <main className="flex-1">
           {children}

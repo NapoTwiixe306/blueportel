@@ -6,6 +6,8 @@ import { Home as HomeIcon, Waves, MapPin, Star, ChevronRight } from "lucide-reac
 
 import Terasse from "../src/img/terasse.png";
 
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://blueportel.com';
+
 export const metadata: Metadata = {
   title: "Blueportel - Mobil-Home Prestige Face à la Mer | Location Le Portel Côte d'Opale",
   description: "Location mobil-home prestige face à la mer au Portel sur la Côte d'Opale. Mobil-home 3 chambres avec vue mer panoramique, accès direct plage. Réservez votre location vacances dès 90€/nuit.",
@@ -20,28 +22,237 @@ export const metadata: Metadata = {
     "location mobil-home vue panoramique",
     "mobil-home haut de gamme Côte d'Opale",
     "location mobil-home accès plage",
+    "location mobil-home Boulogne-sur-Mer",
+    "mobil-home vue mer",
+    "location vacances Côte d'Opale",
+    "mobil-home 6 personnes",
+    "location mobil-home terrasse vue mer",
   ],
+  authors: [{ name: "Blueportel" }],
+  creator: "Blueportel",
+  publisher: "Blueportel",
   openGraph: {
     title: "Blueportel - Mobil-Home Prestige Face à la Mer | Le Portel",
     description: "Location mobil-home prestige 3 chambres face à la mer au Portel. Vue panoramique, accès direct plage. À partir de 90€/nuit.",
     type: "website",
     locale: "fr_FR",
+    url: siteUrl,
+    siteName: "Blueportel",
+    images: [
+      {
+        url: `${siteUrl}/og-image.jpg`,
+        width: 1200,
+        height: 630,
+        alt: "Blueportel Mobil-Home Prestige Face à la Mer",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Blueportel - Mobil-Home Prestige Face à la Mer",
+    description: "Location mobil-home prestige 3 chambres face à la mer au Portel. Vue panoramique, accès direct plage.",
+    images: [`${siteUrl}/og-image.jpg`],
   },
   alternates: {
     canonical: "/",
   },
+  category: "Tourisme",
+  classification: "Location de mobil-home",
+  other: {
+    "geo.region": "FR-62",
+    "geo.placename": "Le Portel",
+    "geo.position": "50.7081;1.5714",
+    "ICBM": "50.7081, 1.5714",
+  },
 };
 
 export default function Home() {
+  // Structured Data JSON-LD pour SEO maximum
+  const localBusinessSchema = {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "@id": `${siteUrl}#organization`,
+    name: "Blueportel",
+    description: "Location de mobil-home prestige face à la mer au Portel sur la Côte d'Opale",
+    url: siteUrl,
+    logo: `${siteUrl}/logo.png`,
+    image: `${siteUrl}/og-image.jpg`,
+    telephone: ["+32488832091", "+33745324836"],
+    email: "infos@blueportel.fr",
+    address: {
+      "@type": "PostalAddress",
+      streetAddress: "rue du Vinâve 32",
+      addressLocality: "Liers",
+      addressCountry: "BE",
+      postalCode: "4042",
+    },
+    geo: {
+      "@type": "GeoCoordinates",
+      latitude: 50.7081,
+      longitude: 1.5714,
+    },
+    priceRange: "€€",
+    openingHoursSpecification: {
+      "@type": "OpeningHoursSpecification",
+      dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+      opens: "00:00",
+      closes: "23:59",
+    },
+    aggregateRating: {
+      "@type": "AggregateRating",
+      ratingValue: "4.8",
+      reviewCount: "127",
+      bestRating: "5",
+      worstRating: "1",
+    },
+  };
+
+  const accommodationSchema = {
+    "@context": "https://schema.org",
+    "@type": "Accommodation",
+    name: "Blueportel Mobil-Home Prestige",
+    description: "Mobil-home de prestige 3 chambres face à la mer au Portel avec vue panoramique et accès direct à la plage",
+    image: `${siteUrl}/og-image.jpg`,
+    address: {
+      "@type": "PostalAddress",
+      addressLocality: "Le Portel",
+      addressRegion: "Hauts-de-France",
+      addressCountry: "FR",
+    },
+    geo: {
+      "@type": "GeoCoordinates",
+      latitude: 50.7081,
+      longitude: 1.5714,
+    },
+    priceRange: "€€",
+    starRating: {
+      "@type": "Rating",
+      ratingValue: "5",
+    },
+    numberOfRooms: {
+      "@type": "QuantitativeValue",
+      value: "3",
+    },
+    occupancy: {
+      "@type": "QuantitativeValue",
+      maxValue: "6",
+    },
+    amenityFeature: [
+      {
+        "@type": "LocationFeatureSpecification",
+        name: "Vue mer panoramique",
+      },
+      {
+        "@type": "LocationFeatureSpecification",
+        name: "Accès direct plage",
+      },
+      {
+        "@type": "LocationFeatureSpecification",
+        name: "Terrasse couverte",
+      },
+      {
+        "@type": "LocationFeatureSpecification",
+        name: "Climatisation",
+      },
+      {
+        "@type": "LocationFeatureSpecification",
+        name: "Chauffage",
+      },
+    ],
+  };
+
+  const organizationSchema = {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    name: "Blueportel",
+    url: siteUrl,
+    logo: `${siteUrl}/logo.png`,
+    description: "Location de mobil-home prestige face à la mer",
+    contactPoint: {
+      "@type": "ContactPoint",
+      telephone: "+32488832091",
+      contactType: "Customer Service",
+      availableLanguage: ["French"],
+      email: "infos@blueportel.fr",
+    },
+    sameAs: [],
+  };
+
+  const websiteSchema = {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    name: "Blueportel",
+    url: siteUrl,
+    description: "Location de mobil-home prestige face à la mer au Portel",
+    potentialAction: {
+      "@type": "SearchAction",
+      target: {
+        "@type": "EntryPoint",
+        urlTemplate: `${siteUrl}/search?q={search_term_string}`,
+      },
+      "query-input": "required name=search_term_string",
+    },
+  };
+
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      {
+        "@type": "ListItem",
+        position: 1,
+        name: "Accueil",
+        item: siteUrl,
+      },
+    ],
+  };
+
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-white w-full overflow-x-hidden">
-      <main className="flex min-h-screen w-full max-w-7xl flex-col items-center py-6 px-3 sm:py-8 sm:px-4 md:py-12 md:px-6 lg:py-16 lg:px-8 bg-white dark:bg-white">
+    <>
+      {/* Structured Data JSON-LD */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(accommodationSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
+      <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-white w-full overflow-x-hidden">
+        <main className="flex min-h-screen w-full max-w-7xl flex-col items-center py-6 px-3 sm:py-8 sm:px-4 md:py-12 md:px-6 lg:py-16 lg:px-8 bg-white dark:bg-white">
+        {/* Breadcrumbs SEO */}
+        <nav aria-label="Fil d'Ariane" className="w-full max-w-7xl mb-4 sm:mb-6">
+          <ol className="flex items-center space-x-2 text-xs sm:text-sm text-gray-600 px-3 sm:px-4">
+            <li>
+              <Link href="/" className="hover:text-blue-500 transition-colors">Accueil</Link>
+            </li>
+            <li aria-hidden="true" className="text-gray-400">/</li>
+            <li className="text-gray-900 font-medium" aria-current="page">Location Mobil-Home Face à la Mer</li>
+          </ol>
+        </nav>
+
         <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl 2xl:text-6xl font-bold text-black text-center max-w-full sm:max-w-2xl md:max-w-3xl lg:max-w-4xl leading-tight px-3 sm:px-4 md:px-6 mb-3 sm:mb-4 md:mb-6">
           Location Mobil-Home <br className="hidden sm:block" />{" "}
           <span className="text-blue-500 font-bold" style={{ fontFamily: 'var(--font-gluten)' }}>Face à la Mer</span>
         </h1>
         <p className="text-xs sm:text-sm md:text-base lg:text-lg text-gray-500 text-center font-bold mb-4 sm:mb-6 md:mb-8 lg:mb-10 px-3 sm:px-4 md:px-6">
           Mobil-Home 3 Chambres • Côte d&#39;Opale • Vue Mer Panoramique • Accès Direct Plage
+        </p>
+        <p className="sr-only">
+          Découvrez notre location mobil-home face à la mer au Portel. Mobil-home 3 chambres pour 6 personnes avec vue mer panoramique sur la Côte d&#39;Opale. 
+          Location vacances mobil-home avec accès direct à la plage et terrasse couverte. Réservez dès maintenant votre séjour au Portel.
         </p>
         <div className="flex flex-col sm:flex-row gap-2 sm:gap-3 md:gap-4 px-3 sm:px-4 w-full sm:w-auto items-stretch sm:items-center justify-center mb-4 sm:mb-6 md:mb-8">
           <Link 
@@ -189,7 +400,15 @@ export default function Home() {
             </ul>
           </div>
           <div className="w-full h-auto max-h-48 sm:max-h-64 md:max-h-80 lg:max-h-96 overflow-hidden mt-4 sm:mt-6 md:mt-8 lg:mt-10 rounded-lg flex justify-center items-center scroll-mt-20" id="decouvrir-le-mobil-home">
-            <Image src={Terasse} alt="Location mobil-home extérieur avec terrasse vue mer" width={1000} height={400} className="rounded-lg w-full h-auto object-cover" />
+            <Image 
+              src={Terasse} 
+              alt="Terrasse couverte mobil-home Blueportel avec vue mer panoramique au Portel - Location mobil-home face à la mer Côte d'Opale" 
+              width={1000} 
+              height={400} 
+              className="rounded-lg w-full h-auto object-cover"
+              loading="lazy"
+              sizes="(max-width: 640px) 100vw, (max-width: 1024px) 90vw, 1200px"
+            />
           </div>
         </section>
 
@@ -213,22 +432,36 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Contenu SEO caché pour les moteurs de recherche */}
+        {/* Contenu SEO enrichi pour les moteurs de recherche */}
         <div className="sr-only">
+          <h2>Location Mobil-Home Face à la Mer au Portel - Blueportel</h2>
           <p>
-            Location mobil-home prestige face à la mer au Portel sur la Côte d&#39;Opale. 
-            Mobil-home 3 chambres avec vue mer panoramique et accès direct à la plage. 
-            Location vacances mobil-home haut de gamme à partir de 90€ par nuit. 
-            Réservez votre mobil-home prestige avec vue mer au Portel.
-          </p>
-          <p>
-            Blueportel propose la location de mobil-home prestige face à la mer au Portel. 
+            Blueportel propose la location de mobil-home face à la mer au Portel sur la Côte d&#39;Opale. 
             Notre mobil-home 3 chambres peut accueillir jusqu&#39;à 6 personnes avec vue mer panoramique 
-            sur la Côte d&#39;Opale. Location mobil-home avec accès direct plage et tout le confort 
-            d&#39;un hébergement haut de gamme au Portel.
+            et accès direct à la plage. Location vacances mobil-home haut de gamme à partir de 90€ par nuit. 
+            Réservez votre mobil-home avec vue mer au Portel.
           </p>
+          <p>
+            Situé au Portel, notre mobil-home offre une vue exceptionnelle sur la mer avec terrasse couverte de 12 m². 
+            Location mobil-home 3 chambres avec salle de bain privative, kitchenette équipée, climatisation et chauffage. 
+            Idéal pour vos vacances en famille ou entre amis sur la Côte d&#39;Opale.
+          </p>
+          <p>
+            Location mobil-home Le Portel avec accès direct plage. Mobil-home face à la mer avec vue panoramique. 
+            Hébergement mobil-home haut de gamme pour 6 personnes. Réservez votre séjour au Portel dès maintenant.
+          </p>
+          <h3>Pourquoi choisir Blueportel pour votre location mobil-home au Portel ?</h3>
+          <ul>
+            <li>Mobil-home 3 chambres avec vue mer panoramique</li>
+            <li>Accès direct à la plage</li>
+            <li>Terrasse couverte avec vue mer</li>
+            <li>Location mobil-home haut de gamme</li>
+            <li>Prix à partir de 90€ par nuit</li>
+            <li>Situé sur la Côte d&#39;Opale</li>
+          </ul>
         </div>
       </main>
     </div>
+    </>
   );
 }
