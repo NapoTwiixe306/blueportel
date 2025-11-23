@@ -63,9 +63,23 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* Copyright */}
-        <div className="mt-8 sm:mt-12 pt-6 sm:pt-8 border-t border-gray-200 text-center">
-          <p className="text-xs sm:text-sm text-gray-500">
+        {/* Copyright et liens légaux */}
+        <div className="mt-8 sm:mt-12 pt-6 sm:pt-8 border-t border-gray-200">
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6 mb-4">
+            <Link 
+              href="/pages/politique-tdm" 
+              className="text-xs sm:text-sm text-gray-600 hover:text-blue-500 transition-colors"
+            >
+              Politique TDM
+            </Link>
+            <Link 
+              href="/pages/contact" 
+              className="text-xs sm:text-sm text-gray-600 hover:text-blue-500 transition-colors"
+            >
+              Contact
+            </Link>
+          </div>
+          <p className="text-xs sm:text-sm text-gray-500 text-center">
             © {new Date().getFullYear()} Blueportel. Tous droits réservés.
           </p>
         </div>
