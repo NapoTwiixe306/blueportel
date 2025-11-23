@@ -45,7 +45,7 @@ const navItems: NavItem[] = [
   {
     label: "Infos Pratique",
     items: [
-      { label: "FAQ Blueportel", href: "#" },
+      { label: "FAQ Blueportel", href: "/pages/FAQ" },
       { label: "Contact", href: "#" },
     ],
   },
