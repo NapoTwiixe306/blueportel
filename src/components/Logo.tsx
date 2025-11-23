@@ -2,7 +2,6 @@ export default function Logo() {
   return (
     <div className="flex items-center">
       <div className="relative">
-        {/* Brown/orange sun/roof shape above "ue" */}
         <svg
           className="absolute -top-1 left-8 h-3 w-8"
           viewBox="0 0 32 16"
@@ -15,10 +14,8 @@ export default function Logo() {
           />
         </svg>
         
-        {/* Main text "Blueportel" */}
         <span className="text-2xl font-bold text-[#1E3A8A]">Blueportel</span>
         
-        {/* Wavy blue lines below "portel" */}
         <div className="ml-2 mt-0.5 flex gap-0.5">
           <svg
             className="h-1 w-8"

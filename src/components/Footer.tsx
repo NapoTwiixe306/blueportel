@@ -8,7 +8,6 @@ export default function Footer() {
     <footer className="bg-white border-t border-gray-200 mt-auto">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-8 sm:py-12 md:py-16">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 sm:gap-12 md:gap-16">
-          {/* Logo */}
           <div className="flex flex-col items-center md:items-start">
             <Link href="/" aria-label="Blueportel - Accueil">
               <Image 
@@ -22,7 +21,6 @@ export default function Footer() {
             </Link>
           </div>
 
-          {/* Contact */}
           <div className="flex flex-col items-center md:items-start">
             <h3 className="text-lg sm:text-xl font-bold text-gray-900 mb-4 sm:mb-6">Contact</h3>
             <div className="space-y-3 sm:space-y-4 text-sm sm:text-base text-gray-700">
@@ -50,7 +48,6 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* Adresse */}
           <div className="flex flex-col items-center md:items-start">
             <h3 className="text-lg sm:text-xl font-bold text-gray-900 mb-4 sm:mb-6">Adresse</h3>
             <div className="flex items-start gap-2 sm:gap-3 text-sm sm:text-base text-gray-700">
@@ -63,7 +60,6 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* Copyright et liens légaux */}
         <div className="mt-8 sm:mt-12 pt-6 sm:pt-8 border-t border-gray-200">
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6 mb-4">
             <Link 

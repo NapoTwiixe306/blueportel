@@ -84,7 +84,6 @@ export default function ContactPage() {
 
   return (
     <>
-      {/* Structured Data JSON-LD pour SEO */}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
@@ -100,7 +99,6 @@ export default function ContactPage() {
 
       <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-white w-full overflow-x-hidden">
         <main className="flex min-h-screen w-full max-w-7xl flex-col items-center py-6 px-3 sm:py-8 sm:px-4 md:py-12 md:px-6 lg:py-16 lg:px-8 bg-white dark:bg-white">
-          {/* Breadcrumbs SEO */}
           <nav aria-label="Fil d'Ariane" className="w-full max-w-7xl mb-4 sm:mb-6">
             <ol className="flex items-center space-x-2 text-xs sm:text-sm text-gray-600 px-3 sm:px-4">
               <li>
@@ -121,7 +119,6 @@ export default function ContactPage() {
           </p>
 
           <div className="w-full max-w-6xl mx-auto space-y-8 sm:space-y-10 md:space-y-12 px-3 sm:px-4 md:px-6">
-            {/* Section À propos de l'hôte */}
             <section className="space-y-6 sm:space-y-8" aria-label="À propos de l'hôte">
               <div className="bg-white border border-gray-200 rounded-lg shadow-md p-6 sm:p-8 md:p-10">
                 <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-black mb-4 sm:mb-6">
@@ -190,7 +187,6 @@ export default function ContactPage() {
               </div>
             </section>
 
-            {/* Section Formulaire de contact */}
             <section className="space-y-6 sm:space-y-8" aria-label="Demande de réservation">
               <div className="bg-white border border-gray-200 rounded-lg shadow-md p-6 sm:p-8 md:p-10">
                 <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-black mb-6 sm:mb-8">
@@ -378,7 +374,6 @@ export default function ContactPage() {
             </section>
           </div>
 
-          {/* Section CTA Réservation */}
           <section className="w-full max-w-5xl mx-auto px-3 sm:px-4 md:px-6 mt-8 sm:mt-12 mb-8 sm:mb-12" aria-label="Réservation">
             <div className="bg-gradient-to-r from-blue-500 to-blue-600 rounded-lg shadow-xl p-6 sm:p-8 md:p-10 text-white text-center">
               <h2 className="text-xl sm:text-2xl md:text-3xl font-bold mb-4 sm:mb-6">
@@ -399,7 +394,6 @@ export default function ContactPage() {
             </div>
           </section>
 
-          {/* Contenu SEO enrichi */}
           <div className="sr-only">
             <h2>Contact Blueportel - Location Mobil-Home Face à la Mer Le Portel</h2>
             <p>

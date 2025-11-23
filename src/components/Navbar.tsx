@@ -56,7 +56,6 @@ export default function Navbar() {
   const [openDropdown, setOpenDropdown] = useState<number | null>(null);
   const dropdownRefs = useRef<(HTMLDivElement | null)[]>([]);
 
-  // Close dropdown when clicking outside
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
       dropdownRefs.current.forEach((ref, index) => {
@@ -72,7 +71,6 @@ export default function Navbar() {
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, [openDropdown]);
 
-  // Close mobile menu when clicking outside
   useEffect(() => {
     if (!mobileMenuOpen) return;
 
@@ -95,7 +93,6 @@ export default function Navbar() {
     <nav className="sticky top-0 z-50 w-full bg-white shadow-sm">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="flex h-20 items-center justify-between">
-          {/* Logo */}
           <div className="flex items-center flex-shrink-0">
             <a href="/" aria-label="Blueportel - Accueil">
               <Image 
@@ -110,7 +107,6 @@ export default function Navbar() {
             </a>
           </div>
 
-          {/* Desktop Navigation */}
           <div className="hidden lg:flex lg:flex-1 lg:items-center lg:justify-center lg:gap-8">
             {navItems.map((item, index) => (
               <div
@@ -158,7 +154,6 @@ export default function Navbar() {
             ))}
           </div>
 
-          {/* Desktop CTA Button */}
           <div className="hidden lg:block flex-shrink-0">
             <Link
               href="https://checkout.lodgify.com/fr/blueportel/654566/reservation?currency=EUR&ref=bnbox&adults=1"
@@ -169,7 +164,6 @@ export default function Navbar() {
             </Link>
           </div>
 
-          {/* Mobile Menu Button */}
           <div className="flex items-center gap-4 lg:hidden">
             <a
               href="#"
@@ -216,7 +210,6 @@ export default function Navbar() {
         </div>
       </div>
 
-      {/* Mobile Menu */}
       {mobileMenuOpen && (
         <div className="border-t border-gray-200 lg:hidden">
           <div className="space-y-1 px-4 pb-4 pt-2">

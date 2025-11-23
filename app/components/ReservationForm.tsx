@@ -9,7 +9,6 @@ export default function ReservationForm() {
   const [showGuestDropdown, setShowGuestDropdown] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
 
-  // Fermer le dropdown en cliquant à l'extérieur
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
       if (
@@ -58,16 +57,13 @@ export default function ReservationForm() {
     </svg>
   );
 
-  // Convertir la date du format jj/mm/aaaa vers YYYY-MM-DD
   const convertDateToISO = (dateString: string): string | null => {
     if (!dateString) return null;
     
-    // Si la date est déjà au format YYYY-MM-DD, la retourner telle quelle
     if (/^\d{4}-\d{2}-\d{2}$/.test(dateString)) {
       return dateString;
     }
     
-    // Sinon, essayer de convertir depuis jj/mm/aaaa
     const parts = dateString.split('/');
     if (parts.length === 3) {
       const day = parts[0].padStart(2, '0');
@@ -79,28 +75,23 @@ export default function ReservationForm() {
     return null;
   };
 
-  // Extraire le nombre d'adultes depuis le string (ex: "1 Adulte" -> 1)
   const extractAdultsCount = (guestsString: string): number => {
     const match = guestsString.match(/(\d+)/);
     return match ? parseInt(match[1], 10) : 1;
   };
 
-  // Gérer la soumission du formulaire
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     
     const baseUrl = "https://checkout.lodgify.com/fr/blueportel/654566/reservation";
     const url = new URL(baseUrl);
     
-    // Ajouter les paramètres par défaut
     url.searchParams.set("currency", "EUR");
     url.searchParams.set("ref", "bnbox");
     
-    // Ajouter le nombre d'adultes
     const adultsCount = extractAdultsCount(guests);
     url.searchParams.set("adults", adultsCount.toString());
     
-    // Ajouter les dates si elles sont renseignées
     const arrival = convertDateToISO(arrivalDate);
     if (arrival) {
       url.searchParams.set("arrival", arrival);
@@ -111,13 +102,11 @@ export default function ReservationForm() {
       url.searchParams.set("departure", departure);
     }
     
-    // Rediriger vers l'URL
     window.open(url.toString(), "_blank");
   };
 
   return (
     <form onSubmit={handleSubmit} className="w-full max-w-4xl mx-auto space-y-3 sm:space-y-4 md:space-y-5 lg:space-y-6">
-      {/* Arrivée */}
       <div className="w-full">
         <label className="block text-xs sm:text-sm md:text-base font-bold text-gray-700 mb-1.5 sm:mb-2">
           Arrivée
@@ -139,7 +128,6 @@ export default function ReservationForm() {
         </div>
       </div>
 
-      {/* Départ */}
       <div className="w-full">
         <label className="block text-xs sm:text-sm md:text-base font-bold text-gray-700 mb-1.5 sm:mb-2">
           Départ
@@ -162,7 +150,6 @@ export default function ReservationForm() {
         </div>
       </div>
 
-      {/* Invités */}
       <div className="relative w-full" ref={dropdownRef}>
         <label className="block text-xs sm:text-sm md:text-base font-bold text-gray-700 mb-1.5 sm:mb-2">
           Invités
@@ -276,7 +263,6 @@ export default function ReservationForm() {
         </div>
       </div>
 
-      {/* Bouton de soumission */}
       <button
         type="submit"
         className="w-full bg-blue-500 hover:bg-blue-600 text-white font-bold py-2.5 sm:py-3 md:py-3.5 px-4 sm:px-6 text-sm sm:text-base md:text-lg rounded-lg transition-colors duration-300 mt-2 sm:mt-3 md:mt-4"

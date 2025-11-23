@@ -209,7 +209,6 @@ export default function Home() {
 
   return (
     <>
-      {/* Structured Data JSON-LD */}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }}
@@ -232,7 +231,6 @@ export default function Home() {
       />
       <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-white w-full overflow-x-hidden">
         <main className="flex min-h-screen w-full max-w-7xl flex-col items-center py-6 px-3 sm:py-8 sm:px-4 md:py-12 md:px-6 lg:py-16 lg:px-8 bg-white dark:bg-white">
-        {/* Breadcrumbs SEO */}
         <nav aria-label="Fil d'Ariane" className="w-full max-w-7xl mb-4 sm:mb-6">
           <ol className="flex items-center space-x-2 text-xs sm:text-sm text-gray-600 px-3 sm:px-4">
             <li>
@@ -303,7 +301,6 @@ export default function Home() {
         <section className="features mt-12 sm:mt-16 md:mt-20 lg:mt-24 xl:mt-32 w-full max-w-7xl mx-auto px-3 sm:px-4 md:px-6 lg:px-8" aria-label="Caractéristiques du mobil-home">
           <h2 className="sr-only">Caractéristiques de votre location mobil-home face à la mer</h2>
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 md:gap-6 lg:gap-8">
-            {/* 3 chambres spacieuses */}
             <article className="flex flex-col items-center text-center">
               <div className="w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 bg-blue-500 rounded-lg flex items-center justify-center mb-2 sm:mb-3 md:mb-4" aria-label="Mobil-home 3 chambres">
                 <HomeIcon className="w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 text-white" aria-hidden="true" />
@@ -316,7 +313,6 @@ export default function Home() {
               </p>
             </article>
 
-            {/* Panorama Exceptionnel */}
             <article className="flex flex-col items-center text-center">
               <div className="w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 bg-blue-500 rounded-lg flex items-center justify-center mb-2 sm:mb-3 md:mb-4" aria-label="Vue mer panoramique">
                 <Waves className="w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 text-white" aria-hidden="true" />
@@ -329,7 +325,6 @@ export default function Home() {
               </p>
             </article>
 
-            {/* À la plage */}
             <article className="flex flex-col items-center text-center">
               <div className="w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 bg-blue-500 rounded-lg flex items-center justify-center mb-2 sm:mb-3 md:mb-4" aria-label="Accès direct plage">
                 <MapPin className="w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 text-white" aria-hidden="true" />
@@ -342,7 +337,6 @@ export default function Home() {
               </p>
             </article>
 
-            {/* Tout confort inclus */}
             <article className="flex flex-col items-center text-center">
               <div className="w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 bg-blue-500 rounded-lg flex items-center justify-center mb-2 sm:mb-3 md:mb-4" aria-label="Mobil-home prestige">
                 <Star className="w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 text-white" aria-hidden="true" />
@@ -438,7 +432,6 @@ export default function Home() {
           </div>
         </section>
 
-        {/* CTA Section */}
         <section className="cta mt-12 sm:mt-16 md:mt-20 lg:mt-24 xl:mt-32 w-full max-w-7xl mx-auto px-3 sm:px-4 md:px-6 lg:px-8 py-8 sm:py-12 md:py-16 lg:py-20 bg-gradient-to-r from-blue-500 to-blue-600 rounded-lg shadow-xl">
           <div className="flex flex-col items-center justify-center text-center max-w-4xl mx-auto">
             <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl 2xl:text-6xl font-bold text-white mb-3 sm:mb-4 md:mb-6 lg:mb-8 px-2 sm:px-4">
@@ -459,7 +452,6 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Contenu SEO enrichi pour les moteurs de recherche */}
         <div className="sr-only">
           <h2>Location Mobil-Home Face à la Mer au Portel - Blueportel</h2>
           <p>

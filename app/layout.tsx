@@ -20,7 +20,6 @@ const gluten = Gluten({
   weight: ["400", "500", "600", "700", "800", "900"],
 });
 
-// Configuration SEO de base
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://blueportel.vercel.app';
 const siteName = 'Blueportel';
 const defaultTitle = 'Blueportel - Mobil-Home Prestige Face à la Mer | Location Le Portel';
@@ -89,7 +88,6 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  // Structured Data Organization pour toutes les pages
   const organizationSchema = {
     '@context': 'https://schema.org',
     '@type': 'Organization',

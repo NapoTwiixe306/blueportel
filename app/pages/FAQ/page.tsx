@@ -6,7 +6,6 @@ import { ChevronDown, ChevronUp, Phone, Mail } from "lucide-react";
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://blueportel.com';
 
-// Composant FAQ Item
 interface FAQItemProps {
   question: string;
   answer: string | React.ReactNode;
@@ -68,7 +67,6 @@ export default function FAQPage() {
     setOpenItems(newOpenItems);
   };
 
-  // Données FAQ
   const faqData = [
     {
       id: "1",
@@ -205,7 +203,6 @@ export default function FAQPage() {
     "10": "Blueportel ouvre du 20 février au 12 novembre 2026. Les réservations sont déjà possibles pour toute la saison.",
   };
 
-  // Schéma FAQPage pour SEO
   const faqPageSchema = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
@@ -219,7 +216,6 @@ export default function FAQPage() {
     }))
   };
 
-  // Schéma BreadcrumbList
   const breadcrumbSchema = {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
@@ -239,7 +235,6 @@ export default function FAQPage() {
     ]
   };
 
-  // Schéma Organization
   const organizationSchema = {
     "@context": "https://schema.org",
     "@type": "Organization",
@@ -265,7 +260,6 @@ export default function FAQPage() {
 
   return (
     <>
-      {/* Structured Data JSON-LD pour SEO */}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqPageSchema) }}
@@ -281,7 +275,6 @@ export default function FAQPage() {
 
       <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-white w-full overflow-x-hidden">
         <main className="flex min-h-screen w-full max-w-7xl flex-col items-center py-6 px-3 sm:py-8 sm:px-4 md:py-12 md:px-6 lg:py-16 lg:px-8 bg-white dark:bg-white">
-          {/* Breadcrumbs SEO */}
           <nav aria-label="Fil d'Ariane" className="w-full max-w-7xl mb-4 sm:mb-6">
             <ol className="flex items-center space-x-2 text-xs sm:text-sm text-gray-600 px-3 sm:px-4">
               <li>
@@ -301,7 +294,6 @@ export default function FAQPage() {
             Questions fréquentes sur la location de mobil-home face à la mer au Portel
           </p>
 
-          {/* Contenu SEO caché */}
           <div className="sr-only">
             <h2>FAQ Blueportel - Questions fréquentes sur la location mobil-home face à la mer</h2>
             <p>
@@ -316,7 +308,6 @@ export default function FAQPage() {
             </p>
           </div>
 
-          {/* Section FAQ */}
           <section className="w-full max-w-5xl mx-auto px-3 sm:px-4 md:px-6 mb-8 sm:mb-12" aria-label="Questions fréquentes">
             <div className="bg-white rounded-lg shadow-lg border border-gray-200 overflow-hidden">
               {faqData.map((item) => (
@@ -332,7 +323,6 @@ export default function FAQPage() {
             </div>
           </section>
 
-          {/* Section Contact */}
           <section className="w-full max-w-5xl mx-auto px-3 sm:px-4 md:px-6 mb-8 sm:mb-12" aria-label="Contact">
             <div className="bg-gradient-to-r from-blue-500 to-blue-600 rounded-lg shadow-xl p-6 sm:p-8 md:p-10 text-white">
               <h2 className="text-xl sm:text-2xl md:text-3xl font-bold mb-4 sm:mb-6 text-center">

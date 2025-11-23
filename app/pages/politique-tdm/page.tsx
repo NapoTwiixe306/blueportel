@@ -4,7 +4,6 @@ import { Mail, MapPin, FileText, Shield, AlertTriangle } from "lucide-react";
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://blueportel.vercel.app';
 
 export default function PolitiqueTDMPage() {
-  // Schéma BreadcrumbList
   const breadcrumbSchema = {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
@@ -24,7 +23,6 @@ export default function PolitiqueTDMPage() {
     ]
   };
 
-  // Schéma WebPage
   const webPageSchema = {
     "@context": "https://schema.org",
     "@type": "WebPage",
@@ -41,7 +39,6 @@ export default function PolitiqueTDMPage() {
 
   return (
     <>
-      {/* Structured Data JSON-LD pour SEO */}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
@@ -53,7 +50,6 @@ export default function PolitiqueTDMPage() {
 
       <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-white w-full overflow-x-hidden">
         <main className="flex min-h-screen w-full max-w-4xl flex-col items-start py-6 px-3 sm:py-8 sm:px-4 md:py-12 md:px-6 lg:py-16 lg:px-8 bg-white dark:bg-white">
-          {/* Breadcrumbs SEO */}
           <nav aria-label="Fil d'Ariane" className="w-full max-w-4xl mb-4 sm:mb-6">
             <ol className="flex items-center space-x-2 text-xs sm:text-sm text-gray-600 px-3 sm:px-4">
               <li>
@@ -74,7 +70,6 @@ export default function PolitiqueTDMPage() {
           </p>
 
           <div className="w-full max-w-4xl mx-auto space-y-8 sm:space-y-10 md:space-y-12 px-3 sm:px-4 md:px-6">
-            {/* Section 1 */}
             <section className="space-y-4 sm:space-y-6">
               <div className="flex items-center gap-3 mb-4">
                 <FileText className="w-6 h-6 sm:w-8 sm:h-8 text-blue-500" aria-hidden="true" />
@@ -92,7 +87,6 @@ export default function PolitiqueTDMPage() {
               </div>
             </section>
 
-            {/* Section 2 */}
             <section className="space-y-4 sm:space-y-6">
               <div className="flex items-center gap-3 mb-4">
                 <Shield className="w-6 h-6 sm:w-8 sm:h-8 text-blue-500" aria-hidden="true" />
@@ -107,7 +101,6 @@ export default function PolitiqueTDMPage() {
               </div>
             </section>
 
-            {/* Section 3 */}
             <section className="space-y-4 sm:space-y-6">
               <div className="flex items-center gap-3 mb-4">
                 <AlertTriangle className="w-6 h-6 sm:w-8 sm:h-8 text-blue-500" aria-hidden="true" />
@@ -133,7 +126,6 @@ export default function PolitiqueTDMPage() {
               </div>
             </section>
 
-            {/* Section 4 */}
             <section className="space-y-4 sm:space-y-6">
               <h2 className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold text-black">
                 4. Utilisation autorisée
@@ -145,7 +137,6 @@ export default function PolitiqueTDMPage() {
               </div>
             </section>
 
-            {/* Section 5 */}
             <section className="space-y-4 sm:space-y-6">
               <h2 className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold text-black">
                 5. Contact pour autorisation
@@ -174,7 +165,6 @@ export default function PolitiqueTDMPage() {
               </div>
             </section>
 
-            {/* Section 6 */}
             <section className="space-y-4 sm:space-y-6">
               <h2 className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold text-black">
                 6. Référence légale
@@ -186,7 +176,6 @@ export default function PolitiqueTDMPage() {
               </div>
             </section>
 
-            {/* Résumé */}
             <section className="bg-blue-50 border-l-4 border-blue-500 rounded-lg p-6 sm:p-8 mt-8 sm:mt-10">
               <h2 className="text-base sm:text-lg md:text-xl font-bold text-gray-900 mb-3 sm:mb-4">
                 Résumé :
@@ -197,7 +186,6 @@ export default function PolitiqueTDMPage() {
             </section>
           </div>
 
-          {/* Contenu SEO enrichi */}
           <div className="sr-only">
             <h2>Politique TDM Blueportel - Protection des contenus contre le Text and Data Mining</h2>
             <p>
