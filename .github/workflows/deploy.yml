@@ -22,7 +22,7 @@ jobs:
 
       - name: Deploy to VPS
         run: |
-          ssh -o StrictHostKeyChecking=no ubuntu@IP_VPS "
+          ssh -o StrictHostKeyChecking=no ubuntu@${{ secrets.VPS_IP }} "
             cd $DEPLOY_DIR &&
             git pull &&
             docker-compose build &&
