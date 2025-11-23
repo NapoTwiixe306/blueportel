@@ -39,10 +39,10 @@ export const metadata: Metadata = {
     siteName: "Blueportel",
     images: [
       {
-        url: `${siteUrl}/og-image.jpg`,
+        url: `${siteUrl}/logo.png`,
         width: 1200,
         height: 630,
-        alt: "FAQ Blueportel - Location Mobil-Home Face à la Mer",
+        alt: "Blueportel - Logo",
       },
     ],
   },
@@ -50,7 +50,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "FAQ Blueportel - Questions Fréquentes | Location Mobil-Home Face à la Mer",
     description: "Réponses à toutes vos questions sur la location de mobil-home face à la mer au Portel. Mobil-home 3 chambres, vue panoramique, équipements.",
-    images: [`${siteUrl}/og-image.jpg`],
+    images: [`${siteUrl}/logo.png`],
   },
   alternates: {
     canonical: `${siteUrl}/pages/FAQ`,

@@ -53,10 +53,10 @@ export const metadata: Metadata = {
     description: defaultDescription,
     images: [
       {
-        url: `${siteUrl}/og-image.jpg`,
+        url: `${siteUrl}/logo.png`,
         width: 1200,
         height: 630,
-        alt: 'Blueportel Mobil-Home Prestige Face à la Mer',
+        alt: 'Blueportel - Logo',
       },
     ],
   },
@@ -64,7 +64,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: defaultTitle,
     description: defaultDescription,
-    images: [`${siteUrl}/og-image.jpg`],
+    images: [`${siteUrl}/logo.png`],
   },
   robots: {
     index: true,

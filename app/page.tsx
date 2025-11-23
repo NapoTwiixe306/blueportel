@@ -40,10 +40,10 @@ export const metadata: Metadata = {
     siteName: "Blueportel",
     images: [
       {
-        url: `${siteUrl}/og-image.jpg`,
+        url: `${siteUrl}/logo.png`,
         width: 1200,
         height: 630,
-        alt: "Blueportel Mobil-Home Prestige Face à la Mer",
+        alt: "Blueportel - Logo",
       },
     ],
   },
@@ -51,7 +51,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Blueportel - Mobil-Home Prestige Face à la Mer",
     description: "Location mobil-home prestige 3 chambres face à la mer au Portel. Vue panoramique, accès direct plage.",
-    images: [`${siteUrl}/og-image.jpg`],
+    images: [`${siteUrl}/logo.png`],
   },
   alternates: {
     canonical: "/",
