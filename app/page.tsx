@@ -244,7 +244,7 @@ export default function Home() {
         </nav>
 
         <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl 2xl:text-6xl font-bold text-black text-center max-w-full sm:max-w-2xl md:max-w-3xl lg:max-w-4xl leading-tight px-3 sm:px-4 md:px-6 mb-3 sm:mb-4 md:mb-6">
-          Location Mobil-Home CECI EST UN TEST <br className="hidden sm:block" />{" "}
+          Location Mobil-Home  <br className="hidden sm:block" />{" "}
           <span className="text-blue-500 font-bold" style={{ fontFamily: 'var(--font-gluten)' }}>Face à la Mer</span>
         </h1>
         <p className="text-xs sm:text-sm md:text-base lg:text-lg text-gray-500 text-center font-bold mb-4 sm:mb-6 md:mb-8 lg:mb-10 px-3 sm:px-4 md:px-6">
