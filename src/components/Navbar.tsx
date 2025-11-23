@@ -158,6 +158,7 @@ export default function Navbar() {
             <Link
               href="https://checkout.lodgify.com/fr/blueportel/654566/reservation?currency=EUR&ref=bnbox&adults=1"
               target="_blank"
+              rel="noopener"
               className="rounded-lg bg-[#2663EB] px-6 py-2.5 text-sm font-medium text-white transition-colors hover:bg-[#1E40AF]"
             >
               Réservez Maintenant
