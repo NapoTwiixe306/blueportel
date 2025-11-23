@@ -15,6 +15,38 @@ export default function robots(): MetadataRoute.Robots {
         allow: '/',
         disallow: ['/api/', '/admin/'],
       },
+      {
+        userAgent: 'GPTBot',
+        disallow: '/',
+      },
+      {
+        userAgent: 'ChatGPT-User',
+        disallow: '/',
+      },
+      {
+        userAgent: 'CCBot',
+        disallow: '/',
+      },
+      {
+        userAgent: 'anthropic-ai',
+        disallow: '/',
+      },
+      {
+        userAgent: 'ClaudeBot',
+        disallow: '/',
+      },
+      {
+        userAgent: 'Google-Extended',
+        disallow: '/',
+      },
+      {
+        userAgent: 'PerplexityBot',
+        disallow: '/',
+      },
+      {
+        userAgent: 'Applebot-Extended',
+        disallow: '/',
+      },
     ],
     sitemap: `${siteUrl}/sitemap.xml`,
   };
