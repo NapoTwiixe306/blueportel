@@ -33,10 +33,19 @@ jobs:
           NEXT_PUBLIC_SITE_URL: ${{ secrets.NEXT_PUBLIC_SITE_URL || 'https://blueportel.vercel.app' }}
 
       - name: Deploy to Vercel
+        if: ${{ secrets.VERCEL_TOKEN != '' }}
         uses: amondnet/vercel-action@v25
         with:
           vercel-token: ${{ secrets.VERCEL_TOKEN }}
           vercel-org-id: ${{ secrets.VERCEL_ORG_ID }}
           vercel-project-id: ${{ secrets.VERCEL_PROJECT_ID }}
           vercel-args: '--prod'
+        continue-on-error: true
+      
+      - name: Vercel auto-deploy notice
+        if: ${{ secrets.VERCEL_TOKEN == '' }}
+        run: |
+          echo "⚠️  Vercel secrets not configured. Skipping manual deployment."
+          echo "ℹ️  Vercel will auto-deploy from GitHub if your repository is connected."
+          echo "📝 To enable manual deployment, add VERCEL_TOKEN, VERCEL_ORG_ID, and VERCEL_PROJECT_ID secrets in GitHub Settings > Secrets and variables > Actions"
 

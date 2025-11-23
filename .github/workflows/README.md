@@ -49,8 +49,20 @@ Pour utiliser le workflow de déploiement Vercel, vous devez configurer les secr
    - **Organization ID** → `VERCEL_ORG_ID`
    - **Project ID** → `VERCEL_PROJECT_ID`
 
-## Note
+## Note importante
+
+**Le workflow de déploiement Vercel est optionnel !**
 
 Vercel déploie automatiquement depuis GitHub si vous avez connecté votre dépôt. 
-Ces workflows sont optionnels et ajoutent une couche supplémentaire de vérification avant le déploiement.
+Le workflow `vercel-deploy.yml` ne s'exécutera que si vous avez configuré les secrets Vercel.
+
+**Si les secrets ne sont pas configurés :**
+- Le workflow continuera sans erreur
+- Un message informatif sera affiché
+- Vercel déploiera automatiquement depuis GitHub (si connecté)
+
+**Pourquoi utiliser le workflow manuel ?**
+- Contrôle total sur le moment du déploiement
+- Vérification du build avant déploiement
+- Logs détaillés dans GitHub Actions
 
