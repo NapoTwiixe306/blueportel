@@ -29,8 +29,8 @@ const navItems: NavItem[] = [
   {
     label: "Séjours & Réservations",
     items: [
-      { label: "Disponibilités", href: "#" },
-      { label: "Tarifs", href: "#" },
+      { label: "Disponibilités", href: "/pages/disponibilites" },
+      { label: "Tarifs", href: "/pages/tarifs" },
       { label: "Réservation personnalisée", href: "#" },
       { label: "Réserver / Calendrier", href: "#" },
     ],
