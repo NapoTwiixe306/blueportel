@@ -1,9 +1,13 @@
 "use client";
 
 import { useState, useEffect, useRef } from "react";
-import Logo from "../img/logo.png";
+import { usePathname, useRouter } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
+import { Globe, DollarSign } from "lucide-react";
+
+import Logo from "../img/logo.png";
+import { locales, type Locale } from "../i18n/locales";
 
 interface DropdownItem {
   label: string;
@@ -13,6 +17,18 @@ interface DropdownItem {
 interface NavItem {
   label: string;
   items: DropdownItem[];
+}
+
+interface LanguageOption {
+  code: Locale;
+  label: string;
+  flag: string;
+}
+
+interface CurrencyOption {
+  code: string;
+  label: string;
+  symbol: string;
 }
 
 const navItems: NavItem[] = [
@@ -51,22 +67,43 @@ const navItems: NavItem[] = [
   },
 ];
 
-export default function Navbar() {
+const languageOptions: LanguageOption[] = [
+  { code: "fr", label: "Français", flag: "🇫🇷" },
+  { code: "en", label: "English", flag: "🇬🇧" },
+  { code: "nl", label: "Nederlands", flag: "🇳🇱" },
+];
+
+const currencyOptions: CurrencyOption[] = [
+  { code: "EUR", label: "Euro", symbol: "€" },
+  { code: "GBP", label: "Livre sterling", symbol: "£" },
+  { code: "USD", label: "US Dollar", symbol: "$" },
+];
+
+interface NavbarProps {
+  locale?: Locale;
+}
+
+export default function Navbar({ locale = "fr" }: NavbarProps) {
+  const router = useRouter();
+  const pathname = usePathname();
+
+  const dropdownRefs = useRef<(HTMLDivElement | null)[]>([]);
+  const toolkitRef = useRef<HTMLDivElement | null>(null);
+
+  const initialLanguage =
+    languageOptions.find((lang) => lang.code === locale) ?? languageOptions[0];
+
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [openDropdown, setOpenDropdown] = useState<number | null>(null);
-  const dropdownRefs = useRef<(HTMLDivElement | null)[]>([]);
+  const [selectedLanguage, setSelectedLanguage] = useState<LanguageOption>(initialLanguage);
+  const [selectedCurrency, setSelectedCurrency] = useState<CurrencyOption>(currencyOptions[0]);
+  const [isToolkitOpen, setIsToolkitOpen] = useState(false);
 
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
-      if (typeof window !== "undefined" && window.innerWidth < 1024) {
-        return;
-      }
-
       dropdownRefs.current.forEach((ref, index) => {
-        if (ref && !ref.contains(event.target as Node)) {
-          if (openDropdown === index) {
-            setOpenDropdown(null);
-          }
+        if (ref && !ref.contains(event.target as Node) && openDropdown === index) {
+          setOpenDropdown(null);
         }
       });
     };
@@ -76,21 +113,45 @@ export default function Navbar() {
   }, [openDropdown]);
 
   useEffect(() => {
-    if (!mobileMenuOpen) return;
-
-    const handleClickOutside = (event: MouseEvent) => {
-      const target = event.target as HTMLElement;
-      if (!target.closest("nav")) {
-        setMobileMenuOpen(false);
+    const handleToolkitOutside = (event: MouseEvent) => {
+      if (toolkitRef.current && !toolkitRef.current.contains(event.target as Node)) {
+        setIsToolkitOpen(false);
       }
     };
 
-    document.addEventListener("mousedown", handleClickOutside);
-    return () => document.removeEventListener("mousedown", handleClickOutside);
-  }, [mobileMenuOpen]);
+    document.addEventListener("mousedown", handleToolkitOutside);
+    return () => document.removeEventListener("mousedown", handleToolkitOutside);
+  }, []);
+
+  useEffect(() => {
+    setSelectedLanguage(
+      languageOptions.find((lang) => lang.code === locale) ?? languageOptions[0]
+    );
+  }, [locale]);
 
   const toggleDropdown = (index: number) => {
     setOpenDropdown(openDropdown === index ? null : index);
+  };
+
+  const buildLocalizedPath = (targetLocale: Locale) => {
+    const segments = pathname.split("/");
+    const first = segments[1];
+    const hasLocalePrefix = locales.includes(first as Locale);
+
+    if (hasLocalePrefix) {
+      const rest = segments.slice(2).join("/");
+      return rest ? `/${targetLocale}/${rest}` : `/${targetLocale}`;
+    }
+
+    return `/${targetLocale}`;
+  };
+
+  const handleLanguageChange = (lang: LanguageOption) => {
+    setSelectedLanguage(lang);
+    const nextPath = buildLocalizedPath(lang.code);
+    router.push(nextPath);
+    setIsToolkitOpen(false);
+    setMobileMenuOpen(false);
   };
 
   return (
@@ -98,7 +159,7 @@ export default function Navbar() {
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="flex h-20 items-center justify-between">
           <div className="flex items-center flex-shrink-0">
-            <Link href="/" aria-label="Blueportel - Accueil">
+            <Link href={`/${locale}`} aria-label="Blueportel - Accueil">
               <Image
                 src={Logo}
                 alt="Blueportel - Mobil-Home Prestige Face à la Mer - Logo"
@@ -114,7 +175,7 @@ export default function Navbar() {
           <div className="hidden lg:flex lg:flex-1 lg:items-center lg:justify-center lg:gap-8">
             {navItems.map((item, index) => (
               <div
-                key={index}
+                key={item.label}
                 ref={(el) => {
                   dropdownRefs.current[index] = el;
                 }}
@@ -133,19 +194,14 @@ export default function Navbar() {
                     stroke="currentColor"
                     viewBox="0 0 24 24"
                   >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M19 9l-7 7-7-7"
-                    />
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                   </svg>
                 </button>
                 {openDropdown === index && (
                   <div className="absolute left-1/2 top-full mt-2 w-56 -translate-x-1/2 rounded-lg bg-white py-2 shadow-lg ring-1 ring-black ring-opacity-5">
-                    {item.items.map((subItem, subIndex) => (
+                    {item.items.map((subItem) => (
                       <Link
-                        key={subIndex}
+                        key={subItem.label}
                         href={subItem.href || "#"}
                         className="block px-4 py-2 text-sm text-gray-700 transition-colors hover:bg-gray-50 hover:text-[#1E3A8A]"
                       >
@@ -158,7 +214,75 @@ export default function Navbar() {
             ))}
           </div>
 
-          <div className="hidden lg:block flex-shrink-0">
+          <div className="hidden lg:flex flex-shrink-0 items-center gap-3">
+            <div className="relative" ref={toolkitRef}>
+              <button
+                type="button"
+                onClick={() => setIsToolkitOpen((prev) => !prev)}
+                className="flex items-center gap-2 rounded-xl border border-gray-200 bg-white px-4 py-2 text-sm font-semibold text-gray-700 shadow-sm transition hover:border-gray-300"
+                aria-expanded={isToolkitOpen}
+              >
+                <Globe className="h-4 w-4 text-blue-500" aria-hidden="true" />
+                <span>
+                  {selectedLanguage.code.toUpperCase()} · {selectedCurrency.code}
+                </span>
+                <svg
+                  className={`h-4 w-4 transition-transform ${isToolkitOpen ? "rotate-180" : ""}`}
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                </svg>
+              </button>
+              {isToolkitOpen && (
+                <div className="absolute right-0 mt-3 w-72 rounded-2xl border border-gray-200 bg-white p-4 shadow-2xl">
+                  <div className="space-y-4">
+                    <div>
+                      <p className="text-xs font-semibold uppercase tracking-wide text-gray-500 mb-2">Langue</p>
+                      <div className="grid grid-cols-2 gap-2">
+                        {languageOptions.map((lang) => (
+                          <button
+                            key={lang.code}
+                            type="button"
+                            onClick={() => handleLanguageChange(lang)}
+                            className={`flex items-center gap-2 rounded-xl border px-3 py-2 text-sm transition ${
+                              selectedLanguage.code === lang.code
+                                ? "border-blue-500 bg-blue-50 text-blue-700"
+                                : "border-gray-200 hover:border-blue-200"
+                            }`}
+                          >
+                            <span>{lang.flag}</span>
+                            {lang.label}
+                          </button>
+                        ))}
+                      </div>
+                    </div>
+                    <div>
+                      <p className="text-xs font-semibold uppercase tracking-wide text-gray-500 mb-2">
+                        Devise
+                      </p>
+                      <div className="grid grid-cols-3 gap-2">
+                        {currencyOptions.map((currency) => (
+                          <button
+                            key={currency.code}
+                            type="button"
+                            onClick={() => setSelectedCurrency(currency)}
+                            className={`rounded-xl border px-3 py-2 text-xs font-semibold transition ${
+                              selectedCurrency.code === currency.code
+                                ? "border-blue-500 bg-blue-50 text-blue-700"
+                                : "border-gray-200 text-gray-700 hover:border-blue-200"
+                            }`}
+                          >
+                            {currency.code} {currency.symbol}
+                          </button>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              )}
+            </div>
             <Link
               href="https://checkout.lodgify.com/fr/blueportel/654566/reservation?currency=EUR&ref=bnbox&adults=1"
               target="_blank"
@@ -177,37 +301,17 @@ export default function Navbar() {
               Réserver
             </Link>
             <button
-              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+              onClick={() => setMobileMenuOpen((prev) => !prev)}
               className="inline-flex items-center justify-center rounded-md p-2 text-gray-800 hover:bg-gray-100 focus:outline-none"
               aria-label="Toggle menu"
             >
               {mobileMenuOpen ? (
-                <svg
-                  className="h-6 w-6"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M6 18L18 6M6 6l12 12"
-                  />
+                <svg className="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
                 </svg>
               ) : (
-                <svg
-                  className="h-6 w-6"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M4 6h16M4 12h16M4 18h16"
-                  />
+                <svg className="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
                 </svg>
               )}
             </button>
@@ -216,10 +320,10 @@ export default function Navbar() {
       </div>
 
       {mobileMenuOpen && (
-        <div className="border-t border-gray-200 lg:hidden">
+        <div className="lg:hidden border-t border-gray-200 bg-white shadow-inner">
           <div className="space-y-1 px-4 pb-4 pt-2">
             {navItems.map((item, index) => (
-              <div key={index}>
+              <div key={item.label}>
                 <button
                   onClick={() => toggleDropdown(index)}
                   className="flex w-full items-center justify-between px-4 py-3 text-base font-medium text-gray-800 hover:bg-gray-50 focus:outline-none"
@@ -233,19 +337,14 @@ export default function Navbar() {
                     stroke="currentColor"
                     viewBox="0 0 24 24"
                   >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M19 9l-7 7-7-7"
-                    />
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                   </svg>
                 </button>
                 {openDropdown === index && (
                   <div className="ml-4 space-y-1 border-l-2 border-gray-200 pl-4">
-                    {item.items.map((subItem, subIndex) => (
+                    {item.items.map((subItem) => (
                       <Link
-                        key={subIndex}
+                        key={subItem.label}
                         href={subItem.href || "#"}
                         className="block px-4 py-2 text-sm text-gray-600 hover:bg-gray-50 hover:text-[#1E3A8A]"
                         onClick={() => setMobileMenuOpen(false)}
@@ -257,6 +356,58 @@ export default function Navbar() {
                 )}
               </div>
             ))}
+          </div>
+
+          <div className="border-t border-gray-200 px-4 py-4 space-y-4">
+            <p className="text-xs font-semibold uppercase tracking-widest text-gray-500">Préférences</p>
+            <div>
+              <p className="text-xs text-gray-500 mb-2 flex items-center gap-2">
+                <Globe className="h-4 w-4 text-blue-500" aria-hidden="true" />
+                Langue
+              </p>
+              <div className="flex flex-wrap gap-2">
+                {languageOptions.map((lang) => (
+                  <button
+                    key={lang.code}
+                    type="button"
+                    onClick={() => handleLanguageChange(lang)}
+                    className={`flex items-center gap-2 rounded-full border px-3 py-1.5 text-sm transition ${
+                      selectedLanguage.code === lang.code
+                        ? "border-blue-500 bg-blue-50 text-blue-700"
+                        : "border-gray-200 text-gray-700"
+                    }`}
+                  >
+                    <span>{lang.flag}</span>
+                    {lang.label}
+                  </button>
+                ))}
+              </div>
+            </div>
+            <div>
+              <p className="text-xs text-gray-500 mb-2 flex items-center gap-2">
+                <DollarSign className="h-4 w-4 text-blue-500" aria-hidden="true" />
+                Devise d’affichage
+              </p>
+              <div className="flex flex-wrap gap-2">
+                {currencyOptions.map((currency) => (
+                  <button
+                    key={currency.code}
+                    type="button"
+                    onClick={() => setSelectedCurrency(currency)}
+                    className={`rounded-full border px-3 py-1.5 text-xs font-semibold transition ${
+                      selectedCurrency.code === currency.code
+                        ? "border-blue-500 bg-blue-50 text-blue-700"
+                        : "border-gray-200 text-gray-700"
+                    }`}
+                  >
+                    {currency.code} {currency.symbol}
+                  </button>
+                ))}
+              </div>
+            </div>
+            <p className="text-xs text-gray-500">
+              Interface en {selectedLanguage.label} – prix affichés en {selectedCurrency.label}.
+            </p>
           </div>
         </div>
       )}

@@ -2,10 +2,16 @@
 
 import { useState, useEffect, useRef } from "react";
 
-export default function ReservationForm() {
+import type { ReservationFormDictionary } from "../../src/i18n/home/types";
+
+type ReservationFormProps = {
+  dictionary: ReservationFormDictionary;
+};
+
+export default function ReservationForm({ dictionary }: ReservationFormProps) {
   const [arrivalDate, setArrivalDate] = useState("");
   const [departureDate, setDepartureDate] = useState("");
-  const [guests, setGuests] = useState("1 Adulte");
+  const [guests, setGuests] = useState(dictionary.guestOptions[0]);
   const [showGuestDropdown, setShowGuestDropdown] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
 
@@ -83,10 +89,10 @@ export default function ReservationForm() {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     
-    const baseUrl = "https://checkout.lodgify.com/fr/blueportel/654566/reservation";
+    const baseUrl = `https://checkout.lodgify.com/${dictionary.bookingLocaleSegment}/blueportel/654566/reservation`;
     const url = new URL(baseUrl);
     
-    url.searchParams.set("currency", "EUR");
+    url.searchParams.set("currency", dictionary.currency);
     url.searchParams.set("ref", "bnbox");
     
     const adultsCount = extractAdultsCount(guests);
@@ -109,7 +115,7 @@ export default function ReservationForm() {
     <form onSubmit={handleSubmit} className="w-full max-w-4xl mx-auto space-y-3 sm:space-y-4 md:space-y-5 lg:space-y-6">
       <div className="w-full">
         <label className="block text-xs sm:text-sm md:text-base font-bold text-gray-700 mb-1.5 sm:mb-2">
-          Arrivée
+          {dictionary.arrivalLabel}
         </label>
         <div className="relative flex items-center">
           <div className="absolute left-2 sm:left-3 pointer-events-none z-10">
@@ -121,7 +127,7 @@ export default function ReservationForm() {
             name="arrival"
             value={arrivalDate}
             onChange={(e) => setArrivalDate(e.target.value)}
-            placeholder="jj/mm/aaaa"
+            placeholder={dictionary.arrivalPlaceholder}
             autoComplete="off"
             className="w-full pl-9 sm:pl-11 pr-3 sm:pr-4 py-2.5 sm:py-3 md:py-3.5 text-sm sm:text-base border border-gray-300 rounded-lg text-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-white"
           />
@@ -130,7 +136,7 @@ export default function ReservationForm() {
 
       <div className="w-full">
         <label className="block text-xs sm:text-sm md:text-base font-bold text-gray-700 mb-1.5 sm:mb-2">
-          Départ
+          {dictionary.departureLabel}
         </label>
         <div className="relative flex items-center">
           <div className="absolute left-2 sm:left-3 pointer-events-none z-10">
@@ -142,7 +148,7 @@ export default function ReservationForm() {
             name="departure"
             value={departureDate}
             onChange={(e) => setDepartureDate(e.target.value)}
-            placeholder="jj/mm/aaaa"
+            placeholder={dictionary.departurePlaceholder}
             min={arrivalDate || undefined}
             autoComplete="off"
             className="w-full pl-9 sm:pl-11 pr-3 sm:pr-4 py-2.5 sm:py-3 md:py-3.5 text-sm sm:text-base border border-gray-300 rounded-lg text-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-white"
@@ -152,7 +158,7 @@ export default function ReservationForm() {
 
       <div className="relative w-full" ref={dropdownRef}>
         <label className="block text-xs sm:text-sm md:text-base font-bold text-gray-700 mb-1.5 sm:mb-2">
-          Invités
+          {dictionary.guestsLabel}
         </label>
         <div className="relative">
           <div className="absolute left-2 sm:left-3 top-1/2 -translate-y-1/2 pointer-events-none z-10">
@@ -188,75 +194,23 @@ export default function ReservationForm() {
             <div 
               className="absolute z-10 w-full mt-2 bg-white border border-gray-300 rounded-lg shadow-lg"
               role="listbox"
-              aria-label="Sélectionner le nombre d'invités"
+              aria-label={dictionary.guestDropdownLabel}
             >
               <div className="py-2">
-                <button
-                  type="button"
-                  role="option"
-                  onClick={() => {
-                    setGuests("1 Adulte");
-                    setShowGuestDropdown(false);
-                  }}
-                  className="w-full px-4 py-2 text-left text-gray-700 hover:bg-gray-50"
-                >
-                  1 Adulte
-                </button>
-                <button
-                  type="button"
-                  role="option"
-                  onClick={() => {
-                    setGuests("2 Adultes");
-                    setShowGuestDropdown(false);
-                  }}
-                  className="w-full px-4 py-2 text-left text-gray-700 hover:bg-gray-50"
-                >
-                  2 Adultes
-                </button>
-                <button
-                  type="button"
-                  role="option"
-                  onClick={() => {
-                    setGuests("3 Adultes");
-                    setShowGuestDropdown(false);
-                  }}
-                  className="w-full px-4 py-2 text-left text-gray-700 hover:bg-gray-50"
-                >
-                  3 Adultes
-                </button>
-                <button
-                  type="button"
-                  role="option"
-                  onClick={() => {
-                    setGuests("4 Adultes");
-                    setShowGuestDropdown(false);
-                  }}
-                  className="w-full px-4 py-2 text-left text-gray-700 hover:bg-gray-50"
-                >
-                  4 Adultes
-                </button>
-                <button
-                  type="button"
-                  role="option"
-                  onClick={() => {
-                    setGuests("5 Adultes");
-                    setShowGuestDropdown(false);
-                  }}
-                  className="w-full px-4 py-2 text-left text-gray-700 hover:bg-gray-50"
-                >
-                  5 Adultes
-                </button>
-                <button
-                  type="button"
-                  role="option"
-                  onClick={() => {
-                    setGuests("6 Adultes");
-                    setShowGuestDropdown(false);
-                  }}
-                  className="w-full px-4 py-2 text-left text-gray-700 hover:bg-gray-50"
-                >
-                  6 Adultes
-                </button>
+                {dictionary.guestOptions.map((option) => (
+                  <button
+                    key={option}
+                    type="button"
+                    role="option"
+                    onClick={() => {
+                      setGuests(option);
+                      setShowGuestDropdown(false);
+                    }}
+                    className="w-full px-4 py-2 text-left text-gray-700 hover:bg-gray-50"
+                  >
+                    {option}
+                  </button>
+                ))}
               </div>
             </div>
           )}
@@ -267,7 +221,7 @@ export default function ReservationForm() {
         type="submit"
         className="w-full bg-blue-500 hover:bg-blue-600 text-white font-bold py-2.5 sm:py-3 md:py-3.5 px-4 sm:px-6 text-sm sm:text-base md:text-lg rounded-lg transition-colors duration-300 mt-2 sm:mt-3 md:mt-4"
       >
-        Réserver
+        {dictionary.submitLabel}
       </button>
     </form>
   );

@@ -4,6 +4,8 @@ import "./globals.css";
 import Navbar from "../src/components/Navbar";
 import Footer from "../src/components/Footer";
 import Analytics from "../src/components/Analytics";
+import { headers } from "next/headers";
+import { defaultLocale, locales, type Locale } from "../src/i18n/locales";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -84,11 +86,15 @@ export const metadata: Metadata = {
   classification: 'Location de mobil-home',
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const headerList = await headers();
+  const headerLocale = headerList.get("x-path-locale") as Locale | null;
+  const locale = headerLocale && locales.includes(headerLocale) ? headerLocale : defaultLocale;
+
   const organizationSchema = {
     '@context': 'https://schema.org',
     '@type': 'Organization',
@@ -113,7 +119,7 @@ export default function RootLayout({
   };
 
   return (
-    <html lang="fr">
+    <html lang={locale}>
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${gluten.variable} antialiased flex flex-col min-h-screen`}
       >
@@ -122,10 +128,8 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
         />
         <Analytics />
-        <Navbar />
-        <main className="flex-1">
-          {children}
-        </main>
+        <Navbar locale={locale} />
+        <main className="flex-1">{children}</main>
         <Footer />
       </body>
     </html>
