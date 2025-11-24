@@ -84,7 +84,7 @@ export default function DisponibilitesPage() {
                 className="flex items-center justify-center gap-2 rounded-xl border border-blue-100 bg-white px-4 py-3 text-sm font-semibold text-blue-700 shadow-sm transition hover:-translate-y-0.5 hover:border-blue-200 hover:shadow-md"
               >
                 <Mail className="h-4 w-4" aria-hidden="true" />
-                infos@blueportel.fr
+                info@blueportel.fr
               </a>
               <a
                 href="tel:+32488832091"

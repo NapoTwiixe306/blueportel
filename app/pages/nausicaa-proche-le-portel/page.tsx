@@ -91,7 +91,16 @@ export default function NausicaaPage() {
       question: "Quelles sont les heures d'ouverture de Nausicaá ?",
       answer: (
         <>
-          En général <strong>09:30–18:30</strong> ; merci de vérifier les éventuels ajustements saisonniers sur le <a href="https://www.nausicaa.fr" target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:text-blue-600 underline">site officiel de Nausicaá</a>.
+          En général <strong>09:30–18:30</strong> ; merci de vérifier les éventuels ajustements saisonniers sur le{" "}
+          <Link
+            href="https://www.nausicaa.fr"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-blue-500 hover:text-blue-600 underline"
+          >
+            site officiel de Nausicaá
+          </Link>
+          .
         </>
       ),
     },
@@ -100,7 +109,16 @@ export default function NausicaaPage() {
       question: "Faut-il réserver les billets pour Nausicaá à l'avance ?",
       answer: (
         <>
-          Il est recommandé de <strong>réserver en ligne</strong> pour éviter l'attente, surtout en période de forte affluence. Consultez le <a href="https://www.nausicaa.fr" target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:text-blue-600 underline">site officiel de Nausicaá</a> pour les billets et tarifs.
+          Il est recommandé de <strong>réserver en ligne</strong> pour éviter l'attente, surtout en période de forte affluence. Consultez le{" "}
+          <Link
+            href="https://www.nausicaa.fr"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-blue-500 hover:text-blue-600 underline"
+          >
+            site officiel de Nausicaá
+          </Link>{" "}
+          pour les billets et tarifs.
         </>
       ),
     },
@@ -352,7 +370,16 @@ export default function NausicaaPage() {
                     <strong className="text-sm sm:text-base md:text-lg text-gray-900">Horaires</strong>
                     <p className="text-sm sm:text-base md:text-lg text-gray-700">
                       généralement <strong>09:30–18:30</strong> (variable selon saison et affluence). 
-                      Vérifiez les horaires et accès mis à jour sur le <a href="https://www.nausicaa.fr" target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:text-blue-600 underline">site officiel de Nausicaá</a>.
+                      Vérifiez les horaires et accès mis à jour sur le{" "}
+                      <Link
+                        href="https://www.nausicaa.fr"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-blue-500 hover:text-blue-600 underline"
+                      >
+                        site officiel de Nausicaá
+                      </Link>
+                      .
                     </p>
                   </div>
                 </li>
@@ -361,7 +388,16 @@ export default function NausicaaPage() {
                   <div>
                     <strong className="text-sm sm:text-base md:text-lg text-gray-900">Billets</strong>
                     <p className="text-sm sm:text-base md:text-lg text-gray-700">
-                      pensez à <strong>réserver en ligne</strong> pour éviter l'attente (voir <a href="https://www.nausicaa.fr" target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:text-blue-600 underline">site officiel de Nausicaá</a>).
+                      pensez à <strong>réserver en ligne</strong> pour éviter l'attente (voir{" "}
+                      <Link
+                        href="https://www.nausicaa.fr"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-blue-500 hover:text-blue-600 underline"
+                      >
+                        site officiel de Nausicaá
+                      </Link>
+                      ).
                     </p>
                   </div>
                 </li>

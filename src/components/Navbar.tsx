@@ -98,17 +98,17 @@ export default function Navbar() {
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="flex h-20 items-center justify-between">
           <div className="flex items-center flex-shrink-0">
-            <a href="/" aria-label="Blueportel - Accueil">
-              <Image 
-                src={Logo} 
-                alt="Blueportel - Mobil-Home Prestige Face à la Mer - Logo" 
+            <Link href="/" aria-label="Blueportel - Accueil">
+              <Image
+                src={Logo}
+                alt="Blueportel - Mobil-Home Prestige Face à la Mer - Logo"
                 className="h-auto w-auto"
                 width={200}
                 height={80}
                 priority
                 fetchPriority="high"
               />
-            </a>
+            </Link>
           </div>
 
           <div className="hidden lg:flex lg:flex-1 lg:items-center lg:justify-center lg:gap-8">
@@ -144,13 +144,13 @@ export default function Navbar() {
                 {openDropdown === index && (
                   <div className="absolute left-1/2 top-full mt-2 w-56 -translate-x-1/2 rounded-lg bg-white py-2 shadow-lg ring-1 ring-black ring-opacity-5">
                     {item.items.map((subItem, subIndex) => (
-                      <a
+                      <Link
                         key={subIndex}
                         href={subItem.href || "#"}
                         className="block px-4 py-2 text-sm text-gray-700 transition-colors hover:bg-gray-50 hover:text-[#1E3A8A]"
                       >
                         {subItem.label}
-                      </a>
+                      </Link>
                     ))}
                   </div>
                 )}
@@ -170,12 +170,12 @@ export default function Navbar() {
           </div>
 
           <div className="flex items-center gap-4 lg:hidden">
-            <a
+            <Link
               href="#"
               className="rounded-lg bg-[#2663EB] px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-[#1E40AF]"
             >
               Réserver
-            </a>
+            </Link>
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
               className="inline-flex items-center justify-center rounded-md p-2 text-gray-800 hover:bg-gray-100 focus:outline-none"
@@ -244,14 +244,14 @@ export default function Navbar() {
                 {openDropdown === index && (
                   <div className="ml-4 space-y-1 border-l-2 border-gray-200 pl-4">
                     {item.items.map((subItem, subIndex) => (
-                      <a
+                      <Link
                         key={subIndex}
                         href={subItem.href || "#"}
                         className="block px-4 py-2 text-sm text-gray-600 hover:bg-gray-50 hover:text-[#1E3A8A]"
                         onClick={() => setMobileMenuOpen(false)}
                       >
                         {subItem.label}
-                      </a>
+                      </Link>
                     ))}
                   </div>
                 )}

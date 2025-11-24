@@ -14,26 +14,14 @@ export async function GET(request: Request) {
 
   try {
     const response = await fetch(remoteUrl, {
-      headers: {
-        Accept: "application/json, text/plain, */*",
-        "Accept-Language": "fr-FR,fr;q=0.9,en;q=0.8",
-        "User-Agent":
-          "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36",
-        Referer: "https://checkout.lodgify.com/",
-        Origin: "https://checkout.lodgify.com",
-        "X-Requested-With": "XMLHttpRequest",
-      },
+      headers: { Accept: "application/json" },
       cache: "no-store",
     });
 
     if (!response.ok) {
       const text = await response.text();
       return NextResponse.json(
-        {
-          error: "Calendrier indisponible",
-          status: response.status,
-          details: text,
-        },
+        { error: "Calendrier indisponible", details: text },
         { status: response.status }
       );
     }
