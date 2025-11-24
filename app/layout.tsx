@@ -3,6 +3,7 @@ import { Geist, Geist_Mono, Gluten } from "next/font/google";
 import "./globals.css";
 import Navbar from "../src/components/Navbar";
 import Footer from "../src/components/Footer";
+import Analytics from "../src/components/Analytics";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -120,6 +121,7 @@ export default function RootLayout({
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
         />
+        <Analytics />
         <Navbar />
         <main className="flex-1">
           {children}
