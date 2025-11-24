@@ -28,6 +28,9 @@ jobs:
           ssh -o StrictHostKeyChecking=no ubuntu@${{ secrets.VPS_IP }} "
             cd $DEPLOY_DIR &&
             git pull &&
-            docker compose down --remove-orphans &&
-            docker compose up -d --build
+            # Ne pas faire 'down' pour éviter d'arrêter Umami
+            docker compose up -d --build &&
+            # S'assurer que Caddy est connecté aux réseaux de Blueportel et Umami
+            docker network connect blueportel_default caddy_server || true &&
+            docker network connect umami_default caddy_server || true
           "
