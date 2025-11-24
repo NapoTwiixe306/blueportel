@@ -20,7 +20,7 @@ const navItems: NavItem[] = [
     label: "Logement",
     items: [
       { label: "Accueil", href: "#" },
-      { label: "Photos", href: "#" },
+      { label: "Photos", href: "/pages/galerie-photo" },
       { label: "Vue d'ensemble", href: "#" },
       { label: "Plan", href: "#" },
       { label: "Avis", href: "#" },

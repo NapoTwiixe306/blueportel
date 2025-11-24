@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://blueportel.vercel.app';
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://blueportel.com';
 
 export const metadata: Metadata = {
   title: "Contact - Blueportel | Location Mobil-Home Face à la Mer Le Portel",

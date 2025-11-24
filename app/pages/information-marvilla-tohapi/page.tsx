@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { AlertCircle, Info, MapPin } from "lucide-react";
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://blueportel.vercel.app';
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://blueportel.com';
 
 export default function InformationMarvillaTohapiPage() {
   const breadcrumbSchema = {

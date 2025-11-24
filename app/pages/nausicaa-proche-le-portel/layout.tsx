@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://blueportel.fr';
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://blueportel.com';
 
 export const metadata: Metadata = {
   title: "Nausicaá - Location Mobil-Home à 10 min | Blueportel Le Portel",

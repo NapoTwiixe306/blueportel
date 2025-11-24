@@ -4,7 +4,7 @@ import Link from "next/link";
 import { useState } from "react";
 import { ChevronDown, ChevronUp, Car, Bus, MapPin, Clock, Phone, Mail, Waves, Home as HomeIcon, Star } from "lucide-react";
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://blueportel.fr';
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://blueportel.com';
 
 interface FAQItemProps {
   question: string;

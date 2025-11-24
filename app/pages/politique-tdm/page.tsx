@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { Mail, MapPin, FileText, Shield, AlertTriangle } from "lucide-react";
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://blueportel.vercel.app';
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://blueportel.com';
 
 export default function PolitiqueTDMPage() {
   const breadcrumbSchema = {

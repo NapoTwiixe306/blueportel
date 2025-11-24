@@ -20,7 +20,7 @@ const gluten = Gluten({
   weight: ["400", "500", "600", "700", "800", "900"],
 });
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://blueportel.vercel.app';
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://blueportel.com';
 const siteName = 'Blueportel';
 const defaultTitle = 'Blueportel - Mobil-Home Prestige Face à la Mer | Location Le Portel';
 const defaultDescription = 'Découvrez Blueportel, votre mobil-home de prestige face à la mer au Portel. Location de mobil-home haut de gamme avec vue imprenable sur la mer.';
