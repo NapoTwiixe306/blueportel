@@ -19,11 +19,11 @@ const navItems: NavItem[] = [
   {
     label: "Logement",
     items: [
-      { label: "Accueil", href: "#" },
+      { label: "Accueil", href: "/" },
       { label: "Photos", href: "/pages/galerie-photo" },
-      { label: "Vue d'ensemble", href: "#" },
-      { label: "Plan", href: "#" },
-      { label: "Avis", href: "#" },
+      { label: "Vue d'ensemble", href: "/pages/vue-densemble" },
+      { label: "Plan", href: "/pages/plan" },
+      { label: "Avis", href: "/pages/avis" },
     ],
   },
   {
