@@ -58,6 +58,10 @@ export default function Navbar() {
 
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
+      if (typeof window !== "undefined" && window.innerWidth < 1024) {
+        return;
+      }
+
       dropdownRefs.current.forEach((ref, index) => {
         if (ref && !ref.contains(event.target as Node)) {
           if (openDropdown === index) {
