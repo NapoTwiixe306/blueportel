@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import Logo from "../img/logo.png";
-import { Phone, Mail, MapPin } from "lucide-react";
+import { Phone, Mail, MapPin, Facebook } from "lucide-react";
 
 export default function Footer() {
   return (
@@ -81,9 +81,20 @@ export default function Footer() {
               Contact
             </Link>
           </div>
-          <p className="text-xs sm:text-sm text-gray-500 text-center">
-            © {new Date().getFullYear()} Blueportel. Tous droits réservés.
-          </p>
+          <div className="flex flex-col items-center gap-4 text-center">
+            <Link
+              href="https://www.facebook.com/Blueportel"
+              target="_blank"
+              rel="noreferrer"
+              className="inline-flex items-center gap-2 rounded-full border border-gray-200 px-4 py-2 text-xs sm:text-sm text-gray-700 transition hover:border-blue-200 hover:text-blue-500"
+            >
+              <Facebook className="h-4 w-4" />
+              Suivez-nous sur Facebook
+            </Link>
+            <p className="text-xs sm:text-sm text-gray-500">
+              © {new Date().getFullYear()} Blueportel. Tous droits réservés.
+            </p>
+          </div>
         </div>
       </div>
     </footer>
