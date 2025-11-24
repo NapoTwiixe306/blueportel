@@ -1,9 +1,18 @@
 import Image from "next/image";
 import Link from "next/link";
-import Logo from "../img/logo.png";
 import { Phone, Mail, MapPin, Facebook } from "lucide-react";
 
-export default function Footer() {
+import type { FooterDictionary } from "../i18n/layout";
+import Logo from "../img/logo.png";
+
+type FooterProps = {
+  dictionary: FooterDictionary;
+};
+
+export default function Footer({ dictionary }: FooterProps) {
+  const currentYear = new Date().getFullYear();
+  const rightsText = dictionary.rights.replace("{year}", currentYear.toString());
+
   return (
     <footer className="bg-white border-t border-gray-200 mt-auto">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-8 sm:py-12 md:py-16">
@@ -22,39 +31,44 @@ export default function Footer() {
           </div>
 
           <div className="flex flex-col items-center md:items-start">
-            <h3 className="text-lg sm:text-xl font-bold text-gray-900 mb-4 sm:mb-6">Contact</h3>
+            <h3 className="text-lg sm:text-xl font-bold text-gray-900 mb-4 sm:mb-6">
+              {dictionary.contactTitle}
+            </h3>
             <div className="space-y-3 sm:space-y-4 text-sm sm:text-base text-gray-700">
               <Link
                 href="tel:+32488832091"
                 className="flex items-center gap-2 sm:gap-3 hover:text-blue-500 transition-colors"
               >
                 <Phone className="w-4 h-4 sm:w-5 sm:h-5 text-blue-500 flex-shrink-0" />
-                <span>+32 488 83 20 91</span>
+                <span>{dictionary.phonePrimaryLabel}</span>
               </Link>
               <Link
                 href="tel:+33745324836"
                 className="flex items-center gap-2 sm:gap-3 hover:text-blue-500 transition-colors"
               >
                 <Phone className="w-4 h-4 sm:w-5 sm:h-5 text-blue-500 flex-shrink-0" />
-                <span>+33 745 32 48 36</span>
+                <span>{dictionary.phoneSecondaryLabel}</span>
               </Link>
               <Link
                 href="mailto:info@blueportel.fr"
                 className="flex items-center gap-2 sm:gap-3 hover:text-blue-500 transition-colors"
               >
                 <Mail className="w-4 h-4 sm:w-5 sm:h-5 text-blue-500 flex-shrink-0" />
-                <span>info@blueportel.fr</span>
+                <span>{dictionary.emailLabel}</span>
               </Link>
             </div>
           </div>
 
           <div className="flex flex-col items-center md:items-start">
-            <h3 className="text-lg sm:text-xl font-bold text-gray-900 mb-4 sm:mb-6">Adresse</h3>
+            <h3 className="text-lg sm:text-xl font-bold text-gray-900 mb-4 sm:mb-6">
+              {dictionary.addressTitle}
+            </h3>
             <div className="flex items-start gap-2 sm:gap-3 text-sm sm:text-base text-gray-700">
               <MapPin className="w-4 h-4 sm:w-5 sm:h-5 text-blue-500 flex-shrink-0 mt-1" />
               <div className="space-y-1">
-                <p>Rue de la Mer 2</p>
-                <p>Le Portel, France 62480</p>
+                {dictionary.addressLines.map((line) => (
+                  <p key={line}>{line}</p>
+                ))}
               </div>
             </div>
           </div>
@@ -62,24 +76,15 @@ export default function Footer() {
 
         <div className="mt-8 sm:mt-12 pt-6 sm:pt-8 border-t border-gray-200">
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6 mb-4">
-            <Link 
-              href="/pages/information-marvilla-tohapi" 
-              className="text-xs sm:text-sm text-gray-600 hover:text-blue-500 transition-colors"
-            >
-              Information Marvilla Tohapi
-            </Link>
-            <Link 
-              href="/pages/politique-tdm" 
-              className="text-xs sm:text-sm text-gray-600 hover:text-blue-500 transition-colors"
-            >
-              Politique TDM
-            </Link>
-            <Link 
-              href="/pages/contact" 
-              className="text-xs sm:text-sm text-gray-600 hover:text-blue-500 transition-colors"
-            >
-              Contact
-            </Link>
+            {dictionary.quickLinks.map((link) => (
+              <Link
+                key={link.href}
+                href={link.href}
+                className="text-xs sm:text-sm text-gray-600 hover:text-blue-500 transition-colors"
+              >
+                {link.label}
+              </Link>
+            ))}
           </div>
           <div className="flex flex-col items-center gap-4 text-center">
             <Link
@@ -89,10 +94,10 @@ export default function Footer() {
               className="inline-flex items-center gap-2 rounded-full border border-gray-200 px-4 py-2 text-xs sm:text-sm text-gray-700 transition hover:border-blue-200 hover:text-blue-500"
             >
               <Facebook className="h-4 w-4" />
-              Suivez-nous sur Facebook
+              {dictionary.facebookLabel}
             </Link>
             <p className="text-xs sm:text-sm text-gray-500">
-              © {new Date().getFullYear()} Blueportel. Tous droits réservés.
+              {rightsText}
             </p>
           </div>
         </div>

@@ -6,6 +6,7 @@ import Footer from "../src/components/Footer";
 import Analytics from "../src/components/Analytics";
 import { headers } from "next/headers";
 import { defaultLocale, locales, type Locale } from "../src/i18n/locales";
+import { getLayoutDictionary } from "../src/i18n/layout";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -94,6 +95,7 @@ export default async function RootLayout({
   const headerList = await headers();
   const headerLocale = headerList.get("x-path-locale") as Locale | null;
   const locale = headerLocale && locales.includes(headerLocale) ? headerLocale : defaultLocale;
+  const layoutDictionary = getLayoutDictionary(locale);
 
   const organizationSchema = {
     '@context': 'https://schema.org',
@@ -130,7 +132,7 @@ export default async function RootLayout({
         <Analytics />
         <Navbar locale={locale} />
         <main className="flex-1">{children}</main>
-        <Footer />
+        <Footer dictionary={layoutDictionary.footer} />
       </body>
     </html>
   );
