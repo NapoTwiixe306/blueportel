@@ -209,7 +209,7 @@ export const frHomeDictionary: HomeDictionary = {
     },
     ctaSecondary: {
       label: "Découvrir le Mobil-Home",
-      href: "#decouvrir-le-mobil-home",
+      href: "/pages/galerie-photo",
     },
   },
   reservation: {

@@ -71,9 +71,22 @@ const dictionaries: Record<Locale, LayoutDictionary> = {
 };
 
 export function getLayoutDictionary(locale: Locale): LayoutDictionary {
-  if (!locales.includes(locale)) {
-    return dictionaries.fr;
-  }
-  return dictionaries[locale];
+  const safeLocale = locales.includes(locale) ? locale : "fr";
+  const base = dictionaries[safeLocale];
+
+  return {
+    footer: {
+      ...base.footer,
+      quickLinks: base.footer.quickLinks.map((link) => {
+        if (link.href.startsWith("http")) {
+          return link;
+        }
+        return {
+          ...link,
+          href: `/${safeLocale}${link.href}`,
+        };
+      }),
+    },
+  };
 }
 

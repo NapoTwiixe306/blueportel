@@ -37,6 +37,16 @@ export default function HomePage({ dictionary }: HomePageProps) {
       ? "Home"
       : "Startpagina";
 
+  const withLocale = (path: string) => {
+    if (!path || path === "#") return "#";
+    if (path.startsWith("http") || path.startsWith("mailto") || path.startsWith("tel")) {
+      return path;
+    }
+    if (path === "/") return `/${dictionary.locale}`;
+    if (path.startsWith("/")) return `/${dictionary.locale}${path}`;
+    return `/${dictionary.locale}/${path}`;
+  };
+
   return (
     <>
       {Object.entries(structuredData).map(([key, schema]) => (
@@ -88,7 +98,7 @@ export default function HomePage({ dictionary }: HomePageProps) {
                 {hero.ctaPrimary.label}
               </Link>
               <Link
-                href={hero.ctaSecondary.href}
+                href={withLocale(hero.ctaSecondary.href)}
                 className="bg-blue-500 text-white font-bold hover:bg-blue-600 transition-colors duration-300 px-6 py-2.5 rounded-md text-sm text-center"
               >
                 {hero.ctaSecondary.label}

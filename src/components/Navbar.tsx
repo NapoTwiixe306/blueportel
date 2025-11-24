@@ -31,41 +31,131 @@ interface CurrencyOption {
   symbol: string;
 }
 
-const navItems: NavItem[] = [
-  {
-    label: "Logement",
-    items: [
-      { label: "Accueil", href: "/" },
-      { label: "Photos", href: "/pages/galerie-photo" },
-      { label: "Vue d'ensemble", href: "/pages/vue-densemble" },
-      { label: "Plan", href: "/pages/plan" },
-      { label: "Avis", href: "/pages/avis" },
-    ],
-  },
-  {
-    label: "Séjours & Réservations",
-    items: [
-      { label: "Disponibilités", href: "/pages/disponibilites" },
-      { label: "Tarifs", href: "/pages/tarifs" },
-      { label: "Réservation personnalisée", href: "#" },
-      { label: "Réserver / Calendrier", href: "#" },
-    ],
-  },
-  {
-    label: "À Proximité",
-    items: [
-      { label: "Nausicaa", href: "/pages/nausicaa-proche-le-portel" },
-      { label: "Guide touristique", href: "/pages/guide-touristique" },
-    ],
-  },
-  {
-    label: "Infos Pratique",
-    items: [
-      { label: "FAQ Blueportel", href: "/pages/FAQ" },
-      { label: "Contact", href: "/pages/contact" },
-    ],
-  },
-];
+const navItemsByLocale: Record<Locale, NavItem[]> = {
+  fr: [
+    {
+      label: "Logement",
+      items: [
+        { label: "Accueil", href: "/" },
+        { label: "Photos", href: "/pages/galerie-photo" },
+        { label: "Vue d'ensemble", href: "/pages/vue-densemble" },
+        { label: "Plan", href: "/pages/plan" },
+        { label: "Avis", href: "/pages/avis" },
+      ],
+    },
+    {
+      label: "Séjours & Réservations",
+      items: [
+        { label: "Disponibilités", href: "/pages/disponibilites" },
+        { label: "Tarifs", href: "/pages/tarifs" },
+        { label: "Réservation personnalisée", href: "/pages/contact" },
+        { label: "Réserver / Calendrier", href: "#" },
+      ],
+    },
+    {
+      label: "À proximité",
+      items: [
+        { label: "Nausicaa", href: "/pages/nausicaa-proche-le-portel" },
+        { label: "Guide touristique", href: "/pages/guide-touristique" },
+      ],
+    },
+    {
+      label: "Infos pratiques",
+      items: [
+        { label: "FAQ Blueportel", href: "/pages/FAQ" },
+        { label: "Contact", href: "/pages/contact" },
+      ],
+    },
+  ],
+  en: [
+    {
+      label: "Stay",
+      items: [
+        { label: "Home", href: "/" },
+        { label: "Photos", href: "/pages/galerie-photo" },
+        { label: "Highlights", href: "/pages/vue-densemble" },
+        { label: "Map", href: "/pages/plan" },
+        { label: "Reviews", href: "/pages/avis" },
+      ],
+    },
+    {
+      label: "Bookings",
+      items: [
+        { label: "Availability", href: "/pages/disponibilites" },
+        { label: "Rates", href: "/pages/tarifs" },
+        { label: "Custom request", href: "/pages/contact" },
+        { label: "Booking / Calendar", href: "#" },
+      ],
+    },
+    {
+      label: "Discover",
+      items: [
+        { label: "Nausicaá", href: "/pages/nausicaa-proche-le-portel" },
+        { label: "Travel guide", href: "/pages/guide-touristique" },
+      ],
+    },
+    {
+      label: "Info",
+      items: [
+        { label: "Blueportel FAQ", href: "/pages/FAQ" },
+        { label: "Contact", href: "/pages/contact" },
+      ],
+    },
+  ],
+  nl: [
+    {
+      label: "Verblijf",
+      items: [
+        { label: "Home", href: "/" },
+        { label: "Foto's", href: "/pages/galerie-photo" },
+        { label: "Overzicht", href: "/pages/vue-densemble" },
+        { label: "Plan", href: "/pages/plan" },
+        { label: "Beoordelingen", href: "/pages/avis" },
+      ],
+    },
+    {
+      label: "Boeken",
+      items: [
+        { label: "Beschikbaarheid", href: "/pages/disponibilites" },
+        { label: "Tarieven", href: "/pages/tarifs" },
+        { label: "Maatwerk aanvraag", href: "/pages/contact" },
+        { label: "Reservering / Kalender", href: "#" },
+      ],
+    },
+    {
+      label: "Ontdekken",
+      items: [
+        { label: "Nausicaá", href: "/pages/nausicaa-proche-le-portel" },
+        { label: "Toeristische gids", href: "/pages/guide-touristique" },
+      ],
+    },
+    {
+      label: "Praktisch",
+      items: [
+        { label: "Blueportel FAQ", href: "/pages/FAQ" },
+        { label: "Contact", href: "/pages/contact" },
+      ],
+    },
+  ],
+};
+
+const bookingLabel: Record<Locale, string> = {
+  fr: "Réservez Maintenant",
+  en: "Book now",
+  nl: "Nu boeken",
+};
+
+const bookingShortLabel: Record<Locale, string> = {
+  fr: "Réserver",
+  en: "Book",
+  nl: "Boeken",
+};
+
+const bookingUrl: Record<Locale, string> = {
+  fr: "https://checkout.lodgify.com/fr/blueportel/654566/reservation?currency=EUR&ref=bnbox&adults=1",
+  en: "https://checkout.lodgify.com/en/blueportel/654566/reservation?currency=EUR&ref=bnbox&adults=1",
+  nl: "https://checkout.lodgify.com/nl/blueportel/654566/reservation?currency=EUR&ref=bnbox&adults=1",
+};
 
 const languageOptions: LanguageOption[] = [
   { code: "fr", label: "Français", flag: "🇫🇷" },
@@ -79,19 +169,55 @@ const currencyOptions: CurrencyOption[] = [
   { code: "USD", label: "US Dollar", symbol: "$" },
 ];
 
+const preferencesLabel: Record<Locale, string> = {
+  fr: "Préférences",
+  en: "Preferences",
+  nl: "Voorkeuren",
+};
+
+const languageLabel: Record<Locale, string> = {
+  fr: "Langue",
+  en: "Language",
+  nl: "Taal",
+};
+
+const currencyLabel: Record<Locale, string> = {
+  fr: "Devise d'affichage",
+  en: "Display Currency",
+  nl: "Valuta",
+};
+
+const toolkitInfo: Record<Locale, (lang: string, currency: string) => string> = {
+  fr: (lang, currency) => `Interface en ${lang} – prix affichés en ${currency}.`,
+  en: (lang, currency) => `Interface in ${lang} – prices shown in ${currency}.`,
+  nl: (lang, currency) => `Interface in ${lang} – prijzen weergegeven in ${currency}.`,
+};
+
 interface NavbarProps {
   locale?: Locale;
 }
 
-export default function Navbar({ locale = "fr" }: NavbarProps) {
+export default function Navbar({ locale: initialLocale = "fr" }: NavbarProps) {
   const router = useRouter();
   const pathname = usePathname();
+
+  // Extract locale from pathname for immediate updates
+  const getLocaleFromPath = (): Locale => {
+    const segments = pathname.split("/");
+    const firstSegment = segments[1];
+    if (firstSegment && locales.includes(firstSegment as Locale)) {
+      return firstSegment as Locale;
+    }
+    return initialLocale;
+  };
+
+  const currentLocale = getLocaleFromPath();
 
   const dropdownRefs = useRef<(HTMLDivElement | null)[]>([]);
   const toolkitRef = useRef<HTMLDivElement | null>(null);
 
   const initialLanguage =
-    languageOptions.find((lang) => lang.code === locale) ?? languageOptions[0];
+    languageOptions.find((lang) => lang.code === currentLocale) ?? languageOptions[0];
 
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [openDropdown, setOpenDropdown] = useState<number | null>(null);
@@ -124,14 +250,15 @@ export default function Navbar({ locale = "fr" }: NavbarProps) {
   }, []);
 
   useEffect(() => {
-    setSelectedLanguage(
-      languageOptions.find((lang) => lang.code === locale) ?? languageOptions[0]
-    );
-  }, [locale]);
+    const newLanguage = languageOptions.find((lang) => lang.code === currentLocale) ?? languageOptions[0];
+    setSelectedLanguage(newLanguage);
+  }, [currentLocale]);
 
   const toggleDropdown = (index: number) => {
     setOpenDropdown(openDropdown === index ? null : index);
   };
+
+  const navItems = navItemsByLocale[currentLocale] ?? navItemsByLocale.fr;
 
   const buildLocalizedPath = (targetLocale: Locale) => {
     const segments = pathname.split("/");
@@ -154,12 +281,20 @@ export default function Navbar({ locale = "fr" }: NavbarProps) {
     setMobileMenuOpen(false);
   };
 
+  const withLocale = (path?: string) => {
+    if (!path || path === "#") return "#";
+    if (path.startsWith("http")) return path;
+    if (path === "/") return `/${currentLocale}`;
+    if (path.startsWith("/")) return `/${currentLocale}${path}`;
+    return `/${currentLocale}/${path}`;
+  };
+
   return (
     <nav className="sticky top-0 z-50 w-full bg-white shadow-sm">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="flex h-20 items-center justify-between">
           <div className="flex items-center flex-shrink-0">
-            <Link href={`/${locale}`} aria-label="Blueportel - Accueil">
+            <Link href={`/${currentLocale}`} aria-label="Blueportel - Accueil">
               <Image
                 src={Logo}
                 alt="Blueportel - Mobil-Home Prestige Face à la Mer - Logo"
@@ -202,7 +337,7 @@ export default function Navbar({ locale = "fr" }: NavbarProps) {
                     {item.items.map((subItem) => (
                       <Link
                         key={subItem.label}
-                        href={subItem.href || "#"}
+                        href={withLocale(subItem.href)}
                         className="block px-4 py-2 text-sm text-gray-700 transition-colors hover:bg-gray-50 hover:text-[#1E3A8A]"
                       >
                         {subItem.label}
@@ -239,7 +374,9 @@ export default function Navbar({ locale = "fr" }: NavbarProps) {
                 <div className="absolute right-0 mt-3 w-72 rounded-2xl border border-gray-200 bg-white p-4 shadow-2xl">
                   <div className="space-y-4">
                     <div>
-                      <p className="text-xs font-semibold uppercase tracking-wide text-gray-500 mb-2">Langue</p>
+                      <p className="text-xs font-semibold uppercase tracking-wide text-gray-500 mb-2">
+                        {languageLabel[currentLocale]}
+                      </p>
                       <div className="grid grid-cols-2 gap-2">
                         {languageOptions.map((lang) => (
                           <button
@@ -260,7 +397,7 @@ export default function Navbar({ locale = "fr" }: NavbarProps) {
                     </div>
                     <div>
                       <p className="text-xs font-semibold uppercase tracking-wide text-gray-500 mb-2">
-                        Devise
+                        {currencyLabel[currentLocale]}
                       </p>
                       <div className="grid grid-cols-3 gap-2">
                         {currencyOptions.map((currency) => (
@@ -280,25 +417,28 @@ export default function Navbar({ locale = "fr" }: NavbarProps) {
                       </div>
                     </div>
                   </div>
+                  <p className="mt-4 text-xs text-gray-500">
+                    {toolkitInfo[currentLocale](selectedLanguage.label, selectedCurrency.label)}
+                  </p>
                 </div>
               )}
             </div>
             <Link
-              href="https://checkout.lodgify.com/fr/blueportel/654566/reservation?currency=EUR&ref=bnbox&adults=1"
+              href={bookingUrl[currentLocale]}
               target="_blank"
               rel="noopener"
               className="rounded-lg bg-[#2663EB] px-6 py-2.5 text-sm font-medium text-white transition-colors hover:bg-[#1E40AF]"
             >
-              Réservez Maintenant
+              {bookingLabel[currentLocale]}
             </Link>
           </div>
 
           <div className="flex items-center gap-4 lg:hidden">
             <Link
-              href="#"
+              href={bookingUrl[currentLocale]}
               className="rounded-lg bg-[#2663EB] px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-[#1E40AF]"
             >
-              Réserver
+              {bookingShortLabel[currentLocale]}
             </Link>
             <button
               onClick={() => setMobileMenuOpen((prev) => !prev)}
@@ -345,7 +485,7 @@ export default function Navbar({ locale = "fr" }: NavbarProps) {
                     {item.items.map((subItem) => (
                       <Link
                         key={subItem.label}
-                        href={subItem.href || "#"}
+                        href={withLocale(subItem.href)}
                         className="block px-4 py-2 text-sm text-gray-600 hover:bg-gray-50 hover:text-[#1E3A8A]"
                         onClick={() => setMobileMenuOpen(false)}
                       >
@@ -359,11 +499,13 @@ export default function Navbar({ locale = "fr" }: NavbarProps) {
           </div>
 
           <div className="border-t border-gray-200 px-4 py-4 space-y-4">
-            <p className="text-xs font-semibold uppercase tracking-widest text-gray-500">Préférences</p>
+            <p className="text-xs font-semibold uppercase tracking-widest text-gray-500">
+              {preferencesLabel[currentLocale]}
+            </p>
             <div>
               <p className="text-xs text-gray-500 mb-2 flex items-center gap-2">
                 <Globe className="h-4 w-4 text-blue-500" aria-hidden="true" />
-                Langue
+                {languageLabel[currentLocale]}
               </p>
               <div className="flex flex-wrap gap-2">
                 {languageOptions.map((lang) => (
@@ -386,7 +528,7 @@ export default function Navbar({ locale = "fr" }: NavbarProps) {
             <div>
               <p className="text-xs text-gray-500 mb-2 flex items-center gap-2">
                 <DollarSign className="h-4 w-4 text-blue-500" aria-hidden="true" />
-                Devise d’affichage
+                {currencyLabel[currentLocale]}
               </p>
               <div className="flex flex-wrap gap-2">
                 {currencyOptions.map((currency) => (
@@ -406,7 +548,7 @@ export default function Navbar({ locale = "fr" }: NavbarProps) {
               </div>
             </div>
             <p className="text-xs text-gray-500">
-              Interface en {selectedLanguage.label} – prix affichés en {selectedCurrency.label}.
+              {toolkitInfo[currentLocale](selectedLanguage.label, selectedCurrency.label)}
             </p>
           </div>
         </div>
