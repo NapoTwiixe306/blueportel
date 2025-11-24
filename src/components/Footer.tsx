@@ -39,7 +39,7 @@ export default function Footer() {
                 <span>+33 745 32 48 36</span>
               </a>
               <a 
-                href="mailto:infos@blueportel.fr" 
+                href="mailto:info@blueportel.fr" 
                 className="flex items-center gap-2 sm:gap-3 hover:text-blue-500 transition-colors"
               >
                 <Mail className="w-4 h-4 sm:w-5 sm:h-5 text-blue-500 flex-shrink-0" />
@@ -53,8 +53,8 @@ export default function Footer() {
             <div className="flex items-start gap-2 sm:gap-3 text-sm sm:text-base text-gray-700">
               <MapPin className="w-4 h-4 sm:w-5 sm:h-5 text-blue-500 flex-shrink-0 mt-1" />
               <div className="space-y-1">
-                <p>rue du Vinâve 32</p>
-                <p>Liers, Belgique 4042</p>
+                <p>Rue de la Mer 2</p>
+                <p>Le Portel, France 62480</p>
               </div>
             </div>
           </div>
