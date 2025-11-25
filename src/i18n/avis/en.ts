@@ -97,7 +97,7 @@ export const enAvisDictionary: AvisDictionary = {
     title: "Why guests recommend Blueportel",
     items: [
       { icon: "heart", text: "Direct sea view from the 12 m² covered terrace" },
-      { icon: "smile", text: "Personal welcome from Isabelle on site" },
+      { icon: "smile", text: "Personal welcome on site" },
       { icon: "users", text: "Family friendly: 3 bedrooms, 5 beds, Wi-Fi, air conditioning" },
       { icon: "map", text: "Close to Nausicaá, beach, shops and coastal trails" },
     ],
