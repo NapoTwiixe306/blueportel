@@ -97,7 +97,7 @@ export const nlAvisDictionary: AvisDictionary = {
     title: "Waarom gasten Blueportel aanraden",
     items: [
       { icon: "heart", text: "Direct zeezicht vanaf het 12 m² overdekte terras" },
-      { icon: "smile", text: "Persoonlijk onthaal door Isabelle ter plaatse" },
+      { icon: "smile", text: "Persoonlijk onthaal ter plaatse" },
       { icon: "users", text: "Gezinsvriendelijk: 3 kamers, 5 bedden, wifi, airco" },
       { icon: "map", text: "Dicht bij Nausicaá, strand, winkels en kustpaden" },
     ],

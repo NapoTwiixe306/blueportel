@@ -97,7 +97,7 @@ export const frAvisDictionary: AvisDictionary = {
     title: "Pourquoi ils recommandent Blueportel",
     items: [
       { icon: "heart", text: "Vue mer directe depuis la terrasse couverte de 12 m²" },
-      { icon: "smile", text: "Accueil personnalisé avec Isabelle sur place" },
+      { icon: "smile", text: "Accueil personnalisé sur place" },
       { icon: "users", text: "Mobil-home familial 3 chambres, 5 lits, Wi-Fi, climatisation" },
       { icon: "map", text: "Proximité Nausicaá, plage, commerces et sentiers côtiers" },
     ],
