@@ -1,14 +1,11 @@
 "use client";
 
 import Link from "next/link";
-import {
-  PiggyBank,
-  Shield,
-  CalendarClock,
-  CheckCircle2,
-} from "lucide-react";
+import { PiggyBank, Shield, CalendarClock, CheckCircle2 } from "lucide-react";
 
 import type { TarifsDictionary, InfoBlock } from "../../i18n/tarifs/types";
+import type { Locale } from "../../i18n/locales";
+import { useCurrency } from "../../contexts/CurrencyContext";
 
 const iconMap: Record<InfoBlock["icon"], typeof PiggyBank> = {
   deposit: PiggyBank,
@@ -24,6 +21,35 @@ type TarifsPageProps = {
 export default function TarifsPage({ dictionary }: TarifsPageProps) {
   const { hero, seasons, infoBlocks, cta, screenReader, structuredData, locale } =
     dictionary;
+  const { formatAmount } = useCurrency();
+
+  const priceTemplates: Record<
+    Locale,
+    { from: (value: string) => string; range: (min: string, max: string) => string }
+  > = {
+    fr: {
+      from: (value) => `à partir de ${value} / nuit`,
+      range: (min, max) => `entre ${min} et ${max} / nuit`,
+    },
+    en: {
+      from: (value) => `from ${value} / night`,
+      range: (min, max) => `between ${min} and ${max} / night`,
+    },
+    nl: {
+      from: (value) => `vanaf ${value} / nacht`,
+      range: (min, max) => `tussen ${min} en ${max} / nacht`,
+    },
+  };
+
+  const formatSeasonPrice = (season: TarifsDictionary["seasons"][number]) => {
+    const template = priceTemplates[locale] ?? priceTemplates.fr;
+    const formattedMin = formatAmount(season.priceEUR.min, locale);
+    if (season.priceEUR.max && season.priceEUR.max !== season.priceEUR.min) {
+      const formattedMax = formatAmount(season.priceEUR.max, locale);
+      return template.range(formattedMin, formattedMax);
+    }
+    return template.from(formattedMin);
+  };
 
   return (
     <>
@@ -78,7 +104,9 @@ export default function TarifsPage({ dictionary }: TarifsPageProps) {
                 <h2 className="text-lg sm:text-xl font-bold text-gray-900 mb-2">
                   {season.name}
                 </h2>
-                <p className="text-2xl font-bold text-black mb-2">{season.price}</p>
+                <p className="text-2xl font-bold text-black mb-2">
+                  {formatSeasonPrice(season)}
+                </p>
                 <p className="text-xs text-gray-500 mb-4">{season.minStay}</p>
                 <ul className="space-y-2 text-sm text-gray-700">
                   {season.perks.map((perk) => (

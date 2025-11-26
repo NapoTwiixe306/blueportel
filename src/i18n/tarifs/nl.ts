@@ -46,7 +46,7 @@ export const nlTarifsDictionary: TarifsDictionary = {
     {
       name: "Laagseizoen",
       period: "Februari • Maart • Oktober",
-      price: "vanaf €80 / nacht",
+      priceEUR: { min: 80 },
       minStay: "minimaal 2 nachten",
       perks: [
         "Winterzonsondergangen",
@@ -57,7 +57,7 @@ export const nlTarifsDictionary: TarifsDictionary = {
     {
       name: "Tussenseizoen",
       period: "April • Mei • Juni • September",
-      price: "vanaf €110 / nacht",
+      priceEUR: { min: 110 },
       minStay: "minimaal 3 nachten",
       perks: [
         "Licht en zacht klimaat",
@@ -68,7 +68,7 @@ export const nlTarifsDictionary: TarifsDictionary = {
     {
       name: "Hoogseizoen",
       period: "Juli • Augustus",
-      price: "€130–150 / nacht",
+      priceEUR: { min: 130, max: 150 },
       minStay: "minimaal 6 nachten",
       perks: [
         "Spectaculair zeezicht",

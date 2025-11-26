@@ -8,6 +8,7 @@ import { Globe, DollarSign } from "lucide-react";
 
 import Logo from "../img/logo.png";
 import { locales, type Locale } from "../i18n/locales";
+import { useCurrency, currencyOptions } from "../contexts/CurrencyContext";
 
 interface DropdownItem {
   label: string;
@@ -23,12 +24,6 @@ interface LanguageOption {
   code: Locale;
   label: string;
   flag: string;
-}
-
-interface CurrencyOption {
-  code: string;
-  label: string;
-  symbol: string;
 }
 
 const navItemsByLocale: Record<Locale, NavItem[]> = {
@@ -163,12 +158,6 @@ const languageOptions: LanguageOption[] = [
   { code: "nl", label: "Nederlands", flag: "🇳🇱" },
 ];
 
-const currencyOptions: CurrencyOption[] = [
-  { code: "EUR", label: "Euro", symbol: "€" },
-  { code: "GBP", label: "Livre sterling", symbol: "£" },
-  { code: "USD", label: "US Dollar", symbol: "$" },
-];
-
 const preferencesLabel: Record<Locale, string> = {
   fr: "Préférences",
   en: "Preferences",
@@ -222,8 +211,8 @@ export default function Navbar({ locale: initialLocale = "fr" }: NavbarProps) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [openDropdown, setOpenDropdown] = useState<number | null>(null);
   const [selectedLanguage, setSelectedLanguage] = useState<LanguageOption>(initialLanguage);
-  const [selectedCurrency, setSelectedCurrency] = useState<CurrencyOption>(currencyOptions[0]);
   const [isToolkitOpen, setIsToolkitOpen] = useState(false);
+  const { currency: selectedCurrency, setCurrency: setSelectedCurrency } = useCurrency();
 
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
@@ -386,7 +375,7 @@ export default function Navbar({ locale: initialLocale = "fr" }: NavbarProps) {
                             className={`flex items-center gap-2 rounded-xl border px-3 py-2 text-sm transition ${
                               selectedLanguage.code === lang.code
                                 ? "border-blue-500 bg-blue-50 text-blue-700"
-                                : "border-gray-200 hover:border-blue-200"
+                                : "border-gray-200 text-gray-900 hover:border-blue-200"
                             }`}
                           >
                             <span>{lang.flag}</span>
@@ -404,7 +393,7 @@ export default function Navbar({ locale: initialLocale = "fr" }: NavbarProps) {
                           <button
                             key={currency.code}
                             type="button"
-                            onClick={() => setSelectedCurrency(currency)}
+                            onClick={() => setSelectedCurrency(currency.code)}
                             className={`rounded-xl border px-3 py-2 text-xs font-semibold transition ${
                               selectedCurrency.code === currency.code
                                 ? "border-blue-500 bg-blue-50 text-blue-700"
@@ -516,7 +505,7 @@ export default function Navbar({ locale: initialLocale = "fr" }: NavbarProps) {
                     className={`flex items-center gap-2 rounded-full border px-3 py-1.5 text-sm transition ${
                       selectedLanguage.code === lang.code
                         ? "border-blue-500 bg-blue-50 text-blue-700"
-                        : "border-gray-200 text-gray-700"
+                        : "border-gray-200 text-gray-900"
                     }`}
                   >
                     <span>{lang.flag}</span>
@@ -535,7 +524,7 @@ export default function Navbar({ locale: initialLocale = "fr" }: NavbarProps) {
                   <button
                     key={currency.code}
                     type="button"
-                    onClick={() => setSelectedCurrency(currency)}
+                    onClick={() => setSelectedCurrency(currency.code)}
                     className={`rounded-full border px-3 py-1.5 text-xs font-semibold transition ${
                       selectedCurrency.code === currency.code
                         ? "border-blue-500 bg-blue-50 text-blue-700"

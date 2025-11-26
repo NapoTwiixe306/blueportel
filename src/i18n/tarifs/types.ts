@@ -4,7 +4,10 @@ import type { Locale } from "../locales";
 export type SeasonCard = {
   name: string;
   period: string;
-  price: string;
+  priceEUR: {
+    min: number;
+    max?: number;
+  };
   minStay: string;
   perks: string[];
 };

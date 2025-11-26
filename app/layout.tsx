@@ -4,6 +4,7 @@ import "./globals.css";
 import Navbar from "../src/components/Navbar";
 import Footer from "../src/components/Footer";
 import Analytics from "../src/components/Analytics";
+import { CurrencyProvider } from "../src/contexts/CurrencyContext";
 import { headers } from "next/headers";
 import { defaultLocale, locales, type Locale } from "../src/i18n/locales";
 import { getLayoutDictionary } from "../src/i18n/layout";
@@ -130,9 +131,11 @@ export default async function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
         />
         <Analytics />
-        <Navbar locale={locale} />
-        <main className="flex-1">{children}</main>
-        <Footer dictionary={layoutDictionary.footer} />
+        <CurrencyProvider>
+          <Navbar locale={locale} />
+          <main className="flex-1">{children}</main>
+          <Footer dictionary={layoutDictionary.footer} />
+        </CurrencyProvider>
       </body>
     </html>
   );
