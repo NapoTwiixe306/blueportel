@@ -46,7 +46,7 @@ export const frTarifsDictionary: TarifsDictionary = {
     {
       name: "Basse saison",
       period: "Février • Mars • Octobre",
-      price: "à partir de 110€ / nuit",
+      price: "à partir de 80€ / nuit",
       minStay: "2 nuits minimum",
       perks: [
         "Couchers de soleil d'hiver",
@@ -57,7 +57,7 @@ export const frTarifsDictionary: TarifsDictionary = {
     {
       name: "Moyenne saison",
       period: "Avril • Mai • Juin • Septembre",
-      price: "à partir de 145€ / nuit",
+      price: "à partir de 110€ / nuit",
       minStay: "3 nuits minimum",
       perks: [
         "Printemps et arrière-saison lumineux",
@@ -68,7 +68,7 @@ export const frTarifsDictionary: TarifsDictionary = {
     {
       name: "Haute saison",
       period: "Juillet • Août",
-      price: "à partir de 195€ / nuit",
+      price: "entre 130€ et 150€ / nuit",
       minStay: "6 nuits minimum",
       perks: [
         "Vue mer exceptionnelle",

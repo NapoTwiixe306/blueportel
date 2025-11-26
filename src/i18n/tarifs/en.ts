@@ -46,7 +46,7 @@ export const enTarifsDictionary: TarifsDictionary = {
     {
       name: "Low season",
       period: "February • March • October",
-      price: "from €110 / night",
+      price: "from €80 / night",
       minStay: "2-night minimum",
       perks: [
         "Winter sunsets over the sea",
@@ -57,7 +57,7 @@ export const enTarifsDictionary: TarifsDictionary = {
     {
       name: "Mid season",
       period: "April • May • June • September",
-      price: "from €145 / night",
+      price: "from €110 / night",
       minStay: "3-night minimum",
       perks: [
         "Bright spring and fall light",
@@ -68,7 +68,7 @@ export const enTarifsDictionary: TarifsDictionary = {
     {
       name: "High season",
       period: "July • August",
-      price: "from €195 / night",
+      price: "€130–150 / night",
       minStay: "6-night minimum",
       perks: [
         "Unforgettable sea view",
