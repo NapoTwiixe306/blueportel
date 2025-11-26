@@ -134,7 +134,7 @@ export default async function RootLayout({
         <CurrencyProvider>
           <Navbar locale={locale} />
           <main className="flex-1">{children}</main>
-          <Footer dictionary={layoutDictionary.footer} />
+          <Footer dictionary={layoutDictionary.footer} locale={locale} />
         </CurrencyProvider>
       </body>
     </html>
