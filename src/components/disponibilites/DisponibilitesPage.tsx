@@ -45,6 +45,9 @@ const statusClasses: Record<CalendarStatus, string> = {
   unknown: "bg-gray-50 text-gray-300 border-gray-100",
 };
 
+const lodgifyIcsUrl =
+  "https://www.lodgify.com/d150a01d-3b0d-496f-aa60-95ab0fcf61a1.ics";
+
 type DisponibilitesPageProps = {
   dictionary: AvailabilityDictionary;
 };
@@ -73,6 +76,7 @@ export default function DisponibilitesPage({ dictionary }: DisponibilitesPagePro
   const [data, setData] = useState<LodgifyResponse | null>(null);
   const [loading, setLoading] = useState(true);
   const [fetchError, setFetchError] = useState<Error | null>(null);
+  const [currentMonthIndex, setCurrentMonthIndex] = useState(0);
 
   useEffect(() => {
     let isMounted = true;
@@ -151,7 +155,7 @@ export default function DisponibilitesPage({ dictionary }: DisponibilitesPagePro
         }
 
         const isoDay = `${monthKey}-${String(dayNumber).padStart(2, "0")}`;
-        const status = dayMap.get(isoDay)?.status ?? "unknown";
+        const status = dayMap.get(isoDay)?.status ?? "available";
 
         return {
           key: isoDay,
@@ -182,6 +186,12 @@ export default function DisponibilitesPage({ dictionary }: DisponibilitesPagePro
       };
     });
   }, [data, locale]);
+
+  useEffect(() => {
+    if (currentMonthIndex > 0 && currentMonthIndex >= monthCalendars.length) {
+      setCurrentMonthIndex(0);
+    }
+  }, [monthCalendars.length, currentMonthIndex]);
 
   const weekdayShort: Record<AvailabilityDictionary["locale"], string[]> = {
     fr: ["lun.", "mar.", "mer.", "jeu.", "ven.", "sam.", "dim."],
@@ -233,6 +243,50 @@ export default function DisponibilitesPage({ dictionary }: DisponibilitesPagePro
             <p className="text-xs sm:text-sm md:text-base lg:text-lg text-gray-600 px-3 sm:px-6">
               {hero.description}
             </p>
+            <p className="mt-3 text-xs sm:text-sm text-gray-500 px-3 sm:px-6">
+              {locale === "fr" && (
+                <>
+                  Vous pouvez aussi consulter le{" "}
+                  <Link
+                    href={lodgifyIcsUrl}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="underline hover:text-blue-600"
+                  >
+                    calendrier iCal complet
+                  </Link>{" "}
+                  fourni par Lodgify.
+                </>
+              )}
+              {locale === "en" && (
+                <>
+                  You can also open the{" "}
+                  <Link
+                    href={lodgifyIcsUrl}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="underline hover:text-blue-600"
+                  >
+                    full iCal calendar
+                  </Link>{" "}
+                  provided by Lodgify.
+                </>
+              )}
+              {locale === "nl" && (
+                <>
+                  U kunt ook de{" "}
+                  <Link
+                    href={lodgifyIcsUrl}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="underline hover:text-blue-600"
+                  >
+                    volledige iCal-kalender
+                  </Link>{" "}
+                  van Lodgify openen.
+                </>
+              )}
+            </p>
           </header>
 
           <section className="w-full max-w-5xl rounded-2xl border border-gray-200 bg-white p-4 sm:p-6 shadow-sm mb-8">
@@ -272,8 +326,11 @@ export default function DisponibilitesPage({ dictionary }: DisponibilitesPagePro
 
             {!loading && !fetchError && monthCalendars.length > 0 && (
               <>
-                <div className="space-y-8">
-                  {monthCalendars.map((month) => (
+                {(() => {
+                  const month = monthCalendars[currentMonthIndex];
+                  const canGoPrev = currentMonthIndex > 0;
+                  const canGoNext = currentMonthIndex < monthCalendars.length - 1;
+                  return (
                     <article
                       key={month.monthKey}
                       className="rounded-2xl border border-gray-200 p-4 sm:p-6 shadow-xs"
@@ -290,19 +347,27 @@ export default function DisponibilitesPage({ dictionary }: DisponibilitesPagePro
                         <div className="flex items-center gap-2 text-gray-400">
                           <button
                             type="button"
-                            className="rounded-full border border-gray-200 p-2"
-                            aria-hidden="true"
-                            tabIndex={-1}
-                            disabled
+                            onClick={() => canGoPrev && setCurrentMonthIndex((idx) => idx - 1)}
+                            className={`rounded-full border p-2 ${
+                              canGoPrev
+                                ? "border-gray-200 hover:border-blue-200 hover:text-blue-600"
+                                : "border-gray-100 text-gray-300 cursor-not-allowed"
+                            }`}
+                            aria-label="Mois précédent"
+                            disabled={!canGoPrev}
                           >
                             <ChevronLeft className="h-4 w-4" aria-hidden="true" />
                           </button>
                           <button
                             type="button"
-                            className="rounded-full border border-gray-200 p-2"
-                            aria-hidden="true"
-                            tabIndex={-1}
-                            disabled
+                            onClick={() => canGoNext && setCurrentMonthIndex((idx) => idx + 1)}
+                            className={`rounded-full border p-2 ${
+                              canGoNext
+                                ? "border-gray-200 hover:border-blue-200 hover:text-blue-600"
+                                : "border-gray-100 text-gray-300 cursor-not-allowed"
+                            }`}
+                            aria-label="Mois suivant"
+                            disabled={!canGoNext}
                           >
                             <ChevronRight className="h-4 w-4" aria-hidden="true" />
                           </button>
@@ -362,8 +427,8 @@ export default function DisponibilitesPage({ dictionary }: DisponibilitesPagePro
                         </table>
                       </div>
                     </article>
-                  ))}
-                </div>
+                  );
+                })()}
 
                 <div className="mt-6 flex flex-wrap gap-4 text-xs text-gray-600">
                   {legend.map((item) => (
