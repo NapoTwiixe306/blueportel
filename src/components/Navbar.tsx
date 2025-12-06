@@ -203,6 +203,8 @@ export default function Navbar({ locale: initialLocale = "fr" }: NavbarProps) {
   const currentLocale = getLocaleFromPath();
 
   const dropdownRefs = useRef<(HTMLDivElement | null)[]>([]);
+  const mobileDropdownRefs = useRef<(HTMLDivElement | null)[]>([]);
+  const mobileMenuRef = useRef<HTMLDivElement | null>(null);
   const toolkitRef = useRef<HTMLDivElement | null>(null);
 
   const initialLanguage =
@@ -214,10 +216,15 @@ export default function Navbar({ locale: initialLocale = "fr" }: NavbarProps) {
   const [isToolkitOpen, setIsToolkitOpen] = useState(false);
   const { currency: selectedCurrency, setCurrency: setSelectedCurrency } = useCurrency();
 
+  // Handle desktop dropdown clicks
   useEffect(() => {
+    if (mobileMenuOpen) return; // Don't interfere when mobile menu is open
+    
     const handleClickOutside = (event: MouseEvent) => {
+      const target = event.target as Node;
+      
       dropdownRefs.current.forEach((ref, index) => {
-        if (ref && !ref.contains(event.target as Node) && openDropdown === index) {
+        if (ref && !ref.contains(target) && openDropdown === index) {
           setOpenDropdown(null);
         }
       });
@@ -225,7 +232,50 @@ export default function Navbar({ locale: initialLocale = "fr" }: NavbarProps) {
 
     document.addEventListener("mousedown", handleClickOutside);
     return () => document.removeEventListener("mousedown", handleClickOutside);
-  }, [openDropdown]);
+  }, [openDropdown, mobileMenuOpen]);
+
+  // Handle mobile menu - close when clicking outside or pressing Escape
+  useEffect(() => {
+    if (!mobileMenuOpen) return;
+    
+    const handleClickOutside = (event: MouseEvent) => {
+      const target = event.target as HTMLElement;
+      
+      // Don't close if clicking inside the mobile menu
+      if (mobileMenuRef.current?.contains(target)) {
+        return;
+      }
+      
+      // Don't close if clicking the menu toggle button
+      if (target.closest('button[aria-label="Toggle menu"]')) {
+        return;
+      }
+      
+      // Close menu if clicking outside
+      setMobileMenuOpen(false);
+      setOpenDropdown(null);
+    };
+
+    const handleEscape = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') {
+        setMobileMenuOpen(false);
+        setOpenDropdown(null);
+      }
+    };
+
+    // Use a small delay to avoid closing immediately when opening
+    const timeoutId = setTimeout(() => {
+      document.addEventListener("click", handleClickOutside);
+    }, 100);
+
+    document.addEventListener("keydown", handleEscape);
+    
+    return () => {
+      clearTimeout(timeoutId);
+      document.removeEventListener("click", handleClickOutside);
+      document.removeEventListener("keydown", handleEscape);
+    };
+  }, [mobileMenuOpen]);
 
   useEffect(() => {
     const handleToolkitOutside = (event: MouseEvent) => {
@@ -430,8 +480,12 @@ export default function Navbar({ locale: initialLocale = "fr" }: NavbarProps) {
               {bookingShortLabel[currentLocale]}
             </Link>
             <button
-              onClick={() => setMobileMenuOpen((prev) => !prev)}
-              className="inline-flex items-center justify-center rounded-md p-2 text-gray-800 hover:bg-gray-100 focus:outline-none"
+              type="button"
+              onClick={(e) => {
+                e.stopPropagation();
+                setMobileMenuOpen((prev) => !prev);
+              }}
+              className="inline-flex items-center justify-center rounded-md p-2 text-gray-800 hover:bg-gray-100 focus:outline-none touch-manipulation"
               aria-label="Toggle menu"
             >
               {mobileMenuOpen ? (
@@ -449,13 +503,25 @@ export default function Navbar({ locale: initialLocale = "fr" }: NavbarProps) {
       </div>
 
       {mobileMenuOpen && (
-        <div className="lg:hidden border-t border-gray-200 bg-white shadow-inner">
+        <div 
+          ref={mobileMenuRef}
+          className="lg:hidden border-t border-gray-200 bg-white shadow-lg"
+        >
           <div className="space-y-1 px-4 pb-4 pt-2">
             {navItems.map((item, index) => (
-              <div key={item.label}>
+              <div 
+                key={item.label}
+                ref={(el) => {
+                  mobileDropdownRefs.current[index] = el;
+                }}
+              >
                 <button
-                  onClick={() => toggleDropdown(index)}
-                  className="flex w-full items-center justify-between px-4 py-3 text-base font-medium text-gray-800 hover:bg-gray-50 focus:outline-none"
+                  type="button"
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    toggleDropdown(index);
+                  }}
+                  className="flex w-full items-center justify-between px-4 py-3 text-base font-medium text-gray-800 hover:bg-gray-50 focus:outline-none touch-manipulation"
                 >
                   <span>{item.label}</span>
                   <svg
@@ -471,16 +537,28 @@ export default function Navbar({ locale: initialLocale = "fr" }: NavbarProps) {
                 </button>
                 {openDropdown === index && (
                   <div className="ml-4 space-y-1 border-l-2 border-gray-200 pl-4">
-                    {item.items.map((subItem) => (
-                      <Link
-                        key={subItem.label}
-                        href={withLocale(subItem.href)}
-                        className="block px-4 py-2 text-sm text-gray-600 hover:bg-gray-50 hover:text-[#1E3A8A]"
-                        onClick={() => setMobileMenuOpen(false)}
-                      >
-                        {subItem.label}
-                      </Link>
-                    ))}
+                    {item.items.map((subItem) => {
+                      const href = withLocale(subItem.href);
+                      return (
+                        <a
+                          key={subItem.label}
+                          href={href}
+                          className="block px-4 py-2 text-sm text-gray-600 hover:bg-gray-50 hover:text-[#1E3A8A] touch-manipulation cursor-pointer relative z-[70]"
+                          onClick={(e) => {
+                            // Close menu immediately
+                            setMobileMenuOpen(false);
+                            setOpenDropdown(null);
+                            // If it's not an external link, use router for client-side navigation
+                            if (!href.startsWith('http') && href !== '#') {
+                              e.preventDefault();
+                              router.push(href);
+                            }
+                          }}
+                        >
+                          {subItem.label}
+                        </a>
+                      );
+                    })}
                   </div>
                 )}
               </div>
@@ -501,8 +579,11 @@ export default function Navbar({ locale: initialLocale = "fr" }: NavbarProps) {
                   <button
                     key={lang.code}
                     type="button"
-                    onClick={() => handleLanguageChange(lang)}
-                    className={`flex items-center gap-2 rounded-full border px-3 py-1.5 text-sm transition ${
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      handleLanguageChange(lang);
+                    }}
+                    className={`flex items-center gap-2 rounded-full border px-3 py-1.5 text-sm transition touch-manipulation ${
                       selectedLanguage.code === lang.code
                         ? "border-blue-500 bg-blue-50 text-blue-700"
                         : "border-gray-200 text-gray-900"
@@ -524,8 +605,11 @@ export default function Navbar({ locale: initialLocale = "fr" }: NavbarProps) {
                   <button
                     key={currency.code}
                     type="button"
-                    onClick={() => setSelectedCurrency(currency.code)}
-                    className={`rounded-full border px-3 py-1.5 text-xs font-semibold transition ${
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      setSelectedCurrency(currency.code);
+                    }}
+                    className={`rounded-full border px-3 py-1.5 text-xs font-semibold transition touch-manipulation ${
                       selectedCurrency.code === currency.code
                         ? "border-blue-500 bg-blue-50 text-blue-700"
                         : "border-gray-200 text-gray-700"

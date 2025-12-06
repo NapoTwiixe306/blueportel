@@ -91,9 +91,9 @@ export const enTarifsDictionary: TarifsDictionary = {
       icon: "caution",
       title: "Security & cleaning",
       items: [
-        "€500 security hold (card imprint or cheque).",
-        "End-of-stay cleaning included.",
-        "Pets welcome on request (+€30).",
+        "€200 security hold (card imprint or cheque).",
+        "End-of-stay cleaning NOT included.",
+        "Pets welcome on request .",
       ],
     },
     {

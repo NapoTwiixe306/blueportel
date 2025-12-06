@@ -91,9 +91,9 @@ export const frTarifsDictionary: TarifsDictionary = {
       icon: "caution",
       title: "Caution & ménage",
       items: [
-        "Caution de 500€ (empreinte ou chèque).",
-        "Ménage de fin de séjour inclus.",
-        "Animaux acceptés sur demande (supplément 30€).",
+        "Caution de 200€ (empreinte ou chèque).",
+        "Ménage NON INCLUS.",
+        "Animaux acceptés sur demande pas de supplément",
       ],
     },
     {

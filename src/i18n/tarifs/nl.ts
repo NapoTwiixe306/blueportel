@@ -91,9 +91,9 @@ export const nlTarifsDictionary: TarifsDictionary = {
       icon: "caution",
       title: "Waarborg & schoonmaak",
       items: [
-        "€500 waarborg (kaartimprint of cheque).",
+        "€200 waarborg (kaartimprint of cheque).",
         "Eindschoonmaak inbegrepen.",
-        "Huisdieren op aanvraag (+€30).",
+        "Huisdieren op aanvraag.",
       ],
     },
     {
