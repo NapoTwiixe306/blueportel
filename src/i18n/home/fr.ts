@@ -7,7 +7,7 @@ export const frHomeDictionary: HomeDictionary = {
   metadata: {
     title: "Location Mobil-Home Face à la Mer Le Portel | Blueportel",
     description:
-      "Location mobil-home prestige face à la mer au Portel, Côte d'Opale. Mobil-home 3 chambres, vue panoramique, accès direct plage. Réservez dès 90€/nuit.",
+      "Location mobil-home prestige face à la mer au Portel, Côte d'Opale. Mobil-home 3 chambres, vue panoramique, accès direct plage. Réservez dès 75€/nuit.",
     keywords: [
       "location mobil-home Le Portel",
       "mobil-home prestige face à la mer",
@@ -39,7 +39,7 @@ export const frHomeDictionary: HomeDictionary = {
     openGraph: {
       title: "Blueportel - Mobil-Home Prestige Face à la Mer | Le Portel",
       description:
-        "Location mobil-home prestige 3 chambres face à la mer au Portel. Vue panoramique, accès direct plage. À partir de 90€/nuit.",
+        "Location mobil-home prestige 3 chambres face à la mer au Portel. Vue panoramique, accès direct plage. À partir de 75€/nuit.",
       type: "website",
       locale: "fr_FR",
       url: `${siteUrl}/fr`,
@@ -217,7 +217,7 @@ export const frHomeDictionary: HomeDictionary = {
     subtitle:
       "Mobil-home 3 chambres Côte d'Opale • Vue mer panoramique • Location vacances face à la mer",
     priceLabel: "Prix Location Mobil-Home",
-    priceValue: "90€",
+    priceValue: "75€",
     priceSuffix: "/ nuit",
     note:
       "Sélectionnez vos dates pour voir le prix total de votre location mobil-home face à la mer.",
@@ -298,7 +298,7 @@ export const frHomeDictionary: HomeDictionary = {
     paragraphs: [
       "Blueportel propose la location d'un mobil-home prestige face à la mer au Portel. Mobil-home 3 chambres pour 6 personnes avec vue panoramique et accès direct à la plage.",
       "Situé au Portel, le mobil-home offre une terrasse couverte de 12 m², climatisation, chauffage et équipements haut de gamme pour vos vacances.",
-      "Réservez votre séjour à partir de 90€ par nuit et profitez d'un hébergement premium sur la Côte d'Opale.",
+      "Réservez votre séjour à partir de 75€ par nuit et profitez d'un hébergement premium sur la Côte d'Opale.",
     ],
     listTitle: "Pourquoi choisir Blueportel ?",
     listItems: [
@@ -306,7 +306,7 @@ export const frHomeDictionary: HomeDictionary = {
       "Accès direct à la plage",
       "Terrasse couverte de 12 m²",
       "Équipements haut de gamme",
-      "À partir de 90€ / nuit",
+      "À partir de 75€ / nuit",
       "Idéal pour 6 personnes",
     ],
   },

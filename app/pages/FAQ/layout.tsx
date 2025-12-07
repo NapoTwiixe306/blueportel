@@ -4,7 +4,7 @@ const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://blueportel.com';
 
 export const metadata: Metadata = {
   title: "FAQ - Questions Fréquentes | Location Mobil-Home Face à la Mer Le Portel | Blueportel",
-  description: "FAQ Blueportel : réponses à toutes vos questions sur la location de mobil-home face à la mer au Portel, Côte d'Opale. Mobil-home 3 chambres, vue panoramique, équipements, réservation, tarifs, activités. Réservez dès 90€/nuit.",
+  description: "FAQ Blueportel : réponses à toutes vos questions sur la location de mobil-home face à la mer au Portel, Côte d'Opale. Mobil-home 3 chambres, vue panoramique, équipements, réservation, tarifs, activités. Réservez dès 75€/nuit.",
   keywords: [
     "FAQ location mobil-home Le Portel",
     "questions fréquentes mobil-home face à la mer",

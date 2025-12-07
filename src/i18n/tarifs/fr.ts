@@ -46,7 +46,7 @@ export const frTarifsDictionary: TarifsDictionary = {
     {
       name: "Basse saison",
       period: "Février • Mars • Octobre",
-      priceEUR: { min: 80 },
+      priceEUR: { min: 75 },
       minStay: "2 nuits minimum",
       perks: [
         "Couchers de soleil d'hiver",
@@ -57,7 +57,7 @@ export const frTarifsDictionary: TarifsDictionary = {
     {
       name: "Moyenne saison",
       period: "Avril • Mai • Juin • Septembre",
-      priceEUR: { min: 110 },
+      priceEUR: { min: 100 },
       minStay: "3 nuits minimum",
       perks: [
         "Printemps et arrière-saison lumineux",

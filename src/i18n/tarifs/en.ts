@@ -46,7 +46,7 @@ export const enTarifsDictionary: TarifsDictionary = {
     {
       name: "Low season",
       period: "February • March • October",
-      priceEUR: { min: 80 },
+      priceEUR: { min: 75 },
       minStay: "2-night minimum",
       perks: [
         "Winter sunsets over the sea",
@@ -57,7 +57,7 @@ export const enTarifsDictionary: TarifsDictionary = {
     {
       name: "Mid season",
       period: "April • May • June • September",
-      priceEUR: { min: 110 },
+      priceEUR: { min: 100 },
       minStay: "3-night minimum",
       perks: [
         "Bright spring and fall light",

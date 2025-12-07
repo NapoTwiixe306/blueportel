@@ -4,7 +4,7 @@ const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://blueportel.com';
 
 export const metadata: Metadata = {
   title: "Contact - Blueportel | Location Mobil-Home Face à la Mer Le Portel",
-  description: "Contactez Michel & Véro pour votre location de mobil-home face à la mer au Portel, Côte d'Opale. Mobil-home 3 chambres, vue panoramique, accès plage. Réservez dès 90€/nuit.",
+  description: "Contactez Michel & Véro pour votre location de mobil-home face à la mer au Portel, Côte d'Opale. Mobil-home 3 chambres, vue panoramique, accès plage. Réservez dès 75€/nuit.",
   keywords: [
     "contact Blueportel",
     "contact location mobil-home Le Portel",
