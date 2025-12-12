@@ -185,7 +185,7 @@ export const frOverviewDictionary: OverviewDictionary = {
       "Réservez votre mobil-home face à la mer ou contactez-nous pour une réservation personnalisée. Réponse rapide par téléphone ou email.",
     buttons: {
       primary: { label: "+32 488 83 20 91", href: "tel:+32488832091" },
-      secondary: { label: "infos@blueportel.fr", href: "mailto:infos@blueportel.fr" },
+      secondary: { label: "info@blueportel.fr", href: "mailto:info@blueportel.fr" },
     },
   },
   screenReader: {

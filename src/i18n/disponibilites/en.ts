@@ -82,7 +82,7 @@ export const enAvailabilityDictionary: AvailabilityDictionary = {
     },
     secondary: {
       label: "Custom request",
-      href: "mailto:infos@blueportel.fr",
+      href: "mailto:info@blueportel.fr",
     },
   },
   info: [

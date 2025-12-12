@@ -125,7 +125,7 @@ export const nlTarifsDictionary: TarifsDictionary = {
         href: "https://checkout.lodgify.com/nl/blueportel/654566/reservation?currency=EUR&ref=bnbox&adults=1",
         rel: "nofollow",
       },
-      secondary: { label: "Offerte aanvragen", href: "mailto:infos@blueportel.fr" },
+      secondary: { label: "Offerte aanvragen", href: "mailto:info@blueportel.fr" },
     },
   },
   screenReader: {

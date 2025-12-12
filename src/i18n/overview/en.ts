@@ -184,7 +184,7 @@ export const enOverviewDictionary: OverviewDictionary = {
       "Book your seafront mobile home or contact us for a tailored reservation. Fast replies by phone or email.",
     buttons: {
       primary: { label: "+32 488 83 20 91", href: "tel:+32488832091" },
-      secondary: { label: "infos@blueportel.fr", href: "mailto:infos@blueportel.fr" },
+      secondary: { label: "info@blueportel.fr", href: "mailto:info@blueportel.fr" },
     },
   },
   screenReader: {

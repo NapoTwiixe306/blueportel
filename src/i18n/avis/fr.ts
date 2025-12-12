@@ -106,7 +106,7 @@ export const frAvisDictionary: AvisDictionary = {
     title: "Donnez votre avis",
     description: "Vous avez séjourné chez nous ? Partagez votre expérience pour aider les prochains voyageurs.",
     links: [
-      { label: "Envoyer un email", href: "mailto:infos@blueportel.fr", type: "email" },
+      { label: "Envoyer un email", href: "mailto:info@blueportel.fr", type: "email" },
       { label: "Avis Facebook", href: "https://www.facebook.com/blueportel", type: "facebook" },
       { label: "Avis Airbnb", href: "https://www.airbnb.fr/rooms/123456", type: "airbnb" },
     ],
@@ -117,8 +117,8 @@ export const frAvisDictionary: AvisDictionary = {
       "Contactez-nous pour connaître les disponibilités ou réserver votre séjour face à la mer. Réponse en moins de 24h.",
     phoneLabel: "+32 488 83 20 91",
     phoneHref: "tel:+32488832091",
-    emailLabel: "infos@blueportel.fr",
-    emailHref: "mailto:infos@blueportel.fr",
+    emailLabel: "info@blueportel.fr",
+    emailHref: "mailto:info@blueportel.fr",
     bookingLabel: "Réserver maintenant",
     bookingHref:
       "https://checkout.lodgify.com/fr/blueportel/654566/reservation?currency=EUR&ref=bnbox&adults=1",

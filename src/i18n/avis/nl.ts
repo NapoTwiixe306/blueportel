@@ -106,7 +106,7 @@ export const nlAvisDictionary: AvisDictionary = {
     title: "Deel uw beoordeling",
     description: "Heeft u bij ons gelogeerd? Deel uw ervaring en inspireer de volgende gasten.",
     links: [
-      { label: "Stuur een e-mail", href: "mailto:infos@blueportel.fr", type: "email" },
+      { label: "Stuur een e-mail", href: "mailto:info@blueportel.fr", type: "email" },
       { label: "Facebook review", href: "https://www.facebook.com/blueportel", type: "facebook" },
       { label: "Airbnb review", href: "https://www.airbnb.fr/rooms/123456", type: "airbnb" },
     ],
@@ -117,8 +117,8 @@ export const nlAvisDictionary: AvisDictionary = {
       "Contacteer ons voor beschikbaarheid of om uw verblijf aan zee te boeken. We antwoorden binnen 24 uur.",
     phoneLabel: "+32 488 83 20 91",
     phoneHref: "tel:+32488832091",
-    emailLabel: "infos@blueportel.fr",
-    emailHref: "mailto:infos@blueportel.fr",
+    emailLabel: "info@blueportel.fr",
+    emailHref: "mailto:info@blueportel.fr",
     bookingLabel: "Nu boeken",
     bookingHref:
       "https://checkout.lodgify.com/nl/blueportel/654566/reservation?currency=EUR&ref=bnbox&adults=1",
@@ -126,7 +126,7 @@ export const nlAvisDictionary: AvisDictionary = {
   screenReader: {
     title: "Blueportel recensies",
     paragraph:
-      "Beoordelingen van gasten die verbleven in de Blueportel mobilhome in Le Portel: zeezicht, overdekte terras, nabijheid van Nausicaá en premium onthaal. Contact: infos@blueportel.fr of +32 488 83 20 91.",
+      "Beoordelingen van gasten die verbleven in de Blueportel mobilhome in Le Portel: zeezicht, overdekte terras, nabijheid van Nausicaá en premium onthaal. Contact: info@blueportel.fr of +32 488 83 20 91.",
   },
 };
 

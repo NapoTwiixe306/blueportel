@@ -122,8 +122,8 @@ export const nlFAQDictionary: FAQDictionary = {
     description: "We helpen u graag met praktische info, beschikbaarheid of speciale verzoeken.",
     phoneLabel: "+32 488 83 20 91",
     phoneHref: "tel:+32488832091",
-    emailLabel: "infos@blueportel.fr",
-    emailHref: "mailto:infos@blueportel.fr",
+    emailLabel: "info@blueportel.fr",
+    emailHref: "mailto:info@blueportel.fr",
   },
 };
 

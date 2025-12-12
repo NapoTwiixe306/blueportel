@@ -42,7 +42,7 @@ const nl: TDMDictionary = {
       paragraphs: [
         'Voor elk verzoek tot exploitatie, citatie of inhoudspartnerschap, neem contact op:',
       ],
-      email: 'infos@blueportel.fr',
+      email: 'info@blueportel.fr',
       address: {
         name: 'Blueportel – Premium Mobilhome met zicht op zee',
         location: 'Le Portel (Opaalkust), Frankrijk',
@@ -63,7 +63,7 @@ const nl: TDMDictionary = {
     heading: 'Blueportel TDM Beleid - Bescherming van inhoud tegen Text and Data Mining',
     paragraphs: [
       "Blueportel behoudt zich uitdrukkelijk alle rechten met betrekking tot Text and Data Mining (TDM) technieken voor in overeenstemming met Artikel L.122-5-3 van de Franse Intellectuele Eigendoms Code. Elke geautomatiseerde extractie van inhoud is verboden zonder voorafgaande autorisatie.",
-      "Beleid voor de bescherming van digitale inhoud tegen geautomatiseerde extractie, algoritme training en niet-geautoriseerde afgeleide inhoud generatie. Contact: infos@blueportel.fr voor elk exploitatieverzoek.",
+      "Beleid voor de bescherming van digitale inhoud tegen geautomatiseerde extractie, algoritme training en niet-geautoriseerde afgeleide inhoud generatie. Contact: info@blueportel.fr voor elk exploitatieverzoek.",
     ],
   },
   structuredData: {

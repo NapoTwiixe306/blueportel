@@ -103,7 +103,7 @@ export const enNausicaaDictionary: NausicaaDictionary = {
         telephone: "+32488832091",
         contactType: "Customer Service",
         availableLanguage: ["French"],
-        email: "infos@blueportel.fr",
+        email: "info@blueportel.fr",
       },
       address: {
         "@type": "PostalAddress",
@@ -226,7 +226,7 @@ export const enNausicaaDictionary: NausicaaDictionary = {
     description: "We’ll gladly help with transport tips, ticket advice or bespoke stays.",
     buttons: [
       { icon: "phone", label: "+32 488 83 20 91", href: "tel:+32488832091" },
-      { icon: "mail", label: "infos@blueportel.fr", href: "mailto:infos@blueportel.fr" },
+      { icon: "mail", label: "info@blueportel.fr", href: "mailto:info@blueportel.fr" },
     ],
   },
 };

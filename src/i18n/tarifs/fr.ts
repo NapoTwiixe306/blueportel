@@ -125,7 +125,7 @@ export const frTarifsDictionary: TarifsDictionary = {
         href: "https://checkout.lodgify.com/fr/blueportel/654566/reservation?currency=EUR&ref=bnbox&adults=1",
         rel: "nofollow",
       },
-      secondary: { label: "Demander un devis", href: "mailto:infos@blueportel.fr" },
+      secondary: { label: "Demander un devis", href: "mailto:info@blueportel.fr" },
     },
   },
   screenReader: {

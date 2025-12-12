@@ -42,7 +42,7 @@ const fr: TDMDictionary = {
       paragraphs: [
         'Pour toute demande d\'exploitation, de citation ou de partenariat de contenu, merci de contacter :',
       ],
-      email: 'infos@blueportel.fr',
+      email: 'info@blueportel.fr',
       address: {
         name: 'Blueportel – Mobil-home Prestige face à la mer',
         location: "Le Portel (Côte d'Opale), France",
@@ -63,7 +63,7 @@ const fr: TDMDictionary = {
     heading: 'Politique TDM Blueportel - Protection des contenus contre le Text and Data Mining',
     paragraphs: [
       "Blueportel se réserve expressément tous les droits relatifs aux techniques de Text and Data Mining (TDM) conformément à l'article L.122-5-3 du Code de la propriété intellectuelle. Toute extraction automatisée des contenus est interdite sans autorisation préalable.",
-      "Politique de protection des contenus numériques contre l'extraction automatisée, l'entraînement d'algorithmes et la génération de contenus dérivés sans autorisation. Contact : infos@blueportel.fr pour toute demande d'exploitation.",
+      "Politique de protection des contenus numériques contre l'extraction automatisée, l'entraînement d'algorithmes et la génération de contenus dérivés sans autorisation. Contact : info@blueportel.fr pour toute demande d'exploitation.",
     ],
   },
   structuredData: {

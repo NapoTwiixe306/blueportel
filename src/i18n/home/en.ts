@@ -66,7 +66,7 @@ export const enHomeDictionary: HomeDictionary = {
       logo: `${siteUrl}/logo.png`,
       image: `${siteUrl}/og-image.jpg`,
       telephone: ["+32488832091", "+33745324836"],
-      email: "infos@blueportel.fr",
+      email: "info@blueportel.fr",
       address: {
         "@type": "PostalAddress",
         streetAddress: "rue du Vinâve 32",
@@ -144,7 +144,7 @@ export const enHomeDictionary: HomeDictionary = {
         telephone: "+32488832091",
         contactType: "Customer Service",
         availableLanguage: ["English", "French"],
-        email: "infos@blueportel.fr",
+        email: "info@blueportel.fr",
       },
       sameAs: [],
     },

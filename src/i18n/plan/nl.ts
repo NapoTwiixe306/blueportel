@@ -81,8 +81,8 @@ export const nlPlanDictionary: PlanDictionary = {
     phoneValue: "+32 488 83 20 91",
     phoneHref: "tel:+32488832091",
     emailLabel: "E-mail",
-    emailValue: "infos@blueportel.fr",
-    emailHref: "mailto:infos@blueportel.fr",
+    emailValue: "info@blueportel.fr",
+    emailHref: "mailto:info@blueportel.fr",
     parking: "Privéparkeerplaats bij de mobilhome",
   },
   map: {
@@ -152,8 +152,8 @@ export const nlPlanDictionary: PlanDictionary = {
       "Wij sturen u graag een gedetailleerde route, GPS-pin of vervoerstips op basis van uw vertrekpunt.",
     phoneLabel: "+32 488 83 20 91",
     phoneHref: "tel:+32488832091",
-    emailLabel: "infos@blueportel.fr",
-    emailHref: "mailto:infos@blueportel.fr",
+    emailLabel: "info@blueportel.fr",
+    emailHref: "mailto:info@blueportel.fr",
     bookingLabel: "Boek uw verblijf",
     bookingHref:
       "https://checkout.lodgify.com/nl/blueportel/654566/reservation?currency=EUR&ref=bnbox&adults=1",

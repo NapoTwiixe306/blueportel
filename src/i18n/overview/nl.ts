@@ -184,7 +184,7 @@ export const nlOverviewDictionary: OverviewDictionary = {
       "Boek uw mobilhome aan zee of contacteer ons voor een reservatie op maat. Snelle antwoorden via telefoon of e-mail.",
     buttons: {
       primary: { label: "+32 488 83 20 91", href: "tel:+32488832091" },
-      secondary: { label: "infos@blueportel.fr", href: "mailto:infos@blueportel.fr" },
+      secondary: { label: "info@blueportel.fr", href: "mailto:info@blueportel.fr" },
     },
   },
   screenReader: {

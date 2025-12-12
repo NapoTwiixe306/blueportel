@@ -42,7 +42,7 @@ const en: TDMDictionary = {
       paragraphs: [
         'For any request for exploitation, citation or content partnership, please contact:',
       ],
-      email: 'infos@blueportel.fr',
+      email: 'info@blueportel.fr',
       address: {
         name: 'Blueportel – Premium Mobile Home facing the sea',
         location: 'Le Portel (Opal Coast), France',
@@ -63,7 +63,7 @@ const en: TDMDictionary = {
     heading: 'Blueportel TDM Policy - Protection of content against Text and Data Mining',
     paragraphs: [
       "Blueportel expressly reserves all rights relating to Text and Data Mining (TDM) techniques in accordance with Article L.122-5-3 of the French Intellectual Property Code. Any automated extraction of content is prohibited without prior authorization.",
-      "Policy for protecting digital content against automated extraction, algorithm training and unauthorized derivative content generation. Contact: infos@blueportel.fr for any exploitation request.",
+      "Policy for protecting digital content against automated extraction, algorithm training and unauthorized derivative content generation. Contact: info@blueportel.fr for any exploitation request.",
     ],
   },
   structuredData: {

@@ -82,7 +82,7 @@ export const nlAvailabilityDictionary: AvailabilityDictionary = {
     },
     secondary: {
       label: "Aanvraag op maat",
-      href: "mailto:infos@blueportel.fr",
+      href: "mailto:info@blueportel.fr",
     },
   },
   info: [

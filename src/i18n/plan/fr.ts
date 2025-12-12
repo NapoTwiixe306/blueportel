@@ -81,8 +81,8 @@ export const frPlanDictionary: PlanDictionary = {
     phoneValue: "+32 488 83 20 91",
     phoneHref: "tel:+32488832091",
     emailLabel: "Email",
-    emailValue: "infos@blueportel.fr",
-    emailHref: "mailto:infos@blueportel.fr",
+    emailValue: "info@blueportel.fr",
+    emailHref: "mailto:info@blueportel.fr",
     parking: "Place privée sur l'emplacement",
   },
   map: {
@@ -152,8 +152,8 @@ export const frPlanDictionary: PlanDictionary = {
       "Nous pouvons vous envoyer un plan détaillé, un point GPS ou des recommandations transport selon votre ville de départ.",
     phoneLabel: "+32 488 83 20 91",
     phoneHref: "tel:+32488832091",
-    emailLabel: "infos@blueportel.fr",
-    emailHref: "mailto:infos@blueportel.fr",
+    emailLabel: "info@blueportel.fr",
+    emailHref: "mailto:info@blueportel.fr",
     bookingLabel: "Réserver votre séjour",
     bookingHref:
       "https://checkout.lodgify.com/fr/blueportel/654566/reservation?currency=EUR&ref=bnbox&adults=1",

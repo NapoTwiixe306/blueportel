@@ -120,7 +120,7 @@ export default async function RootLayout({
       telephone: '+32488832091',
       contactType: 'Customer Service',
       availableLanguage: ['French'],
-      email: 'infos@blueportel.fr',
+      email: 'info@blueportel.fr',
     },
     address: {
       '@type': 'PostalAddress',
