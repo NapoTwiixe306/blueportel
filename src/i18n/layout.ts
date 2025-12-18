@@ -4,6 +4,8 @@ export type FooterDictionary = {
   contactTitle: string;
   addressTitle: string;
   addressLines: string[];
+  ressourceTitle: string;
+  ressourceLines: string;
   phonePrimaryLabel: string;
   phoneSecondaryLabel: string;
   emailLabel: string;
@@ -21,6 +23,8 @@ const dictionaries: Record<Locale, LayoutDictionary> = {
     footer: {
       contactTitle: "Contact",
       addressTitle: "Adresse",
+      ressourceTitle: "Ressources",
+      ressourceLines: "Annuaire Google",
       addressLines: ["Rue de la Mer 2", "Le Portel, France 62480"],
       phonePrimaryLabel: "+32 488 83 20 91",
       phoneSecondaryLabel: "+33 745 32 48 36",
@@ -38,6 +42,8 @@ const dictionaries: Record<Locale, LayoutDictionary> = {
     footer: {
       contactTitle: "Contact",
       addressTitle: "Address",
+      ressourceTitle: "Resources",
+      ressourceLines: "Google Annuaire",
       addressLines: ["Rue de la Mer 2", "Le Portel, France 62480"],
       phonePrimaryLabel: "+32 488 83 20 91",
       phoneSecondaryLabel: "+33 745 32 48 36",
@@ -55,6 +61,8 @@ const dictionaries: Record<Locale, LayoutDictionary> = {
     footer: {
       contactTitle: "Contact",
       addressTitle: "Adres",
+      ressourceTitle: "Ressources",
+      ressourceLines: "Google Annuaire",
       addressLines: ["Rue de la Mer 2", "Le Portel, Frankrijk 62480"],
       phonePrimaryLabel: "+32 488 83 20 91",
       phoneSecondaryLabel: "+33 745 32 48 36",
