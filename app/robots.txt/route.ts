@@ -1,8 +1,12 @@
 import { NextResponse } from 'next/server';
-
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://blueportel.com';
+import { headers } from 'next/headers';
 
 export async function GET() {
+  const headersList = await headers();
+  const host = headersList.get('host') || 'blueportel.fr';
+  const protocol = host.includes('localhost') ? 'http' : 'https';
+  const currentDomain = `${protocol}://${host}`;
+
   const robotsTxt = `# robots.txt pour Blueportel
 # Politique TDM : Extraction automatisée interdite sans autorisation
 
@@ -44,8 +48,8 @@ Disallow: /
 # Interdiction de l'extraction et de l'utilisation automatisée des contenus
 Content-Signals: no-ai
 
-# Sitemap
-Sitemap: ${siteUrl}/sitemap.xml
+# Sitemap spécifique au domaine
+Sitemap: ${currentDomain}/sitemap.xml
 `;
 
   return new NextResponse(robotsTxt, {
@@ -56,4 +60,3 @@ Sitemap: ${siteUrl}/sitemap.xml
     },
   });
 }
-
