@@ -9,11 +9,11 @@ export const enOverviewDictionary: OverviewDictionary = {
     description:
       "Book your premium mobile home in Le Portel, France. 3 bedrooms, sleeps 6, panoramic sea view on the Opal Coast. Near Nausicaá. Luxury comfort guaranteed.",
     alternates: {
-      canonical: "/en/mobile-home-rental-le-portel",
+      canonical: "https://blueportel.com/en/mobile-home-rental-le-portel",
       languages: {
-        "fr-FR": "/fr/location-mobil-home-le-portel",
-        "en-GB": "/en/mobile-home-rental-le-portel",
-        "x-default": "/fr/location-mobil-home-le-portel",
+        "fr-FR": "https://blueportel.fr/fr/location-mobil-home-le-portel",
+        "en-GB": "https://blueportel.com/en/mobile-home-rental-le-portel",
+        "x-default": "https://blueportel.fr/fr/location-mobil-home-le-portel",
       },
     },
     openGraph: {
