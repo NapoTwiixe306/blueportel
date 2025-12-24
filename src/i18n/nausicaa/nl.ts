@@ -12,11 +12,11 @@ export const nlNausicaaDictionary: NausicaaDictionary = {
     description:
       "Mobilhome met zeezicht, 3 slaapkamers en terras, op slechts 10 minuten van Nausicaá. Praktische tips voor uw bezoek en comfortabel verblijf.",
     alternates: {
-      canonical: "/nl/pages/nausicaa-proche-le-portel",
+      canonical: "/nl/nausicaa-dichtbij",
       languages: {
-        "fr-FR": "/fr/pages/nausicaa-proche-le-portel",
-        "en-GB": "/en/pages/nausicaa-proche-le-portel",
-        "nl-NL": "/nl/pages/nausicaa-proche-le-portel",
+        "fr-FR": "/fr/hebergement-proche-nausicaa",
+        "en-GB": "/en/accommodation-near-nausicaa",
+        "nl-NL": "/nl/nausicaa-dichtbij",
       },
     },
     openGraph: {
@@ -24,7 +24,7 @@ export const nlNausicaaDictionary: NausicaaDictionary = {
       description:
         "Premium mobilhome met panoramisch zeezicht, ideaal om Nausicaá met het gezin te ontdekken.",
       type: "website",
-      url: `${siteUrl}/nl/pages/nausicaa-proche-le-portel`,
+      url: `${siteUrl}/nl/nausicaa-dichtbij`,
     },
   },
   hero: {
@@ -87,7 +87,7 @@ export const nlNausicaaDictionary: NausicaaDictionary = {
           "@type": "ListItem",
           position: 2,
           name: "Nausicaá",
-          item: `${siteUrl}/nl/pages/nausicaa-proche-le-portel`,
+          item: `${siteUrl}/nl/nausicaa-dichtbij`,
         },
       ],
     },
@@ -219,7 +219,7 @@ export const nlNausicaaDictionary: NausicaaDictionary = {
       "Met Nausicaá, de stranden van Le Portel en de kliffen van de Opaalkust is Blueportel uw perfecte uitvalsbasis.",
     buttons: {
       primary: { label: "Beschikbaarheid bekijken", href: bookingUrl, rel: "nofollow" },
-      secondary: { label: "Contact", href: "/pages/contact" },
+      secondary: { label: "Contact", href: "/contact" },
     },
   },
   contact: {

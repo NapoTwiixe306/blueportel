@@ -4,7 +4,7 @@ import { useEffect } from "react";
 
 export default function LegacyNausicaaRedirect() {
   useEffect(() => {
-    window.location.replace("/fr/pages/nausicaa-proche-le-portel");
+    window.location.replace("/fr/hebergement-proche-nausicaa");
   }, []);
 
   return null;

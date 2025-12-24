@@ -30,18 +30,18 @@ export const enAvisDictionary: AvisDictionary = {
     description:
       "Verified Blueportel guest ratings. See why our seafront mobile home has held a 4.9/5 score since 2022.",
     alternates: {
-      canonical: "/en/pages/avis",
+      canonical: "/en/reviews",
       languages: {
-        "fr-FR": "/fr/pages/avis",
-        "en-GB": "/en/pages/avis",
-        "nl-NL": "/nl/pages/avis",
+        "fr-FR": "/fr/avis",
+        "en-GB": "/en/reviews",
+        "nl-NL": "/nl/beoordelingen",
       },
     },
     openGraph: {
       title: "Blueportel guest reviews",
       description: "Authentic stories from travellers who stayed right by the sea in Le Portel.",
       type: "website",
-      url: `${siteUrl}/en/pages/avis`,
+      url: `${siteUrl}/en/reviews`,
     },
   },
   structuredData: {
@@ -51,7 +51,7 @@ export const enAvisDictionary: AvisDictionary = {
       "@id": `${siteUrl}#blueportel-reviews`,
       name: "Blueportel mobile home",
       description: "Guest reviews for the Blueportel mobile home inside Camping Le Phare d’Opale.",
-      url: `${siteUrl}/en/pages/avis`,
+      url: `${siteUrl}/en/reviews`,
       aggregateRating: {
         "@type": "AggregateRating",
         ratingValue: "4.9",
@@ -75,7 +75,7 @@ export const enAvisDictionary: AvisDictionary = {
       "@type": "BreadcrumbList",
       itemListElement: [
         { "@type": "ListItem", position: 1, name: "Home", item: `${siteUrl}/en` },
-        { "@type": "ListItem", position: 2, name: "Reviews", item: `${siteUrl}/en/pages/avis` },
+        { "@type": "ListItem", position: 2, name: "Reviews", item: `${siteUrl}/en/reviews` },
       ],
     },
   },

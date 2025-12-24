@@ -33,7 +33,6 @@ export const frHomeDictionary: HomeDictionary = {
       languages: {
         "fr-FR": "/fr",
         "en-GB": "/en",
-        "nl-NL": "/nl",
       },
     },
     openGraph: {
@@ -209,7 +208,7 @@ export const frHomeDictionary: HomeDictionary = {
     },
     ctaSecondary: {
       label: "Découvrir le Mobil-Home",
-      href: "/pages/galerie-photo",
+      href: "/galerie-photo",
     },
   },
   reservation: {

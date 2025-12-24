@@ -8,23 +8,23 @@ const bookingUrl =
 export const enNausicaaDictionary: NausicaaDictionary = {
   locale: "en",
   metadata: {
-    title: "Blueportel mobile home near Nausicaá | Le Portel",
+    title: "Accommodation Near Nausicaá Boulogne-sur-Mer | Sea View Rental",
     description:
       "Sea-view 3-bedroom mobile home only 10 minutes from Nausicaá. Practical tips for your visit and all-inclusive seaside comfort.",
     alternates: {
-      canonical: "/en/pages/nausicaa-proche-le-portel",
+      canonical: "/en/accommodation-near-nausicaa",
       languages: {
-        "fr-FR": "/fr/pages/nausicaa-proche-le-portel",
-        "en-GB": "/en/pages/nausicaa-proche-le-portel",
-        "nl-NL": "/nl/pages/nausicaa-proche-le-portel",
+        "fr-FR": "/fr/hebergement-proche-nausicaa",
+        "en-GB": "/en/accommodation-near-nausicaa",
+        "nl-NL": "/nl/nausicaa-dichtbij",
       },
     },
     openGraph: {
-      title: "Blueportel – stay 10 minutes from Nausicaá",
+      title: "Accommodation Near Nausicaá Boulogne-sur-Mer | Blueportel",
       description:
         "Premium mobile home with panoramic sea view, ideal base to explore Nausicaá with the family.",
       type: "website",
-      url: `${siteUrl}/en/pages/nausicaa-proche-le-portel`,
+      url: `${siteUrl}/en/accommodation-near-nausicaa`,
     },
   },
   hero: {
@@ -86,8 +86,8 @@ export const enNausicaaDictionary: NausicaaDictionary = {
         {
           "@type": "ListItem",
           position: 2,
-          name: "Nausicaá",
-          item: `${siteUrl}/en/pages/nausicaa-proche-le-portel`,
+          name: "Accommodation Near Nausicaá",
+          item: `${siteUrl}/en/accommodation-near-nausicaa`,
         },
       ],
     },
@@ -218,7 +218,7 @@ export const enNausicaaDictionary: NausicaaDictionary = {
       "Between Nausicaá, Le Portel beaches and the Opal Coast cliffs, Blueportel is the perfect seaside hub.",
     buttons: {
       primary: { label: "Check availability", href: bookingUrl, rel: "nofollow" },
-      secondary: { label: "Contact us", href: "/pages/contact" },
+      secondary: { label: "Contact us", href: "/contact" },
     },
   },
   contact: {

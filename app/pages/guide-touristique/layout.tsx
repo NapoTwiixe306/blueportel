@@ -23,7 +23,7 @@ export const metadata: Metadata = {
       "Balades en bord de mer, plaisirs gourmands, Nausicaá, Vélomaritime et couchers de soleil depuis la terrasse Blueportel.",
     type: "website",
     locale: "fr_FR",
-    url: `${siteUrl}/pages/guide-touristique`,
+    url: `${siteUrl}/guide-touristique`,
     siteName: "Blueportel",
     images: [
       {
@@ -42,7 +42,7 @@ export const metadata: Metadata = {
     images: [`${siteUrl}/logo.png`],
   },
   alternates: {
-    canonical: `${siteUrl}/pages/guide-touristique`,
+    canonical: `${siteUrl}/guide-touristique`,
   },
   category: "Tourisme",
   classification: "Guide touristique",

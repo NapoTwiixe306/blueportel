@@ -49,7 +49,7 @@ const en: MarvillaDictionary = {
           '@type': 'ListItem',
           position: 2,
           name: 'Marvilla Tohapi Information',
-          item: `${siteUrl}/en/pages/information-marvilla-tohapi`,
+          item: `${siteUrl}/en/seaside-campsite-opal-coast`,
         },
       ],
     },
@@ -59,7 +59,7 @@ const en: MarvillaDictionary = {
       name: 'Marvilla Tohapi Information',
       description:
         'Important information regarding the independent Blueportel rental at Le Phare d\'Opale - Marvilla Tohapi campsite',
-      url: `${siteUrl}/en/pages/information-marvilla-tohapi`,
+      url: `${siteUrl}/en/seaside-campsite-opal-coast`,
       inLanguage: 'en-US',
       isPartOf: {
         '@type': 'WebSite',

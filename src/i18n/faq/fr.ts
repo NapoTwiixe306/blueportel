@@ -71,18 +71,18 @@ export const frFAQDictionary: FAQDictionary = {
     description:
       "Toutes les réponses pour préparer votre séjour face à la mer : localisation, équipements, wifi, animaux, accès et réservations Blueportel.",
     alternates: {
-      canonical: "/fr/pages/FAQ",
+      canonical: "/fr/faq",
       languages: {
-        "fr-FR": "/fr/pages/FAQ",
-        "en-GB": "/en/pages/FAQ",
-        "nl-NL": "/nl/pages/FAQ",
+        "fr-FR": "/fr/faq",
+        "en-GB": "/en/faq",
+        "nl-NL": "/nl/faq",
       },
     },
     openGraph: {
       title: "Questions fréquentes Blueportel",
       description: "Localisation, équipements, arrivée, activités : préparez sereinement votre séjour à Le Portel.",
       type: "website",
-      url: `${siteUrl}/fr/pages/FAQ`,
+      url: `${siteUrl}/fr/faq`,
     },
   },
   structuredData: {
@@ -103,7 +103,7 @@ export const frFAQDictionary: FAQDictionary = {
       "@type": "BreadcrumbList",
       itemListElement: [
         { "@type": "ListItem", position: 1, name: "Accueil", item: `${siteUrl}/fr` },
-        { "@type": "ListItem", position: 2, name: "FAQ", item: `${siteUrl}/fr/pages/FAQ` },
+        { "@type": "ListItem", position: 2, name: "FAQ", item: `${siteUrl}/fr/faq` },
       ],
     },
   },

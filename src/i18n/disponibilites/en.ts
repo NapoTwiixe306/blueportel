@@ -9,11 +9,11 @@ export const enAvailabilityDictionary: AvailabilityDictionary = {
     description:
       "Check real-time availability for the Blueportel mobile home in Le Portel. Lodgify-synced calendar and secure seaside booking.",
     alternates: {
-      canonical: "/en/pages/disponibilites",
+      canonical: "/en/availability",
       languages: {
-        "fr-FR": "/fr/pages/disponibilites",
-        "en-GB": "/en/pages/disponibilites",
-        "nl-NL": "/nl/pages/disponibilites",
+        "fr-FR": "/fr/disponibilites",
+        "en-GB": "/en/availability",
+        "nl-NL": "/nl/beschikbaarheid",
       },
     },
     openGraph: {
@@ -21,7 +21,7 @@ export const enAvailabilityDictionary: AvailabilityDictionary = {
       description:
         "Real-time availability for the Blueportel mobile home. Pick your dates and book online or reach out directly.",
       type: "website",
-      url: `${siteUrl}/en/pages/disponibilites`,
+      url: `${siteUrl}/en/availability`,
     },
   },
   structuredData: {
@@ -34,7 +34,7 @@ export const enAvailabilityDictionary: AvailabilityDictionary = {
           "@type": "ListItem",
           position: 2,
           name: "Availability",
-          item: `${siteUrl}/en/pages/disponibilites`,
+          item: `${siteUrl}/en/availability`,
         },
       ],
     },

@@ -49,7 +49,7 @@ const fr: MarvillaDictionary = {
           '@type': 'ListItem',
           position: 2,
           name: 'Information Marvilla Tohapi',
-          item: `${siteUrl}/fr/pages/information-marvilla-tohapi`,
+          item: `${siteUrl}/fr/camping-phare-d-opale`,
         },
       ],
     },
@@ -59,7 +59,7 @@ const fr: MarvillaDictionary = {
       name: 'Information Marvilla Tohapi',
       description:
         "Information importante concernant la location indépendante Blueportel au camping Le Phare d'Opale - Marvilla Tohapi",
-      url: `${siteUrl}/fr/pages/information-marvilla-tohapi`,
+      url: `${siteUrl}/fr/camping-phare-d-opale`,
       inLanguage: 'fr-FR',
       isPartOf: {
         '@type': 'WebSite',

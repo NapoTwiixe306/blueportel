@@ -24,7 +24,7 @@ export const metadata: Metadata = {
       "Mobil-home haut de gamme face à la mer au Portel : 3 chambres, 2 salles de bain, cuisine équipée, terrasse panoramique et accès rapide à Nausicaá.",
     type: "website",
     locale: "fr_FR",
-    url: `${siteUrl}/pages/vue-densemble`,
+    url: `${siteUrl}/location-mobil-home-le-portel`,
     siteName: "Blueportel",
     images: [
       {
@@ -43,7 +43,7 @@ export const metadata: Metadata = {
     images: [`${siteUrl}/logo.png`],
   },
   alternates: {
-    canonical: `${siteUrl}/pages/vue-densemble`,
+    canonical: `${siteUrl}/location-mobil-home-le-portel`,
   },
   category: "Tourisme",
   classification: "Hébergement - Mobil-home premium",

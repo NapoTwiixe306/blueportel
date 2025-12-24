@@ -30,18 +30,18 @@ export const frAvisDictionary: AvisDictionary = {
     description:
       "Notes vérifiées des voyageurs Blueportel. Découvrez pourquoi notre mobil-home face à la mer obtient 4.9/5 depuis 2022.",
     alternates: {
-      canonical: "/fr/pages/avis",
+      canonical: "/fr/avis",
       languages: {
-        "fr-FR": "/fr/pages/avis",
-        "en-GB": "/en/pages/reviews",
-        "nl-NL": "/nl/pages/recensies",
+        "fr-FR": "/fr/avis",
+        "en-GB": "/en/reviews",
+        "nl-NL": "/nl/beoordelingen",
       },
     },
     openGraph: {
       title: "Avis Blueportel",
       description: "Témoignages authentiques des voyageurs qui ont séjourné face à la mer au Portel.",
       type: "website",
-      url: `${siteUrl}/fr/pages/avis`,
+      url: `${siteUrl}/fr/avis`,
     },
   },
   structuredData: {
@@ -51,7 +51,7 @@ export const frAvisDictionary: AvisDictionary = {
       "@id": `${siteUrl}#blueportel-avis`,
       name: "Mobil-home Blueportel",
       description: "Avis clients sur le mobil-home Blueportel situé au Camping Le Phare d'Opale.",
-      url: `${siteUrl}/fr/pages/avis`,
+      url: `${siteUrl}/fr/avis`,
       aggregateRating: {
         "@type": "AggregateRating",
         ratingValue: "4.9",
@@ -75,7 +75,7 @@ export const frAvisDictionary: AvisDictionary = {
       "@type": "BreadcrumbList",
       itemListElement: [
         { "@type": "ListItem", position: 1, name: "Accueil", item: `${siteUrl}/fr` },
-        { "@type": "ListItem", position: 2, name: "Avis", item: `${siteUrl}/fr/pages/avis` },
+        { "@type": "ListItem", position: 2, name: "Avis", item: `${siteUrl}/fr/avis` },
       ],
     },
   },

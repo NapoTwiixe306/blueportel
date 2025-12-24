@@ -9,11 +9,11 @@ export const frTarifsDictionary: TarifsDictionary = {
     description:
       "Découvrez les tarifs basse, moyenne et haute saison du mobil-home Blueportel. Acompte 30%, caution 500€, linge et ménage inclus. Réservez votre séjour face à la mer.",
     alternates: {
-      canonical: "/fr/pages/tarifs",
+      canonical: "/fr/tarifs",
       languages: {
-        "fr-FR": "/fr/pages/tarifs",
-        "en-GB": "/en/pages/tarifs",
-        "nl-NL": "/nl/pages/tarifs",
+        "fr-FR": "/fr/tarifs",
+        "en-GB": "/en/rates",
+        "nl-NL": "/nl/tarieven",
       },
     },
     openGraph: {
@@ -21,7 +21,7 @@ export const frTarifsDictionary: TarifsDictionary = {
       description:
         "Tarifs par saison, politique d’acompte et prestations incluses pour votre location mobil-home au Portel.",
       type: "website",
-      url: `${siteUrl}/fr/pages/tarifs`,
+      url: `${siteUrl}/fr/tarifs`,
     },
   },
   structuredData: {
@@ -30,7 +30,7 @@ export const frTarifsDictionary: TarifsDictionary = {
       "@type": "BreadcrumbList",
       itemListElement: [
         { "@type": "ListItem", position: 1, name: "Accueil", item: `${siteUrl}/fr` },
-        { "@type": "ListItem", position: 2, name: "Tarifs", item: `${siteUrl}/fr/pages/tarifs` },
+        { "@type": "ListItem", position: 2, name: "Tarifs", item: `${siteUrl}/fr/tarifs` },
       ],
     },
   },

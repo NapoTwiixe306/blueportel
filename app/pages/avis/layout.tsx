@@ -22,7 +22,7 @@ export const metadata: Metadata = {
       "Découvrez pourquoi les voyageurs recommandent Blueportel : vue mer, terrasse, confort et accueil premium à Le Portel.",
     type: "website",
     locale: "fr_FR",
-    url: `${siteUrl}/pages/avis`,
+    url: `${siteUrl}/avis`,
     siteName: "Blueportel",
     images: [
       {
@@ -41,7 +41,7 @@ export const metadata: Metadata = {
     images: [`${siteUrl}/logo.png`],
   },
   alternates: {
-    canonical: `${siteUrl}/pages/avis`,
+    canonical: `${siteUrl}/avis`,
   },
   category: "Tourisme",
   classification: "Avis clients",

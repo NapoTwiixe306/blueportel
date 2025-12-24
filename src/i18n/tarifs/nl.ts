@@ -9,11 +9,11 @@ export const nlTarifsDictionary: TarifsDictionary = {
     description:
       "Tarieven per seizoen voor de Blueportel mobilhome. 30% voorschot, €500 borg, linnengoed en eindschoonmaak inbegrepen. Boek uw verblijf aan zee.",
     alternates: {
-      canonical: "/nl/pages/tarifs",
+      canonical: "/nl/tarieven",
       languages: {
-        "fr-FR": "/fr/pages/tarifs",
-        "en-GB": "/en/pages/tarifs",
-        "nl-NL": "/nl/pages/tarifs",
+        "fr-FR": "/fr/tarifs",
+        "en-GB": "/en/rates",
+        "nl-NL": "/nl/tarieven",
       },
     },
     openGraph: {
@@ -21,7 +21,7 @@ export const nlTarifsDictionary: TarifsDictionary = {
       description:
         "Seizoensprijzen, voorschotbeleid en inbegrepen diensten voor uw verblijf in Le Portel.",
       type: "website",
-      url: `${siteUrl}/nl/pages/tarifs`,
+      url: `${siteUrl}/nl/tarieven`,
     },
   },
   structuredData: {
@@ -30,7 +30,7 @@ export const nlTarifsDictionary: TarifsDictionary = {
       "@type": "BreadcrumbList",
       itemListElement: [
         { "@type": "ListItem", position: 1, name: "Home", item: `${siteUrl}/nl` },
-        { "@type": "ListItem", position: 2, name: "Tarieven", item: `${siteUrl}/nl/pages/tarifs` },
+        { "@type": "ListItem", position: 2, name: "Tarieven", item: `${siteUrl}/nl/tarieven` },
       ],
     },
   },

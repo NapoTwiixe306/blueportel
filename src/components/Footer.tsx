@@ -54,7 +54,7 @@ export default function Footer({ dictionary, locale: initialLocale }: FooterProp
             <Link href={`/${currentLocale}`} aria-label="Blueportel - Accueil">
               <Image 
                 src={Logo} 
-                alt="Blueportel - Logo" 
+                alt="Blueportel - Location Mobil-Home Le Portel - Côte d'Opale" 
                 className="h-auto w-auto"
                 width={180}
                 height={72}

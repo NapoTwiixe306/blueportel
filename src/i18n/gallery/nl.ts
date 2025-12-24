@@ -87,18 +87,18 @@ export const nlGalleryDictionary: GalleryDictionary = {
     description:
       "Bekijk de Blueportel mobilhome in beelden: terras met zeezicht, lichte leefruimtes, knusse slaapkamers en directe toegang tot de Opaalkust.",
     alternates: {
-      canonical: "/nl/pages/galerie-photo",
+      canonical: "/nl/fotos",
       languages: {
-        "fr-FR": "/fr/pages/galerie-photo",
-        "en-GB": "/en/pages/galerie-photo",
-        "nl-NL": "/nl/pages/galerie-photo",
+        "fr-FR": "/fr/galerie-photo",
+        "en-GB": "/en/photo-gallery",
+        "nl-NL": "/nl/fotos",
       },
     },
     openGraph: {
       title: "Blueportel fotogalerij",
       description: "HD-foto's van het terras, de kamers en het zeezicht van de Blueportel mobilhome.",
       type: "website",
-      url: `${siteUrl}/nl/pages/galerie-photo`,
+      url: `${siteUrl}/nl/fotos`,
     },
   },
   structuredData: {
@@ -127,7 +127,7 @@ export const nlGalleryDictionary: GalleryDictionary = {
           "@type": "ListItem",
           position: 2,
           name: "Fotogalerij",
-          item: `${siteUrl}/nl/pages/galerie-photo`,
+          item: `${siteUrl}/nl/fotos`,
         },
       ],
     },
@@ -166,7 +166,7 @@ export const nlGalleryDictionary: GalleryDictionary = {
       "https://checkout.lodgify.com/nl/blueportel/654566/reservation?currency=EUR&ref=bnbox&adults=1",
     bookingRel: "nofollow",
     contactLabel: "Contacteer ons",
-    contactHref: "/pages/contact",
+    contactHref: "/contact",
   },
   screenReader: {
     title: "Blueportel fotogalerij",

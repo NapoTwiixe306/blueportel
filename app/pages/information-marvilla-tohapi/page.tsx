@@ -7,7 +7,7 @@ export default function RedirectPage() {
   const router = useRouter();
 
   useEffect(() => {
-    router.replace("/fr/pages/information-marvilla-tohapi");
+    router.replace("/fr/camping-phare-d-opale");
   }, [router]);
 
   return null;

@@ -24,7 +24,7 @@ export const metadata: Metadata = {
       "Préparez votre trajet vers Blueportel : accès voiture, train, bus, vélo et distances clés depuis Paris, Lille, Calais et Boulogne-sur-Mer.",
     type: "website",
     locale: "fr_FR",
-    url: `${siteUrl}/pages/plan`,
+    url: `${siteUrl}/plan`,
     siteName: "Blueportel",
     images: [
       {
@@ -43,7 +43,7 @@ export const metadata: Metadata = {
     images: [`${siteUrl}/logo.png`],
   },
   alternates: {
-    canonical: `${siteUrl}/pages/plan`,
+    canonical: `${siteUrl}/plan`,
   },
   category: "Tourisme",
   classification: "Plan d'accès",

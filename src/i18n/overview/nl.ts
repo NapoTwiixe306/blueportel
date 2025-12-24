@@ -9,11 +9,11 @@ export const nlOverviewDictionary: OverviewDictionary = {
     description:
       "42 m² mobilhome in Le Portel: 3 slaapkamers, 2 badkamers, overdekt terras met zeezicht en premium comfort voor 6 personen.",
     alternates: {
-      canonical: "/nl/pages/vue-densemble",
+      canonical: "/nl/overzicht",
       languages: {
-        "fr-FR": "/fr/pages/vue-densemble",
-        "en-GB": "/en/pages/vue-densemble",
-        "nl-NL": "/nl/pages/vue-densemble",
+        "fr-FR": "/fr/location-mobil-home-le-portel",
+        "en-GB": "/en/mobile-home-rental-le-portel",
+        "nl-NL": "/nl/overzicht",
       },
     },
     openGraph: {
@@ -21,7 +21,7 @@ export const nlOverviewDictionary: OverviewDictionary = {
       description:
         "Ontdek de Blueportel mobilhome: terras met zeezicht, lichte kamers, uitgeruste keuken en premium diensten.",
       type: "website",
-      url: `${siteUrl}/nl/pages/vue-densemble`,
+      url: `${siteUrl}/nl/overzicht`,
     },
   },
   structuredData: {
@@ -30,7 +30,7 @@ export const nlOverviewDictionary: OverviewDictionary = {
       "@type": "Accommodation",
       name: "Blueportel mobilhome",
       description: "Luxe mobilhome met 3 slaapkamers aan zee in Le Portel",
-      url: `${siteUrl}/nl/pages/vue-densemble`,
+      url: `${siteUrl}/nl/overzicht`,
       image: `${siteUrl}/galerie/blueportel-terrasse-ensoleillee.jpg`,
       occupancy: { "@type": "QuantitativeValue", maxValue: 6 },
       numberOfRooms: 3,
@@ -62,7 +62,7 @@ export const nlOverviewDictionary: OverviewDictionary = {
           "@type": "ListItem",
           position: 2,
           name: "Overzicht",
-          item: `${siteUrl}/nl/pages/vue-densemble`,
+          item: `${siteUrl}/nl/overzicht`,
         },
       ],
     },
@@ -90,7 +90,7 @@ export const nlOverviewDictionary: OverviewDictionary = {
         href: "https://checkout.lodgify.com/nl/blueportel/654566/reservation?currency=EUR&ref=bnbox&adults=1",
         rel: "nofollow",
       },
-      secondary: { label: "Bekijk de foto's", href: "/pages/galerie-photo" },
+      secondary: { label: "Bekijk de foto's", href: "/fotos" },
     },
   },
   heroImageAlt: "Overdekt terras met panoramisch zeezicht bij mobilhome Blueportel",

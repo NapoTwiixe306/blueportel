@@ -47,6 +47,7 @@ export default function OverviewPage({ dictionary }: OverviewPageProps) {
     cta,
     screenReader,
     structuredData,
+    seoContent,
   } = dictionary;
 
   const withLocale = (path: string) => {
@@ -69,6 +70,24 @@ export default function OverviewPage({ dictionary }: OverviewPageProps) {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData.breadcrumb) }}
       />
+      {structuredData.lodgingBusiness && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData.lodgingBusiness) }}
+        />
+      )}
+      {structuredData.product && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData.product) }}
+        />
+      )}
+      {structuredData.faq && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData.faq) }}
+        />
+      )}
 
       <div className="flex min-h-screen items-center justify-center bg-white font-sans w-full overflow-x-hidden">
         <main className="flex min-h-screen w-full max-w-7xl flex-col items-center py-6 px-3 sm:py-8 sm:px-4 md:py-12 md:px-6 lg:py-16 lg:px-8 bg-white">
@@ -255,6 +274,23 @@ export default function OverviewPage({ dictionary }: OverviewPageProps) {
               <p key={paragraph}>{paragraph}</p>
             ))}
           </section>
+
+          {seoContent && (
+            <section className="w-full max-w-4xl mt-12 mb-16 px-4">
+              <div className="prose prose-blue max-w-none">
+                {seoContent.map((section, index) => (
+                  <article key={index} className="mb-10">
+                    <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-4">
+                      {section.title}
+                    </h2>
+                    <div className="text-gray-700 leading-relaxed whitespace-pre-line text-base sm:text-lg">
+                      {section.content}
+                    </div>
+                  </article>
+                ))}
+              </div>
+            </section>
+          )}
         </main>
       </div>
     </>

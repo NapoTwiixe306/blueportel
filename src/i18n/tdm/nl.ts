@@ -81,7 +81,7 @@ const nl: TDMDictionary = {
           '@type': 'ListItem',
           position: 2,
           name: 'TDM Beleid',
-          item: `${siteUrl}/nl/pages/politique-tdm`,
+          item: `${siteUrl}/nl/voorwaarden`,
         },
       ],
     },
@@ -90,7 +90,7 @@ const nl: TDMDictionary = {
       '@type': 'WebPage',
       name: 'Text and Data Mining (TDM) Beleid',
       description: 'Beleid voor de bescherming van inhoud tegen niet-geautoriseerde Text and Data Mining',
-      url: `${siteUrl}/nl/pages/politique-tdm`,
+      url: `${siteUrl}/nl/voorwaarden`,
       inLanguage: 'nl-NL',
       isPartOf: {
         '@type': 'WebSite',

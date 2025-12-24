@@ -9,11 +9,11 @@ export const enPlanDictionary: PlanDictionary = {
     description:
       "Address, driving routes, train, bus and distance info to reach the Blueportel mobile home inside Camping Le Phare d’Opale.",
     alternates: {
-      canonical: "/en/pages/plan",
+      canonical: "/en/map",
       languages: {
-        "fr-FR": "/fr/pages/plan",
-        "en-GB": "/en/pages/plan",
-        "nl-NL": "/nl/pages/plan",
+        "fr-FR": "/fr/plan",
+        "en-GB": "/en/map",
+        "nl-NL": "/nl/plan",
       },
     },
     openGraph: {
@@ -21,7 +21,7 @@ export const enPlanDictionary: PlanDictionary = {
       description:
         "All transport options to reach the Blueportel seafront rental: car, train, bus, bike and flights.",
       type: "website",
-      url: `${siteUrl}/en/pages/plan`,
+      url: `${siteUrl}/en/map`,
     },
   },
   structuredData: {
@@ -31,7 +31,7 @@ export const enPlanDictionary: PlanDictionary = {
       name: "Blueportel directions",
       description:
         "Routes to reach the Blueportel mobile home in Le Portel (Camping Le Phare d’Opale).",
-      url: `${siteUrl}/en/pages/plan`,
+      url: `${siteUrl}/en/map`,
       address: {
         "@type": "PostalAddress",
         streetAddress: "2 rue de la Mer",
@@ -58,7 +58,7 @@ export const enPlanDictionary: PlanDictionary = {
       "@type": "BreadcrumbList",
       itemListElement: [
         { "@type": "ListItem", position: 1, name: "Home", item: `${siteUrl}/en` },
-        { "@type": "ListItem", position: 2, name: "Plan", item: `${siteUrl}/en/pages/plan` },
+        { "@type": "ListItem", position: 2, name: "Plan", item: `${siteUrl}/en/map` },
       ],
     },
   },

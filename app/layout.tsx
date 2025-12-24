@@ -83,6 +83,11 @@ export const metadata: Metadata = {
   },
   alternates: {
     canonical: siteUrl,
+    languages: {
+      'fr-FR': `${siteUrl}/fr`,
+      'en-US': `${siteUrl}/en`,
+      'nl-NL': `${siteUrl}/nl`,
+    },
   },
   icons: {
     icon: [
@@ -108,27 +113,35 @@ export default async function RootLayout({
   const locale = headerLocale && locales.includes(headerLocale) ? headerLocale : defaultLocale;
   const layoutDictionary = getLayoutDictionary(locale);
 
-  const organizationSchema = {
+  const lodgingSchema = {
     '@context': 'https://schema.org',
-    '@type': 'Organization',
-    name: siteName,
+    '@type': 'CampingResort',
+    '@id': `${siteUrl}/#resort`,
+    name: 'Blueportel',
+    description: defaultDescription,
     url: siteUrl,
     logo: `${siteUrl}/logo.png`,
-    description: defaultDescription,
-    contactPoint: {
-      '@type': 'ContactPoint',
-      telephone: '+32488832091',
-      contactType: 'Customer Service',
-      availableLanguage: ['French'],
-      email: 'info@blueportel.fr',
-    },
+    image: `${siteUrl}/galerie/blueportel-hero-vue-mer.png`,
     address: {
       '@type': 'PostalAddress',
-      streetAddress: 'rue du Vinâve 32',
-      addressLocality: 'Liers',
-      addressCountry: 'BE',
-      postalCode: '4042',
+      streetAddress: 'Camping Tohapi Le Phare d\'Opale, Boulevard Sainte-Beuve',
+      addressLocality: 'Le Portel',
+      addressRegion: 'Hauts-de-France',
+      postalCode: '62480',
+      addressCountry: 'FR',
     },
+    geo: {
+      '@type': 'GeoCoordinates',
+      latitude: '50.7011',
+      longitude: '1.5758',
+    },
+    telephone: '+32488832091',
+    priceRange: '€€',
+    amenityFeature: [
+      { '@type': 'LocationFeatureSpecification', name: 'Vue Mer', value: 'true' },
+      { '@type': 'LocationFeatureSpecification', name: '3 Chambres', value: 'true' },
+      { '@type': 'LocationFeatureSpecification', name: 'Proche Nausicaá', value: 'true' },
+    ],
   };
 
   return (
@@ -138,7 +151,7 @@ export default async function RootLayout({
       >
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(lodgingSchema) }}
         />
         <Analytics />
         <CurrencyProvider>

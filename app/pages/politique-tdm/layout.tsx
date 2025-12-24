@@ -23,7 +23,7 @@ export const metadata: Metadata = {
     description: "Politique relative au Text and Data Mining de Blueportel. Protection des contenus contre l'extraction automatisée non autorisée.",
     type: "website",
     locale: "fr_FR",
-    url: `${siteUrl}/pages/politique-tdm`,
+    url: `${siteUrl}/politique-tdm`,
     siteName: "Blueportel",
     images: [
       {
@@ -41,7 +41,7 @@ export const metadata: Metadata = {
     images: [`${siteUrl}/logo.png`],
   },
   alternates: {
-    canonical: `${siteUrl}/pages/politique-tdm`,
+    canonical: `${siteUrl}/politique-tdm`,
   },
   category: "Légal",
   classification: "Politique de protection des contenus",
