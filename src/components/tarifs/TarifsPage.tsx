@@ -35,10 +35,6 @@ export default function TarifsPage({ dictionary }: TarifsPageProps) {
       from: (value) => `from ${value} / night`,
       range: (min, max) => `between ${min} and ${max} / night`,
     },
-    nl: {
-      from: (value) => `vanaf ${value} / nacht`,
-      range: (min, max) => `tussen ${min} en ${max} / nacht`,
-    },
   };
 
   const formatSeasonPrice = (season: TarifsDictionary["seasons"][number]) => {

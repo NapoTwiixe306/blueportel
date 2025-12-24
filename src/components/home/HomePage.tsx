@@ -33,9 +33,7 @@ export default function HomePage({ dictionary }: HomePageProps) {
   const homeLabel =
     dictionary.locale === "fr"
       ? "Accueil"
-      : dictionary.locale === "en"
-      ? "Home"
-      : "Startpagina";
+      : "Home";
 
   const withLocale = (path: string) => {
     if (!path || path === "#") return "#";
