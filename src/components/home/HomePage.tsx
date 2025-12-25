@@ -54,8 +54,8 @@ export default function HomePage({ dictionary }: HomePageProps) {
           dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
         />
       ))}
-      <div className="flex min-h-screen items-center justify-center bg-white font-sans w-full overflow-x-hidden">
-        <main className="flex min-h-screen w-full max-w-7xl flex-col items-center py-6 px-3 sm:py-8 sm:px-4 md:py-12 md:px-6 lg:py-16 lg:px-8 bg-white">
+      <div className="flex min-h-screen bg-white items-center justify-center font-sans w-full overflow-x-hidden">
+        <main className="flex min-h-screen bg-white w-full max-w-7xl flex-col items-center py-6 px-3 sm:py-8 sm:px-4 md:py-12 md:px-6 lg:py-16 lg:px-8">
           <nav aria-label="Breadcrumb" className="w-full max-w-7xl mb-4 sm:mb-6">
             <ol className="flex items-center space-x-2 text-xs sm:text-sm text-gray-600 px-3 sm:px-4">
               <li>
@@ -72,7 +72,7 @@ export default function HomePage({ dictionary }: HomePageProps) {
             </ol>
           </nav>
 
-          <header className="w-full max-w-4xl text-center mb-8 sm:mb-12">
+          <header className="w-full bg-white max-w-4xl text-center mb-8 sm:mb-12">
             <p className="text-xs sm:text-sm text-blue-500 font-semibold uppercase tracking-wide mb-2">
               {hero.pretitle}
             </p>
