@@ -7,18 +7,32 @@ export async function GET() {
   const protocol = host.includes('localhost') ? 'http' : 'https';
   const currentDomain = `${protocol}://${host}`;
 
-  const robotsTxt = `# robots.txt pour Blueportel
-# Politique TDM : Extraction automatisée interdite sans autorisation
+  const robotsTxt = `# robots.txt for Blueportel
+# Crawl policy focused on transactional pages only
 
 User-agent: *
-Allow: /
+Disallow: /
+Allow: /location-mobil-home-vue-mer-le-portel
+Allow: /mobile-home-sea-view-le-portel
+Allow: /contact
+Allow: /robots.txt
+Allow: /sitemap.xml
 Disallow: /api/
 Disallow: /admin/
+Disallow: /fr/
+Disallow: /en/
 
 User-agent: Googlebot
-Allow: /
+Disallow: /
+Allow: /location-mobil-home-vue-mer-le-portel
+Allow: /mobile-home-sea-view-le-portel
+Allow: /contact
+Allow: /robots.txt
+Allow: /sitemap.xml
 Disallow: /api/
 Disallow: /admin/
+Disallow: /fr/
+Disallow: /en/
 
 User-agent: GPTBot
 Disallow: /
