@@ -6,7 +6,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { Globe, DollarSign } from "lucide-react";
 
-import Logo from "../img/logo.png";
+import Logo from "../img/location-mobil-home-le-portel-logo.png";
 import { locales, type Locale } from "../i18n/locales";
 import { useCurrency, currencyOptions } from "../contexts/CurrencyContext";
 

@@ -96,7 +96,7 @@ export const enNausicaaDictionary: NausicaaDictionary = {
       "@type": "Organization",
       name: "Blueportel",
       url: siteUrl,
-      logo: `${siteUrl}/logo.png`,
+      logo: `${siteUrl}/location-mobil-home-le-portel-logo.png`,
       description: "Luxury sea-view mobile home rental in Le Portel on the Opal Coast",
       contactPoint: {
         "@type": "ContactPoint",

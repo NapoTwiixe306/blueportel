@@ -3,7 +3,7 @@ import Link from "next/link";
 import { Home as HomeIcon, Waves, MapPin, Star, ChevronRight } from "lucide-react";
 
 import ReservationForm from "../../../app/components/ReservationForm";
-import Terasse from "../../img/terasse.png";
+import Terasse from "../../img/terrasse-mobil-home-vue-mer-le-portel.png";
 
 import type { HomeDictionary, FeatureIcon } from "../../i18n/home/types";
 
@@ -200,6 +200,7 @@ export default function HomePage({ dictionary }: HomePageProps) {
                   alt={location.imageAlt}
                   width={1200}
                   height={500}
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 1200px"
                   className="w-full h-auto object-cover"
                 />
               </div>

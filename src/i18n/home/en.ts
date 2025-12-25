@@ -38,7 +38,7 @@ export const enHomeDictionary: HomeDictionary = {
       siteName: "Blueportel",
       images: [
         {
-          url: `${siteUrl}/logo.png`,
+          url: `${siteUrl}/location-mobil-home-le-portel-logo.png`,
           width: 1200,
           height: 630,
           alt: "Blueportel - Logo",
@@ -50,7 +50,7 @@ export const enHomeDictionary: HomeDictionary = {
       title: "Blueportel - Seafront Mobile Home",
       description:
         "Rent a luxury 3-bedroom mobile home facing the sea in Le Portel with panoramic views and direct beach access.",
-      images: [`${siteUrl}/logo.png`],
+      images: [`${siteUrl}/location-mobil-home-le-portel-logo.png`],
     },
   },
   structuredData: {
@@ -62,7 +62,7 @@ export const enHomeDictionary: HomeDictionary = {
       description:
         "Luxury seafront mobile home rental in Le Portel on the Opal Coast",
       url: `${siteUrl}/en`,
-      logo: `${siteUrl}/logo.png`,
+      logo: `${siteUrl}/location-mobil-home-le-portel-logo.png`,
       image: `${siteUrl}/og-image.jpg`,
       telephone: ["+32488832091", "+33745324836"],
       email: "info@blueportel.fr",
@@ -136,7 +136,7 @@ export const enHomeDictionary: HomeDictionary = {
       "@type": "Organization",
       name: "Blueportel",
       url: `${siteUrl}/en`,
-      logo: `${siteUrl}/logo.png`,
+      logo: `${siteUrl}/location-mobil-home-le-portel-logo.png`,
       description: "Luxury seafront vacation rental",
       contactPoint: {
         "@type": "ContactPoint",

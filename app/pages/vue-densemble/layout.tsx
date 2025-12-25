@@ -28,7 +28,7 @@ export const metadata: Metadata = {
     siteName: "Blueportel",
     images: [
       {
-        url: `${siteUrl}/logo.png`,
+        url: `${siteUrl}/location-mobil-home-le-portel-logo.png`,
         width: 1200,
         height: 630,
         alt: "Blueportel - Mobil-home prestige face à la mer",
@@ -40,7 +40,7 @@ export const metadata: Metadata = {
     title: "Vue d'ensemble Mobil-home Blueportel",
     description:
       "Mobil-home prestige face à la mer au Portel : vue mer directe, terrasse de 12 m², équipements premium pour 6 personnes.",
-    images: [`${siteUrl}/logo.png`],
+    images: [`${siteUrl}/location-mobil-home-le-portel-logo.png`],
   },
   alternates: {
     canonical: `${siteUrl}/location-mobil-home-le-portel`,

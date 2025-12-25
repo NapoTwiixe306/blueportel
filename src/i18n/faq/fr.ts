@@ -1,6 +1,6 @@
 import type { FAQDictionary } from "./types";
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://blueportel.com";
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://blueportel.fr";
 
 const faqEntries = [
   {
@@ -71,11 +71,11 @@ export const frFAQDictionary: FAQDictionary = {
     description:
       "Toutes les réponses pour préparer votre séjour face à la mer : localisation, équipements, wifi, animaux, accès et réservations Blueportel.",
     alternates: {
-      canonical: "/fr/faq",
+      canonical: "https://blueportel.fr/fr/faq",
       languages: {
-        "fr-FR": "/fr/faq",
-        "en-GB": "/en/faq",
-        "nl-NL": "/nl/faq",
+        "fr-FR": "https://blueportel.fr/fr/faq",
+        "en-GB": "https://blueportel.com/en/faq",
+        "nl-NL": "https://blueportel.com/nl/faq",
       },
     },
     openGraph: {

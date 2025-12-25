@@ -23,7 +23,7 @@ export const metadata: Metadata = {
     siteName: "Blueportel",
     images: [
       {
-        url: `${siteUrl}/logo.png`,
+        url: `${siteUrl}/location-mobil-home-le-portel-logo.png`,
         width: 1200,
         height: 630,
         alt: "Blueportel - Disponibilités",
@@ -35,7 +35,7 @@ export const metadata: Metadata = {
     title: "Disponibilités Mobil-home Blueportel",
     description:
       "Consultez les dates disponibles et réservez votre séjour face à la mer.",
-    images: [`${siteUrl}/logo.png`],
+    images: [`${siteUrl}/location-mobil-home-le-portel-logo.png`],
   },
   alternates: {
     canonical: `${siteUrl}/disponibilites`,

@@ -26,7 +26,7 @@ export const metadata: Metadata = {
     siteName: "Blueportel",
     images: [
       {
-        url: `${siteUrl}/logo.png`,
+        url: `${siteUrl}/location-mobil-home-le-portel-logo.png`,
         width: 1200,
         height: 630,
         alt: "Blueportel - Avis clients",
@@ -38,7 +38,7 @@ export const metadata: Metadata = {
     title: "Avis clients Blueportel",
     description:
       "Lisez les retours de voyageurs sur le mobil-home Blueportel face à la mer.",
-    images: [`${siteUrl}/logo.png`],
+    images: [`${siteUrl}/location-mobil-home-le-portel-logo.png`],
   },
   alternates: {
     canonical: `${siteUrl}/avis`,

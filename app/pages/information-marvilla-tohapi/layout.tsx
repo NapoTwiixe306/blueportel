@@ -27,7 +27,7 @@ export const metadata: Metadata = {
     siteName: "Blueportel",
     images: [
       {
-        url: `${siteUrl}/logo.png`,
+        url: `${siteUrl}/location-mobil-home-le-portel-logo.png`,
         width: 1200,
         height: 630,
         alt: "Blueportel - Logo",
@@ -38,7 +38,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Information Marvilla Tohapi - Blueportel",
     description: "Blueportel est une location indépendante au camping Le Phare d'Opale - Marvilla Tohapi à Le Portel.",
-    images: [`${siteUrl}/logo.png`],
+    images: [`${siteUrl}/location-mobil-home-le-portel-logo.png`],
   },
   alternates: {
     canonical: `${siteUrl}/camping-phare-d-opale`,

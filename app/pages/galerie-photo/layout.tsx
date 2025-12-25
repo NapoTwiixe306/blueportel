@@ -30,7 +30,7 @@ export const metadata: Metadata = {
     siteName: "Blueportel",
     images: [
       {
-        url: `${siteUrl}/logo.png`,
+        url: `${siteUrl}/location-mobil-home-le-portel-logo.png`,
         width: 1200,
         height: 630,
         alt: "Blueportel - Mobil-home vue mer Le Portel",
@@ -42,7 +42,7 @@ export const metadata: Metadata = {
     title: "Galerie Photo Blueportel | Mobil-Home Vue Mer",
     description:
       "Photos haute définition du mobil-home Blueportel : vue mer, terrasse couverte, chambres et espaces de vie lumineux.",
-    images: [`${siteUrl}/logo.png`],
+    images: [`${siteUrl}/location-mobil-home-le-portel-logo.png`],
   },
   alternates: {
     canonical: `${siteUrl}/galerie-photo`,

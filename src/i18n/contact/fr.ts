@@ -1,6 +1,6 @@
 import type { ContactDictionary } from "./types";
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://blueportel.com";
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://blueportel.fr";
 
 const countryOptions = [
   { value: "FR", label: "🇫🇷" },
@@ -21,11 +21,11 @@ export const frContactDictionary: ContactDictionary = {
     description:
       "Contactez les propriétaires du mobil-home Blueportel à Le Portel. Conseils, disponibilités et devis personnalisés pour votre séjour face à la mer.",
     alternates: {
-      canonical: "/fr/contact",
+      canonical: "https://blueportel.fr/fr/contact",
       languages: {
-        "fr-FR": "/fr/contact",
-        "en-GB": "/en/contact",
-        "nl-NL": "/nl/contact",
+        "fr-FR": "https://blueportel.fr/fr/contact",
+        "en-GB": "https://blueportel.com/en/contact",
+        "nl-NL": "https://blueportel.com/nl/contact",
       },
     },
     openGraph: {

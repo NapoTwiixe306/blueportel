@@ -1,6 +1,6 @@
 import type { OverviewDictionary } from "./types";
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://blueportel.com";
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://blueportel.fr";
 
 export const frOverviewDictionary: OverviewDictionary = {
   locale: "fr",

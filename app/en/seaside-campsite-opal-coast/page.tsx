@@ -39,7 +39,7 @@ export async function generateMetadata(): Promise<Metadata> {
       siteName: "Blueportel",
       images: [
         {
-          url: `${siteUrl}/logo.png`,
+          url: `${siteUrl}/location-mobil-home-le-portel-logo.png`,
           width: 1200,
           height: 630,
           alt: "Blueportel - Logo",
@@ -51,7 +51,7 @@ export async function generateMetadata(): Promise<Metadata> {
       title: "Marvilla Tohapi Information - Blueportel",
       description:
         "Blueportel is an independent rental at Le Phare d'Opale - Marvilla Tohapi campsite in Le Portel.",
-      images: [`${siteUrl}/logo.png`],
+      images: [`${siteUrl}/location-mobil-home-le-portel-logo.png`],
     },
     alternates: {
       canonical: `${siteUrl}/en/camping-phare-d-opale`,

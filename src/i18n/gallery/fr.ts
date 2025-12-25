@@ -1,6 +1,6 @@
 import type { GalleryDictionary, GalleryImage } from "./types";
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://blueportel.com";
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://blueportel.fr";
 
 const galleryImagesFr: GalleryImage[] = [
   {
@@ -87,11 +87,11 @@ export const frGalleryDictionary: GalleryDictionary = {
     description:
       "Explorez en photos le mobil-home Blueportel : terrasse vue mer, pièces lumineuses, chambres cosy et accès direct à la Côte d'Opale.",
     alternates: {
-      canonical: "/fr/galerie-photo",
+      canonical: "https://blueportel.fr/fr/galerie-photo",
       languages: {
-        "fr-FR": "/fr/galerie-photo",
-        "en-GB": "/en/photo-gallery",
-        "nl-NL": "/nl/fotos",
+        "fr-FR": "https://blueportel.fr/fr/galerie-photo",
+        "en-GB": "https://blueportel.com/en/photo-gallery",
+        "nl-NL": "https://blueportel.com/nl/fotos",
       },
     },
     openGraph: {

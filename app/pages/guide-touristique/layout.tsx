@@ -27,7 +27,7 @@ export const metadata: Metadata = {
     siteName: "Blueportel",
     images: [
       {
-        url: `${siteUrl}/logo.png`,
+        url: `${siteUrl}/location-mobil-home-le-portel-logo.png`,
         width: 1200,
         height: 630,
         alt: "Blueportel - Guide touristique",
@@ -39,7 +39,7 @@ export const metadata: Metadata = {
     title: "Guide touristique Le Portel | Blueportel",
     description:
       "Découvrez nos idées d’activités autour du mobil-home Blueportel : nature, culture, gastronomie et détente.",
-    images: [`${siteUrl}/logo.png`],
+    images: [`${siteUrl}/location-mobil-home-le-portel-logo.png`],
   },
   alternates: {
     canonical: `${siteUrl}/guide-touristique`,
