@@ -200,7 +200,7 @@ export default function MoneyPageEN() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(product) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faq) }} />
 
-      <main className="mx-auto max-w-6xl bg-white px-4 sm:px-6 lg:px-8 py-10 sm:py-14">
+      <main className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 py-10 sm:py-14">
         <header className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
           <div>
             <p className="text-sm font-semibold text-blue-600">
