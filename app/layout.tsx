@@ -71,16 +71,22 @@ export const metadata: Metadata = {
     images: [`${siteUrl}/location-mobil-home-le-portel-logo.png`],
   },
   robots: {
-    // Nettoyage agressif: par défaut, NOINDEX partout.
-    // Les pages money + /contact ré-activent l’indexation via leur metadata.
-    index: false,
-    follow: false,
+    index: true,
+    follow: true,
     googleBot: {
-      index: false,
-      follow: false,
+      index: true,
+      follow: true,
       'max-video-preview': -1,
       'max-image-preview': 'large',
       'max-snippet': -1,
+    },
+  },
+  alternates: {
+    canonical: siteUrl,
+    languages: {
+      'fr-FR': `${siteUrl}/fr`,
+      'en-US': `${siteUrl}/en`,
+      'nl-NL': `${siteUrl}/nl`,
     },
   },
   icons: {
@@ -107,11 +113,46 @@ export default async function RootLayout({
   const locale = headerLocale && locales.includes(headerLocale) ? headerLocale : defaultLocale;
   const layoutDictionary = getLayoutDictionary(locale);
 
+  const lodgingSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'CampingResort',
+    '@id': `${siteUrl}/#resort`,
+    name: 'Blueportel',
+    description: defaultDescription,
+    url: siteUrl,
+    logo: `${siteUrl}/location-mobil-home-le-portel-logo.png`,
+    image: `${siteUrl}/galerie/blueportel-hero-vue-mer.png`,
+    address: {
+      '@type': 'PostalAddress',
+      streetAddress: 'Camping Tohapi Le Phare d\'Opale, Boulevard Sainte-Beuve',
+      addressLocality: 'Le Portel',
+      addressRegion: 'Hauts-de-France',
+      postalCode: '62480',
+      addressCountry: 'FR',
+    },
+    geo: {
+      '@type': 'GeoCoordinates',
+      latitude: '50.7011',
+      longitude: '1.5758',
+    },
+    telephone: '+32488832091',
+    priceRange: '€€',
+    amenityFeature: [
+      { '@type': 'LocationFeatureSpecification', name: 'Vue Mer', value: 'true' },
+      { '@type': 'LocationFeatureSpecification', name: '3 Chambres', value: 'true' },
+      { '@type': 'LocationFeatureSpecification', name: 'Proche Nausicaá', value: 'true' },
+    ],
+  };
+
   return (
     <html lang={locale}>
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${gluten.variable} antialiased flex flex-col min-h-screen`}
       >
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(lodgingSchema) }}
+        />
         <Analytics />
         <CurrencyProvider>
           <Navbar locale={locale} />

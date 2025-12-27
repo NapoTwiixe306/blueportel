@@ -16,117 +16,29 @@ export function middleware(request: NextRequest) {
     domainLocale = "en";
   }
 
-  const pathLocale = locales.find((loc) => pathname === `/${loc}` || pathname.startsWith(`/${loc}/`));
+  // Vérifier si la route actuelle contient déjà une locale
+  const pathLocale = locales.find(
+    (loc) => pathname === `/${loc}` || pathname.startsWith(`/${loc}/`)
+  );
 
-  const toAbsolute = (targetHost: string, targetPath: string) => {
+  // Si on a une locale dans le domaine ET pas de locale dans le chemin
+  if (domainLocale && !pathLocale) {
+    // Rediriger vers la version avec la locale du domaine
     const url = request.nextUrl.clone();
-    url.host = targetHost;
-    url.pathname = targetPath;
-    return url;
-  };
-
-  const redirect301 = (url: URL) => NextResponse.redirect(url, 301);
-
-  // Domain-only language rule (no multilingual content on same domain):
-  // - blueportel.fr serves only FR routes (no /fr prefix publicly)
-  // - blueportel.com serves only EN routes (no /en prefix publicly)
-
-  // Cross-domain locale prefixes => send to the right domain, strip locale prefix
-  if (domainLocale === "fr" && pathLocale === "en") {
-    const stripped = pathname.replace(/^\/en(?=\/|$)/, "") || "/";
-    const mapped =
-      stripped === "/mobile-home-rental-le-portel" ? "/mobile-home-sea-view-le-portel" : stripped;
-    return redirect301(toAbsolute("blueportel.com", mapped));
-  }
-  if (domainLocale === "en" && pathLocale === "fr") {
-    const stripped = pathname.replace(/^\/fr(?=\/|$)/, "") || "/";
-    const mapped =
-      stripped === "/location-mobil-home-le-portel" ? "/location-mobil-home-vue-mer-le-portel" : stripped;
-    return redirect301(toAbsolute("blueportel.fr", mapped));
+    url.pathname = `/${domainLocale}${pathname === "/" ? "" : pathname}`;
+    return NextResponse.redirect(url);
   }
 
-  // If user hits /fr/* on .fr => strip /fr (301)
-  if (domainLocale === "fr" && pathLocale === "fr") {
-    const stripped = pathname.replace(/^\/fr(?=\/|$)/, "") || "/";
-    // consolidate old FR overview slug
-    const mapped =
-      stripped === "/location-mobil-home-le-portel" ? "/location-mobil-home-vue-mer-le-portel" : stripped;
+  // Si on a une locale dans le chemin qui ne correspond pas au domaine
+  if (domainLocale && pathLocale && pathLocale !== domainLocale) {
+    // Rediriger vers la locale correspondant au domaine
     const url = request.nextUrl.clone();
-    url.pathname = mapped;
-    return redirect301(url);
+    const pathWithoutLocale = pathname.replace(`/${pathLocale}`, "") || "/";
+    url.pathname = `/${domainLocale}${pathWithoutLocale === "/" ? "" : pathWithoutLocale}`;
+    return NextResponse.redirect(url);
   }
 
-  // If user hits /en/* on .com => strip /en (301)
-  if (domainLocale === "en" && pathLocale === "en") {
-    const stripped = pathname.replace(/^\/en(?=\/|$)/, "") || "/";
-    // consolidate old EN overview slug
-    const mapped =
-      stripped === "/mobile-home-rental-le-portel" ? "/mobile-home-sea-view-le-portel" : stripped;
-    const url = request.nextUrl.clone();
-    url.pathname = mapped;
-    return redirect301(url);
-  }
-
-  // Mandatory 301s (legacy -> money)
-  if (domainLocale === "fr") {
-    if (pathname === "/fr/pages/vue-densemble" || pathname === "/pages/vue-densemble") {
-      const url = request.nextUrl.clone();
-      url.pathname = "/location-mobil-home-vue-mer-le-portel";
-      return redirect301(url);
-    }
-    if (
-      pathname === "/location-mobil-home-le-portel" ||
-      pathname === "/mobil-home-3-chambres-vue-mer" ||
-      pathname === "/hebergement-proche-nausicaa" ||
-      pathname === "/camping-phare-d-opale"
-    ) {
-      const url = request.nextUrl.clone();
-      url.pathname = "/location-mobil-home-vue-mer-le-portel";
-      return redirect301(url);
-    }
-    // If someone tries to access the EN money URL on .fr, send to FR money.
-    if (pathname === "/mobile-home-sea-view-le-portel") {
-      const url = request.nextUrl.clone();
-      url.pathname = "/location-mobil-home-vue-mer-le-portel";
-      return redirect301(url);
-    }
-  }
-
-  if (domainLocale === "en") {
-    if (pathname === "/en/pages/overview" || pathname === "/pages/overview") {
-      const url = request.nextUrl.clone();
-      url.pathname = "/mobile-home-sea-view-le-portel";
-      return redirect301(url);
-    }
-    if (
-      pathname === "/mobile-home-rental-le-portel" ||
-      pathname === "/seaside-campsite-opal-coast" ||
-      pathname === "/accommodation-near-nausicaa"
-    ) {
-      const url = request.nextUrl.clone();
-      url.pathname = "/mobile-home-sea-view-le-portel";
-      return redirect301(url);
-    }
-    // If someone tries to access the FR money URL on .com, send to EN money.
-    if (pathname === "/location-mobil-home-vue-mer-le-portel") {
-      const url = request.nextUrl.clone();
-      url.pathname = "/mobile-home-sea-view-le-portel";
-      return redirect301(url);
-    }
-  }
-
-  // Always expose the domain locale to the app (for <html lang>, etc.)
-  if (domainLocale) {
-    const requestHeaders = new Headers(request.headers);
-    requestHeaders.set("x-path-locale", domainLocale);
-    return NextResponse.next({
-      request: {
-        headers: requestHeaders,
-      },
-    });
-  }
-
-  // Fallback: keep existing behavior when host is unknown (dev)
+  // Si on a une locale dans le chemin, l'ajouter aux headers
   if (pathLocale) {
     const requestHeaders = new Headers(request.headers);
     requestHeaders.set("x-path-locale", pathLocale);

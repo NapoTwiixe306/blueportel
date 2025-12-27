@@ -30,7 +30,8 @@ const dictionaries: Record<Locale, LayoutDictionary> = {
       phoneSecondaryLabel: "+33 745 32 48 36",
       emailLabel: "info@blueportel.fr",
       quickLinks: [
-        { href: "/location-mobil-home-vue-mer-le-portel", label: "Réserver (vue mer Le Portel)" },
+        { href: "/camping-phare-d-opale", label: "Information Marvilla Tohapi" },
+        { href: "/politique-tdm", label: "Politique TDM" },
         { href: "/contact", label: "Contact" },
       ],
       facebookLabel: "Suivez-nous sur Facebook",
@@ -48,7 +49,8 @@ const dictionaries: Record<Locale, LayoutDictionary> = {
       phoneSecondaryLabel: "+33 745 32 48 36",
       emailLabel: "info@blueportel.fr",
       quickLinks: [
-        { href: "/mobile-home-sea-view-le-portel", label: "Book (sea view Le Portel)" },
+        { href: "/seaside-campsite-opal-coast", label: "Marvilla Tohapi Info" },
+        { href: "/terms", label: "TDM Policy" },
         { href: "/contact", label: "Contact" },
       ],
       facebookLabel: "Follow us on Facebook",
@@ -64,7 +66,15 @@ export function getLayoutDictionary(locale: Locale): LayoutDictionary {
   return {
     footer: {
       ...base.footer,
-      quickLinks: base.footer.quickLinks,
+      quickLinks: base.footer.quickLinks.map((link) => {
+        if (link.href.startsWith("http")) {
+          return link;
+        }
+        return {
+          ...link,
+          href: `/${safeLocale}${link.href}`,
+        };
+      }),
     },
   };
 }

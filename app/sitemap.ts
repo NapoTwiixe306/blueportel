@@ -9,37 +9,37 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const frDomain = 'https://blueportel.fr';
   const enDomain = 'https://blueportel.com';
 
-  // Nettoyage agressif: sitemap = pages money + 1 page soutien max
+  // Si on est sur le .com, on ne renvoie que la page EN
   if (isEnDomain) {
     return [
       {
-        url: `${enDomain}/mobile-home-sea-view-le-portel`,
+        url: `${enDomain}/en/mobile-home-rental-le-portel`,
         lastModified: new Date(),
         changeFrequency: 'daily' as const,
         priority: 1.0,
       },
-      {
-        url: `${enDomain}/contact`,
-        lastModified: new Date(),
-        changeFrequency: 'monthly' as const,
-        priority: 0.2,
-      },
     ];
   }
 
-  // Sinon (sur le .fr), on renvoie uniquement money + contact
+  // Sinon (sur le .fr), on renvoie les 3 pages FR
   return [
     {
-      url: `${frDomain}/location-mobil-home-vue-mer-le-portel`,
+      url: `${frDomain}/fr/location-mobil-home-le-portel`,
       lastModified: new Date(),
       changeFrequency: 'daily' as const,
       priority: 1.0,
     },
     {
-      url: `${frDomain}/contact`,
+      url: `${frDomain}/fr/mobil-home-3-chambres-vue-mer`,
       lastModified: new Date(),
-      changeFrequency: 'monthly' as const,
-      priority: 0.2,
+      changeFrequency: 'weekly' as const,
+      priority: 0.8,
+    },
+    {
+      url: `${frDomain}/fr/hebergement-proche-nausicaa`,
+      lastModified: new Date(),
+      changeFrequency: 'weekly' as const,
+      priority: 0.8,
     },
   ];
 }
