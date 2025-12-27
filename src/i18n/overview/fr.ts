@@ -9,11 +9,11 @@ export const frOverviewDictionary: OverviewDictionary = {
     description:
       "Réservez votre mobil-home de prestige à Le Portel (62). 3 chambres, 6 pers, vue mer panoramique sur la Côte d'Opale. Proche Nausicaá. Confort premium garanti.",
     alternates: {
-      canonical: "https://blueportel.fr/fr/location-mobil-home-le-portel",
+      canonical: "/fr/location-mobil-home-le-portel",
       languages: {
-        "fr-FR": "https://blueportel.fr/fr/location-mobil-home-le-portel",
-        "en-GB": "https://blueportel.com/en/mobile-home-rental-le-portel",
-        "x-default": "https://blueportel.fr/fr/location-mobil-home-le-portel",
+        "fr-FR": "/fr/location-mobil-home-le-portel",
+        "en-GB": "/en/mobile-home-rental-le-portel",
+        "x-default": "/fr/location-mobil-home-le-portel",
       },
     },
     openGraph: {
