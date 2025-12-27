@@ -1,6 +1,6 @@
 import type { HomeDictionary } from "./types";
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://blueportel.fr";
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://blueportel.com";
 
 export const frHomeDictionary: HomeDictionary = {
   locale: "fr",
@@ -29,10 +29,10 @@ export const frHomeDictionary: HomeDictionary = {
     creator: "Blueportel",
     publisher: "Blueportel",
     alternates: {
-      canonical: "https://blueportel.fr/fr",
+      canonical: "/fr",
       languages: {
-        "fr-FR": "https://blueportel.fr/fr",
-        "en-GB": "https://blueportel.com/en",
+        "fr-FR": "/fr",
+        "en-GB": "/en",
       },
     },
     openGraph: {
@@ -45,7 +45,7 @@ export const frHomeDictionary: HomeDictionary = {
       siteName: "Blueportel",
       images: [
         {
-          url: `${siteUrl}/location-mobil-home-le-portel-logo.png`,
+          url: `${siteUrl}/logo.png`,
           width: 1200,
           height: 630,
           alt: "Blueportel - Logo",
@@ -57,7 +57,7 @@ export const frHomeDictionary: HomeDictionary = {
       title: "Blueportel - Mobil-Home Prestige Face à la Mer",
       description:
         "Location mobil-home prestige 3 chambres face à la mer au Portel. Vue panoramique, accès direct plage.",
-      images: [`${siteUrl}/location-mobil-home-le-portel-logo.png`],
+      images: [`${siteUrl}/logo.png`],
     },
   },
   structuredData: {
@@ -69,7 +69,7 @@ export const frHomeDictionary: HomeDictionary = {
       description:
         "Location de mobil-home prestige face à la mer au Portel sur la Côte d'Opale",
       url: `${siteUrl}/fr`,
-      logo: `${siteUrl}/location-mobil-home-le-portel-logo.png`,
+      logo: `${siteUrl}/logo.png`,
       image: `${siteUrl}/og-image.jpg`,
       telephone: ["+32488832091", "+33745324836"],
       email: "info@blueportel.fr",
@@ -152,7 +152,7 @@ export const frHomeDictionary: HomeDictionary = {
       "@type": "Organization",
       name: "Blueportel",
       url: `${siteUrl}/fr`,
-      logo: `${siteUrl}/location-mobil-home-le-portel-logo.png`,
+      logo: `${siteUrl}/logo.png`,
       description: "Location de mobil-home prestige face à la mer",
       contactPoint: {
         "@type": "ContactPoint",

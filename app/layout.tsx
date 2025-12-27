@@ -57,7 +57,7 @@ export const metadata: Metadata = {
     description: defaultDescription,
     images: [
       {
-        url: `${siteUrl}/location-mobil-home-le-portel-logo.png`,
+        url: `${siteUrl}/logo.png`,
         width: 1200,
         height: 630,
         alt: 'Blueportel - Logo',
@@ -68,7 +68,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: defaultTitle,
     description: defaultDescription,
-    images: [`${siteUrl}/location-mobil-home-le-portel-logo.png`],
+    images: [`${siteUrl}/logo.png`],
   },
   robots: {
     index: true,
@@ -91,13 +91,13 @@ export const metadata: Metadata = {
   },
   icons: {
     icon: [
-      { url: '/location-mobil-home-le-portel-logo.png', sizes: 'any' },
-      { url: '/location-mobil-home-le-portel-logo.png', type: 'image/png' },
+      { url: '/logo.png', sizes: 'any' },
+      { url: '/logo.png', type: 'image/png' },
     ],
     apple: [
-      { url: '/location-mobil-home-le-portel-logo.png', sizes: '180x180', type: 'image/png' },
+      { url: '/logo.png', sizes: '180x180', type: 'image/png' },
     ],
-    shortcut: '/location-mobil-home-le-portel-logo.png',
+    shortcut: '/logo.png',
   },
   category: 'Tourisme',
   classification: 'Location de mobil-home',
@@ -120,7 +120,7 @@ export default async function RootLayout({
     name: 'Blueportel',
     description: defaultDescription,
     url: siteUrl,
-    logo: `${siteUrl}/location-mobil-home-le-portel-logo.png`,
+    logo: `${siteUrl}/logo.png`,
     image: `${siteUrl}/galerie/blueportel-hero-vue-mer.png`,
     address: {
       '@type': 'PostalAddress',

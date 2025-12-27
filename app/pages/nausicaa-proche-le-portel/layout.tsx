@@ -39,7 +39,7 @@ export const metadata: Metadata = {
     siteName: "Blueportel",
     images: [
       {
-        url: `${siteUrl}/location-mobil-home-le-portel-logo.png`,
+        url: `${siteUrl}/logo.png`,
         width: 1200,
         height: 630,
         alt: "Blueportel - Location mobil-home proche Nausicaá",
@@ -50,7 +50,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Nausicaá - Location Mobil-Home à 10 min | Blueportel",
     description: "Location mobil-home à Le Portel, à 10 min de Nausicaá. Mobil-home 3 chambres face à la mer, idéal pour visiter Nausicaá en famille.",
-    images: [`${siteUrl}/location-mobil-home-le-portel-logo.png`],
+    images: [`${siteUrl}/logo.png`],
   },
   alternates: {
     canonical: `${siteUrl}/hebergement-proche-nausicaa`,

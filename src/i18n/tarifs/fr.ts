@@ -1,6 +1,6 @@
 import type { TarifsDictionary } from "./types";
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://blueportel.fr";
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://blueportel.com";
 
 export const frTarifsDictionary: TarifsDictionary = {
   locale: "fr",
@@ -9,11 +9,11 @@ export const frTarifsDictionary: TarifsDictionary = {
     description:
       "Découvrez les tarifs basse, moyenne et haute saison du mobil-home Blueportel. Acompte 30%, caution 500€, linge et ménage inclus. Réservez votre séjour face à la mer.",
     alternates: {
-      canonical: "https://blueportel.fr/fr/tarifs",
+      canonical: "/fr/tarifs",
       languages: {
-        "fr-FR": "https://blueportel.fr/fr/tarifs",
-        "en-GB": "https://blueportel.com/en/rates",
-        "nl-NL": "https://blueportel.com/nl/tarieven",
+        "fr-FR": "/fr/tarifs",
+        "en-GB": "/en/rates",
+        "nl-NL": "/nl/tarieven",
       },
     },
     openGraph: {

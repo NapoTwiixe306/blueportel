@@ -1,6 +1,6 @@
 import type { GuideDictionary } from "./types";
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://blueportel.fr";
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://blueportel.com";
 
 export const frGuideDictionary: GuideDictionary = {
   locale: "fr",
@@ -9,11 +9,11 @@ export const frGuideDictionary: GuideDictionary = {
     description:
       "Idées d'activités automnales autour du mobil-home Blueportel : balades iodées, Nausicaá, adresses gourmandes et panoramas sur la Côte d'Opale.",
     alternates: {
-      canonical: "https://blueportel.fr/fr/guide-touristique",
+      canonical: "/fr/guide-touristique",
       languages: {
-        "fr-FR": "https://blueportel.fr/fr/guide-touristique",
-        "en-GB": "https://blueportel.com/en/travel-guide",
-        "nl-NL": "https://blueportel.com/nl/gids",
+        "fr-FR": "/fr/guide-touristique",
+        "en-GB": "/en/travel-guide",
+        "nl-NL": "/nl/gids",
       },
     },
     openGraph: {

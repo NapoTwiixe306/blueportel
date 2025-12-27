@@ -31,7 +31,7 @@ export const metadata: Metadata = {
     siteName: "Blueportel",
     images: [
       {
-        url: `${siteUrl}/location-mobil-home-le-portel-logo.png`,
+        url: `${siteUrl}/logo.png`,
         width: 1200,
         height: 630,
         alt: "Blueportel - Logo",
@@ -42,7 +42,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Contact Blueportel - Location Mobil-Home Face à la Mer",
     description: "Contactez Michel & Véro pour votre location de mobil-home face à la mer au Portel. Mobil-home 3 chambres, vue panoramique.",
-    images: [`${siteUrl}/location-mobil-home-le-portel-logo.png`],
+    images: [`${siteUrl}/logo.png`],
   },
   alternates: {
     canonical: `${siteUrl}/contact`,

@@ -9,7 +9,7 @@ import { Phone, Mail, MapPin, Facebook, Link2 } from "lucide-react";
 import type { FooterDictionary } from "../i18n/layout";
 import { getLayoutDictionary } from "../i18n/layout";
 import { locales, type Locale } from "../i18n/locales";
-import Logo from "../img/location-mobil-home-le-portel-logo.png";
+import Logo from "../img/logo.png";
 
 type FooterProps = {
   dictionary: FooterDictionary;

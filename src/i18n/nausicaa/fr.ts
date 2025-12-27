@@ -96,7 +96,7 @@ export const frNausicaaDictionary: NausicaaDictionary = {
       "@type": "Organization",
       name: "Blueportel",
       url: siteUrl,
-      logo: `${siteUrl}/location-mobil-home-le-portel-logo.png`,
+      logo: `${siteUrl}/logo.png`,
       description: "Location de mobil-home prestige face à la mer au Portel sur la Côte d'Opale",
       contactPoint: {
         "@type": "ContactPoint",

@@ -11,17 +11,17 @@ export default function manifest(): MetadataRoute.Manifest {
     theme_color: '#2663EB',
     icons: [
       {
-        src: '/location-mobil-home-le-portel-logo.png',
+        src: '/logo.png',
         sizes: '206x138',
         type: 'image/png',
       },
       {
-        src: '/location-mobil-home-le-portel-logo.png',
+        src: '/logo.png',
         sizes: '192x192',
         type: 'image/png',
       },
       {
-        src: '/location-mobil-home-le-portel-logo.png',
+        src: '/logo.png',
         sizes: '512x512',
         type: 'image/png',
       },

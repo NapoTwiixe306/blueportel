@@ -28,7 +28,7 @@ export const metadata: Metadata = {
     siteName: "Blueportel",
     images: [
       {
-        url: `${siteUrl}/location-mobil-home-le-portel-logo.png`,
+        url: `${siteUrl}/logo.png`,
         width: 1200,
         height: 630,
         alt: "Blueportel - Plan d'accès",
@@ -40,7 +40,7 @@ export const metadata: Metadata = {
     title: "Plan d'accès Blueportel | Côte d'Opale",
     description:
       "Toutes les options pour venir à Blueportel : voiture, train, bus, vélo et distances clés vers Le Portel.",
-    images: [`${siteUrl}/location-mobil-home-le-portel-logo.png`],
+    images: [`${siteUrl}/logo.png`],
   },
   alternates: {
     canonical: `${siteUrl}/plan`,

@@ -1,6 +1,6 @@
 import type { AvisDictionary } from "./types";
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://blueportel.fr";
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://blueportel.com";
 
 const reviews = [
   {
@@ -30,11 +30,11 @@ export const frAvisDictionary: AvisDictionary = {
     description:
       "Notes vérifiées des voyageurs Blueportel. Découvrez pourquoi notre mobil-home face à la mer obtient 4.9/5 depuis 2022.",
     alternates: {
-      canonical: "https://blueportel.fr/fr/avis",
+      canonical: "/fr/avis",
       languages: {
-        "fr-FR": "https://blueportel.fr/fr/avis",
-        "en-GB": "https://blueportel.com/en/reviews",
-        "nl-NL": "https://blueportel.com/nl/beoordelingen",
+        "fr-FR": "/fr/avis",
+        "en-GB": "/en/reviews",
+        "nl-NL": "/nl/beoordelingen",
       },
     },
     openGraph: {
