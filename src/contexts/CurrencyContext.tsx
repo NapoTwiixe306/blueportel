@@ -45,6 +45,7 @@ const CurrencyContext = createContext<CurrencyContextValue | undefined>(undefine
 const localeFormatMap: Record<Locale, string> = {
   fr: "fr-FR",
   en: "en-GB",
+  nl: "nl-NL",
 };
 
 export function CurrencyProvider({ children }: { children: React.ReactNode }) {

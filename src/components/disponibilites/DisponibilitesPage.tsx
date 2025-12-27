@@ -119,7 +119,7 @@ export default function DisponibilitesPage({ dictionary }: DisponibilitesPagePro
 
   const dayFormatter = useMemo(
     () =>
-      new Intl.DateTimeFormat(locale === "en" ? "en-GB" : "fr-FR", {
+      new Intl.DateTimeFormat(locale === "en" ? "en-GB" : locale === "nl" ? "nl-NL" : "fr-FR", {
         weekday: "long",
         day: "numeric",
         month: "long",
@@ -172,7 +172,7 @@ export default function DisponibilitesPage({ dictionary }: DisponibilitesPagePro
       }
 
       const monthLabel = new Intl.DateTimeFormat(
-        locale === "en" ? "en-GB" : "fr-FR",
+        locale === "en" ? "en-GB" : locale === "nl" ? "nl-NL" : "fr-FR",
         {
           month: "long",
           year: "numeric",
@@ -196,6 +196,7 @@ export default function DisponibilitesPage({ dictionary }: DisponibilitesPagePro
   const weekdayShort: Record<AvailabilityDictionary["locale"], string[]> = {
     fr: ["lun.", "mar.", "mer.", "jeu.", "ven.", "sam.", "dim."],
     en: ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"],
+    nl: ["ma", "di", "wo", "do", "vr", "za", "zo"],
   };
 
   const withLocale = (path: string) => {
@@ -269,6 +270,20 @@ export default function DisponibilitesPage({ dictionary }: DisponibilitesPagePro
                     full iCal calendar
                   </Link>{" "}
                   provided by Lodgify.
+                </>
+              )}
+              {locale === "nl" && (
+                <>
+                  U kunt ook de{" "}
+                  <Link
+                    href={lodgifyIcsUrl}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="underline hover:text-blue-600"
+                  >
+                    volledige iCal-kalender
+                  </Link>{" "}
+                  van Lodgify openen.
                 </>
               )}
             </p>
