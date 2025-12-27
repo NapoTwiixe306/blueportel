@@ -8,23 +8,23 @@ const mapUrl =
 export const frNausicaaDictionary: NausicaaDictionary = {
   locale: "fr",
   metadata: {
-    title: "Hébergement Proche Nausicaá Boulogne-sur-Mer | Mobil-Home Vue Mer",
+    title: "Mobil-home proche Nausicaá | Blueportel Le Portel",
     description:
       "Mobil-home 3 chambres face à la mer, à seulement 10 minutes de Nausicaá. Découvrez nos conseils pratiques pour votre visite et réservez votre séjour Blueportel.",
     alternates: {
-      canonical: "/fr/hebergement-proche-nausicaa",
+      canonical: "/fr/pages/nausicaa-proche-le-portel",
       languages: {
-        "fr-FR": "/fr/hebergement-proche-nausicaa",
-        "en-GB": "/en/accommodation-near-nausicaa",
-        "nl-NL": "/nl/nausicaa-dichtbij",
+        "fr-FR": "/fr/pages/nausicaa-proche-le-portel",
+        "en-GB": "/en/pages/nausicaa-proche-le-portel",
+        "nl-NL": "/nl/pages/nausicaa-proche-le-portel",
       },
     },
     openGraph: {
-      title: "Hébergement Proche Nausicaá Boulogne-sur-Mer | Blueportel",
+      title: "Blueportel – mobil-home à 10 min de Nausicaá",
       description:
         "Location mobil-home prestige face à la mer, idéale pour visiter Nausicaá en famille. Vue panoramique, terrasse couverte, 3 chambres.",
       type: "website",
-      url: `${siteUrl}/fr/hebergement-proche-nausicaa`,
+      url: `${siteUrl}/fr/pages/nausicaa-proche-le-portel`,
     },
   },
   hero: {
@@ -86,8 +86,8 @@ export const frNausicaaDictionary: NausicaaDictionary = {
         {
           "@type": "ListItem",
           position: 2,
-          name: "Hébergement proche Nausicaá",
-          item: `${siteUrl}/fr/hebergement-proche-nausicaa`,
+          name: "Nausicaá",
+          item: `${siteUrl}/fr/pages/nausicaa-proche-le-portel`,
         },
       ],
     },
@@ -225,7 +225,7 @@ export const frNausicaaDictionary: NausicaaDictionary = {
       "Entre Nausicaá, les plages de Le Portel et les falaises de la Côte d'Opale, Blueportel est votre camp de base idéal.",
     buttons: {
       primary: { label: "Vérifier les disponibilités", href: mapUrl, rel: "nofollow" },
-      secondary: { label: "Contact", href: "/contact" },
+      secondary: { label: "Contact", href: "/pages/contact" },
     },
   },
   contact: {

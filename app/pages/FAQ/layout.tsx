@@ -35,7 +35,7 @@ export const metadata: Metadata = {
     description: "Trouvez toutes les réponses à vos questions sur la location de mobil-home Blueportel au Portel. Mobil-home 3 chambres face à la mer avec vue panoramique, équipements, réservation, tarifs.",
     type: "website",
     locale: "fr_FR",
-    url: `${siteUrl}/faq`,
+    url: `${siteUrl}/pages/FAQ`,
     siteName: "Blueportel",
     images: [
       {
@@ -53,7 +53,7 @@ export const metadata: Metadata = {
     images: [`${siteUrl}/logo.png`],
   },
   alternates: {
-    canonical: `${siteUrl}/faq`,
+    canonical: `${siteUrl}/pages/FAQ`,
   },
   category: "Tourisme",
   classification: "Location de mobil-home - FAQ",

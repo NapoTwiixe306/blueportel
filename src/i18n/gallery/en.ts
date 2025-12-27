@@ -87,18 +87,18 @@ export const enGalleryDictionary: GalleryDictionary = {
     description:
       "Discover the Blueportel mobile home in photos: panoramic terrace, bright living areas, cozy bedrooms and direct access to the Opal Coast.",
     alternates: {
-      canonical: "/en/photo-gallery",
+      canonical: "/en/pages/galerie-photo",
       languages: {
-        "fr-FR": "/fr/galerie-photo",
-        "en-GB": "/en/photo-gallery",
-        "nl-NL": "/nl/fotos",
+        "fr-FR": "/fr/pages/galerie-photo",
+        "en-GB": "/en/pages/galerie-photo",
+        "nl-NL": "/nl/pages/galerie-photo",
       },
     },
     openGraph: {
       title: "Blueportel photo gallery",
       description: "HD visuals of the terrace, interiors and sea view of the Blueportel mobile home.",
       type: "website",
-      url: `${siteUrl}/en/photo-gallery`,
+      url: `${siteUrl}/en/pages/galerie-photo`,
     },
   },
   structuredData: {
@@ -127,7 +127,7 @@ export const enGalleryDictionary: GalleryDictionary = {
           "@type": "ListItem",
           position: 2,
           name: "Photo gallery",
-          item: `${siteUrl}/en/photo-gallery`,
+          item: `${siteUrl}/en/pages/galerie-photo`,
         },
       ],
     },
@@ -166,7 +166,7 @@ export const enGalleryDictionary: GalleryDictionary = {
       "https://checkout.lodgify.com/en/blueportel/654566/reservation?currency=EUR&ref=bnbox&adults=1",
     bookingRel: "nofollow",
     contactLabel: "Contact us",
-    contactHref: "/contact",
+    contactHref: "/pages/contact",
   },
   screenReader: {
     title: "Blueportel photo gallery",

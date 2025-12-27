@@ -9,11 +9,11 @@ export const enTarifsDictionary: TarifsDictionary = {
     description:
       "Seasonal rates for the Blueportel mobile home. 30% deposit, €500 security hold, linen and cleaning included. Book your stay by the sea.",
     alternates: {
-      canonical: "/en/rates",
+      canonical: "/en/pages/tarifs",
       languages: {
-        "fr-FR": "/fr/tarifs",
-        "en-GB": "/en/rates",
-        "nl-NL": "/nl/tarieven",
+        "fr-FR": "/fr/pages/tarifs",
+        "en-GB": "/en/pages/tarifs",
+        "nl-NL": "/nl/pages/tarifs",
       },
     },
     openGraph: {
@@ -21,7 +21,7 @@ export const enTarifsDictionary: TarifsDictionary = {
       description:
         "Seasonal prices, booking policy and services included for your Le Portel seaside stay.",
       type: "website",
-      url: `${siteUrl}/en/rates`,
+      url: `${siteUrl}/en/pages/tarifs`,
     },
   },
   structuredData: {
@@ -30,7 +30,7 @@ export const enTarifsDictionary: TarifsDictionary = {
       "@type": "BreadcrumbList",
       itemListElement: [
         { "@type": "ListItem", position: 1, name: "Home", item: `${siteUrl}/en` },
-        { "@type": "ListItem", position: 2, name: "Rates", item: `${siteUrl}/en/rates` },
+        { "@type": "ListItem", position: 2, name: "Rates", item: `${siteUrl}/en/pages/tarifs` },
       ],
     },
   },

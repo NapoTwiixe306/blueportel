@@ -21,11 +21,11 @@ export const frContactDictionary: ContactDictionary = {
     description:
       "Contactez les propriétaires du mobil-home Blueportel à Le Portel. Conseils, disponibilités et devis personnalisés pour votre séjour face à la mer.",
     alternates: {
-      canonical: "/fr/contact",
+      canonical: "/fr/pages/contact",
       languages: {
-        "fr-FR": "/fr/contact",
-        "en-GB": "/en/contact",
-        "nl-NL": "/nl/contact",
+        "fr-FR": "/fr/pages/contact",
+        "en-GB": "/en/pages/contact",
+        "nl-NL": "/nl/pages/contact",
       },
     },
     openGraph: {
@@ -33,7 +33,7 @@ export const frContactDictionary: ContactDictionary = {
       description:
         "Parlez directement avec Michel & Véro pour organiser votre séjour dans notre mobil-home face à la mer.",
       type: "website",
-      url: `${siteUrl}/fr/contact`,
+      url: `${siteUrl}/fr/pages/contact`,
     },
   },
   structuredData: {
@@ -42,7 +42,7 @@ export const frContactDictionary: ContactDictionary = {
       "@type": "BreadcrumbList",
       itemListElement: [
         { "@type": "ListItem", position: 1, name: "Accueil", item: `${siteUrl}/fr` },
-        { "@type": "ListItem", position: 2, name: "Contact", item: `${siteUrl}/fr/contact` },
+        { "@type": "ListItem", position: 2, name: "Contact", item: `${siteUrl}/fr/pages/contact` },
       ],
     },
     person: {
@@ -58,7 +58,7 @@ export const frContactDictionary: ContactDictionary = {
       "@context": "https://schema.org",
       "@type": "ContactPage",
       name: "Contact Blueportel",
-      url: `${siteUrl}/fr/contact`,
+      url: `${siteUrl}/fr/pages/contact`,
       mainEntity: {
         "@type": "Organization",
         name: "Blueportel",

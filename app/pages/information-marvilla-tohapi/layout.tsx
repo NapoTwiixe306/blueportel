@@ -23,7 +23,7 @@ export const metadata: Metadata = {
     description: "Blueportel est une location indépendante au camping Le Phare d'Opale - Marvilla Tohapi à Le Portel. Mobil-home premium avec vue mer directe.",
     type: "website",
     locale: "fr_FR",
-    url: `${siteUrl}/camping-phare-d-opale`,
+    url: `${siteUrl}/pages/information-marvilla-tohapi`,
     siteName: "Blueportel",
     images: [
       {
@@ -41,7 +41,7 @@ export const metadata: Metadata = {
     images: [`${siteUrl}/logo.png`],
   },
   alternates: {
-    canonical: `${siteUrl}/camping-phare-d-opale`,
+    canonical: `${siteUrl}/pages/information-marvilla-tohapi`,
   },
   category: "Information",
   classification: "Information légale",

@@ -9,11 +9,11 @@ export const nlAvailabilityDictionary: AvailabilityDictionary = {
     description:
       "Bekijk de real-time beschikbaarheid van de Blueportel mobilhome in Le Portel. Lodgify-kalender en veilige reservering aan zee.",
     alternates: {
-      canonical: "/nl/beschikbaarheid",
+      canonical: "/nl/pages/disponibilites",
       languages: {
-        "fr-FR": "/fr/disponibilites",
-        "en-GB": "/en/availability",
-        "nl-NL": "/nl/beschikbaarheid",
+        "fr-FR": "/fr/pages/disponibilites",
+        "en-GB": "/en/pages/disponibilites",
+        "nl-NL": "/nl/pages/disponibilites",
       },
     },
     openGraph: {
@@ -21,7 +21,7 @@ export const nlAvailabilityDictionary: AvailabilityDictionary = {
       description:
         "Beschikbaarheidskalender van de Blueportel mobilhome. Kies uw data en boek online of neem rechtstreeks contact op.",
       type: "website",
-      url: `${siteUrl}/nl/beschikbaarheid`,
+      url: `${siteUrl}/nl/pages/disponibilites`,
     },
   },
   structuredData: {
@@ -34,7 +34,7 @@ export const nlAvailabilityDictionary: AvailabilityDictionary = {
           "@type": "ListItem",
           position: 2,
           name: "Beschikbaarheid",
-          item: `${siteUrl}/nl/beschikbaarheid`,
+          item: `${siteUrl}/nl/pages/disponibilites`,
         },
       ],
     },

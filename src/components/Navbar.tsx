@@ -32,33 +32,33 @@ const navItemsByLocale: Record<Locale, NavItem[]> = {
       label: "Logement",
       items: [
         { label: "Accueil", href: "/" },
-        { label: "Photos", href: "/galerie-photo" },
-        { label: "Vue d'ensemble", href: "/location-mobil-home-le-portel" },
-        { label: "Plan", href: "/plan" },
-        { label: "Avis", href: "/avis" },
+        { label: "Photos", href: "/pages/galerie-photo" },
+        { label: "Vue d'ensemble", href: "/pages/vue-densemble" },
+        { label: "Plan", href: "/pages/plan" },
+        { label: "Avis", href: "/pages/avis" },
       ],
     },
     {
       label: "Séjours & Réservations",
       items: [
-        { label: "Disponibilités", href: "/disponibilites" },
-        { label: "Tarifs", href: "/tarifs" },
-        { label: "Réservation personnalisée", href: "/contact" },
+        { label: "Disponibilités", href: "/pages/disponibilites" },
+        { label: "Tarifs", href: "/pages/tarifs" },
+        { label: "Réservation personnalisée", href: "/pages/contact" },
         { label: "Réserver / Calendrier", href: "#" },
       ],
     },
     {
       label: "À proximité",
       items: [
-        { label: "Nausicaa", href: "/hebergement-proche-nausicaa" },
-        { label: "Guide touristique", href: "/guide-touristique" },
+        { label: "Nausicaa", href: "/pages/nausicaa-proche-le-portel" },
+        { label: "Guide touristique", href: "/pages/guide-touristique" },
       ],
     },
     {
       label: "Infos pratiques",
       items: [
-        { label: "FAQ Blueportel", href: "/faq" },
-        { label: "Contact", href: "/contact" },
+        { label: "FAQ Blueportel", href: "/pages/FAQ" },
+        { label: "Contact", href: "/pages/contact" },
       ],
     },
   ],
@@ -67,33 +67,68 @@ const navItemsByLocale: Record<Locale, NavItem[]> = {
       label: "Stay",
       items: [
         { label: "Home", href: "/" },
-        { label: "Photos", href: "/photo-gallery" },
-        { label: "Highlights", href: "/mobile-home-rental-le-portel" },
-        { label: "Map", href: "/map" },
-        { label: "Reviews", href: "/reviews" },
+        { label: "Photos", href: "/pages/galerie-photo" },
+        { label: "Highlights", href: "/pages/vue-densemble" },
+        { label: "Map", href: "/pages/plan" },
+        { label: "Reviews", href: "/pages/avis" },
       ],
     },
     {
       label: "Bookings",
       items: [
-        { label: "Availability", href: "/availability" },
-        { label: "Rates", href: "/rates" },
-        { label: "Custom request", href: "/contact" },
+        { label: "Availability", href: "/pages/disponibilites" },
+        { label: "Rates", href: "/pages/tarifs" },
+        { label: "Custom request", href: "/pages/contact" },
         { label: "Booking / Calendar", href: "#" },
       ],
     },
     {
       label: "Discover",
       items: [
-        { label: "Nausicaá", href: "/accommodation-near-nausicaa" },
-        { label: "Travel guide", href: "/travel-guide" },
+        { label: "Nausicaá", href: "/pages/nausicaa-proche-le-portel" },
+        { label: "Travel guide", href: "/pages/guide-touristique" },
       ],
     },
     {
       label: "Info",
       items: [
-        { label: "Blueportel FAQ", href: "/faq" },
-        { label: "Contact", href: "/contact" },
+        { label: "Blueportel FAQ", href: "/pages/FAQ" },
+        { label: "Contact", href: "/pages/contact" },
+      ],
+    },
+  ],
+  nl: [
+    {
+      label: "Verblijf",
+      items: [
+        { label: "Home", href: "/" },
+        { label: "Foto's", href: "/pages/galerie-photo" },
+        { label: "Overzicht", href: "/pages/vue-densemble" },
+        { label: "Plan", href: "/pages/plan" },
+        { label: "Beoordelingen", href: "/pages/avis" },
+      ],
+    },
+    {
+      label: "Boeken",
+      items: [
+        { label: "Beschikbaarheid", href: "/pages/disponibilites" },
+        { label: "Tarieven", href: "/pages/tarifs" },
+        { label: "Maatwerk aanvraag", href: "/pages/contact" },
+        { label: "Reservering / Kalender", href: "#" },
+      ],
+    },
+    {
+      label: "Ontdekken",
+      items: [
+        { label: "Nausicaá", href: "/pages/nausicaa-proche-le-portel" },
+        { label: "Toeristische gids", href: "/pages/guide-touristique" },
+      ],
+    },
+    {
+      label: "Praktisch",
+      items: [
+        { label: "Blueportel FAQ", href: "/pages/FAQ" },
+        { label: "Contact", href: "/pages/contact" },
       ],
     },
   ],
@@ -102,41 +137,49 @@ const navItemsByLocale: Record<Locale, NavItem[]> = {
 const bookingLabel: Record<Locale, string> = {
   fr: "Réservez Maintenant",
   en: "Book now",
+  nl: "Nu boeken",
 };
 
 const bookingShortLabel: Record<Locale, string> = {
   fr: "Réserver",
   en: "Book",
+  nl: "Boeken",
 };
 
 const bookingUrl: Record<Locale, string> = {
   fr: "https://checkout.lodgify.com/fr/blueportel/654566/reservation?currency=EUR&ref=bnbox&adults=1",
   en: "https://checkout.lodgify.com/en/blueportel/654566/reservation?currency=EUR&ref=bnbox&adults=1",
+  nl: "https://checkout.lodgify.com/nl/blueportel/654566/reservation?currency=EUR&ref=bnbox&adults=1",
 };
 
 const languageOptions: LanguageOption[] = [
   { code: "fr", label: "Français", flag: "🇫🇷" },
   { code: "en", label: "English", flag: "🇬🇧" },
+  { code: "nl", label: "Nederlands", flag: "🇳🇱" },
 ];
 
 const preferencesLabel: Record<Locale, string> = {
   fr: "Préférences",
   en: "Preferences",
+  nl: "Voorkeuren",
 };
 
 const languageLabel: Record<Locale, string> = {
   fr: "Langue",
   en: "Language",
+  nl: "Taal",
 };
 
 const currencyLabel: Record<Locale, string> = {
   fr: "Devise d'affichage",
   en: "Display Currency",
+  nl: "Valuta",
 };
 
 const toolkitInfo: Record<Locale, (lang: string, currency: string) => string> = {
   fr: (lang, currency) => `Interface en ${lang} – prix affichés en ${currency}.`,
   en: (lang, currency) => `Interface in ${lang} – prices shown in ${currency}.`,
+  nl: (lang, currency) => `Interface in ${lang} – prijzen weergegeven in ${currency}.`,
 };
 
 interface NavbarProps {
@@ -293,7 +336,7 @@ export default function Navbar({ locale: initialLocale = "fr" }: NavbarProps) {
             <Link href={`/${currentLocale}`} aria-label="Blueportel - Accueil">
               <Image
                 src={Logo}
-                alt="Blueportel - Location Mobil-Home Le Portel - Vue Mer Côte d'Opale"
+                alt="Blueportel - Mobil-Home Prestige Face à la Mer - Logo"
                 className="h-auto w-auto"
                 width={200}
                 height={80}

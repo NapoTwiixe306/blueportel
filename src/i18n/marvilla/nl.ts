@@ -49,7 +49,7 @@ const nl: MarvillaDictionary = {
           '@type': 'ListItem',
           position: 2,
           name: 'Marvilla Tohapi Informatie',
-          item: `${siteUrl}/nl/camping-informatie`,
+          item: `${siteUrl}/nl/pages/information-marvilla-tohapi`,
         },
       ],
     },
@@ -59,7 +59,7 @@ const nl: MarvillaDictionary = {
       name: 'Marvilla Tohapi Informatie',
       description:
         'Belangrijke informatie over de onafhankelijke Blueportel verhuur op Le Phare d\'Opale - Marvilla Tohapi camping',
-      url: `${siteUrl}/nl/camping-informatie`,
+      url: `${siteUrl}/nl/pages/information-marvilla-tohapi`,
       inLanguage: 'nl-NL',
       isPartOf: {
         '@type': 'WebSite',

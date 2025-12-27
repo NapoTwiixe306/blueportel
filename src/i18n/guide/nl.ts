@@ -9,18 +9,18 @@ export const nlGuideDictionary: GuideDictionary = {
     description:
       "Tips voor een rustige herfst aan zee: wandelingen, Nausicaá, culinaire adressen en zonsondergangen vanaf het Blueportel-terras.",
     alternates: {
-      canonical: "/nl/gids",
+      canonical: "/nl/pages/guide-touristique",
       languages: {
-        "fr-FR": "/fr/guide-touristique",
-        "en-GB": "/en/travel-guide",
-        "nl-NL": "/nl/gids",
+        "fr-FR": "/fr/pages/guide-touristique",
+        "en-GB": "/en/pages/guide-touristique",
+        "nl-NL": "/nl/pages/guide-touristique",
       },
     },
     openGraph: {
       title: "Herfsttrip naar Le Portel",
       description: "Onze favoriete activiteiten om de Opaalkust te beleven in de herfst vanuit Blueportel.",
       type: "website",
-      url: `${siteUrl}/nl/gids`,
+      url: `${siteUrl}/nl/pages/guide-touristique`,
     },
   },
   structuredData: {
@@ -29,7 +29,7 @@ export const nlGuideDictionary: GuideDictionary = {
       "@type": "TouristTrip",
       name: "Blueportel herfstgids",
       description: "Ideeën en routes rond de Blueportel mobilhome in Le Portel.",
-      url: `${siteUrl}/nl/gids`,
+      url: `${siteUrl}/nl/pages/guide-touristique`,
       itinerary: [
         {
           "@type": "ListItem",
@@ -62,7 +62,7 @@ export const nlGuideDictionary: GuideDictionary = {
           "@type": "ListItem",
           position: 2,
           name: "Toeristische gids",
-          item: `${siteUrl}/nl/gids`,
+          item: `${siteUrl}/nl/pages/guide-touristique`,
         },
       ],
     },
@@ -139,7 +139,7 @@ export const nlGuideDictionary: GuideDictionary = {
       href: "https://checkout.lodgify.com/nl/blueportel/654566/reservation?currency=EUR&ref=bnbox&adults=1",
       rel: "nofollow",
     },
-    secondary: { label: "Contacteer ons", href: "/contact" },
+    secondary: { label: "Contacteer ons", href: "/pages/contact" },
   },
   screenReader: {
     title: "Herfstgids Le Portel",

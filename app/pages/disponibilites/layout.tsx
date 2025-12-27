@@ -19,7 +19,7 @@ export const metadata: Metadata = {
       "Vérifiez les dates disponibles pour le mobil-home Blueportel et réservez en ligne via Lodgify.",
     type: "website",
     locale: "fr_FR",
-    url: `${siteUrl}/disponibilites`,
+    url: `${siteUrl}/pages/disponibilites`,
     siteName: "Blueportel",
     images: [
       {
@@ -38,7 +38,7 @@ export const metadata: Metadata = {
     images: [`${siteUrl}/logo.png`],
   },
   alternates: {
-    canonical: `${siteUrl}/disponibilites`,
+    canonical: `${siteUrl}/pages/disponibilites`,
   },
   category: "Tourisme",
   classification: "Disponibilités",

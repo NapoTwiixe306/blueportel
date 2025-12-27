@@ -71,11 +71,11 @@ export const nlFAQDictionary: FAQDictionary = {
     description:
       "Alle antwoorden om uw verblijf voor te bereiden: ligging, uitrusting, wifi, huisdieren, inchecken en tarieven.",
     alternates: {
-      canonical: "/nl/faq",
+      canonical: "/nl/pages/FAQ",
       languages: {
-        "fr-FR": "/fr/faq",
-        "en-GB": "/en/faq",
-        "nl-NL": "/nl/faq",
+        "fr-FR": "/fr/pages/FAQ",
+        "en-GB": "/en/pages/FAQ",
+        "nl-NL": "/nl/pages/FAQ",
       },
     },
     openGraph: {
@@ -83,7 +83,7 @@ export const nlFAQDictionary: FAQDictionary = {
       description:
         "Alles over de mobilhome in Le Portel: zicht, comfort, aankomst en activiteiten aan de Opaalkust.",
       type: "website",
-      url: `${siteUrl}/nl/faq`,
+      url: `${siteUrl}/nl/pages/FAQ`,
     },
   },
   structuredData: {
@@ -101,7 +101,7 @@ export const nlFAQDictionary: FAQDictionary = {
       "@type": "BreadcrumbList",
       itemListElement: [
         { "@type": "ListItem", position: 1, name: "Home", item: `${siteUrl}/nl` },
-        { "@type": "ListItem", position: 2, name: "FAQ", item: `${siteUrl}/nl/faq` },
+        { "@type": "ListItem", position: 2, name: "FAQ", item: `${siteUrl}/nl/pages/FAQ` },
       ],
     },
   },

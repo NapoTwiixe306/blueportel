@@ -35,7 +35,7 @@ export const metadata: Metadata = {
     description: "Location mobil-home à Le Portel, à 10 min de Nausicaá. Mobil-home 3 chambres face à la mer, vue panoramique, idéal pour visiter Nausicaá en famille.",
     type: "website",
     locale: "fr_FR",
-    url: `${siteUrl}/hebergement-proche-nausicaa`,
+    url: `${siteUrl}/pages/nausicaa-proche-le-portel`,
     siteName: "Blueportel",
     images: [
       {
@@ -53,7 +53,7 @@ export const metadata: Metadata = {
     images: [`${siteUrl}/logo.png`],
   },
   alternates: {
-    canonical: `${siteUrl}/hebergement-proche-nausicaa`,
+    canonical: `${siteUrl}/pages/nausicaa-proche-le-portel`,
   },
   category: "Tourisme",
   classification: "Location de mobil-home - Proche Nausicaá",

@@ -7,7 +7,7 @@ export default function RedirectPage() {
   const router = useRouter();
 
   useEffect(() => {
-    router.replace("/fr/politique-tdm");
+    router.replace("/fr/pages/politique-tdm");
   }, [router]);
 
   return null;

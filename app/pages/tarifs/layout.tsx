@@ -19,7 +19,7 @@ export const metadata: Metadata = {
       "Grille tarifaire par saison, services inclus, conditions de réservation et politique de caution pour le mobil-home Blueportel.",
     type: "website",
     locale: "fr_FR",
-    url: `${siteUrl}/tarifs`,
+    url: `${siteUrl}/pages/tarifs`,
     siteName: "Blueportel",
     images: [
       {
@@ -38,7 +38,7 @@ export const metadata: Metadata = {
     images: [`${siteUrl}/logo.png`],
   },
   alternates: {
-    canonical: `${siteUrl}/tarifs`,
+    canonical: `${siteUrl}/pages/tarifs`,
   },
   category: "Tourisme",
   classification: "Tarifs hébergement",

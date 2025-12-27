@@ -9,18 +9,18 @@ export const enGuideDictionary: GuideDictionary = {
     description:
       "Ideas for crisp autumn days near the Blueportel mobile home: coastal walks, Nausicaá, foodie stops and golden sunsets on the Opal Coast.",
     alternates: {
-      canonical: "/en/travel-guide",
+      canonical: "/en/pages/guide-touristique",
       languages: {
-        "fr-FR": "/fr/guide-touristique",
-        "en-GB": "/en/travel-guide",
-        "nl-NL": "/nl/gids",
+        "fr-FR": "/fr/pages/guide-touristique",
+        "en-GB": "/en/pages/guide-touristique",
+        "nl-NL": "/nl/pages/guide-touristique",
       },
     },
     openGraph: {
       title: "Autumn getaway in Le Portel",
       description: "Our favourite activities to enjoy the Opal Coast in autumn from the Blueportel terrace.",
       type: "website",
-      url: `${siteUrl}/en/travel-guide`,
+      url: `${siteUrl}/en/pages/guide-touristique`,
     },
   },
   structuredData: {
@@ -29,7 +29,7 @@ export const enGuideDictionary: GuideDictionary = {
       "@type": "TouristTrip",
       name: "Blueportel fall guide",
       description: "Itineraries and activity ideas around the Blueportel mobile home in Le Portel.",
-      url: `${siteUrl}/en/travel-guide`,
+      url: `${siteUrl}/en/pages/guide-touristique`,
       itinerary: [
         {
           "@type": "ListItem",
@@ -62,7 +62,7 @@ export const enGuideDictionary: GuideDictionary = {
           "@type": "ListItem",
           position: 2,
           name: "Travel guide",
-          item: `${siteUrl}/en/travel-guide`,
+          item: `${siteUrl}/en/pages/guide-touristique`,
         },
       ],
     },
@@ -140,7 +140,7 @@ export const enGuideDictionary: GuideDictionary = {
       href: "https://checkout.lodgify.com/en/blueportel/654566/reservation?currency=EUR&ref=bnbox&adults=1",
       rel: "nofollow",
     },
-    secondary: { label: "Contact us", href: "/contact" },
+    secondary: { label: "Contact us", href: "/pages/contact" },
   },
   screenReader: {
     title: "Autumn guide Le Portel",

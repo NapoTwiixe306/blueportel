@@ -9,11 +9,11 @@ export const frGuideDictionary: GuideDictionary = {
     description:
       "Idées d'activités automnales autour du mobil-home Blueportel : balades iodées, Nausicaá, adresses gourmandes et panoramas sur la Côte d'Opale.",
     alternates: {
-      canonical: "/fr/guide-touristique",
+      canonical: "/fr/pages/guide-touristique",
       languages: {
-        "fr-FR": "/fr/guide-touristique",
-        "en-GB": "/en/travel-guide",
-        "nl-NL": "/nl/gids",
+        "fr-FR": "/fr/pages/guide-touristique",
+        "en-GB": "/en/pages/guide-touristique",
+        "nl-NL": "/nl/pages/guide-touristique",
       },
     },
     openGraph: {
@@ -21,7 +21,7 @@ export const frGuideDictionary: GuideDictionary = {
       description:
         "Nos conseils pour profiter de la Côte d'Opale en automne depuis la terrasse Blueportel.",
       type: "website",
-      url: `${siteUrl}/fr/guide-touristique`,
+      url: `${siteUrl}/fr/pages/guide-touristique`,
     },
   },
   structuredData: {
@@ -30,7 +30,7 @@ export const frGuideDictionary: GuideDictionary = {
       "@type": "TouristTrip",
       name: "Guide touristique Blueportel",
       description: "Itinéraires et idées d'activités autour du mobil-home Blueportel à Le Portel.",
-      url: `${siteUrl}/fr/guide-touristique`,
+      url: `${siteUrl}/fr/pages/guide-touristique`,
       itinerary: [
         {
           "@type": "ListItem",
@@ -64,7 +64,7 @@ export const frGuideDictionary: GuideDictionary = {
           "@type": "ListItem",
           position: 2,
           name: "Guide touristique",
-          item: `${siteUrl}/fr/guide-touristique`,
+          item: `${siteUrl}/fr/pages/guide-touristique`,
         },
       ],
     },
@@ -145,7 +145,7 @@ export const frGuideDictionary: GuideDictionary = {
       href: "https://checkout.lodgify.com/fr/blueportel/654566/reservation?currency=EUR&ref=bnbox&adults=1",
       rel: "nofollow",
     },
-    secondary: { label: "Nous contacter", href: "/contact" },
+    secondary: { label: "Nous contacter", href: "/pages/contact" },
   },
   screenReader: {
     title: "Guide touristique automne Le Portel",

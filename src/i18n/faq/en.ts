@@ -71,18 +71,18 @@ export const enFAQDictionary: FAQDictionary = {
     description:
       "Everything you need to plan your stay: location, facilities, wifi, pets, check-in and rates at Blueportel.",
     alternates: {
-      canonical: "/en/faq",
+      canonical: "/en/pages/FAQ",
       languages: {
-        "fr-FR": "/fr/faq",
-        "en-GB": "/en/faq",
-        "nl-NL": "/nl/faq",
+        "fr-FR": "/fr/pages/FAQ",
+        "en-GB": "/en/pages/FAQ",
+        "nl-NL": "/nl/pages/FAQ",
       },
     },
     openGraph: {
       title: "Blueportel FAQ",
       description: "Location, equipment, arrivals and nearby activities for your seaside getaway in Le Portel.",
       type: "website",
-      url: `${siteUrl}/en/faq`,
+      url: `${siteUrl}/en/pages/FAQ`,
     },
   },
   structuredData: {
@@ -100,7 +100,7 @@ export const enFAQDictionary: FAQDictionary = {
       "@type": "BreadcrumbList",
       itemListElement: [
         { "@type": "ListItem", position: 1, name: "Home", item: `${siteUrl}/en` },
-        { "@type": "ListItem", position: 2, name: "FAQ", item: `${siteUrl}/en/faq` },
+        { "@type": "ListItem", position: 2, name: "FAQ", item: `${siteUrl}/en/pages/FAQ` },
       ],
     },
   },

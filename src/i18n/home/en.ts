@@ -5,18 +5,18 @@ const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://blueportel.com";
 export const enHomeDictionary: HomeDictionary = {
   locale: "en",
   metadata: {
-    title: "Seafront Mobile Home Rental Le Portel | Opal Coast Sea View",
+    title: "Seafront Mobile Home Rental in Le Portel | Blueportel",
     description:
-      "Book a luxury 3-bedroom mobile home facing the sea in Le Portel on the Opal Coast. Near Nausicaá, panoramic sea view, direct beach access from €90/night.",
+      "Book a luxury 3-bedroom mobile home facing the sea in Le Portel on the Opal Coast. Panoramic sea view, direct beach access, premium amenities from €90/night.",
     keywords: [
       "mobile home rental Le Portel",
-      "seafront mobile home Opal Coast",
-      "accommodation near Nausicaa",
+      "seafront mobile home",
+      "Opal Coast vacation rental",
       "3 bedroom mobile home sea view",
-      "luxury mobile home North France",
-      "seaside campsite Le Portel",
+      "luxury mobile home France",
+      "family holiday Le Portel",
       "panoramic sea view rental",
-      "beachfront mobile home rental",
+      "beachfront accommodation Le Portel",
     ],
     authors: [{ name: "Blueportel" }],
     creator: "Blueportel",
@@ -26,6 +26,7 @@ export const enHomeDictionary: HomeDictionary = {
       languages: {
         "fr-FR": "/fr",
         "en-GB": "/en",
+        "nl-NL": "/nl",
       },
     },
     openGraph: {
@@ -186,7 +187,7 @@ export const enHomeDictionary: HomeDictionary = {
     },
     ctaSecondary: {
       label: "Explore the mobile home",
-      href: "/photo-gallery",
+      href: "#decouvrir-le-mobil-home",
     },
   },
   reservation: {

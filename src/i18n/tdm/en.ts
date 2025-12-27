@@ -81,7 +81,7 @@ const en: TDMDictionary = {
           '@type': 'ListItem',
           position: 2,
           name: 'TDM Policy',
-          item: `${siteUrl}/en/terms`,
+          item: `${siteUrl}/en/pages/politique-tdm`,
         },
       ],
     },
@@ -90,7 +90,7 @@ const en: TDMDictionary = {
       '@type': 'WebPage',
       name: 'Text and Data Mining (TDM) Policy',
       description: 'Policy for protecting content against unauthorized Text and Data Mining',
-      url: `${siteUrl}/en/terms`,
+      url: `${siteUrl}/en/pages/politique-tdm`,
       inLanguage: 'en-US',
       isPartOf: {
         '@type': 'WebSite',

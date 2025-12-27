@@ -33,7 +33,7 @@ export default function NotFound() {
               Retour à l&apos;accueil
             </Link>
             <Link
-              href="/contact"
+              href="/pages/contact"
               className="inline-flex items-center gap-2 rounded-2xl border border-white/40 px-6 py-3 text-sm font-semibold text-white transition hover:-translate-y-0.5 hover:border-white"
             >
               Contactez-nous

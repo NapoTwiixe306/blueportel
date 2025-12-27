@@ -24,20 +24,12 @@ export type CTAButtons = {
   secondary: { label: string; href: string };
 };
 
-export type SEOSection = {
-  title: string;
-  content: string;
-};
-
 export type OverviewDictionary = {
   locale: Locale;
   metadata: Metadata;
   structuredData: {
     equipment: Record<string, unknown>;
     breadcrumb: Record<string, unknown>;
-    lodgingBusiness?: Record<string, unknown>;
-    product?: Record<string, unknown>;
-    faq?: Record<string, unknown>;
   };
   hero: {
     homeLabel: string;
@@ -64,7 +56,6 @@ export type OverviewDictionary = {
     description: string;
     buttons: CTAButtons;
   };
-  seoContent?: SEOSection[];
   screenReader: {
     title: string;
     paragraphs: string[];

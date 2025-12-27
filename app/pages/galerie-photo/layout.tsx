@@ -26,7 +26,7 @@ export const metadata: Metadata = {
       "Visitez la galerie photo du mobil-home Blueportel : intérieur moderne, terrasse panoramique et vue mer exceptionnelle à Le Portel, Côte d'Opale.",
     type: "website",
     locale: "fr_FR",
-    url: `${siteUrl}/galerie-photo`,
+    url: `${siteUrl}/pages/galerie-photo`,
     siteName: "Blueportel",
     images: [
       {
@@ -45,7 +45,7 @@ export const metadata: Metadata = {
     images: [`${siteUrl}/logo.png`],
   },
   alternates: {
-    canonical: `${siteUrl}/galerie-photo`,
+    canonical: `${siteUrl}/pages/galerie-photo`,
   },
   category: "Tourisme",
   classification: "Galerie photo mobil-home",

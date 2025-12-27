@@ -87,18 +87,18 @@ export const frGalleryDictionary: GalleryDictionary = {
     description:
       "Explorez en photos le mobil-home Blueportel : terrasse vue mer, pièces lumineuses, chambres cosy et accès direct à la Côte d'Opale.",
     alternates: {
-      canonical: "/fr/galerie-photo",
+      canonical: "/fr/pages/galerie-photo",
       languages: {
-        "fr-FR": "/fr/galerie-photo",
-        "en-GB": "/en/photo-gallery",
-        "nl-NL": "/nl/fotos",
+        "fr-FR": "/fr/pages/galerie-photo",
+        "en-GB": "/en/pages/galerie-photo",
+        "nl-NL": "/nl/pages/galerie-photo",
       },
     },
     openGraph: {
       title: "Galerie photo Blueportel",
       description: "Images HD de la terrasse, des chambres et de la vue mer du mobil-home Blueportel.",
       type: "website",
-      url: `${siteUrl}/fr/galerie-photo`,
+      url: `${siteUrl}/fr/pages/galerie-photo`,
     },
   },
   structuredData: {
@@ -127,7 +127,7 @@ export const frGalleryDictionary: GalleryDictionary = {
           "@type": "ListItem",
           position: 2,
           name: "Galerie photo",
-          item: `${siteUrl}/fr/galerie-photo`,
+          item: `${siteUrl}/fr/pages/galerie-photo`,
         },
       ],
     },
@@ -166,7 +166,7 @@ export const frGalleryDictionary: GalleryDictionary = {
       "https://checkout.lodgify.com/fr/blueportel/654566/reservation?currency=EUR&ref=bnbox&adults=1",
     bookingRel: "nofollow",
     contactLabel: "Nous contacter",
-    contactHref: "/contact",
+    contactHref: "/pages/contact",
   },
   screenReader: {
     title: "Galerie photo Blueportel",

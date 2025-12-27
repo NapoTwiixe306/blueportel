@@ -27,7 +27,7 @@ export const metadata: Metadata = {
     description: "Contactez Michel & Véro pour votre location de mobil-home face à la mer au Portel. Mobil-home 3 chambres avec vue panoramique, accès direct plage.",
     type: "website",
     locale: "fr_FR",
-    url: `${siteUrl}/contact`,
+    url: `${siteUrl}/pages/contact`,
     siteName: "Blueportel",
     images: [
       {
@@ -45,7 +45,7 @@ export const metadata: Metadata = {
     images: [`${siteUrl}/logo.png`],
   },
   alternates: {
-    canonical: `${siteUrl}/contact`,
+    canonical: `${siteUrl}/pages/contact`,
   },
   category: "Tourisme",
   classification: "Location de mobil-home - Contact",

@@ -5,16 +5,16 @@ const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://blueportel.com";
 export const nlHomeDictionary: HomeDictionary = {
   locale: "nl",
   metadata: {
-    title: "Mobilhome aan Zee Le Portel Huren | Opaalkust Zeezicht",
+    title: "Mobilhome aan Zee Huren in Le Portel | Blueportel",
     description:
-      "Huur een luxe mobilhome met 3 slaapkamers aan zee in Le Portel aan de Opaalkust. Vlakbij Nausicaá, panoramisch zeezicht, directe toegang tot het strand.",
+      "Huur een luxe mobilhome met 3 slaapkamers aan zee in Le Portel aan de Opaalkust. Panoramisch zeezicht, directe toegang tot het strand, premium comfort vanaf €90/nacht.",
     keywords: [
       "mobilhome huren Le Portel",
       "vakantiehuis aan zee Frankrijk",
       "opaalkust mobilhome",
-      "nausicaa overnachting",
       "mobilhome 3 slaapkamers zeezicht",
       "luxe mobilhome huren",
+      "familievakantie Le Portel",
       "panoramisch zeezicht mobilhome",
       "strandhuis Frankrijk",
     ],
@@ -187,7 +187,7 @@ export const nlHomeDictionary: HomeDictionary = {
     },
     ctaSecondary: {
       label: "Ontdek de mobilhome",
-      href: "/fotos",
+      href: "#decouvrir-le-mobil-home",
     },
   },
   reservation: {

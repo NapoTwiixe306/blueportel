@@ -21,11 +21,11 @@ export const enContactDictionary: ContactDictionary = {
     description:
       "Reach the owners of the Blueportel mobile home in Le Portel. Ask for advice, availability or a bespoke quote for your seaside stay.",
     alternates: {
-      canonical: "/en/contact",
+      canonical: "/en/pages/contact",
       languages: {
-        "fr-FR": "/fr/contact",
-        "en-GB": "/en/contact",
-        "nl-NL": "/nl/contact",
+        "fr-FR": "/fr/pages/contact",
+        "en-GB": "/en/pages/contact",
+        "nl-NL": "/nl/pages/contact",
       },
     },
     openGraph: {
@@ -33,7 +33,7 @@ export const enContactDictionary: ContactDictionary = {
       description:
         "Chat directly with Michel & Véro to organise your stay in our sea-view mobile home.",
       type: "website",
-      url: `${siteUrl}/en/contact`,
+      url: `${siteUrl}/en/pages/contact`,
     },
   },
   structuredData: {
@@ -42,7 +42,7 @@ export const enContactDictionary: ContactDictionary = {
       "@type": "BreadcrumbList",
       itemListElement: [
         { "@type": "ListItem", position: 1, name: "Home", item: `${siteUrl}/en` },
-        { "@type": "ListItem", position: 2, name: "Contact", item: `${siteUrl}/en/contact` },
+        { "@type": "ListItem", position: 2, name: "Contact", item: `${siteUrl}/en/pages/contact` },
       ],
     },
     person: {
@@ -58,7 +58,7 @@ export const enContactDictionary: ContactDictionary = {
       "@context": "https://schema.org",
       "@type": "ContactPage",
       name: "Contact Blueportel",
-      url: `${siteUrl}/en/contact`,
+      url: `${siteUrl}/en/pages/contact`,
       mainEntity: {
         "@type": "Organization",
         name: "Blueportel",

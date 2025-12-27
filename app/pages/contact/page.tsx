@@ -4,7 +4,7 @@ import { useEffect } from "react";
 
 export default function LegacyContactRedirect() {
   useEffect(() => {
-    window.location.replace("/fr/contact");
+    window.location.replace("/fr/pages/contact");
   }, []);
 
   return null;
