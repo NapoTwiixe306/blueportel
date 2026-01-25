@@ -8,6 +8,7 @@ import { CurrencyProvider } from "../src/contexts/CurrencyContext";
 import { headers } from "next/headers";
 import { defaultLocale, locales, type Locale } from "../src/i18n/locales";
 import { getLayoutDictionary } from "../src/i18n/layout";
+import Metricool from "@/src/components/Metricool";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -140,6 +141,7 @@ export default async function RootLayout({
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
         />
+        <Metricool/>
         <Analytics />
         <CurrencyProvider>
           <Navbar locale={locale} />
