@@ -199,7 +199,7 @@ export const frHomeDictionary: HomeDictionary = {
     title: "Location Mobil-Home",
     highlight: "Face à la Mer",
     tagline:
-      "Mobil-home 3 chambres • Côte d'Opale • Vue mer panoramique • Accès direct plage",
+      "BluePortel, là où l'on vient en famille... et où l'on revient pour le calme",
     srDescription:
       "Découvrez notre location mobil-home face à la mer au Portel. Mobil-home 3 chambres pour 6 personnes avec vue mer panoramique et accès direct plage.",
     ctaPrimary: {
