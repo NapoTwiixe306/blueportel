@@ -29,18 +29,6 @@ export type HeroSection = {
   ctaSecondary: { label: string; href: string };
 };
 
-export type ReservationSection = {
-  title: string;
-  subtitle: string;
-  priceLabel: string;
-  priceValue: string;
-  priceSuffix: string;
-  note: string;
-  highlightTitle: string;
-  highlightSubtitle: string;
-  selectionNote: string;
-};
-
 export type LocationSection = {
   title: string;
   highlight: string;
@@ -71,25 +59,12 @@ export type ScreenReaderBlock = {
   listItems: string[];
 };
 
-export type ReservationFormDictionary = {
-  arrivalLabel: string;
-  arrivalPlaceholder: string;
-  departureLabel: string;
-  departurePlaceholder: string;
-  guestsLabel: string;
-  guestDropdownLabel: string;
-  guestOptions: string[];
-  submitLabel: string;
-  bookingLocaleSegment: string;
-  currency: string;
-};
 
 export type HomeDictionary = {
   locale: Locale;
   metadata: Metadata;
   structuredData: StructuredData;
   hero: HeroSection;
-  reservation: ReservationSection;
   features: {
     cards: FeatureCard[];
     srTitle: string;
@@ -97,6 +72,5 @@ export type HomeDictionary = {
   location: LocationSection;
   cta: CTASection;
   screenReader: ScreenReaderBlock;
-  reservationForm: ReservationFormDictionary;
 };
 

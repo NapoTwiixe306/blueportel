@@ -212,20 +212,7 @@ export const frHomeDictionary: HomeDictionary = {
       href: "/pages/galerie-photo",
     },
   },
-  reservation: {
-    title: "Découvrir le Mobil-Home Face à la Mer",
-    subtitle:
-      "Mobil-home 3 chambres Côte d'Opale • Vue mer panoramique • Location vacances face à la mer",
-    priceLabel: "Prix Location Mobil-Home",
-    priceValue: "75€",
-    priceSuffix: "/ nuit",
-    note:
-      "Sélectionnez vos dates pour voir le prix total de votre location mobil-home face à la mer.",
-    highlightTitle: "À l'intérieur du Mobil-Home",
-    highlightSubtitle: "Mobil-home 6 personnes – 3 chambres – cuisine équipée",
-    selectionNote:
-      "Sélectionnez vos dates pour voir le prix total de votre location mobil-home face à la mer.",
-  },
+  
   features: {
     srTitle: "Caractéristiques de votre location mobil-home face à la mer",
     cards: [
@@ -310,25 +297,7 @@ export const frHomeDictionary: HomeDictionary = {
       "Idéal pour 6 personnes",
     ],
   },
-  reservationForm: {
-    arrivalLabel: "Arrivée",
-    arrivalPlaceholder: "jj/mm/aaaa",
-    departureLabel: "Départ",
-    departurePlaceholder: "jj/mm/aaaa",
-    guestsLabel: "Invités",
-    guestDropdownLabel: "Sélectionner le nombre d'invités",
-    guestOptions: [
-      "1 Adulte",
-      "2 Adultes",
-      "3 Adultes",
-      "4 Adultes",
-      "5 Adultes",
-      "6 Adultes",
-    ],
-    submitLabel: "Réserver",
-    bookingLocaleSegment: "fr",
-    currency: "EUR",
-  },
+  
 };
 
 export default frHomeDictionary;

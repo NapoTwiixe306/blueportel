@@ -21,13 +21,11 @@ const iconComponents: Record<FeatureIcon, typeof HomeIcon> = {
 export default function HomePage({ dictionary }: HomePageProps) {
   const {
     hero,
-    reservation,
     features,
     location,
     cta,
     screenReader,
     structuredData,
-    reservationForm,
   } = dictionary;
 
   const homeLabel =
@@ -105,28 +103,6 @@ export default function HomePage({ dictionary }: HomePageProps) {
               </Link>
             </div>
           </header>
-
-          <section
-            className="reservation mt-12 sm:mt-16 md:mt-20 w-full max-w-4xl p-6 bg-gray-200 rounded-2xl shadow text-center"
-            aria-label={reservation.title}
-          >
-            <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-black leading-tight mb-4">
-              {reservation.title}
-            </h2>
-            <p className="text-gray-500 font-semibold mb-8">{reservation.subtitle}</p>
-            <ReservationForm dictionary={reservationForm} />
-            <div className="mt-8">
-              <h3 className="text-sm sm:text-base md:text-lg font-bold text-black">
-                {reservation.priceLabel}
-              </h3>
-              <p className="text-3xl sm:text-4xl font-bold text-black mb-2">
-                {reservation.priceValue}{" "}
-                <span className="text-blue-500">{reservation.priceSuffix}</span>
-              </p>
-              <p className="text-sm text-gray-500">{reservation.note}</p>
-            </div>
-          </section>
-
           <section
             className="features mt-12 sm:mt-16 md:mt-20 w-full max-w-7xl px-3"
             aria-label={features.srTitle}
@@ -168,7 +144,7 @@ export default function HomePage({ dictionary }: HomePageProps) {
               ))}
             </div>
 
-            <div className="bg-gray-200 rounded-2xl p-6 shadow-lg mt-8 space-y-8">
+            <div className="border-2 border-gray-100 bg-transparent rounded-2xl p-6 shadow-lg mt-8 space-y-8">
               <article>
                 <h3 className="text-xl font-bold text-gray-800 mb-4">{location.interiorTitle}</h3>
                 <p className="text-sm text-gray-700 mb-4">{location.interiorParagraph}</p>
