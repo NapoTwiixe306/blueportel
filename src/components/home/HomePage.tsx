@@ -2,7 +2,6 @@ import Image from "next/image";
 import Link from "next/link";
 import { Home as HomeIcon, Waves, MapPin, Star, ChevronRight } from "lucide-react";
 
-import ReservationForm from "../../../app/components/ReservationForm";
 import Terasse from "../../img/terasse.png";
 
 import type { HomeDictionary, FeatureIcon } from "../../i18n/home/types";

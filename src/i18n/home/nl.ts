@@ -190,20 +190,7 @@ export const nlHomeDictionary: HomeDictionary = {
       href: "#decouvrir-le-mobil-home",
     },
   },
-  reservation: {
-    title: "Ontdek onze mobilhome aan zee",
-    subtitle:
-      "3 slaapkamers • 2 badkamers • Volledig ingerichte keuken • Ideaal voor 6 personen",
-    priceLabel: "Vanaf",
-    priceValue: "€90",
-    priceSuffix: "/ nacht",
-    note:
-      "Selecteer uw data om de totale prijs en beschikbaarheid te zien.",
-    highlightTitle: "Binnen in de mobilhome",
-    highlightSubtitle: "Master bedroom, twee twin kamers, volledig uitgeruste keuken",
-    selectionNote:
-      "Kies uw aankomst- en vertrekdatum om de totale prijs te bekijken.",
-  },
+
   features: {
     srTitle: "Belangrijkste troeven van de mobilhome",
     cards: [
@@ -286,25 +273,7 @@ export const nlHomeDictionary: HomeDictionary = {
       "Perfect voor gezinnen of vrienden",
     ],
   },
-  reservationForm: {
-    arrivalLabel: "Aankomst",
-    arrivalPlaceholder: "dd/mm/jjjj",
-    departureLabel: "Vertrek",
-    departurePlaceholder: "dd/mm/jjjj",
-    guestsLabel: "Gasten",
-    guestDropdownLabel: "Aantal gasten kiezen",
-    guestOptions: [
-      "1 Volwassene",
-      "2 Volwassenen",
-      "3 Volwassenen",
-      "4 Volwassenen",
-      "5 Volwassenen",
-      "6 Volwassenen",
-    ],
-    submitLabel: "Reserveren",
-    bookingLocaleSegment: "nl",
-    currency: "EUR",
-  },
+
 };
 
 export default nlHomeDictionary;

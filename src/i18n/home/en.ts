@@ -190,20 +190,7 @@ export const enHomeDictionary: HomeDictionary = {
       href: "#decouvrir-le-mobil-home",
     },
   },
-  reservation: {
-    title: "Discover our seafront mobile home",
-    subtitle:
-      "3-bedroom mobile home • Opal Coast • Premium amenities for 6 guests",
-    priceLabel: "Nightly rate",
-    priceValue: "€90",
-    priceSuffix: "/ night",
-    note:
-      "Select your dates to view the full price of your stay in our seafront mobile home.",
-    highlightTitle: "Inside the mobile home",
-    highlightSubtitle: "3 bedrooms, 2 bathrooms, fully equipped kitchen",
-    selectionNote:
-      "Select your dates to view the final price and availability.",
-  },
+
   features: {
     srTitle: "Highlights of your seafront mobile home rental",
     cards: [
@@ -287,25 +274,7 @@ export const enHomeDictionary: HomeDictionary = {
       "Perfect for families or friends",
     ],
   },
-  reservationForm: {
-    arrivalLabel: "Arrival",
-    arrivalPlaceholder: "dd/mm/yyyy",
-    departureLabel: "Departure",
-    departurePlaceholder: "dd/mm/yyyy",
-    guestsLabel: "Guests",
-    guestDropdownLabel: "Select number of guests",
-    guestOptions: [
-      "1 Adult",
-      "2 Adults",
-      "3 Adults",
-      "4 Adults",
-      "5 Adults",
-      "6 Adults",
-    ],
-    submitLabel: "Reserve",
-    bookingLocaleSegment: "en",
-    currency: "EUR",
-  },
+
 };
 
 export default enHomeDictionary;
