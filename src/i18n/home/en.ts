@@ -178,7 +178,7 @@ export const enHomeDictionary: HomeDictionary = {
     titleLine2Prefix: "Facing the ",
     titleLine2Highlight: "Sea",
     tagline:
-      "3-bedroom mobile home • Opal Coast • Panoramic sea view • Direct beach access",
+      "Enjoy a comfortable mobile home in a campsite 4 stars, close to the beach.",
     srDescription:
       "Discover our luxury 3-bedroom mobile home overlooking the sea in Le Portel. Sleeps 6 guests with panoramic views and direct beach access.",
     ctaPrimary: {

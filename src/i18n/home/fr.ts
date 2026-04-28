@@ -200,7 +200,7 @@ export const frHomeDictionary: HomeDictionary = {
     titleLine2Prefix: "Face à la ",
     titleLine2Highlight: "Mer",
     tagline:
-      "BluePortel, là où l'on vient en famille... et où l'on revient pour le calme",
+      "Profitez d'un mobil-home tout confort dans un camping 4 étoiles, à deux pas de la plage.",
     srDescription:
       "Découvrez notre location mobil-home face à la mer au Portel. Mobil-home 3 chambres pour 6 personnes avec vue mer panoramique et accès direct plage.",
     ctaPrimary: {
