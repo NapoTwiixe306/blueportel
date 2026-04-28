@@ -77,13 +77,13 @@ export default function HeroBanner({ hero, locale }: HeroBannerProps) {
       <div className="relative z-10 w-full h-full px-4 sm:px-6 lg:px-10 pt-18 sm:pt-24 md:pt-28 lg:pt-32 pb-40 sm:pb-48 md:pb-52 lg:pb-56 flex flex-col justify-center">
         <div className="max-w-2xl">
           {/* Badge */}
-          <div className="inline-flex items-center px-4 sm:px-5 py-2 rounded-full bg-gradient-to-r from-sky-200 to-blue-100 text-[#1D4ED8] text-sm sm:text-base font-semibold mb-5 sm:mb-7 shadow-sm">
+          <div className="inline-flex items-center px-4 sm:px-5 py-2 rounded-full bg-linear-to-r from-sky-200 to-blue-100 text-[#1D4ED8] text-sm sm:text-base font-semibold mb-5 sm:mb-7 shadow-sm">
             {hero.pretitle}
           </div>
 
           {/* Main Heading */}
-          <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-extrabold text-[#0F172A] leading-tight tracking-tight mb-4 sm:mb-6 drop-shadow-[0_18px_40px_rgba(15,23,42,0.12)]">
-            <span className="text-balance block">{hero.titleLine1}</span>
+          <h1 className=" text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-extrabold text-[#0F172A] leading-tight tracking-tight mb-4 sm:mb-6 drop-shadow-[0_18px_40px_rgba(15,23,42,0.12)]">
+            <span className="w-full whitespace-nowrap">{hero.titleLine1}</span>
             <span className="block mt-3 sm:mt-4 text-[#334155]">
               <span>{hero.titleLine2Prefix}</span>
               <span className="text-[#3B82F6]" style={{ fontFamily: "var(--font-caveat)" }}>
@@ -103,17 +103,25 @@ export default function HeroBanner({ hero, locale }: HeroBannerProps) {
               href={hero.ctaPrimary.href}
               rel={hero.ctaPrimary.rel}
               target={hero.ctaPrimary.rel ? "_blank" : undefined}
-              className="group inline-flex items-center justify-center rounded-full bg-[#2563EB] px-6 py-3 text-sm sm:text-base font-semibold text-white shadow-2xl shadow-[#2563EB]/20 transition duration-300 hover:-translate-y-0.5 hover:bg-[#1D4ED8]"
+              className="relative group inline-flex items-center justify-center overflow-hidden rounded-full bg-[#2563EB] px-6 py-3 text-sm sm:text-base font-semibold text-white shadow-2xl shadow-[#2563EB]/20 transition duration-300 hover:-translate-y-0.5 hover:scale-[1.02] active:scale-[0.98] hover:bg-[#1D4ED8]"
             >
-              {hero.ctaPrimary.label}
-              <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+              <span className="absolute inset-0 rounded-full bg-[#2563EB] blur-xl opacity-0 group-hover:opacity-30 transition duration-500" />
+              <span className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-700 ease-out bg-linear-to-r from-transparent via-white/30 to-transparent opacity-40" />
+              <span className="relative flex items-center gap-2">
+                {hero.ctaPrimary.label}
+                <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+              </span>
             </Link>
             <Link
               href={hero.ctaSecondary.href}
-              className="group inline-flex items-center justify-center rounded-full border-2 border-[#3B82F6] bg-white/90 px-6 py-3 text-sm sm:text-base font-semibold text-[#3B82F6] transition duration-300 hover:-translate-y-0.5 hover:bg-[#3B82F6] hover:text-white"
+              className="relative group inline-flex items-center justify-center overflow-hidden rounded-full border-2 border-[#3B82F6] bg-white/90 px-6 py-3 text-sm sm:text-base font-semibold text-[#3B82F6] transition duration-300 hover:-translate-y-0.5 hover:scale-[1.02] active:scale-[0.98] hover:bg-[#3B82F6] hover:text-white"
             >
-              {hero.ctaSecondary.label}
-              <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+              <span className="absolute inset-0 rounded-full bg-[#3B82F6] blur-xl opacity-0 group-hover:opacity-20 transition duration-500" />
+              <span className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-700 ease-out bg-linear-to-r from-transparent via-white/20 to-transparent opacity-30" />
+              <span className="relative flex items-center gap-2">
+                {hero.ctaSecondary.label}
+                <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+              </span>
             </Link>
           </div>
 
