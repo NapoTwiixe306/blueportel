@@ -1,0 +1,36 @@
+name: Deploy Next.js
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    env:
+      DEPLOY_DIR: /var/www/blueportel/blueportel
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v3
+
+      - name: Setup SSH
+        uses: webfactory/ssh-agent@v0.9.1
+        with:
+          ssh-private-key: ${{ secrets.VPS_SSH_KEY }}
+
+      - name: Test SSH
+        run: ssh -o StrictHostKeyChecking=no ubuntu@${{ secrets.VPS_IP }} "echo SSH OK"
+
+      - name: Deploy to VPS
+        run: |
+          ssh -o StrictHostKeyChecking=no ubuntu@${{ secrets.VPS_IP }} "
+            cd $DEPLOY_DIR &&
+            git pull &&
+            # Ne pas faire 'down' pour éviter d'arrêter Umami
+            docker compose up -d --build &&
+            # S'assurer que Caddy est connecté aux réseaux de Blueportel et Umami
+            docker network connect blueportel_default caddy_server || true &&
+            docker network connect umami_default caddy_server || true
+          "
