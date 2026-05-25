@@ -1,13 +1,14 @@
 import type { HomeDictionary } from "./types";
+import { getAlternates } from "../../lib/seo/hreflang";
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://blueportel.com";
+const siteUrl = "https://blueportel.fr";
 
 export const nlHomeDictionary: HomeDictionary = {
   locale: "nl",
   metadata: {
-    title: "Mobilhome aan Zee Huren in Le Portel | Blueportel",
+    title: "Blueportel - Luxe Staanplaats aan Zee | Le Portel, Opaalkust",
     description:
-      "Huur een luxe mobilhome met 3 slaapkamers aan zee in Le Portel aan de Opaalkust. Panoramisch zeezicht, directe toegang tot het strand, premium comfort vanaf €90/nacht.",
+      "Huur een luxe mobiel huis met zeezicht in Le Portel aan de Opaalkust. 3 slaapkamers, panoramisch zeezicht, direct strandtoegang. Boek vanaf EUR 75/nacht.",
     keywords: [
       "mobilhome huren Le Portel",
       "vakantiehuis aan zee Frankrijk",
@@ -21,25 +22,18 @@ export const nlHomeDictionary: HomeDictionary = {
     authors: [{ name: "Blueportel" }],
     creator: "Blueportel",
     publisher: "Blueportel",
-    alternates: {
-      canonical: "/nl",
-      languages: {
-        "fr-FR": "/fr",
-        "en-GB": "/en",
-        "nl-NL": "/nl",
-      },
-    },
+    alternates: getAlternates("nl"),
     openGraph: {
-      title: "Blueportel - Luxe Mobilhome aan Zee | Le Portel",
+      title: "Blueportel - Luxe Staanplaats aan Zee | Le Portel",
       description:
-        "Luxe mobilhome met 3 slaapkamers aan zee in Le Portel. Panoramisch zeezicht en directe toegang tot het strand vanaf €90/nacht.",
+        "Luxe mobiel huis met 3 slaapkamers aan zee in Le Portel. Panoramisch zeezicht, direct strandtoegang. Vanaf EUR 75/nacht.",
       type: "website",
       locale: "nl_NL",
-      url: `${siteUrl}/nl`,
+      url: "https://blueportel.fr/nl",
       siteName: "Blueportel",
       images: [
         {
-          url: `${siteUrl}/logo.png`,
+          url: "https://blueportel.fr/logo.png",
           width: 1200,
           height: 630,
           alt: "Blueportel - Logo",
@@ -51,7 +45,7 @@ export const nlHomeDictionary: HomeDictionary = {
       title: "Blueportel - Mobilhome aan Zee",
       description:
         "Huur een luxe mobilhome aan zee in Le Portel met panoramisch zicht en directe toegang tot het strand.",
-      images: [`${siteUrl}/logo.png`],
+      images: ["https://blueportel.fr/logo.png"],
     },
   },
   structuredData: {
@@ -174,11 +168,11 @@ export const nlHomeDictionary: HomeDictionary = {
   hero: {
     breadcrumbCurrent: "Luxe mobilhome aan zee huren",
     pretitle: "Blueportel mobilhome",
-    titleLine1: "Uw Vluchtplek",
-    titleLine2Prefix: "Met ",
-    titleLine2Highlight: "Zeezicht",
+    titleLine1: "Vakantieverhuur Mobiel Huis",
+    titleLine2Prefix: "aan Zee - ",
+    titleLine2Highlight: "Le Portel",
     tagline:
-      "Mobilhome met 3 slaapkamers • Opaalkust • Panoramisch zeezicht • Direct toegang tot het strand",
+      "Geniet van een comfortabel mobiel huis in een 4-sterren camping, vlak bij het strand.",
     srDescription:
       "Ontdek onze luxe mobilhome aan zee in Le Portel. Drie slaapkamers, plaats voor 6 personen, panoramisch uitzicht en directe toegang tot het strand.",
     ctaPrimary: {
@@ -295,4 +289,3 @@ export const nlHomeDictionary: HomeDictionary = {
 };
 
 export default nlHomeDictionary;
-

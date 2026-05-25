@@ -1,11 +1,12 @@
 import type { HomeDictionary } from "./types";
+import { getAlternates } from "../../lib/seo/hreflang";
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://blueportel.com";
+const siteUrl = "https://blueportel.com";
 
 export const enHomeDictionary: HomeDictionary = {
   locale: "en",
   metadata: {
-    title: "Seafront Mobile Home Rental in Le Portel | Blueportel",
+    title: "Blueportel - Luxury Seafront Mobile Home | Le Portel",
     description:
       "Book a luxury 3-bedroom mobile home facing the sea in Le Portel on the Opal Coast. Panoramic sea view, direct beach access, premium amenities from €90/night.",
     keywords: [
@@ -21,25 +22,18 @@ export const enHomeDictionary: HomeDictionary = {
     authors: [{ name: "Blueportel" }],
     creator: "Blueportel",
     publisher: "Blueportel",
-    alternates: {
-      canonical: "/en",
-      languages: {
-        "fr-FR": "/fr",
-        "en-GB": "/en",
-        "nl-NL": "/nl",
-      },
-    },
+    alternates: getAlternates("en"),
     openGraph: {
       title: "Blueportel - Luxury Seafront Mobile Home | Le Portel",
       description:
         "Luxury 3-bedroom seafront mobile home rental in Le Portel. Panoramic sea view, direct beach access. From €90/night.",
       type: "website",
       locale: "en_GB",
-      url: `${siteUrl}/en`,
+      url: "https://blueportel.com",
       siteName: "Blueportel",
       images: [
         {
-          url: `${siteUrl}/logo.png`,
+          url: "https://blueportel.com/logo.png",
           width: 1200,
           height: 630,
           alt: "Blueportel - Logo",
@@ -51,7 +45,7 @@ export const enHomeDictionary: HomeDictionary = {
       title: "Blueportel - Seafront Mobile Home",
       description:
         "Rent a luxury 3-bedroom mobile home facing the sea in Le Portel with panoramic views and direct beach access.",
-      images: [`${siteUrl}/logo.png`],
+      images: ["https://blueportel.com/logo.png"],
     },
   },
   structuredData: {
@@ -174,9 +168,9 @@ export const enHomeDictionary: HomeDictionary = {
   hero: {
     breadcrumbCurrent: "Luxury Seafront Mobile Home Rental",
     pretitle: "Blueportel mobile home",
-    titleLine1: "Your Escape",
-    titleLine2Prefix: "Facing the ",
-    titleLine2Highlight: "Sea",
+    titleLine1: "Seafront Mobile Home Rental",
+    titleLine2Prefix: "Le Portel, ",
+    titleLine2Highlight: "Opal Coast",
     tagline:
       "Enjoy a comfortable mobile home in a campsite 4 stars, close to the beach.",
     srDescription:
@@ -296,4 +290,3 @@ export const enHomeDictionary: HomeDictionary = {
 };
 
 export default enHomeDictionary;
-

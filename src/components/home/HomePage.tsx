@@ -2,6 +2,7 @@ import Link from "next/link";
 import { Home as HomeIcon, Waves, MapPin, Star } from "lucide-react";
 
 import type { HomeDictionary, FeatureIcon } from "../../i18n/home/types";
+import { JsonLdVacationRental } from "../seo/JsonLdVacationRental";
 import Hero from "./hero";
 import LocationCarousel from "./LocationCarousel";
 
@@ -23,7 +24,6 @@ export default function HomePage({ dictionary }: HomePageProps) {
     location,
     cta,
     screenReader,
-    structuredData,
   } = dictionary;
 
   const homeLabel =
@@ -54,13 +54,7 @@ export default function HomePage({ dictionary }: HomePageProps) {
 
   return (
     <>
-      {Object.entries(structuredData).map(([key, schema]) => (
-        <script
-          key={key}
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
-        />
-      ))}
+      <JsonLdVacationRental locale={dictionary.locale} />
       <div className="w-full overflow-x-hidden bg-white">
         <main className="w-full">
        
@@ -157,4 +151,3 @@ export default function HomePage({ dictionary }: HomePageProps) {
     </>
   );
 }
-

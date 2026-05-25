@@ -31,13 +31,12 @@ const caveat = Caveat({
   subsets: ["latin"],
 });
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://blueportel.com';
 const siteName = 'Blueportel';
 const defaultTitle = 'BluePortel - Face à la mer';
 const defaultDescription = 'Découvrez Blueportel, votre mobil-home de prestige face à la mer au Portel. Location de mobil-home haut de gamme avec vue imprenable sur la mer.';
 
 export const metadata: Metadata = {
-  metadataBase: new URL(siteUrl),
+  metadataBase: new URL("https://blueportel.fr"),
   title: {
     default: defaultTitle,
     template: `%s | ${siteName}`,
@@ -57,13 +56,13 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     locale: 'fr_FR',
-    url: siteUrl,
+    url: "https://blueportel.fr",
     siteName: siteName,
     title: defaultTitle,
     description: defaultDescription,
     images: [
       {
-        url: `${siteUrl}/logo.png`,
+        url: "https://blueportel.fr/logo.png",
         width: 1200,
         height: 630,
         alt: 'Blueportel - Logo',
@@ -74,7 +73,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: defaultTitle,
     description: defaultDescription,
-    images: [`${siteUrl}/logo.png`],
+    images: ["https://blueportel.fr/logo.png"],
   },
   robots: {
     index: true,
@@ -88,7 +87,7 @@ export const metadata: Metadata = {
     },
   },
   alternates: {
-    canonical: siteUrl,
+    canonical: "https://blueportel.fr",
   },
   icons: {
     icon: [
@@ -114,38 +113,11 @@ export default async function RootLayout({
   const locale = headerLocale && locales.includes(headerLocale) ? headerLocale : defaultLocale;
   const layoutDictionary = getLayoutDictionary(locale);
 
-  const organizationSchema = {
-    '@context': 'https://schema.org',
-    '@type': 'Organization',
-    name: siteName,
-    url: siteUrl,
-    logo: `${siteUrl}/logo.png`,
-    description: defaultDescription,
-    contactPoint: {
-      '@type': 'ContactPoint',
-      telephone: '+32488832091',
-      contactType: 'Customer Service',
-      availableLanguage: ['French'],
-      email: 'info@blueportel.fr',
-    },
-    address: {
-      '@type': 'PostalAddress',
-      streetAddress: 'rue du Vinâve 32',
-      addressLocality: 'Liers',
-      addressCountry: 'BE',
-      postalCode: '4042',
-    },
-  };
-
   return (
     <html lang={locale}>
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${gluten.variable} ${caveat.variable} antialiased flex flex-col min-h-screen bg-white`}
       >
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
-        />
         <Metricool/>
         <Analytics />
         <CurrencyProvider>

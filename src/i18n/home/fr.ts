@@ -1,11 +1,12 @@
 import type { HomeDictionary } from "./types";
+import { getAlternates } from "../../lib/seo/hreflang";
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://blueportel.com";
+const siteUrl = "https://blueportel.fr";
 
 export const frHomeDictionary: HomeDictionary = {
   locale: "fr",
   metadata: {
-    title: "Location Mobil-Home Face à la Mer Le Portel | Blueportel",
+    title: "Blueportel - Mobil-Home Prestige Face à la Mer | Le Portel",
     description:
       "Location mobil-home prestige face à la mer au Portel, Côte d'Opale. Mobil-home 3 chambres, vue panoramique, accès direct plage. Réservez dès 75€/nuit.",
     keywords: [
@@ -28,25 +29,18 @@ export const frHomeDictionary: HomeDictionary = {
     authors: [{ name: "Blueportel" }],
     creator: "Blueportel",
     publisher: "Blueportel",
-    alternates: {
-      canonical: "/fr",
-      languages: {
-        "fr-FR": "/fr",
-        "en-GB": "/en",
-        "nl-NL": "/nl",
-      },
-    },
+    alternates: getAlternates("fr"),
     openGraph: {
       title: "Blueportel - Mobil-Home Prestige Face à la Mer | Le Portel",
       description:
         "Location mobil-home prestige 3 chambres face à la mer au Portel. Vue panoramique, accès direct plage. À partir de 75€/nuit.",
       type: "website",
       locale: "fr_FR",
-      url: `${siteUrl}/fr`,
+      url: "https://blueportel.fr",
       siteName: "Blueportel",
       images: [
         {
-          url: `${siteUrl}/logo.png`,
+          url: "https://blueportel.fr/logo.png",
           width: 1200,
           height: 630,
           alt: "Blueportel - Logo",
@@ -58,7 +52,7 @@ export const frHomeDictionary: HomeDictionary = {
       title: "Blueportel - Mobil-Home Prestige Face à la Mer",
       description:
         "Location mobil-home prestige 3 chambres face à la mer au Portel. Vue panoramique, accès direct plage.",
-      images: [`${siteUrl}/logo.png`],
+      images: ["https://blueportel.fr/logo.png"],
     },
   },
   structuredData: {
@@ -196,9 +190,9 @@ export const frHomeDictionary: HomeDictionary = {
   hero: {
     breadcrumbCurrent: "Location Mobil-Home Face à la Mer",
     pretitle: "Mobil-home Blueportel",
-    titleLine1: "Votre échappée",
-    titleLine2Prefix: "Face à la ",
-    titleLine2Highlight: "Mer",
+    titleLine1: "Location Mobil-Home",
+    titleLine2Prefix: "Face a la Mer - ",
+    titleLine2Highlight: "Le Portel",
     tagline:
       "Profitez d'un mobil-home tout confort dans un camping 4 étoiles, à deux pas de la plage.",
     srDescription:
@@ -319,4 +313,3 @@ export const frHomeDictionary: HomeDictionary = {
 };
 
 export default frHomeDictionary;
-
