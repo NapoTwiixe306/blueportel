@@ -142,7 +142,7 @@ export const frGuideDictionary: GuideDictionary = {
       "Séjournez dans notre mobil-home tout confort avec vue mer et explorez la Côte d'Opale en automne.",
     primary: {
       label: "Réserver maintenant",
-      href: "https://checkout.lodgify.com/fr/blueportel/654566/reservation?currency=EUR&ref=bnbox&adults=1",
+      href: "/fr/pages/reserver",
       rel: "nofollow",
     },
     secondary: { label: "Nous contacter", href: "/pages/contact" },

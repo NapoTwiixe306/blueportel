@@ -123,7 +123,7 @@ export const frContactDictionary: ContactDictionary = {
     description:
       "Réservez directement en ligne votre mobil-home face à la mer ou contactez-nous pour une demande sur mesure.",
     buttonLabel: "Réserver maintenant",
-    href: "https://checkout.lodgify.com/fr/blueportel/654566/reservation?currency=EUR&ref=bnbox&adults=1",
+    href: "/fr/pages/reserver",
   },
   screenReader: {
     title: "Contact Blueportel - Mobil-home face à la mer",

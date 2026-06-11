@@ -156,7 +156,7 @@ export const nlPlanDictionary: PlanDictionary = {
     emailHref: "mailto:info@blueportel.fr",
     bookingLabel: "Boek uw verblijf",
     bookingHref:
-      "https://checkout.lodgify.com/nl/blueportel/654566/reservation?currency=EUR&ref=bnbox&adults=1",
+      "/nl/pages/reserver",
   },
   screenReader: {
     title: "Route naar Blueportel",

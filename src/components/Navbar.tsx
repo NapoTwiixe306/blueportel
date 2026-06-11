@@ -51,6 +51,7 @@ const navItemsByLocale: Record<Locale, NavItem[]> = {
       items: [
         { label: "Nausicaá", href: "/pages/nausicaa-proche-le-portel" },
         { label: "Guide touristique", href: "/pages/guide-touristique" },
+        { label: "Blog & guides", href: "/blog" },
       ],
     },
     {
@@ -85,6 +86,7 @@ const navItemsByLocale: Record<Locale, NavItem[]> = {
       items: [
         { label: "Nausicaá", href: "/pages/nausicaa-proche-le-portel" },
         { label: "Travel guide", href: "/pages/guide-touristique" },
+        { label: "Blog & guides", href: "/blog" },
       ],
     },
     {
@@ -119,6 +121,7 @@ const navItemsByLocale: Record<Locale, NavItem[]> = {
       items: [
         { label: "Nausicaá", href: "/pages/nausicaa-proche-le-portel" },
         { label: "Toeristische gids", href: "/pages/guide-touristique" },
+        { label: "Blog & gidsen", href: "/blog" },
       ],
     },
     {
@@ -144,9 +147,9 @@ const bookingShortLabel: Record<Locale, string> = {
 };
 
 const bookingUrl: Record<Locale, string> = {
-  fr: "https://checkout.lodgify.com/fr/blueportel/654566/reservation?currency=EUR&ref=bnbox&adults=1",
-  en: "https://checkout.lodgify.com/en/blueportel/654566/reservation?currency=EUR&ref=bnbox&adults=1",
-  nl: "https://checkout.lodgify.com/nl/blueportel/654566/reservation?currency=EUR&ref=bnbox&adults=1",
+  fr: "/fr/pages/reserver",
+  en: "/en/pages/reserver",
+  nl: "/nl/pages/reserver",
 };
 
 const languageOptions: LanguageOption[] = [

@@ -78,7 +78,7 @@ export const frAvailabilityDictionary: AvailabilityDictionary = {
       "Après avoir choisi vos dates, ouvrez le tunnel de réservation Lodgify ou écrivez-nous pour une demande sur mesure.",
     primary: {
       label: "Ouvrir la réservation Lodgify",
-      href: "https://checkout.lodgify.com/fr/blueportel/654566/reservation?currency=EUR&ref=bnbox&adults=1",
+      href: "/fr/pages/reserver",
     },
     secondary: {
       label: "Demande personnalisée",

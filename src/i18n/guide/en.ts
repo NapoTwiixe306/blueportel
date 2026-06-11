@@ -137,7 +137,7 @@ export const enGuideDictionary: GuideDictionary = {
       "Stay in our fully equipped sea-view mobile home and explore the Opal Coast in style this autumn.",
     primary: {
       label: "Book now",
-      href: "https://checkout.lodgify.com/en/blueportel/654566/reservation?currency=EUR&ref=bnbox&adults=1",
+      href: "/en/pages/reserver",
       rel: "nofollow",
     },
     secondary: { label: "Contact us", href: "/pages/contact" },

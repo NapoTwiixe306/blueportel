@@ -78,7 +78,7 @@ export const nlAvailabilityDictionary: AvailabilityDictionary = {
       "Selecteer uw data en open het Lodgify-reservatieproces of stuur ons een bericht voor een aanvraag op maat.",
     primary: {
       label: "Lodgify-reservatie openen",
-      href: "https://checkout.lodgify.com/nl/blueportel/654566/reservation?currency=EUR&ref=bnbox&adults=1",
+      href: "/nl/pages/reserver",
     },
     secondary: {
       label: "Aanvraag op maat",

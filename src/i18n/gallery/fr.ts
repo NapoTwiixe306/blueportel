@@ -163,7 +163,7 @@ export const frGalleryDictionary: GalleryDictionary = {
       "Réservez votre séjour face à la mer ou contactez-nous pour une visite guidée en visio. Nous répondons à toutes vos questions.",
     bookingLabel: "Réserver maintenant",
     bookingHref:
-      "https://checkout.lodgify.com/fr/blueportel/654566/reservation?currency=EUR&ref=bnbox&adults=1",
+      "/fr/pages/reserver",
     bookingRel: "nofollow",
     contactLabel: "Nous contacter",
     contactHref: "/pages/contact",

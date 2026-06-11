@@ -123,7 +123,7 @@ export const enContactDictionary: ContactDictionary = {
     description:
       "Secure your seaside mobile home directly online or contact us for a bespoke itinerary.",
     buttonLabel: "Book now",
-    href: "https://checkout.lodgify.com/en/blueportel/654566/reservation?currency=EUR&ref=bnbox&adults=1",
+    href: "/en/pages/reserver",
   },
   screenReader: {
     title: "Contact Blueportel - sea-view mobile home",

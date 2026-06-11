@@ -136,7 +136,7 @@ export const nlGuideDictionary: GuideDictionary = {
       "Logeer in onze comfortabele mobilhome met zeezicht en ontdek de Opaalkust in herfstmodus.",
     primary: {
       label: "Nu boeken",
-      href: "https://checkout.lodgify.com/nl/blueportel/654566/reservation?currency=EUR&ref=bnbox&adults=1",
+      href: "/nl/pages/reserver",
       rel: "nofollow",
     },
     secondary: { label: "Contacteer ons", href: "/pages/contact" },

@@ -4,9 +4,9 @@ import { getAlternates } from "../../lib/seo/hreflang";
 const siteUrl = "https://blueportel.fr";
 
 const prestigeBookingUrl =
-  "https://checkout.lodgify.com/fr/blueportel/654566/reservation?currency=EUR&ref=bnbox&adults=1";
+  "/fr/pages/reserver";
 const horizonBookingUrl =
-  "https://checkout.lodgify.com/fr/blueportel/reservation?currency=EUR&ref=bnbox&adults=1";
+  "/fr/pages/reserver";
 
 export const frHomeDictionary: HomeDictionary = {
   locale: "fr",
@@ -84,9 +84,9 @@ export const frHomeDictionary: HomeDictionary = {
       priceRange: "€€",
       aggregateRating: {
         "@type": "AggregateRating",
-        ratingValue: "4.9",
-        reviewCount: "127",
-        bestRating: "5",
+        ratingValue: "8.3",
+        reviewCount: "8",
+        bestRating: "10",
         worstRating: "1",
       },
     },
@@ -149,7 +149,7 @@ export const frHomeDictionary: HomeDictionary = {
     subtitle:
       "Choisissez l'hébergement qui correspond à votre séjour et profitez d'une vue exceptionnelle sur la Manche.",
     badge: "Le Portel · Côte d'Opale",
-    ratingText: "4,9/5 sur 127 avis",
+    ratingText: "8,3/10 sur Booking.com",
     ctaPrimary: {
       label: "Voir les hébergements",
       href: "#hebergements",
@@ -247,7 +247,7 @@ export const frHomeDictionary: HomeDictionary = {
         icon: "users",
         title: "Accueil personnalisé",
         description:
-          "Isabelle vous accueille sur place et partage ses meilleures adresses de la Côte d'Opale pour un séjour réussi.",
+          "Michel et Véronique vous accueillent sur place et partagent leurs meilleures adresses de la Côte d'Opale pour un séjour réussi.",
       },
     ],
   },
@@ -257,31 +257,31 @@ export const frHomeDictionary: HomeDictionary = {
     subtitle:
       "Des familles, des couples, des amis — tous sont repartis avec l'envie de revenir.",
     stats: [
-      { label: "Note moyenne", value: "4,9/5" },
-      { label: "Séjours en 2024", value: "127+" },
-      { label: "Clients réguliers", value: "62 %" },
+      { label: "Note Booking.com", value: "8,3/10" },
+      { label: "Personnel", value: "10/10" },
+      { label: "Rapport qualité/prix", value: "9,8/10" },
     ],
     reviews: [
       {
-        name: "Camille & Romain",
-        date: "Août 2024",
-        rating: 5,
-        text: "Vue mer imprenable, terrasse idéale pour les petits-déjeuners et accueil chaleureux d'Isabelle. Séjour parfait pour visiter Nausicaá en famille !",
+        name: "Cecile (France)",
+        date: "Mai 2026",
+        rating: 4.5,
+        text: "Propriétaire très agréable et d'une très grande gentillesse. Mobil-home impeccable, vraiment rien à redire, parfait. Nous reviendrons avec un très grand plaisir. Merci à Michel et Véronique.",
         platform: "Booking.com",
       },
       {
-        name: "Sébastien & Julie",
-        date: "Juillet 2024",
-        rating: 5,
-        text: "Mobil-home décoré avec goût, literie premium, tout est pensé pour le confort. Parking, wifi, clim... On reviendra sans hésiter !",
-        platform: "Airbnb",
+        name: "Laurianne (Belgique)",
+        date: "Avril 2026",
+        rating: 4.5,
+        text: "Le logement répond à mes attentes, fonctionnel, et la localisation était parfaite : calme et proche de la mer et de ses sentiers.",
+        platform: "Booking.com",
       },
       {
-        name: "Élodie",
-        date: "Mai 2024",
-        rating: 4.8,
-        text: "Excellent séjour. Calme, vue sur la mer, randonnées le long de la falaise. Mention spéciale pour la cuisine super équipée.",
-        platform: "Google",
+        name: "Romain (Belgique)",
+        date: "Mai 2026",
+        rating: 4,
+        text: "La vue depuis le logement est juste extra. La proximité de la plage.",
+        platform: "Booking.com",
       },
     ],
   },
@@ -306,7 +306,7 @@ export const frHomeDictionary: HomeDictionary = {
         id: "faq-3",
         question: "Quelles sont les heures d'arrivée et de départ ?",
         answer:
-          "L'arrivée se fait entre <strong>14h et 18h</strong>, avec accueil personnalisé par Isabelle sur place. Le départ est prévu avant <strong>11h</strong>. Toutes les informations pratiques vous sont transmises la semaine précédant votre séjour.",
+          "L'arrivée se fait entre <strong>14h et 18h</strong>, avec accueil personnalisé par Michel et Véronique sur place. Le départ est prévu avant <strong>11h</strong>. Toutes les informations pratiques vous sont transmises la semaine précédant votre séjour.",
       },
       {
         id: "faq-4",

@@ -122,7 +122,7 @@ export const nlContactDictionary: ContactDictionary = {
     title: "Klaar om te boeken?",
     description: "Reserveer meteen online of contacteer ons voor een verblijf op maat.",
     buttonLabel: "Nu boeken",
-    href: "https://checkout.lodgify.com/nl/blueportel/654566/reservation?currency=EUR&ref=bnbox&adults=1",
+    href: "/nl/pages/reserver",
   },
   screenReader: {
     title: "Contact Blueportel - mobilhome met zeezicht",

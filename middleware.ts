@@ -65,6 +65,6 @@ export const config = {
      * - robots.txt (robots file)
      * - sitemap files
      */
-    "/((?!api|_next/static|_next/image|favicon.ico|robots.txt|sitemap).*)",
+    "/((?!api|_next/static|_next/image|favicon.ico|robots.txt|llms.txt|sitemap).*)",
   ],
 };

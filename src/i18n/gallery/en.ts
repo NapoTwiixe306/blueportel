@@ -163,7 +163,7 @@ export const enGalleryDictionary: GalleryDictionary = {
       "Book your seaside stay or schedule a virtual tour—our team answers every question promptly.",
     bookingLabel: "Book now",
     bookingHref:
-      "https://checkout.lodgify.com/en/blueportel/654566/reservation?currency=EUR&ref=bnbox&adults=1",
+      "/en/pages/reserver",
     bookingRel: "nofollow",
     contactLabel: "Contact us",
     contactHref: "/pages/contact",

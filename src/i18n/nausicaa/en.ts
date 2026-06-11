@@ -3,7 +3,7 @@ import type { NausicaaDictionary } from "./types";
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://blueportel.com";
 
 const bookingUrl =
-  "https://checkout.lodgify.com/en/blueportel/654566/reservation?currency=EUR&ref=bnbox&adults=1";
+  "/en/pages/reserver";
 
 export const enNausicaaDictionary: NausicaaDictionary = {
   locale: "en",

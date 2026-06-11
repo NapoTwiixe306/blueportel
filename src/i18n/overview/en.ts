@@ -87,7 +87,7 @@ export const enOverviewDictionary: OverviewDictionary = {
     cta: {
       primary: {
         label: "Book now",
-        href: "https://checkout.lodgify.com/en/blueportel/654566/reservation?currency=EUR&ref=bnbox&adults=1",
+        href: "/en/pages/reserver",
         rel: "nofollow",
       },
       secondary: { label: "View photos", href: "/pages/galerie-photo" },

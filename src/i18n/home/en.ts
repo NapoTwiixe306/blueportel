@@ -4,9 +4,9 @@ import { getAlternates } from "../../lib/seo/hreflang";
 const siteUrl = "https://blueportel.fr";
 
 const prestigeBookingUrl =
-  "https://checkout.lodgify.com/en/blueportel/654566/reservation?currency=EUR&ref=bnbox&adults=1";
+  "/en/pages/reserver";
 const horizonBookingUrl =
-  "https://checkout.lodgify.com/en/blueportel/reservation?currency=EUR&ref=bnbox&adults=1";
+  "/en/pages/reserver";
 
 export const enHomeDictionary: HomeDictionary = {
   locale: "en",
@@ -72,9 +72,9 @@ export const enHomeDictionary: HomeDictionary = {
       },
       aggregateRating: {
         "@type": "AggregateRating",
-        ratingValue: "4.9",
-        reviewCount: "127",
-        bestRating: "5",
+        ratingValue: "8.3",
+        reviewCount: "8",
+        bestRating: "10",
         worstRating: "1",
       },
     },
@@ -113,7 +113,7 @@ export const enHomeDictionary: HomeDictionary = {
     subtitle:
       "Choose the accommodation that suits your stay and enjoy an exceptional view over the English Channel.",
     badge: "Le Portel · Opal Coast",
-    ratingText: "4.9/5 from 127 reviews",
+    ratingText: "8.3/10 on Booking.com",
     ctaPrimary: {
       label: "View accommodations",
       href: "#hebergements",
@@ -211,7 +211,7 @@ export const enHomeDictionary: HomeDictionary = {
         icon: "users",
         title: "Personalised welcome",
         description:
-          "Isabelle welcomes you on site and shares her best local tips for a memorable stay.",
+          "Michel and Véronique welcome you on site and share their best local tips for a memorable stay.",
       },
     ],
   },
@@ -220,31 +220,31 @@ export const enHomeDictionary: HomeDictionary = {
     title: "They stayed by the sea",
     subtitle: "Families, couples, friends — they all left wanting to come back.",
     stats: [
-      { label: "Average rating", value: "4.9/5" },
-      { label: "Stays in 2024", value: "127+" },
-      { label: "Returning guests", value: "62 %" },
+      { label: "Booking.com score", value: "8.3/10" },
+      { label: "Staff", value: "10/10" },
+      { label: "Value for money", value: "9.8/10" },
     ],
     reviews: [
       {
-        name: "Camille & Romain",
-        date: "August 2024",
-        rating: 5,
-        text: "Stunning sea view, perfect terrace for breakfasts and a warm welcome from Isabelle. Ideal stay for visiting Nausicaá with the family!",
+        name: "Cecile (France)",
+        date: "May 2026",
+        rating: 4.5,
+        text: "Very pleasant and extremely kind owner. The mobile home was impeccable — truly nothing to fault, perfect. We will come back with great pleasure. Thank you Michel and Véronique.",
         platform: "Booking.com",
       },
       {
-        name: "Sébastien & Julie",
-        date: "July 2024",
-        rating: 5,
-        text: "Tastefully decorated mobile home, premium bedding, everything thought out for comfort. Parking, wifi, AC… We'll definitely be back!",
-        platform: "Airbnb",
+        name: "Laurianne (Belgium)",
+        date: "April 2026",
+        rating: 4.5,
+        text: "The accommodation met my expectations, functional, and the location was perfect: quiet and close to the sea and its coastal paths.",
+        platform: "Booking.com",
       },
       {
-        name: "Élodie",
-        date: "May 2024",
-        rating: 4.8,
-        text: "Excellent stay. Peaceful, sea view, cliff walks. Special mention for the fully equipped kitchen.",
-        platform: "Google",
+        name: "Romain (Belgium)",
+        date: "May 2026",
+        rating: 4,
+        text: "The view from the accommodation is just amazing. So close to the beach.",
+        platform: "Booking.com",
       },
     ],
   },
@@ -269,7 +269,7 @@ export const enHomeDictionary: HomeDictionary = {
         id: "faq-3",
         question: "What are the check-in and check-out times?",
         answer:
-          "Check-in is between <strong>2pm and 6pm</strong>, with a personal welcome from Isabelle. Check-out is before <strong>11am</strong>.",
+          "Check-in is between <strong>2pm and 6pm</strong>, with a personal welcome from Michel and Véronique. Check-out is before <strong>11am</strong>.",
       },
       {
         id: "faq-4",

@@ -4,9 +4,9 @@ import { getAlternates } from "../../lib/seo/hreflang";
 const siteUrl = "https://blueportel.fr";
 
 const prestigeBookingUrl =
-  "https://checkout.lodgify.com/nl/blueportel/654566/reservation?currency=EUR&ref=bnbox&adults=1";
+  "/nl/pages/reserver";
 const horizonBookingUrl =
-  "https://checkout.lodgify.com/nl/blueportel/reservation?currency=EUR&ref=bnbox&adults=1";
+  "/nl/pages/reserver";
 
 export const nlHomeDictionary: HomeDictionary = {
   locale: "nl",
@@ -71,9 +71,9 @@ export const nlHomeDictionary: HomeDictionary = {
       },
       aggregateRating: {
         "@type": "AggregateRating",
-        ratingValue: "4.9",
-        reviewCount: "127",
-        bestRating: "5",
+        ratingValue: "8.3",
+        reviewCount: "8",
+        bestRating: "10",
         worstRating: "1",
       },
     },
@@ -112,7 +112,7 @@ export const nlHomeDictionary: HomeDictionary = {
     subtitle:
       "Kies het verblijf dat bij uw reis past en geniet van een uitzonderlijk uitzicht op het Kanaal.",
     badge: "Le Portel · Opaalkust",
-    ratingText: "4,9/5 op basis van 127 beoordelingen",
+    ratingText: "8,3/10 op Booking.com",
     ctaPrimary: {
       label: "Bekijk verblijven",
       href: "#hebergements",
@@ -210,7 +210,7 @@ export const nlHomeDictionary: HomeDictionary = {
         icon: "users",
         title: "Persoonlijk onthaal",
         description:
-          "Isabelle verwelkomt u ter plaatse en deelt haar beste adressen op de Opaalkust.",
+          "Michel en Véronique verwelkomen u ter plaatse en delen hun beste adressen aan de Opaalkust.",
       },
     ],
   },
@@ -219,31 +219,31 @@ export const nlHomeDictionary: HomeDictionary = {
     title: "Zij verbleven aan zee",
     subtitle: "Gezinnen, koppels, vrienden — ze wilden allemaal terugkomen.",
     stats: [
-      { label: "Gemiddelde beoordeling", value: "4,9/5" },
-      { label: "Verblijven in 2024", value: "127+" },
-      { label: "Terugkerende gasten", value: "62 %" },
+      { label: "Booking.com-score", value: "8,3/10" },
+      { label: "Personeel", value: "10/10" },
+      { label: "Prijs-kwaliteit", value: "9,8/10" },
     ],
     reviews: [
       {
-        name: "Camille & Romain",
-        date: "Augustus 2024",
-        rating: 5,
-        text: "Prachtig zeezicht, ideaal terras voor het ontbijt en een warm onthaal van Isabelle. Perfect verblijf voor een bezoek aan Nausicaá met het gezin!",
+        name: "Cecile (Frankrijk)",
+        date: "Mei 2026",
+        rating: 4.5,
+        text: "Zeer aangename en bijzonder vriendelijke eigenaar. Onberispelijke mobilhome — echt niets op aan te merken, perfect. We komen met veel plezier terug. Bedankt Michel en Véronique.",
         platform: "Booking.com",
       },
       {
-        name: "Sébastien & Julie",
-        date: "Juli 2024",
-        rating: 5,
-        text: "Smaakvol ingericht mobilhome, premium beddengoed, alles doordacht voor comfort. Parking, wifi, airco… We komen zeker terug!",
-        platform: "Airbnb",
+        name: "Laurianne (België)",
+        date: "April 2026",
+        rating: 4.5,
+        text: "De accommodatie voldeed aan mijn verwachtingen, functioneel, en de ligging was perfect: rustig en dicht bij de zee en haar wandelpaden.",
+        platform: "Booking.com",
       },
       {
-        name: "Élodie",
-        date: "Mei 2024",
-        rating: 4.8,
-        text: "Uitstekend verblijf. Rustig, zeezicht, wandelingen langs de kliffen. Speciale vermelding voor de volledig uitgeruste keuken.",
-        platform: "Google",
+        name: "Romain (België)",
+        date: "Mei 2026",
+        rating: 4,
+        text: "Het uitzicht vanuit de accommodatie is gewoonweg fantastisch. En zo dicht bij het strand.",
+        platform: "Booking.com",
       },
     ],
   },
@@ -268,7 +268,7 @@ export const nlHomeDictionary: HomeDictionary = {
         id: "faq-3",
         question: "Wat zijn de aankomst- en vertrektijden?",
         answer:
-          "Aankomst tussen <strong>14u en 18u</strong>, met persoonlijk onthaal door Isabelle. Vertrek vóór <strong>11u</strong>.",
+          "Aankomst tussen <strong>14u en 18u</strong>, met persoonlijk onthaal door Michel en Véronique. Vertrek vóór <strong>11u</strong>.",
       },
       {
         id: "faq-4",

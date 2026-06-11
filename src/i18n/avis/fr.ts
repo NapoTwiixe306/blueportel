@@ -2,33 +2,48 @@ import type { AvisDictionary } from "./types";
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://blueportel.com";
 
+// Avis réels issus de la fiche Booking.com de Blueportel Prestige
+// (note globale 8,3/10 sur 8 commentaires — notes converties sur 5 pour l'affichage)
 const reviews = [
   {
-    name: "Camille & Romain",
-    date: "Août 2024",
-    rating: 5,
-    text: "Vue mer imprenable, terrasse idéale pour les petits-déjeuners et accueil chaleureux d'Isabelle. Séjour parfait pour visiter Nausicaá en famille !",
+    name: "Cecile (France)",
+    date: "Mai 2026",
+    rating: 4.5,
+    text: "Propriétaire très agréable et d'une très grande gentillesse. Mobil-home impeccable, vraiment rien à redire, parfait. À proximité du centre-ville, bord de mer très agréable. Nous reviendrons avec un très grand plaisir. Merci à Michel et Véronique.",
   },
   {
-    name: "Sébastien & Julie",
-    date: "Juillet 2024",
-    rating: 5,
-    text: "Mobil-home décoré avec goût, literie premium, tout est pensé pour le confort. Parking, wifi, clim... On reviendra !",
+    name: "Laurianne (Belgique)",
+    date: "Avril 2026",
+    rating: 4.5,
+    text: "Le logement répond à mes attentes, fonctionnel, et la localisation était parfaite : calme et proche de la mer et de ses sentiers.",
   },
   {
-    name: "Élodie",
-    date: "Mai 2024",
-    rating: 4.8,
-    text: "Excellent séjour. Calme, vue sur la mer, randonnées le long de la falaise. Mention spéciale pour la cuisine super équipée.",
+    name: "Vincent (France)",
+    date: "Octobre 2025",
+    rating: 4.5,
+    text: "Mobil-home très bien équipé, il y a tout le nécessaire cuisine, sanitaire et ménage. Climatisation et chauffage. C'est plutôt spacieux pour une famille avec 2 enfants. Proche de la mer dans un camping fermé, avec aire de jeux. Propriétaire attentionné, il y a des jeux de société à disposition.",
+  },
+  {
+    name: "Romain (Belgique)",
+    date: "Mai 2026",
+    rating: 4,
+    text: "La vue depuis le logement est juste extra. La proximité de la plage.",
   },
 ];
+
+const reviewDates: Record<string, string> = {
+  "Cecile (France)": "2026-05-03",
+  "Laurianne (Belgique)": "2026-04-08",
+  "Vincent (France)": "2025-10-21",
+  "Romain (Belgique)": "2026-05-15",
+};
 
 export const frAvisDictionary: AvisDictionary = {
   locale: "fr",
   metadata: {
     title: "Avis Blueportel | Témoignages clients",
     description:
-      "Notes vérifiées des voyageurs Blueportel. Découvrez pourquoi notre mobil-home face à la mer obtient 4.9/5 depuis 2022.",
+      "Avis vérifiés des voyageurs Blueportel sur Booking.com : 8,3/10, emplacement noté 9,5/10 et rapport qualité/prix 9,8/10 pour notre mobil-home face à la mer à Le Portel.",
     alternates: {
       canonical: "/fr/pages/avis",
       languages: {
@@ -54,8 +69,10 @@ export const frAvisDictionary: AvisDictionary = {
       url: `${siteUrl}/fr/pages/avis`,
       aggregateRating: {
         "@type": "AggregateRating",
-        ratingValue: "4.9",
-        reviewCount: "127",
+        ratingValue: "8.3",
+        bestRating: "10",
+        worstRating: "1",
+        reviewCount: "8",
       },
       review: reviews.map((review) => ({
         "@type": "Review",
@@ -67,7 +84,7 @@ export const frAvisDictionary: AvisDictionary = {
           bestRating: "5",
           worstRating: "1",
         },
-        datePublished: "2024-01-01",
+        datePublished: reviewDates[review.name],
       })),
     },
     breadcrumb: {
@@ -85,12 +102,12 @@ export const frAvisDictionary: AvisDictionary = {
     pretitle: "Témoignages • Blueportel",
     title: "Ils ont séjourné face à la mer au Portel",
     description:
-      "Découvrez les retours des voyageurs qui ont profité de la vue panoramique, de la terrasse couverte et de l'accueil premium Blueportel. Partagez également votre expérience.",
+      "Les avis ci-dessous sont les avis vérifiés de nos voyageurs sur Booking.com : note globale 8,3/10, emplacement 9,5/10, personnel 10/10. Découvrez leurs retours — et partagez le vôtre après votre séjour.",
   },
   stats: [
-    { label: "Note moyenne", value: "4.9/5" },
-    { label: "Séjours 2024", value: "127+" },
-    { label: "Clients réguliers", value: "62%" },
+    { label: "Note Booking.com", value: "8,3/10" },
+    { label: "Personnel", value: "10/10" },
+    { label: "Rapport qualité/prix", value: "9,8/10" },
   ],
   reviews,
   reasons: {
@@ -108,7 +125,7 @@ export const frAvisDictionary: AvisDictionary = {
     links: [
       { label: "Envoyer un email", href: "mailto:info@blueportel.fr", type: "email" },
       { label: "Avis Facebook", href: "https://www.facebook.com/blueportel", type: "facebook" },
-      { label: "Avis Airbnb", href: "https://www.airbnb.fr/rooms/123456", type: "airbnb" },
+      { label: "Avis Booking.com", href: "https://www.booking.com/hotel/fr/blueportel.fr.html", type: "airbnb" },
     ],
   },
   cta: {
@@ -121,7 +138,7 @@ export const frAvisDictionary: AvisDictionary = {
     emailHref: "mailto:info@blueportel.fr",
     bookingLabel: "Réserver maintenant",
     bookingHref:
-      "https://checkout.lodgify.com/fr/blueportel/654566/reservation?currency=EUR&ref=bnbox&adults=1",
+      "/fr/pages/reserver",
   },
   screenReader: {
     title: "Avis Blueportel",

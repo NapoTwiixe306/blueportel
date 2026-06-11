@@ -163,7 +163,7 @@ export const nlGalleryDictionary: GalleryDictionary = {
       "Boek uw verblijf aan zee of vraag een virtuele rondleiding aan—wij beantwoorden al uw vragen.",
     bookingLabel: "Nu boeken",
     bookingHref:
-      "https://checkout.lodgify.com/nl/blueportel/654566/reservation?currency=EUR&ref=bnbox&adults=1",
+      "/nl/pages/reserver",
     bookingRel: "nofollow",
     contactLabel: "Contacteer ons",
     contactHref: "/pages/contact",

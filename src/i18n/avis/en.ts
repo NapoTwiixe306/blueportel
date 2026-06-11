@@ -2,33 +2,48 @@ import type { AvisDictionary } from "./types";
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://blueportel.com";
 
+// Genuine reviews from the Blueportel Prestige Booking.com listing
+// (overall score 8.3/10 from 8 reviews — ratings converted to /5 for display)
 const reviews = [
   {
-    name: "Camille & Romain",
-    date: "August 2024",
-    rating: 5,
-    text: "Unbeatable sea view, perfect terrace breakfasts and Isabelle’s warm welcome. Ideal base to visit Nausicaá with the kids!",
+    name: "Cecile (France)",
+    date: "May 2026",
+    rating: 4.5,
+    text: "Very pleasant and extremely kind owner. The mobile home was impeccable — truly nothing to fault, perfect. Close to the town centre, very pleasant seafront. We will come back with great pleasure. Thank you Michel and Véronique.",
   },
   {
-    name: "Sébastien & Julie",
-    date: "July 2024",
-    rating: 5,
-    text: "Beautifully decorated mobile home, premium bedding, every detail covered. Parking, Wi-Fi, AC… we’ll be back!",
+    name: "Laurianne (Belgium)",
+    date: "April 2026",
+    rating: 4.5,
+    text: "The accommodation met my expectations, functional, and the location was perfect: quiet and close to the sea and its coastal paths.",
   },
   {
-    name: "Élodie",
-    date: "May 2024",
-    rating: 4.8,
-    text: "Superb stay. Quiet setting, ocean view, cliff hikes. Special mention for the fully equipped kitchen.",
+    name: "Vincent (France)",
+    date: "October 2025",
+    rating: 4.5,
+    text: "Very well equipped mobile home — everything you need for cooking, bathroom and cleaning. Air conditioning and heating. Quite spacious for a family with 2 children. Close to the sea in a gated campsite with a playground. Attentive owner, with board games available.",
+  },
+  {
+    name: "Romain (Belgium)",
+    date: "May 2026",
+    rating: 4,
+    text: "The view from the accommodation is just amazing. So close to the beach.",
   },
 ];
+
+const reviewDates: Record<string, string> = {
+  "Cecile (France)": "2026-05-03",
+  "Laurianne (Belgium)": "2026-04-08",
+  "Vincent (France)": "2025-10-21",
+  "Romain (Belgium)": "2026-05-15",
+};
 
 export const enAvisDictionary: AvisDictionary = {
   locale: "en",
   metadata: {
     title: "Blueportel reviews | Guest stories",
     description:
-      "Verified Blueportel guest ratings. See why our seafront mobile home has held a 4.9/5 score since 2022.",
+      "Verified Blueportel guest reviews from Booking.com: 8.3/10 overall, location rated 9.5/10 and value for money 9.8/10 for our seafront mobile home in Le Portel.",
     alternates: {
       canonical: "/en/pages/avis",
       languages: {
@@ -54,8 +69,10 @@ export const enAvisDictionary: AvisDictionary = {
       url: `${siteUrl}/en/pages/avis`,
       aggregateRating: {
         "@type": "AggregateRating",
-        ratingValue: "4.9",
-        reviewCount: "127",
+        ratingValue: "8.3",
+        bestRating: "10",
+        worstRating: "1",
+        reviewCount: "8",
       },
       review: reviews.map((review) => ({
         "@type": "Review",
@@ -67,7 +84,7 @@ export const enAvisDictionary: AvisDictionary = {
           bestRating: "5",
           worstRating: "1",
         },
-        datePublished: "2024-01-01",
+        datePublished: reviewDates[review.name],
       })),
     },
     breadcrumb: {
@@ -85,12 +102,12 @@ export const enAvisDictionary: AvisDictionary = {
     pretitle: "Guest stories • Blueportel",
     title: "They stayed by the sea in Le Portel",
     description:
-      "Read what travellers loved about the panoramic view, covered terrace and premium hosting at Blueportel. Share your experience to help future guests.",
+      "The reviews below are verified guest reviews from our Booking.com listing: 8.3/10 overall, location 9.5/10, staff 10/10. Read their feedback — and share yours after your stay.",
   },
   stats: [
-    { label: "Average rating", value: "4.9/5" },
-    { label: "Stays in 2024", value: "127+" },
-    { label: "Returning guests", value: "62%" },
+    { label: "Booking.com score", value: "8.3/10" },
+    { label: "Staff", value: "10/10" },
+    { label: "Value for money", value: "9.8/10" },
   ],
   reviews,
   reasons: {
@@ -108,7 +125,7 @@ export const enAvisDictionary: AvisDictionary = {
     links: [
       { label: "Send an email", href: "mailto:info@blueportel.fr", type: "email" },
       { label: "Facebook review", href: "https://www.facebook.com/blueportel", type: "facebook" },
-      { label: "Airbnb review", href: "https://www.airbnb.fr/rooms/123456", type: "airbnb" },
+      { label: "Booking.com review", href: "https://www.booking.com/hotel/fr/blueportel.en-gb.html", type: "airbnb" },
     ],
   },
   cta: {
@@ -121,7 +138,7 @@ export const enAvisDictionary: AvisDictionary = {
     emailHref: "mailto:info@blueportel.fr",
     bookingLabel: "Book now",
     bookingHref:
-      "https://checkout.lodgify.com/en/blueportel/654566/reservation?currency=EUR&ref=bnbox&adults=1",
+      "/en/pages/reserver",
   },
   screenReader: {
     title: "Blueportel guest reviews",
