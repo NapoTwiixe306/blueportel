@@ -4,10 +4,14 @@ import Image from "next/image";
 import { useEffect, useMemo, useState } from "react";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 
-import type { LocationSection } from "../../i18n/home/types";
+type CarouselSlide = {
+  src: string;
+  alt: string;
+  caption?: string;
+};
 
 type LocationCarouselProps = {
-  slides: LocationSection["carouselImages"];
+  slides: CarouselSlide[];
 };
 
 export default function LocationCarousel({ slides }: LocationCarouselProps) {
@@ -49,7 +53,7 @@ export default function LocationCarousel({ slides }: LocationCarouselProps) {
       </div>
 
       <div className="absolute inset-x-4 bottom-4 flex items-center justify-center gap-3">
-        {slides.map((_, index) => (
+        {slides.map((_slide: CarouselSlide, index: number) => (
           <button
             key={`slide-dot-${index}`}
             type="button"

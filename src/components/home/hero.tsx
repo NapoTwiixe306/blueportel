@@ -1,279 +1,163 @@
-"use client"
+"use client";
 
-import { ArrowRight, Star, Users, Waves, Umbrella } from "lucide-react"
-import Link from "next/link"
-import Image from "next/image"
-import { motion, cubicBezier } from "framer-motion"
+import { ArrowRight, Star, Waves, Users } from "lucide-react";
+import Link from "next/link";
+import Image from "next/image";
+import { motion, cubicBezier } from "framer-motion";
 
-import herobg from "../../img/herobg.jpg"
-import type { HeroSection } from "../../i18n/home/types"
+import herobg from "../../img/herobg.jpg";
 
-interface HeroBannerProps {
-  hero: HeroSection
-  locale: string
-}
+type HeroProps = {
+  title: string;
+  subtitle: string;
+  ctaPrimary: { label: string; href: string };
+  ctaSecondary: { label: string; href: string };
+  badge: string;
+  ratingText: string;
+  statsItems: { label: string; value: string }[];
+};
 
-/* ---------------- TEXTS ---------------- */
-
-const getHeroTexts = (locale: string) => {
-  const texts: Record<string, Record<string, string>> = {
-    fr: {
-      people: "6 Personnes",
-      bedrooms: "3 Chambres",
-      seafront: "Face à la mer",
-      beachAccess: "Accès direct à la plage",
-      directAccess: "Accès direct",
-      beach: "plage",
-      rating: "9,1/10 sur +10 avis",
-    },
-    en: {
-      people: "6 People",
-      bedrooms: "3 Bedrooms",
-      seafront: "Facing the sea",
-      beachAccess: "Direct beach access",
-      directAccess: "Direct access",
-      beach: "beach",
-      rating: "9.1/10 from +10 reviews",
-    },
-    nl: {
-      people: "6 Personen",
-      bedrooms: "3 Slaapkamers",
-      seafront: "Aan zee",
-      beachAccess: "Directe strandtoegang",
-      directAccess: "Directe toegang",
-      beach: "strand",
-      rating: "9,1/10 van +10 reviews",
-    },
-  }
-  return texts[locale] || texts.fr
-}
-
-/* ---------------- ANIMATION ---------------- */
-
-const easing = cubicBezier(0.25, 0.1, 0.25, 1)
+const easing = cubicBezier(0.25, 0.1, 0.25, 1);
 
 const container = {
   hidden: {},
   show: {
-    transition: {
-      staggerChildren: 0.12,
-      delayChildren: 0.2,
-    },
+    transition: { staggerChildren: 0.1, delayChildren: 0.15 },
   },
-}
+};
 
 const item = {
-  hidden: {
-    opacity: 0,
-    y: 18,
-    filter: "blur(6px)",
-  },
+  hidden: { opacity: 0, y: 20, filter: "blur(4px)" },
   show: {
     opacity: 1,
     y: 0,
     filter: "blur(0px)",
-    transition: {
-      duration: 0.6,
-      ease: easing,
-    },
+    transition: { duration: 0.55, ease: easing },
   },
-}
+};
 
-/* ---------------- FEATURES ---------------- */
-
-const featureContainer = {
-  hidden: { opacity: 0, y: 20 },
+const statsVariant = {
+  hidden: { opacity: 0, y: 24 },
   show: {
     opacity: 1,
     y: 0,
-    transition: {
-      duration: 0.6,
-      delay: 0.35,
-      ease: easing,
-    },
+    transition: { duration: 0.5, delay: 0.5, ease: easing },
   },
-}
+};
 
-const featureItem = {
-  hover: {
-    y: -6,
-    scale: 1.02,
-    transition: {
-      type: "spring" as const, // ✅ FIX TS ERROR ICI
-      stiffness: 300,
-      damping: 20,
-    },
-  },
-}
-
-/* ---------------- COMPONENT ---------------- */
-
-export default function HeroBanner({ hero, locale }: HeroBannerProps) {
-  const texts = getHeroTexts(locale)
-
+export default function Hero({
+  title,
+  subtitle,
+  ctaPrimary,
+  ctaSecondary,
+  badge,
+  ratingText,
+  statsItems,
+}: HeroProps) {
   return (
-    <section className="relative w-full min-h-[60vh] sm:min-h-[70vh] md:min-h-[80vh] overflow-hidden">
-
-      {/* BACKGROUND */}
+    <section className="relative w-full min-h-[70vh] sm:min-h-[80vh] md:min-h-screen overflow-hidden">
+      {/* Background image */}
       <div className="absolute inset-0">
         <Image
           src={herobg}
-          alt={hero.srDescription}
+          alt="Vue mer panoramique depuis BluePortel sur la Côte d'Opale"
           fill
           className="object-cover"
           priority
+          fetchPriority="high"
         />
+        <div className="absolute inset-0 bg-gradient-to-r from-slate-950/90 via-slate-900/70 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-t from-slate-950/50 via-transparent to-transparent" />
       </div>
 
-      {/* DECOR */}
-      <div className="absolute -right-20 top-10 w-72 h-72 rounded-full bg-[#3B82F6]/20 blur-3xl" />
-      <div className="absolute -left-16 top-40 w-52 h-52 rounded-full bg-[#F59E0B]/20 blur-3xl" />
-      <div className="absolute -right-10 bottom-24 w-40 h-40 rounded-full bg-[#22C55E]/20 blur-3xl" />
+      {/* Decorative glows */}
+      <div className="absolute right-0 top-0 w-96 h-96 rounded-full bg-blue-500/10 blur-3xl pointer-events-none" />
+      <div className="absolute right-1/4 bottom-1/4 w-64 h-64 rounded-full bg-sky-400/10 blur-3xl pointer-events-none" />
 
-      {/* OVERLAY */}
-      <div
-        className="absolute inset-0 bg-white/95 shadow-[inset_0_0_200px_rgba(255,255,255,0.9)]"
-        style={{ clipPath: "ellipse(60% 105% at 0% 20%)" }}
-      />
-
-      {/* CONTENT */}
-      <div className="relative z-10 w-full h-full px-4 sm:px-6 lg:px-10 pt-18 sm:pt-24 md:pt-28 lg:pt-32 pb-40 sm:pb-48 md:pb-52 lg:pb-56 flex flex-col justify-center">
-
+      {/* Content */}
+      <div className="relative z-10 w-full h-full px-4 sm:px-6 lg:px-10 pt-20 sm:pt-28 md:pt-36 pb-32 sm:pb-40 flex flex-col justify-center">
         <motion.div
           className="max-w-2xl"
           variants={container}
           initial="hidden"
           animate="show"
         >
-
-          {/* BADGE */}
-          <motion.div
-            variants={item}
-            className="inline-flex items-center px-4 py-2 rounded-full bg-linear-to-r from-sky-200 to-blue-100 text-[#1D4ED8] text-sm font-semibold mb-5 shadow-sm"
-          >
-            {hero.pretitle}
+          {/* Badge */}
+          <motion.div variants={item}>
+            <span className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 backdrop-blur-sm px-4 py-1.5 text-xs sm:text-sm font-semibold text-white/90 mb-6">
+              <Waves className="h-3.5 w-3.5 text-sky-300" />
+              {badge}
+            </span>
           </motion.div>
 
-          {/* TITLE */}
+          {/* Title */}
           <motion.h1
             variants={item}
-            className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-extrabold text-[#0F172A] leading-tight tracking-tight mb-4"
+            className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold text-white leading-[1.1] tracking-tight mb-5"
           >
-            <span className="whitespace-nowrap">{hero.titleLine1}</span>
-
-            <span className="block mt-3 sm:mt-4 text-[#334155]">
-              <span>{hero.titleLine2Prefix}</span>{" "}
-              <span
-                className="text-[#3B82F6]"
-                style={{ fontFamily: "var(--font-caveat)" }}
-              >
-                {hero.titleLine2Highlight}
-              </span>
-            </span>
+            {title}
           </motion.h1>
 
-          {/* TEXT */}
+          {/* Subtitle */}
           <motion.p
             variants={item}
-            className="text-base sm:text-lg md:text-xl text-[#334155] mb-7 max-w-xl"
+            className="text-base sm:text-lg md:text-xl text-white/75 mb-8 max-w-xl leading-relaxed"
           >
-            {hero.tagline}
+            {subtitle}
           </motion.p>
 
-          {/* CTA */}
-          <motion.div
-            variants={item}
-            className="flex flex-col sm:flex-row gap-4 mb-8"
-          >
-
-            {/* PRIMARY */}
+          {/* CTAs */}
+          <motion.div variants={item} className="flex flex-col sm:flex-row gap-3 mb-8">
             <Link
-              href={hero.ctaPrimary.href}
-              className="relative group inline-flex items-center justify-center overflow-hidden rounded-full bg-[#2563EB] px-6 py-3 font-semibold text-white shadow-2xl transition hover:-translate-y-0.5 hover:scale-[1.02] active:scale-[0.98]"
+              href={ctaPrimary.href}
+              className="group inline-flex items-center justify-center gap-2 rounded-full bg-blue-500 px-7 py-3.5 text-sm font-bold text-white shadow-lg shadow-blue-500/30 transition-all hover:-translate-y-0.5 hover:bg-blue-400 active:scale-[0.98]"
             >
-              <span className="absolute inset-0 bg-[#2563EB] blur-xl opacity-0 group-hover:opacity-30 transition" />
-              <span className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-700 bg-linear-to-r from-transparent via-white/30 to-transparent opacity-40" />
-
-              <span className="relative flex items-center gap-2">
-                {hero.ctaPrimary.label}
-                <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
-              </span>
+              {ctaPrimary.label}
+              <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
             </Link>
-
-            {/* SECONDARY */}
             <Link
-              href={hero.ctaSecondary.href}
-              className="relative group inline-flex items-center justify-center overflow-hidden rounded-full border-2 border-[#3B82F6] bg-white/90 px-6 py-3 font-semibold text-[#3B82F6] transition hover:-translate-y-0.5 hover:scale-[1.02] active:scale-[0.98] hover:bg-[#3B82F6] hover:text-white"
+              href={ctaSecondary.href}
+              className="group inline-flex items-center justify-center gap-2 rounded-full border border-white/30 bg-white/10 backdrop-blur-sm px-7 py-3.5 text-sm font-bold text-white transition-all hover:bg-white/20 hover:border-white/50 active:scale-[0.98]"
             >
-              <span className="absolute inset-0 bg-[#3B82F6] blur-xl opacity-0 group-hover:opacity-20 transition" />
-              <span className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-700 bg-linear-to-r from-transparent via-white/20 to-transparent opacity-30" />
-
-              <span className="relative flex items-center gap-2">
-                {hero.ctaSecondary.label}
-                <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
-              </span>
+              {ctaSecondary.label}
+              <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
             </Link>
           </motion.div>
 
-          {/* RATING */}
+          {/* Rating */}
           <motion.div
             variants={item}
-            className="inline-flex items-center gap-3 rounded-full bg-slate-50/90 px-4 py-2 border"
+            className="inline-flex items-center gap-2 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 px-4 py-2"
           >
             <div className="flex gap-0.5">
               {[1, 2, 3, 4].map((i) => (
-                <Star key={i} className="h-4 w-4 fill-[#FBBF24] text-[#FBBF24]" />
+                <Star key={i} className="h-4 w-4 fill-amber-400 text-amber-400" aria-hidden="true" />
               ))}
-              <Star className="h-4 w-4 fill-[#FBBF24]/50 text-[#FBBF24]" />
+              <Star className="h-4 w-4 fill-amber-400/50 text-amber-400" aria-hidden="true" />
             </div>
-            <span className="text-sm text-slate-600">{texts.rating}</span>
+            <span className="text-xs sm:text-sm text-white/80 font-medium">{ratingText}</span>
           </motion.div>
-
         </motion.div>
       </div>
 
-      {/* FEATURES */}
+      {/* Stats bar */}
       <motion.div
-        variants={featureContainer}
+        variants={statsVariant}
         initial="hidden"
         animate="show"
-        className="absolute bottom-4 right-3 sm:bottom-8 sm:right-6 lg:right-8 z-20 w-[calc(100%-24px)] sm:w-auto sm:max-w-3xl"
+        className="absolute bottom-0 left-0 right-0 z-20"
       >
-        <div className="bg-white/95 backdrop-blur-xl border rounded-3xl shadow-2xl p-4 sm:p-6 flex flex-col gap-4 md:flex-row">
-
-          <motion.div variants={featureItem} whileHover="hover" className="flex items-center gap-3">
-            <div className="w-12 h-12 flex items-center justify-center bg-[#DBEAFE] rounded-2xl">
-              <Users className="h-6 w-6 text-[#2563EB]" />
-            </div>
-            <div>
-              <p className="font-semibold text-[#0F172A]">{texts.people}</p>
-              <p className="text-xs text-slate-500">{texts.bedrooms}</p>
-            </div>
-          </motion.div>
-
-          <motion.div variants={featureItem} whileHover="hover" className="flex items-center gap-3">
-            <div className="w-12 h-12 flex items-center justify-center bg-[#DBEAFE] rounded-2xl">
-              <Waves className="h-6 w-6 text-[#2563EB]" />
-            </div>
-            <div>
-              <p className="font-semibold text-[#0F172A]">{texts.seafront}</p>
-              <p className="text-xs text-slate-500">{texts.beachAccess}</p>
-            </div>
-          </motion.div>
-
-          <motion.div variants={featureItem} whileHover="hover" className="flex items-center gap-3">
-            <div className="w-12 h-12 flex items-center justify-center bg-[#DBEAFE] rounded-2xl">
-              <Umbrella className="h-6 w-6 text-[#2563EB]" />
-            </div>
-            <div>
-              <p className="font-semibold text-[#0F172A]">{texts.directAccess}</p>
-              <p className="text-xs text-slate-500">{texts.beach}</p>
-            </div>
-          </motion.div>
-
+        <div className="mx-4 sm:mx-6 lg:mx-10 mb-4 sm:mb-6 rounded-2xl bg-white/95 backdrop-blur-xl border border-white/60 shadow-2xl">
+          <div className="grid grid-cols-3 divide-x divide-gray-100">
+            {statsItems.map((stat) => (
+              <div key={stat.label} className="py-4 px-4 sm:px-6 text-center">
+                <p className="text-base sm:text-lg md:text-xl font-bold text-slate-900">{stat.value}</p>
+                <p className="text-xs sm:text-sm text-slate-500 mt-0.5">{stat.label}</p>
+              </div>
+            ))}
+          </div>
         </div>
       </motion.div>
-
     </section>
-  )
+  );
 }

@@ -3,77 +3,78 @@ import { getAlternates } from "../../lib/seo/hreflang";
 
 const siteUrl = "https://blueportel.fr";
 
+const prestigeBookingUrl =
+  "https://checkout.lodgify.com/fr/blueportel/654566/reservation?currency=EUR&ref=bnbox&adults=1";
+const horizonBookingUrl =
+  "https://checkout.lodgify.com/fr/blueportel/reservation?currency=EUR&ref=bnbox&adults=1";
+
 export const frHomeDictionary: HomeDictionary = {
   locale: "fr",
+
   metadata: {
-    title: "Blueportel - Mobil-Home Prestige Face à la Mer | Le Portel",
+    title: "BluePortel — Deux mobil-homes face à la mer | Côte d'Opale, Le Portel",
     description:
-      "Location mobil-home prestige face à la mer au Portel, Côte d'Opale. Mobil-home 3 chambres, vue panoramique, accès direct plage. Réservez dès 75€/nuit.",
+      "Choisissez votre mobil-home face à la mer sur la Côte d'Opale. Prestige (6 pers.) ou Horizon (4 pers.) : vue sur la Manche, accès direct plage, réservation directe sans frais.",
     keywords: [
       "location mobil-home Le Portel",
-      "mobil-home prestige face à la mer",
-      "location mobil-home Côte d'Opale",
-      "mobil-home 3 chambres vue mer",
+      "mobil-home face à la mer Côte d'Opale",
       "location vacances Le Portel",
-      "mobil-home plage Le Portel",
-      "hébergement mobil-home prestige",
-      "location mobil-home vue panoramique",
-      "mobil-home haut de gamme Côte d'Opale",
-      "location mobil-home accès plage",
-      "location mobil-home Boulogne-sur-Mer",
       "mobil-home vue mer",
-      "location vacances Côte d'Opale",
-      "mobil-home 6 personnes",
-      "location mobil-home terrasse vue mer",
+      "hébergement Côte d'Opale",
+      "mobil-home 6 personnes vue mer",
+      "location mobil-home Boulogne-sur-Mer",
+      "mobil-home terrasse vue mer",
+      "réservation directe mobil-home",
+      "camping Côte d'Opale bord de mer",
     ],
-    authors: [{ name: "Blueportel" }],
-    creator: "Blueportel",
-    publisher: "Blueportel",
+    authors: [{ name: "BluePortel" }],
+    creator: "BluePortel",
+    publisher: "BluePortel",
     alternates: getAlternates("fr"),
     openGraph: {
-      title: "Blueportel - Mobil-Home Prestige Face à la Mer | Le Portel",
+      title: "BluePortel — Deux mobil-homes face à la mer | Côte d'Opale",
       description:
-        "Location mobil-home prestige 3 chambres face à la mer au Portel. Vue panoramique, accès direct plage. À partir de 75€/nuit.",
+        "Prestige (6 pers.) ou Horizon (4 pers.) face à la Manche. Vue panoramique, accès direct plage. Réservation directe, meilleur tarif garanti.",
       type: "website",
       locale: "fr_FR",
-      url: "https://blueportel.fr",
-      siteName: "Blueportel",
+      url: siteUrl,
+      siteName: "BluePortel",
       images: [
         {
-          url: "https://blueportel.fr/logo.png",
+          url: `${siteUrl}/galerie/blueportel-hero-vue-mer.png`,
           width: 1200,
           height: 630,
-          alt: "Blueportel - Logo",
+          alt: "BluePortel — Vue mer panoramique Côte d'Opale",
         },
       ],
     },
     twitter: {
       card: "summary_large_image",
-      title: "Blueportel - Mobil-Home Prestige Face à la Mer",
-      description:
-        "Location mobil-home prestige 3 chambres face à la mer au Portel. Vue panoramique, accès direct plage.",
-      images: ["https://blueportel.fr/logo.png"],
+      title: "BluePortel — Deux mobil-homes face à la mer",
+      description: "Prestige (6 pers.) ou Horizon (4 pers.) sur la Côte d'Opale. Vue mer, accès plage, réservation directe.",
+      images: [`${siteUrl}/galerie/blueportel-hero-vue-mer.png`],
     },
   },
+
   structuredData: {
     localBusiness: {
       "@context": "https://schema.org",
-      "@type": "LocalBusiness",
+      "@type": "LodgingBusiness",
       "@id": `${siteUrl}/fr#organization`,
-      name: "Blueportel",
-      description:
-        "Location de mobil-home prestige face à la mer au Portel sur la Côte d'Opale",
+      name: "BluePortel",
+      description: "Location de mobil-homes face à la mer au Portel sur la Côte d'Opale",
       url: `${siteUrl}/fr`,
       logo: `${siteUrl}/logo.png`,
-      image: `${siteUrl}/og-image.jpg`,
+      image: `${siteUrl}/galerie/blueportel-hero-vue-mer.png`,
       telephone: ["+32488832091", "+33745324836"],
       email: "info@blueportel.fr",
       address: {
         "@type": "PostalAddress",
-        streetAddress: "rue du Vinâve 32",
-        addressLocality: "Liers",
-        addressCountry: "BE",
-        postalCode: "4042",
+        streetAddress: "Camping Le Phare d'Opale",
+        addressLocality: "Le Portel",
+        addressRegion: "Hauts-de-France",
+        addressCountry: "FR",
+        postalCode: "62480",
       },
       geo: {
         "@type": "GeoCoordinates",
@@ -81,23 +82,9 @@ export const frHomeDictionary: HomeDictionary = {
         longitude: 1.5714,
       },
       priceRange: "€€",
-      openingHoursSpecification: {
-        "@type": "OpeningHoursSpecification",
-        dayOfWeek: [
-          "Monday",
-          "Tuesday",
-          "Wednesday",
-          "Thursday",
-          "Friday",
-          "Saturday",
-          "Sunday",
-        ],
-        opens: "00:00",
-        closes: "23:59",
-      },
       aggregateRating: {
         "@type": "AggregateRating",
-        ratingValue: "4.8",
+        ratingValue: "4.9",
         reviewCount: "127",
         bestRating: "5",
         worstRating: "1",
@@ -106,210 +93,267 @@ export const frHomeDictionary: HomeDictionary = {
     accommodation: {
       "@context": "https://schema.org",
       "@type": "Accommodation",
-      name: "Blueportel Mobil-Home Prestige",
+      name: "BluePortel Prestige",
       description:
-        "Mobil-home de prestige 3 chambres face à la mer au Portel avec vue panoramique et accès direct à la plage",
-      image: `${siteUrl}/og-image.jpg`,
+        "Mobil-home Prestige 3 chambres pour 6 personnes face à la mer au Portel avec vue panoramique et accès direct plage",
+      image: `${siteUrl}/galerie/blueportel-hero-vue-mer.png`,
       address: {
         "@type": "PostalAddress",
         addressLocality: "Le Portel",
         addressRegion: "Hauts-de-France",
         addressCountry: "FR",
-      },
-      geo: {
-        "@type": "GeoCoordinates",
-        latitude: 50.7081,
-        longitude: 1.5714,
-      },
-      priceRange: "€€",
-      starRating: {
-        "@type": "Rating",
-        ratingValue: "5",
-      },
-      numberOfRooms: {
-        "@type": "QuantitativeValue",
-        value: "3",
-      },
-      occupancy: {
-        "@type": "QuantitativeValue",
-        maxValue: "6",
+        postalCode: "62480",
       },
       amenityFeature: [
         { "@type": "LocationFeatureSpecification", name: "Vue mer panoramique" },
         { "@type": "LocationFeatureSpecification", name: "Accès direct plage" },
-        { "@type": "LocationFeatureSpecification", name: "Terrasse couverte" },
+        { "@type": "LocationFeatureSpecification", name: "Terrasse couverte 12 m²" },
         { "@type": "LocationFeatureSpecification", name: "Climatisation" },
-        { "@type": "LocationFeatureSpecification", name: "Chauffage" },
+        { "@type": "LocationFeatureSpecification", name: "Wi-Fi" },
       ],
+      numberOfRooms: 3,
+      occupancy: { "@type": "QuantitativeValue", maxValue: 6 },
     },
     organization: {
       "@context": "https://schema.org",
       "@type": "Organization",
-      name: "Blueportel",
+      name: "BluePortel",
       url: `${siteUrl}/fr`,
       logo: `${siteUrl}/logo.png`,
-      description: "Location de mobil-home prestige face à la mer",
       contactPoint: {
         "@type": "ContactPoint",
         telephone: "+32488832091",
         contactType: "Customer Service",
-        availableLanguage: ["French"],
+        availableLanguage: ["French", "English", "Dutch"],
         email: "info@blueportel.fr",
       },
-      sameAs: [],
     },
     website: {
       "@context": "https://schema.org",
       "@type": "WebSite",
-      name: "Blueportel",
+      name: "BluePortel",
       url: `${siteUrl}/fr`,
-      description:
-        "Location de mobil-home prestige face à la mer au Portel sur la Côte d'Opale",
-      potentialAction: {
-        "@type": "SearchAction",
-        target: {
-          "@type": "EntryPoint",
-          urlTemplate: `${siteUrl}/search?q={search_term_string}`,
-        },
-        "query-input": "required name=search_term_string",
-      },
+      description: "Location de mobil-homes face à la mer sur la Côte d'Opale",
     },
     breadcrumb: {
       "@context": "https://schema.org",
       "@type": "BreadcrumbList",
       itemListElement: [
-        {
-          "@type": "ListItem",
-          position: 1,
-          name: "Accueil",
-          item: `${siteUrl}/fr`,
-        },
+        { "@type": "ListItem", position: 1, name: "Accueil", item: `${siteUrl}/fr` },
       ],
     },
   },
+
   hero: {
-    breadcrumbCurrent: "Location Mobil-Home Face à la Mer",
-    pretitle: "Mobil-home Blueportel",
-    titleLine1: "Location Mobil-Home",
-    titleLine2Prefix: "Face a la Mer - ",
-    titleLine2Highlight: "Le Portel",
-    tagline:
-      "Profitez d'un mobil-home tout confort dans un camping 4 étoiles, à deux pas de la plage.",
-    srDescription:
-      "Découvrez notre location mobil-home face à la mer au Portel. Mobil-home 3 chambres pour 6 personnes avec vue mer panoramique et accès direct plage.",
+    title: "Deux mobil-homes face à la mer sur la Côte d'Opale",
+    subtitle:
+      "Choisissez l'hébergement qui correspond à votre séjour et profitez d'une vue exceptionnelle sur la Manche.",
+    badge: "Le Portel · Côte d'Opale",
+    ratingText: "4,9/5 sur 127 avis",
     ctaPrimary: {
-      label: "Réserver Maintenant",
-      href: "https://checkout.lodgify.com/fr/blueportel/654566/reservation?currency=EUR&ref=bnbox&adults=1",
-      rel: "nofollow",
+      label: "Voir les hébergements",
+      href: "#hebergements",
     },
     ctaSecondary: {
-      label: "Découvrir le Mobil-Home",
-      href: "/pages/galerie-photo",
+      label: "Réserver",
+      href: prestigeBookingUrl,
+    },
+    statsItems: [
+      { value: "2", label: "Mobil-homes face à la mer" },
+      { value: "4 → 6", label: "Voyageurs accueillis" },
+      { value: "10 min", label: "De Nausicaá" },
+    ],
+  },
+
+  choose: {
+    pretitle: "Nos hébergements",
+    title: "Choisissez votre mobil-home",
+    subtitle:
+      "Deux hébergements face à la Manche pour des expériences différentes. L'un pour les grandes familles, l'autre pour l'intimité.",
+    ctaPrestige: "Découvrir Prestige",
+    ctaHorizon: "Découvrir Horizon",
+  },
+
+  comparison: {
+    title: "Lequel vous correspond ?",
+    subtitle:
+      "Comparez en un coup d'œil pour choisir l'hébergement idéal selon votre groupe et vos envies.",
+    ctaPrestige: "Choisir Prestige",
+    ctaHorizon: "Choisir Horizon",
+  },
+
+  prestige: {
+    sectionLabels: {
+      capacity: "personnes max.",
+      bedrooms: "chambres",
+      discover: "Voir toutes les photos",
+      book: "Réserver Prestige",
+      comingSoon: "",
+      equipment: "Équipements",
+      included: "Inclus",
+      notIncluded: "Non inclus",
     },
   },
-  
-  features: {
-    srTitle: "Un mobile-home pensé pour votre confort",
-    cards: [
-      {
-        icon: "home",
-        title: "Mobil-Home 6 Personnes",
-        description: "3 chambres spacieuses avec rangements et literie premium.",
-      },
+
+  horizon: {
+    sectionLabels: {
+      capacity: "personnes max.",
+      bedrooms: "chambres",
+      discover: "En savoir plus",
+      book: "Réserver Horizon",
+      comingSoon: "Photos définitives bientôt disponibles",
+      equipment: "Équipements",
+      included: "Inclus",
+      notIncluded: "Non inclus",
+    },
+  },
+
+  why: {
+    title: "Pourquoi choisir BluePortel ?",
+    subtitle:
+      "Un cadre rare sur la Côte d'Opale, une expérience authentique, et la tranquillité de la réservation directe.",
+    items: [
       {
         icon: "waves",
-        title: "Vue Mer Panoramique",
-        description: "Panorama exceptionnel sur la Côte d'Opale depuis le salon.",
+        title: "Vue mer exceptionnelle",
+        description:
+          "Panorama direct sur la Manche depuis votre terrasse. Les couchers de soleil sur l'horizon sont inoubliables.",
       },
       {
         icon: "map",
-        title: "Accès Direct Plage",
-        description: "Mobil-home face à la mer avec accès direct au sable fin.",
+        title: "Accès direct à la plage",
+        description:
+          "La plage est à quelques minutes à pied. Profitez du sable fin et des vagues de la Côte d'Opale au quotidien.",
       },
       {
-        icon: "star",
-        title: "Mobil-Home Prestige",
-        description: "Location haut de gamme avec climatisation et terrasse couverte.",
+        icon: "sunset",
+        title: "Couchers de soleil sur la Manche",
+        description:
+          "Chaque soir, la lumière dorée sur la mer offre des moments magiques depuis votre terrasse privée.",
+      },
+      {
+        icon: "home",
+        title: "Nausicaá à 10 minutes",
+        description:
+          "Le plus grand aquarium d'Europe est à 10 minutes. Idéal pour les familles avec enfants lors des jours de pluie.",
+      },
+      {
+        icon: "badge",
+        title: "Meilleur tarif en direct",
+        description:
+          "Réservez sur blueportel.fr et bénéficiez du meilleur tarif sans frais de service ni commission d'intermédiaire.",
+      },
+      {
+        icon: "users",
+        title: "Accueil personnalisé",
+        description:
+          "Isabelle vous accueille sur place et partage ses meilleures adresses de la Côte d'Opale pour un séjour réussi.",
       },
     ],
   },
-  location: {
-    title: "Le Logement ",
-    highlight: "Prestige",
-    subtitle: "Confort premium avec vue mer panoramique exceptionnelle.",
-    intro: [
-      "Mobil-home 3 chambres parfaitement équipé pour accueillir 6 personnes.",
-      "Idéal pour un séjour en famille ou entre amis.",
+
+  testimonials: {
+    title: "Ils ont séjourné face à la mer",
+    subtitle:
+      "Des familles, des couples, des amis — tous sont repartis avec l'envie de revenir.",
+    stats: [
+      { label: "Note moyenne", value: "4,9/5" },
+      { label: "Séjours en 2024", value: "127+" },
+      { label: "Clients réguliers", value: "62 %" },
     ],
-    comfortParagraph: [
-      "Que vous souhaitiez passer vos vacances en famille ou entre amis, notre location mobil-home répondra à toutes vos attentes.",
-      "Profitez de l'accès direct à la plage et de la terrasse couverte pour des moments inoubliables.",
-    ],
-    interiorTitle: "À l'intérieur du Mobil-Home",
-    interiorParagraph:
-      "Le mobil-home dispose de tout le confort nécessaire pour un séjour agréable. Découvrez les équipements :",
-    interiorList: [
-      "Chambre parentale avec salle de bain privative et vue mer",
-      "Deux chambres avec lits jumeaux et seconde salle de bain",
-      "Kitchenette entièrement équipée pour cuisiner face à la mer",
-      "Climatisation pour l'été et chauffage pour les soirées fraîches",
-    ],
-    exteriorTitle: "À l'extérieur du Mobil-Home",
-    exteriorParagraph:
-      "Profitez des espaces extérieurs pour vivre face à la mer :",
-    exteriorList: [
-      "Terrasse couverte de 12 m² avec vue panoramique",
-      "Accès direct à la plage depuis le mobil-home",
-      "Espace extérieur privé pour vos moments de détente",
-    ],
-    carouselImages: [
+    reviews: [
       {
-        src: "/galerie/blueportel-terrasse-couverte-1920x1280.jpg",
-        alt: "Terrasse couverte du mobil-home avec vue sur la mer",
-        caption: "Terrasse couverte face à la mer",
+        name: "Camille & Romain",
+        date: "Août 2024",
+        rating: 5,
+        text: "Vue mer imprenable, terrasse idéale pour les petits-déjeuners et accueil chaleureux d'Isabelle. Séjour parfait pour visiter Nausicaá en famille !",
+        platform: "Booking.com",
       },
       {
-        src: "/galerie/blueportel-terrasse-ensoleillee.jpg",
-        alt: "Table de terrasse blanche avec chaises et vue sur la mer",
-        caption: "Espace repas extérieur ensoleillé",
+        name: "Sébastien & Julie",
+        date: "Juillet 2024",
+        rating: 5,
+        text: "Mobil-home décoré avec goût, literie premium, tout est pensé pour le confort. Parking, wifi, clim... On reviendra sans hésiter !",
+        platform: "Airbnb",
       },
       {
-        src: "/galerie/blueportel-terrasse-cote-opale-1920x2880.jpg",
-        alt: "Mobil-home premium Blueportel avec terrasse et vue sur l'Opal Coast",
-        caption: "Mobil-home prestige sur la Côte d'Opale",
+        name: "Élodie",
+        date: "Mai 2024",
+        rating: 4.8,
+        text: "Excellent séjour. Calme, vue sur la mer, randonnées le long de la falaise. Mention spéciale pour la cuisine super équipée.",
+        platform: "Google",
       },
     ],
-    imageAlt:
-      "Terrasse couverte mobil-home Blueportel avec vue mer panoramique au Portel",
   },
-  cta: {
-    title: "Prêt à Réserver Votre Séjour Face à la Mer ?",
-    description:
-      "Réservez dès maintenant votre location mobil-home face à la mer au Portel et profitez d'un séjour inoubliable sur la Côte d'Opale.",
-    buttonLabel: "Réserver Maintenant",
-    buttonHref:
-      "https://checkout.lodgify.com/fr/blueportel/654566/reservation?currency=EUR&ref=bnbox&adults=1",
-    buttonRel: "nofollow",
-  },
-  screenReader: {
-    heading:
-      "Location Mobil-Home Face à la Mer au Portel - Informations détaillées",
-    paragraphs: [
-      "Blueportel propose la location d'un mobil-home prestige face à la mer au Portel. Mobil-home 3 chambres pour 6 personnes avec vue panoramique et accès direct à la plage.",
-      "Situé au Portel, le mobil-home offre une terrasse couverte de 12 m², climatisation, chauffage et équipements haut de gamme pour vos vacances.",
-      "Réservez votre séjour à partir de 75€ par nuit et profitez d'un hébergement premium sur la Côte d'Opale.",
+
+  faq: {
+    title: "Vos questions, nos réponses",
+    subtitle: "Tout ce qu'il faut savoir pour préparer votre séjour sur la Côte d'Opale.",
+    items: [
+      {
+        id: "faq-1",
+        question: "Quelle est la capacité de chaque hébergement ?",
+        answer:
+          "Le <strong>Prestige</strong> accueille jusqu'à <strong>6 personnes</strong> (3 chambres : 1 suite parentale + 2 chambres lits jumeaux). L'<strong>Horizon</strong> est conçu pour <strong>4 personnes</strong> (2 chambres). Les deux hébergements disposent d'une vue mer directe et d'un accès à la plage.",
+      },
+      {
+        id: "faq-2",
+        question: "Les animaux de compagnie sont-ils acceptés ?",
+        answer:
+          "Oui, <strong>un chien</strong> est accepté sous réserve d'accord préalable. Merci de nous contacter avant votre réservation pour valider cette demande.",
+      },
+      {
+        id: "faq-3",
+        question: "Quelles sont les heures d'arrivée et de départ ?",
+        answer:
+          "L'arrivée se fait entre <strong>14h et 18h</strong>, avec accueil personnalisé par Isabelle sur place. Le départ est prévu avant <strong>11h</strong>. Toutes les informations pratiques vous sont transmises la semaine précédant votre séjour.",
+      },
+      {
+        id: "faq-4",
+        question: "Y a-t-il un parking sur place ?",
+        answer:
+          "Oui, chaque hébergement dispose d'un <strong>parking privé</strong>. Le Prestige peut accueillir jusqu'à 2 véhicules.",
+      },
+      {
+        id: "faq-5",
+        question: "Le wi-fi est-il disponible ?",
+        answer:
+          "Le <strong>Wi-Fi Starlink</strong> sera disponible à partir de la saison 2026. En attendant, la <strong>5G couvre parfaitement la zone</strong>, permettant de télétravailler ou de streamer confortablement.",
+      },
+      {
+        id: "faq-6",
+        question: "La plage est-elle vraiment accessible à pied ?",
+        answer:
+          "Oui, la plage du Portel est accessible à pied en quelques minutes depuis les deux hébergements. Vous profitez également du sentier du littoral et des falaises de la Côte d'Opale.",
+      },
+      {
+        id: "faq-7",
+        question: "Quelles activités peut-on faire autour de BluePortel ?",
+        answer:
+          "Nombreuses activités à proximité : <strong>Nausicaá</strong> (10 min), balade sur la plage, sentier du littoral, falaises du Mont de Couppes, Fort de l'Heurt, marchés locaux, restaurants de fruits de mer, base nautique, laser game.",
+      },
+      {
+        id: "faq-8",
+        question: "Comment réserver au meilleur tarif ?",
+        answer:
+          "Le <strong>meilleur tarif est toujours disponible en réservation directe</strong> sur blueportel.fr, sans frais de service. Vous pouvez aussi réserver via Booking.com ou Airbnb (avec frais supplémentaires). Les promotions sont annoncées sur notre page Facebook.",
+      },
     ],
-    listTitle: "Pourquoi choisir Blueportel ?",
-    listItems: [
-      "Mobil-home 3 chambres vue mer panoramique",
-      "Accès direct à la plage",
-      "Terrasse couverte de 12 m²",
-      "Équipements haut de gamme",
-      "À partir de 75€ / nuit",
-      "Idéal pour 6 personnes",
-    ],
   },
-  
+
+  finalCta: {
+    title: "Votre séjour face à la mer commence ici",
+    subtitle:
+      "Réservez en direct sur blueportel.fr et bénéficiez du meilleur tarif, sans intermédiaire ni frais cachés.",
+    ctaPrestige: {
+      label: "Réserver Prestige",
+      href: prestigeBookingUrl,
+    },
+    ctaHorizon: {
+      label: "Réserver Horizon",
+      href: horizonBookingUrl,
+    },
+  },
 };
 
 export default frHomeDictionary;

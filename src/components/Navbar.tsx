@@ -29,47 +29,46 @@ interface LanguageOption {
 const navItemsByLocale: Record<Locale, NavItem[]> = {
   fr: [
     {
-      label: "Logement",
+      label: "Hébergements",
       items: [
-        { label: "Accueil", href: "/" },
-        { label: "Photos", href: "/pages/galerie-photo" },
-        { label: "Vue d'ensemble", href: "/pages/vue-densemble" },
-        { label: "Plan", href: "/pages/plan" },
+        { label: "Prestige — 6 personnes", href: "/pages/prestige" },
+        { label: "Horizon — 4 personnes", href: "/pages/horizon" },
+        { label: "Comparatif", href: "/#hebergements" },
+        { label: "Photos Prestige", href: "/pages/galerie-photo" },
         { label: "Avis", href: "/pages/avis" },
       ],
     },
     {
-      label: "Séjours & Réservations",
+      label: "Réservations",
       items: [
         { label: "Disponibilités", href: "/pages/disponibilites" },
         { label: "Tarifs", href: "/pages/tarifs" },
-        { label: "Réservation personnalisée", href: "/pages/contact" },
-        { label: "Réserver / Calendrier", href: "#" },
+        { label: "Demande personnalisée", href: "/pages/contact" },
       ],
     },
     {
       label: "À proximité",
       items: [
-        { label: "Nausicaa", href: "/pages/nausicaa-proche-le-portel" },
+        { label: "Nausicaá", href: "/pages/nausicaa-proche-le-portel" },
         { label: "Guide touristique", href: "/pages/guide-touristique" },
       ],
     },
     {
       label: "Infos pratiques",
       items: [
-        { label: "FAQ Blueportel", href: "/pages/FAQ" },
+        { label: "FAQ", href: "/pages/FAQ" },
         { label: "Contact", href: "/pages/contact" },
       ],
     },
   ],
   en: [
     {
-      label: "Stay",
+      label: "Accommodations",
       items: [
-        { label: "Home", href: "/" },
-        { label: "Photos", href: "/pages/galerie-photo" },
-        { label: "Highlights", href: "/pages/vue-densemble" },
-        { label: "Map", href: "/pages/plan" },
+        { label: "Prestige — 6 guests", href: "/pages/prestige" },
+        { label: "Horizon — 4 guests", href: "/pages/horizon" },
+        { label: "Compare", href: "/#hebergements" },
+        { label: "Prestige photos", href: "/pages/galerie-photo" },
         { label: "Reviews", href: "/pages/avis" },
       ],
     },
@@ -79,7 +78,6 @@ const navItemsByLocale: Record<Locale, NavItem[]> = {
         { label: "Availability", href: "/pages/disponibilites" },
         { label: "Rates", href: "/pages/tarifs" },
         { label: "Custom request", href: "/pages/contact" },
-        { label: "Booking / Calendar", href: "#" },
       ],
     },
     {
@@ -92,19 +90,19 @@ const navItemsByLocale: Record<Locale, NavItem[]> = {
     {
       label: "Info",
       items: [
-        { label: "Blueportel FAQ", href: "/pages/FAQ" },
+        { label: "FAQ", href: "/pages/FAQ" },
         { label: "Contact", href: "/pages/contact" },
       ],
     },
   ],
   nl: [
     {
-      label: "Verblijf",
+      label: "Verblijven",
       items: [
-        { label: "Home", href: "/" },
-        { label: "Foto's", href: "/pages/galerie-photo" },
-        { label: "Overzicht", href: "/pages/vue-densemble" },
-        { label: "Plan", href: "/pages/plan" },
+        { label: "Prestige — 6 personen", href: "/pages/prestige" },
+        { label: "Horizon — 4 personen", href: "/pages/horizon" },
+        { label: "Vergelijken", href: "/#hebergements" },
+        { label: "Prestige foto's", href: "/pages/galerie-photo" },
         { label: "Beoordelingen", href: "/pages/avis" },
       ],
     },
@@ -114,7 +112,6 @@ const navItemsByLocale: Record<Locale, NavItem[]> = {
         { label: "Beschikbaarheid", href: "/pages/disponibilites" },
         { label: "Tarieven", href: "/pages/tarifs" },
         { label: "Maatwerk aanvraag", href: "/pages/contact" },
-        { label: "Reservering / Kalender", href: "#" },
       ],
     },
     {
@@ -127,7 +124,7 @@ const navItemsByLocale: Record<Locale, NavItem[]> = {
     {
       label: "Praktisch",
       items: [
-        { label: "Blueportel FAQ", href: "/pages/FAQ" },
+        { label: "FAQ", href: "/pages/FAQ" },
         { label: "Contact", href: "/pages/contact" },
       ],
     },
@@ -357,7 +354,7 @@ export default function Navbar({ locale: initialLocale = "fr" }: NavbarProps) {
               >
                 <button
                   onClick={() => toggleDropdown(index)}
-                  className="flex items-center gap-1 text-base font-medium text-black transition-colors hover:text-white/80 focus:outline-none"
+                  className="flex items-center gap-1 text-base font-medium text-black transition-colors hover:text-[#2663EB] focus:outline-none"
                 >
                   {item.label}
                   <svg

@@ -1,96 +1,78 @@
 import type { HomeDictionary } from "./types";
 import { getAlternates } from "../../lib/seo/hreflang";
 
-const siteUrl = "https://blueportel.com";
+const siteUrl = "https://blueportel.fr";
+
+const prestigeBookingUrl =
+  "https://checkout.lodgify.com/en/blueportel/654566/reservation?currency=EUR&ref=bnbox&adults=1";
+const horizonBookingUrl =
+  "https://checkout.lodgify.com/en/blueportel/reservation?currency=EUR&ref=bnbox&adults=1";
 
 export const enHomeDictionary: HomeDictionary = {
   locale: "en",
+
   metadata: {
-    title: "Blueportel - Luxury Seafront Mobile Home | Le Portel",
+    title: "BluePortel — Two seafront mobile homes | Opal Coast, Le Portel",
     description:
-      "Book a luxury 3-bedroom mobile home facing the sea in Le Portel on the Opal Coast. Panoramic sea view, direct beach access, premium amenities from €90/night.",
+      "Choose your mobile home facing the sea on the Opal Coast. Prestige (6 guests) or Horizon (4 guests): sea view, direct beach access, book directly with no fees.",
     keywords: [
       "mobile home rental Le Portel",
-      "seafront mobile home",
-      "Opal Coast vacation rental",
-      "3 bedroom mobile home sea view",
-      "luxury mobile home France",
-      "family holiday Le Portel",
-      "panoramic sea view rental",
-      "beachfront accommodation Le Portel",
+      "seafront mobile home Opal Coast",
+      "holiday rental Le Portel France",
+      "sea view mobile home",
+      "accommodation Opal Coast",
+      "mobile home 6 people sea view",
     ],
-    authors: [{ name: "Blueportel" }],
-    creator: "Blueportel",
-    publisher: "Blueportel",
+    authors: [{ name: "BluePortel" }],
+    creator: "BluePortel",
+    publisher: "BluePortel",
     alternates: getAlternates("en"),
     openGraph: {
-      title: "Blueportel - Luxury Seafront Mobile Home | Le Portel",
+      title: "BluePortel — Two seafront mobile homes | Opal Coast",
       description:
-        "Luxury 3-bedroom seafront mobile home rental in Le Portel. Panoramic sea view, direct beach access. From €90/night.",
+        "Prestige (6 guests) or Horizon (4 guests) facing the English Channel. Sea view, direct beach access. Book direct, best price guaranteed.",
       type: "website",
       locale: "en_GB",
-      url: "https://blueportel.com",
-      siteName: "Blueportel",
+      url: `${siteUrl}/en`,
+      siteName: "BluePortel",
       images: [
         {
-          url: "https://blueportel.com/logo.png",
+          url: `${siteUrl}/galerie/blueportel-hero-vue-mer.png`,
           width: 1200,
           height: 630,
-          alt: "Blueportel - Logo",
+          alt: "BluePortel — Panoramic sea view Opal Coast",
         },
       ],
     },
     twitter: {
       card: "summary_large_image",
-      title: "Blueportel - Seafront Mobile Home",
-      description:
-        "Rent a luxury 3-bedroom mobile home facing the sea in Le Portel with panoramic views and direct beach access.",
-      images: ["https://blueportel.com/logo.png"],
+      title: "BluePortel — Two seafront mobile homes",
+      description: "Prestige (6) or Horizon (4) on the Opal Coast. Sea view, beach access, book direct.",
+      images: [`${siteUrl}/galerie/blueportel-hero-vue-mer.png`],
     },
   },
+
   structuredData: {
     localBusiness: {
       "@context": "https://schema.org",
-      "@type": "LocalBusiness",
+      "@type": "LodgingBusiness",
       "@id": `${siteUrl}/en#organization`,
-      name: "Blueportel",
-      description:
-        "Luxury seafront mobile home rental in Le Portel on the Opal Coast",
+      name: "BluePortel",
+      description: "Seafront mobile home rentals in Le Portel on the Opal Coast",
       url: `${siteUrl}/en`,
       logo: `${siteUrl}/logo.png`,
-      image: `${siteUrl}/og-image.jpg`,
       telephone: ["+32488832091", "+33745324836"],
       email: "info@blueportel.fr",
       address: {
         "@type": "PostalAddress",
-        streetAddress: "rue du Vinâve 32",
-        addressLocality: "Liers",
-        addressCountry: "BE",
-        postalCode: "4042",
-      },
-      geo: {
-        "@type": "GeoCoordinates",
-        latitude: 50.7081,
-        longitude: 1.5714,
-      },
-      priceRange: "€€",
-      openingHoursSpecification: {
-        "@type": "OpeningHoursSpecification",
-        dayOfWeek: [
-          "Monday",
-          "Tuesday",
-          "Wednesday",
-          "Thursday",
-          "Friday",
-          "Saturday",
-          "Sunday",
-        ],
-        opens: "00:00",
-        closes: "23:59",
+        addressLocality: "Le Portel",
+        addressRegion: "Hauts-de-France",
+        addressCountry: "FR",
+        postalCode: "62480",
       },
       aggregateRating: {
         "@type": "AggregateRating",
-        ratingValue: "4.8",
+        ratingValue: "4.9",
         reviewCount: "127",
         bestRating: "5",
         worstRating: "1",
@@ -99,63 +81,23 @@ export const enHomeDictionary: HomeDictionary = {
     accommodation: {
       "@context": "https://schema.org",
       "@type": "Accommodation",
-      name: "Blueportel Luxury Seafront Mobile Home",
-      description:
-        "Premium 3-bedroom mobile home with panoramic sea view and direct beach access in Le Portel",
-      image: `${siteUrl}/og-image.jpg`,
-      address: {
-        "@type": "PostalAddress",
-        addressLocality: "Le Portel",
-        addressRegion: "Hauts-de-France",
-        addressCountry: "FR",
-      },
-      geo: {
-        "@type": "GeoCoordinates",
-        latitude: 50.7081,
-        longitude: 1.5714,
-      },
-      priceRange: "€€",
-      starRating: { "@type": "Rating", ratingValue: "5" },
-      numberOfRooms: { "@type": "QuantitativeValue", value: "3" },
-      occupancy: { "@type": "QuantitativeValue", maxValue: "6" },
-      amenityFeature: [
-        { "@type": "LocationFeatureSpecification", name: "Panoramic sea view" },
-        { "@type": "LocationFeatureSpecification", name: "Direct beach access" },
-        { "@type": "LocationFeatureSpecification", name: "Covered terrace" },
-        { "@type": "LocationFeatureSpecification", name: "Air conditioning" },
-        { "@type": "LocationFeatureSpecification", name: "Heating" },
-      ],
+      name: "BluePortel Prestige",
+      description: "Prestige mobile home, 3 bedrooms for 6 guests, sea view, direct beach access",
+      numberOfRooms: 3,
+      occupancy: { "@type": "QuantitativeValue", maxValue: 6 },
     },
     organization: {
       "@context": "https://schema.org",
       "@type": "Organization",
-      name: "Blueportel",
+      name: "BluePortel",
       url: `${siteUrl}/en`,
       logo: `${siteUrl}/logo.png`,
-      description: "Luxury seafront vacation rental",
-      contactPoint: {
-        "@type": "ContactPoint",
-        telephone: "+32488832091",
-        contactType: "Customer Service",
-        availableLanguage: ["English", "French"],
-        email: "info@blueportel.fr",
-      },
-      sameAs: [],
     },
     website: {
       "@context": "https://schema.org",
       "@type": "WebSite",
-      name: "Blueportel",
+      name: "BluePortel",
       url: `${siteUrl}/en`,
-      description: "Luxury seafront mobile home rental in Le Portel",
-      potentialAction: {
-        "@type": "SearchAction",
-        target: {
-          "@type": "EntryPoint",
-          urlTemplate: `${siteUrl}/search?q={search_term_string}`,
-        },
-        "query-input": "required name=search_term_string",
-      },
     },
     breadcrumb: {
       "@context": "https://schema.org",
@@ -165,128 +107,216 @@ export const enHomeDictionary: HomeDictionary = {
       ],
     },
   },
+
   hero: {
-    breadcrumbCurrent: "Luxury Seafront Mobile Home Rental",
-    pretitle: "Blueportel mobile home",
-    titleLine1: "Seafront Mobile Home Rental",
-    titleLine2Prefix: "Le Portel, ",
-    titleLine2Highlight: "Opal Coast",
-    tagline:
-      "Enjoy a comfortable mobile home in a campsite 4 stars, close to the beach.",
-    srDescription:
-      "Discover our luxury 3-bedroom mobile home overlooking the sea in Le Portel. Sleeps 6 guests with panoramic views and direct beach access.",
+    title: "Two mobile homes facing the sea on the Opal Coast",
+    subtitle:
+      "Choose the accommodation that suits your stay and enjoy an exceptional view over the English Channel.",
+    badge: "Le Portel · Opal Coast",
+    ratingText: "4.9/5 from 127 reviews",
     ctaPrimary: {
-      label: "Book now",
-      href: "https://checkout.lodgify.com/en/blueportel/654566/reservation?currency=EUR&ref=bnbox&adults=1",
-      rel: "nofollow",
+      label: "View accommodations",
+      href: "#hebergements",
     },
     ctaSecondary: {
-      label: "Explore the mobile home",
-      href: "#decouvrir-le-mobil-home",
+      label: "Book now",
+      href: prestigeBookingUrl,
+    },
+    statsItems: [
+      { value: "2", label: "Seafront mobile homes" },
+      { value: "4 → 6", label: "Guests welcomed" },
+      { value: "10 min", label: "From Nausicaá" },
+    ],
+  },
+
+  choose: {
+    pretitle: "Our accommodations",
+    title: "Choose your mobile home",
+    subtitle:
+      "Two seafront accommodations for different experiences. One for large families, one for intimacy.",
+    ctaPrestige: "Discover Prestige",
+    ctaHorizon: "Discover Horizon",
+  },
+
+  comparison: {
+    title: "Which one suits you?",
+    subtitle:
+      "Compare at a glance to choose the ideal accommodation for your group and preferences.",
+    ctaPrestige: "Choose Prestige",
+    ctaHorizon: "Choose Horizon",
+  },
+
+  prestige: {
+    sectionLabels: {
+      capacity: "guests max.",
+      bedrooms: "bedrooms",
+      discover: "View all photos",
+      book: "Book Prestige",
+      comingSoon: "",
+      equipment: "Amenities",
+      included: "Included",
+      notIncluded: "Not included",
     },
   },
 
-  features: {
-    srTitle: "Highlights of your seafront mobile home rental",
-    cards: [
-      {
-        icon: "home",
-        title: "6-guest capacity",
-        description: "Three bright bedrooms with hotel-quality bedding.",
-      },
+  horizon: {
+    sectionLabels: {
+      capacity: "guests max.",
+      bedrooms: "bedrooms",
+      discover: "Learn more",
+      book: "Book Horizon",
+      comingSoon: "Definitive photos coming soon",
+      equipment: "Amenities",
+      included: "Included",
+      notIncluded: "Not included",
+    },
+  },
+
+  why: {
+    title: "Why choose BluePortel?",
+    subtitle:
+      "A rare setting on the Opal Coast, an authentic experience, and the peace of mind of booking directly.",
+    items: [
       {
         icon: "waves",
-        title: "Panoramic sea view",
-        description: "Unobstructed view over the Opal Coast from the lounge.",
+        title: "Exceptional sea view",
+        description:
+          "Direct panoramic view over the English Channel from your terrace. Sunsets on the horizon are unforgettable.",
       },
       {
         icon: "map",
         title: "Direct beach access",
-        description: "Step straight onto the sand from the mobile home.",
+        description:
+          "The beach is just a few minutes walk away. Enjoy the fine sand and waves of the Opal Coast every day.",
       },
       {
-        icon: "star",
-        title: "Premium amenities",
-        description: "Air conditioning, heating and covered terrace included.",
-      },
-    ],
-  },
-  location: {
-    title: "The Prestige Home",
-    highlight: "Prestige",
-    subtitle: "Premium comfort with exceptional panoramic sea view.",
-    intro: [
-      "3-bedroom mobile home perfectly equipped to accommodate 6 people.",
-      "Ideal for a family stay or between friends.",
-    ],
-    comfortParagraph: [
-      "Whether you travel with family or friends, this rental is designed for stress-free seaside breaks.",
-      "Enjoy direct beach access and a large covered terrace for unforgettable sunsets.",
-    ],
-    interiorTitle: "Inside the mobile home",
-    interiorParagraph:
-      "Everything is included for a seamless stay. Highlights include:",
-    interiorList: [
-      "Master bedroom with ensuite bathroom and sea view",
-      "Two twin rooms with a second bathroom",
-      "Fully equipped kitchenette facing the sea",
-      "Air conditioning for summer and heating for cooler evenings",
-    ],
-    exteriorTitle: "Outdoor spaces",
-    exteriorParagraph:
-      "Make the most of the Opal Coast climate with generous outdoor areas:",
-    exteriorList: [
-      "12 m² covered terrace with panoramic sea view",
-      "Private path leading straight to the beach",
-      "Outdoor lounge for slow mornings and sunset drinks",
-    ],
-    carouselImages: [
-      {
-        src: "/galerie/blueportel-terrasse-couverte-1920x1280.jpg",
-        alt: "Covered terrace of the mobile home with sea view",
-        caption: "Covered terrace facing the sea",
+        icon: "sunset",
+        title: "Sunsets over the Channel",
+        description:
+          "Every evening, the golden light on the sea creates magical moments from your private terrace.",
       },
       {
-        src: "/galerie/blueportel-terrasse-ensoleillee.jpg",
-        alt: "White terrace table with chairs and sea view",
-        caption: "Sunny outdoor dining area",
+        icon: "home",
+        title: "Nausicaá 10 minutes away",
+        description:
+          "Europe's largest aquarium is just 10 minutes away. Perfect for families with children on rainy days.",
       },
       {
-        src: "/galerie/blueportel-terrasse-cote-opale-1920x2880.jpg",
-        alt: "Premium Blueportel mobile home terrace with coastal view",
-        caption: "Prestige mobile home on the Opal Coast",
+        icon: "badge",
+        title: "Best price — book direct",
+        description:
+          "Book on blueportel.fr and get the best price with no service fees or intermediary commission.",
       },
-    ],
-    imageAlt:
-      "Blueportel covered terrace overlooking the sea in Le Portel on the Opal Coast",
-  },
-  cta: {
-    title: "Ready to book your stay by the sea?",
-    description:
-      "Reserve your Blueportel mobile home now and enjoy a high-end seaside holiday on the Opal Coast.",
-    buttonLabel: "Book now",
-    buttonHref:
-      "https://checkout.lodgify.com/en/blueportel/654566/reservation?currency=EUR&ref=bnbox&adults=1",
-    buttonRel: "nofollow",
-  },
-  screenReader: {
-    heading: "Blueportel seafront mobile home details",
-    paragraphs: [
-      "Blueportel offers a luxury seaside mobile home in Le Portel. Three bedrooms, panoramic view and direct access to the beach.",
-      "The covered terrace, air conditioning, heating and premium bedding ensure comfort all year round.",
-      "Book from €90 per night for 6 guests and enjoy an unforgettable family holiday.",
-    ],
-    listTitle: "Why choose Blueportel?",
-    listItems: [
-      "3-bedroom seafront mobile home",
-      "Panoramic view of the Opal Coast",
-      "Direct beach access",
-      "Covered terrace and outdoor lounge",
-      "Premium amenities from €90/night",
-      "Perfect for families or friends",
+      {
+        icon: "users",
+        title: "Personalised welcome",
+        description:
+          "Isabelle welcomes you on site and shares her best local tips for a memorable stay.",
+      },
     ],
   },
 
+  testimonials: {
+    title: "They stayed by the sea",
+    subtitle: "Families, couples, friends — they all left wanting to come back.",
+    stats: [
+      { label: "Average rating", value: "4.9/5" },
+      { label: "Stays in 2024", value: "127+" },
+      { label: "Returning guests", value: "62 %" },
+    ],
+    reviews: [
+      {
+        name: "Camille & Romain",
+        date: "August 2024",
+        rating: 5,
+        text: "Stunning sea view, perfect terrace for breakfasts and a warm welcome from Isabelle. Ideal stay for visiting Nausicaá with the family!",
+        platform: "Booking.com",
+      },
+      {
+        name: "Sébastien & Julie",
+        date: "July 2024",
+        rating: 5,
+        text: "Tastefully decorated mobile home, premium bedding, everything thought out for comfort. Parking, wifi, AC… We'll definitely be back!",
+        platform: "Airbnb",
+      },
+      {
+        name: "Élodie",
+        date: "May 2024",
+        rating: 4.8,
+        text: "Excellent stay. Peaceful, sea view, cliff walks. Special mention for the fully equipped kitchen.",
+        platform: "Google",
+      },
+    ],
+  },
+
+  faq: {
+    title: "Your questions, our answers",
+    subtitle: "Everything you need to know to prepare your stay on the Opal Coast.",
+    items: [
+      {
+        id: "faq-1",
+        question: "What is the capacity of each accommodation?",
+        answer:
+          "<strong>Prestige</strong> sleeps up to <strong>6 guests</strong> (3 bedrooms). <strong>Horizon</strong> is designed for <strong>4 guests</strong> (2 bedrooms). Both have direct sea views and beach access.",
+      },
+      {
+        id: "faq-2",
+        question: "Are pets allowed?",
+        answer:
+          "Yes, <strong>one dog</strong> is allowed subject to prior agreement. Please contact us before booking.",
+      },
+      {
+        id: "faq-3",
+        question: "What are the check-in and check-out times?",
+        answer:
+          "Check-in is between <strong>2pm and 6pm</strong>, with a personal welcome from Isabelle. Check-out is before <strong>11am</strong>.",
+      },
+      {
+        id: "faq-4",
+        question: "Is there parking on site?",
+        answer:
+          "Yes, each accommodation has <strong>private parking</strong>. Prestige accommodates up to 2 vehicles.",
+      },
+      {
+        id: "faq-5",
+        question: "Is Wi-Fi available?",
+        answer:
+          "<strong>Starlink Wi-Fi</strong> will be available from the 2026 season. In the meantime, <strong>5G covers the area perfectly</strong>.",
+      },
+      {
+        id: "faq-6",
+        question: "Is the beach really within walking distance?",
+        answer:
+          "Yes, Le Portel beach is a few minutes walk from both accommodations. The coastal path and cliffs are also nearby.",
+      },
+      {
+        id: "faq-7",
+        question: "What activities are there near BluePortel?",
+        answer:
+          "<strong>Nausicaá</strong> (10 min), beach walks, coastal path, Mont de Couppes cliffs, Fort de l'Heurt, local markets, seafood restaurants, water sports centre.",
+      },
+      {
+        id: "faq-8",
+        question: "How do I get the best rate?",
+        answer:
+          "The <strong>best rate is always by booking direct</strong> on blueportel.fr, with no service fees. You can also book on Booking.com or Airbnb (with extra fees).",
+      },
+    ],
+  },
+
+  finalCta: {
+    title: "Your seaside stay starts here",
+    subtitle:
+      "Book directly on blueportel.fr and get the best price, with no intermediary or hidden fees.",
+    ctaPrestige: {
+      label: "Book Prestige",
+      href: prestigeBookingUrl,
+    },
+    ctaHorizon: {
+      label: "Book Horizon",
+      href: horizonBookingUrl,
+    },
+  },
 };
 
 export default enHomeDictionary;
