@@ -78,7 +78,16 @@ export function JsonLdVacationRental({ locale }: { locale: Locale }) {
       "https://blueportel.fr",
       "https://blueportel.com",
       "https://www.facebook.com/Blueportel",
+      "https://www.booking.com/hotel/fr/blueportel.fr.html",
+      "https://www.airbnb.com/rooms/1389190512266062716",
     ],
+    aggregateRating: {
+      "@type": "AggregateRating",
+      ratingValue: "8.3",
+      bestRating: "10",
+      worstRating: "1",
+      reviewCount: "8",
+    },
     numberOfRooms: 3,
     occupancy: {
       "@type": "QuantitativeValue",

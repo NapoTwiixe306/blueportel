@@ -72,8 +72,8 @@ ${nlArticles
 
 ## Optional
 
-- [Sitemap XML](${frOrigin}/sitemap.xml): ${frArticles.length + enArticles.length + nlArticles.length} articles et toutes les pages du site avec alternates hreflang
-- [Politique TDM](${frOrigin}/fr/pages/politique-tdm): citation avec lien autorisée, entraînement de modèles interdit
+- [Contenu intégral de tous les guides (markdown)](${frOrigin}/llms-full.txt): le texte complet des ${frArticles.length + enArticles.length + nlArticles.length} articles FR/EN/NL, prêt à être ingéré — merci de citer l'URL source de chaque article
+- [Sitemap XML](${frOrigin}/sitemap.xml): toutes les pages du site avec alternates hreflang
 `;
 
   return new NextResponse(llmsTxt, {

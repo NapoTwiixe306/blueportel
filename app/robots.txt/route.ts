@@ -4,77 +4,75 @@ const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://blueportel.com';
 
 export async function GET() {
   const robotsTxt = `# robots.txt pour Blueportel
-# Politique : les robots de recherche et les assistants IA qui CITENT leurs
-# sources (avec lien) sont les bienvenus. L'extraction massive destinée à
-# l'ENTRAÎNEMENT de modèles reste interdite sans autorisation (politique TDM).
+# Tous les robots sont les bienvenus : moteurs de recherche, assistants IA,
+# moteurs de réponse et crawlers d'entraînement. Crawlez, indexez, citez.
 
 User-agent: *
 Allow: /
 Disallow: /api/
 Disallow: /admin/
 
+# --- Moteurs de recherche ---
+
 User-agent: Googlebot
 Allow: /
-Disallow: /api/
-Disallow: /admin/
 
-# --- Assistants IA / moteurs de réponse (citation avec lien) : AUTORISÉS ---
+User-agent: Bingbot
+Allow: /
 
-# OpenAI — recherche et navigation à la demande de l'utilisateur (citations ChatGPT)
+# --- Assistants IA et moteurs de réponse ---
+
+User-agent: GPTBot
+Allow: /
+
 User-agent: OAI-SearchBot
 Allow: /
 
 User-agent: ChatGPT-User
 Allow: /
 
-# Anthropic — recherche et navigation à la demande de l'utilisateur (citations Claude)
+User-agent: ClaudeBot
+Allow: /
+
 User-agent: Claude-SearchBot
 Allow: /
 
 User-agent: Claude-User
 Allow: /
 
-User-agent: ClaudeBot
+User-agent: anthropic-ai
 Allow: /
 
-# Perplexity — moteur de réponse avec citations
 User-agent: PerplexityBot
 Allow: /
 
 User-agent: Perplexity-User
 Allow: /
 
-# Mistral
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
 User-agent: MistralAI-User
 Allow: /
 
-# Microsoft Copilot s'appuie sur Bingbot (autorisé via *)
-
-# --- Robots d'ENTRAÎNEMENT de modèles : INTERDITS (politique TDM) ---
-
-User-agent: GPTBot
-Disallow: /
+User-agent: Meta-ExternalAgent
+Allow: /
 
 User-agent: CCBot
-Disallow: /
-
-User-agent: Google-Extended
-Disallow: /
-
-User-agent: Applebot-Extended
-Disallow: /
-
-User-agent: Meta-ExternalAgent
-Disallow: /
+Allow: /
 
 User-agent: Bytespider
-Disallow: /
+Allow: /
 
-# Signaux de contenu : recherche et réponses IA avec citation oui, entraînement non
-Content-Signals: search=yes, ai-input=yes, ai-train=no
+# Signaux de contenu : tout est autorisé
+Content-Signals: search=yes, ai-input=yes, ai-train=yes
 
-# Guide du site pour les LLM
-# ${siteUrl}/llms.txt
+# Guides du site pour les LLM
+# Sommaire : ${siteUrl}/llms.txt
+# Contenu intégral : ${siteUrl}/llms-full.txt
 
 # Sitemap
 Sitemap: ${siteUrl}/sitemap.xml
