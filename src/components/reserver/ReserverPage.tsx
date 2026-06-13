@@ -226,31 +226,26 @@ export default function ReserverPage({ locale }: { locale: Locale }) {
           </article>
         </section>
 
-        {/* Réservation directe en ligne — Prestige & Horizon */}
-        {(["prestige", "horizon"] as const).map((prop) => {
-          const label = prop === "prestige" ? "Prestige" : "Horizon";
-          return (
-            <section key={prop} className="w-full max-w-xl mt-12 sm:mt-16">
-              <div className="text-center mb-5">
-                <h2 className="text-xl sm:text-2xl font-bold text-gray-900">
-                  {locale === "en"
-                    ? `Book the ${label} online`
-                    : locale === "nl"
-                      ? `Reserveer de ${label} online`
-                      : `Réserver ${prop === "prestige" ? "le Prestige" : "l'Horizon"} en ligne`}
-                </h2>
-                <p className="mt-2 text-sm text-gray-600">
-                  {locale === "en"
-                    ? "Instant booking with secure deposit payment."
-                    : locale === "nl"
-                      ? "Direct reserveren met veilige voorschotbetaling."
-                      : "Réservation immédiate avec paiement sécurisé de l'acompte."}
-                </p>
-              </div>
-              <BookingForm property={prop} locale={locale} />
-            </section>
-          );
-        })}
+        {/* Réservation directe en ligne — choix Horizon / Prestige dans le formulaire */}
+        <section className="w-full max-w-xl mt-12 sm:mt-16">
+          <div className="text-center mb-5">
+            <h2 className="text-xl sm:text-2xl font-bold text-gray-900">
+              {locale === "en"
+                ? "Book your stay"
+                : locale === "nl"
+                  ? "Boek uw verblijf"
+                  : "Réservez votre séjour"}
+            </h2>
+            <p className="mt-2 text-sm text-gray-600">
+              {locale === "en"
+                ? "Instant booking with secure deposit payment."
+                : locale === "nl"
+                  ? "Direct reserveren met veilige voorschotbetaling."
+                  : "Réservation immédiate avec paiement sécurisé de l'acompte."}
+            </p>
+          </div>
+          <BookingForm locale={locale} />
+        </section>
       </main>
     </div>
   );

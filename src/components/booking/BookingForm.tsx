@@ -57,6 +57,7 @@ const T: Record<Locale, Record<string, string>> = {
     contactTitle: "Vos coordonnées",
     subtitle: "Acompte 30 % aujourd'hui, solde avant l'arrivée.",
     perNight: "/ nuit",
+    chooseProperty: "Votre logement",
   },
   en: {
     title: "Book online",
@@ -82,6 +83,7 @@ const T: Record<Locale, Record<string, string>> = {
     contactTitle: "Your details",
     subtitle: "30% deposit today, balance before arrival.",
     perNight: "/ night",
+    chooseProperty: "Your accommodation",
   },
   nl: {
     title: "Online reserveren",
@@ -107,14 +109,20 @@ const T: Record<Locale, Record<string, string>> = {
     contactTitle: "Uw gegevens",
     subtitle: "30% voorschot vandaag, saldo vóór aankomst.",
     perNight: "/ nacht",
+    chooseProperty: "Uw accommodatie",
   },
 };
 
-type Props = { property: AccommodationId; locale: string };
+type Props = { initialProperty?: AccommodationId; locale: string };
 
-export default function BookingForm({ property, locale }: Props) {
+// Ordre d'affichage du sélecteur de logement
+const PROPERTY_ORDER: AccommodationId[] = ["horizon", "prestige"];
+
+export default function BookingForm({ initialProperty = "horizon", locale }: Props) {
   const lang: Locale = locale === "en" || locale === "nl" ? locale : "fr";
   const t = T[lang];
+
+  const [property, setProperty] = useState<AccommodationId>(initialProperty);
   const capacity = accommodations[property].capacity;
 
   const fmtDate = (iso: string) =>
@@ -199,6 +207,17 @@ export default function BookingForm({ property, locale }: Props) {
     [submitting, quote, checkIn, checkOut, name, email, phonePrefix, phone, guests]
   );
 
+  // Changement de logement : on repart de zéro (dispo et capacité diffèrent)
+  const changeProperty = (id: AccommodationId) => {
+    if (id === property) return;
+    setProperty(id);
+    setCheckIn("");
+    setCheckOut("");
+    setQuote(null);
+    setError(null);
+    setGuests((g) => Math.min(g, accommodations[id].capacity));
+  };
+
   const onSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setError(null);
@@ -257,6 +276,42 @@ export default function BookingForm({ property, locale }: Props) {
       </div>
 
       <div className="space-y-6 p-6 sm:p-7">
+        {/* Choix du logement */}
+        <div>
+          <p className="mb-3 text-sm font-bold text-gray-900">{t.chooseProperty}</p>
+          <div className="grid grid-cols-2 gap-2" role="group" aria-label={t.chooseProperty}>
+            {PROPERTY_ORDER.map((id) => {
+              const active = id === property;
+              const acc = accommodations[id];
+              const label = acc.name.replace(/blueportel /i, "");
+              return (
+                <button
+                  key={id}
+                  type="button"
+                  onClick={() => changeProperty(id)}
+                  aria-pressed={active}
+                  className={`rounded-xl border px-4 py-3 text-left transition ${
+                    active
+                      ? "border-blue-600 bg-blue-50 ring-2 ring-blue-100"
+                      : "border-gray-200 bg-white hover:border-gray-300"
+                  }`}
+                >
+                  <span className={`block text-sm font-bold ${active ? "text-blue-700" : "text-gray-900"}`}>
+                    {label}
+                  </span>
+                  <span className="block text-[11px] text-gray-500">
+                    {lang === "en"
+                      ? `Sleeps ${acc.capacity}`
+                      : lang === "nl"
+                        ? `${acc.capacity} pers.`
+                        : `${acc.capacity} voyageurs`}
+                  </span>
+                </button>
+              );
+            })}
+          </div>
+        </div>
+
         {/* Dates + voyageurs */}
         <div>
           <p className="mb-3 text-sm font-bold text-gray-900">{t.datesTitle}</p>
