@@ -10,7 +10,7 @@ import type { AccommodationId } from "../../data/accommodations";
 // À défaut, les valeurs par défaut ci-dessous sont utilisées.
 
 const HORIZON_BOOKING_DEFAULT =
-  "https://ical.booking.com/v1/export?t=93aa3a20-548b-4290-a413-797ca3b447e1";
+  "https://ical.booking.com/v1/export?t=2f9b6512-bc70-4b4f-a0ee-f8f9769ee564";
 const HORIZON_AIRBNB_DEFAULT =
   "https://fr.airbnb.be/calendar/ical/1684229209545436081.ics?t=33486bf3d2384c32bd8da4edb9e2091b";
 
