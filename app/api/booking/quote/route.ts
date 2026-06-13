@@ -2,6 +2,7 @@ import { NextResponse } from "next/server";
 
 import { isAccommodationId } from "@/src/lib/availability/sources";
 import { computeQuote, eurosFromCents } from "@/src/lib/booking/pricing";
+import { getRates } from "@/src/lib/booking/rates";
 import { isRangeAvailable } from "@/src/lib/booking/availability";
 
 // Devis + disponibilité pour un séjour donné (appelé en direct par le formulaire).
@@ -15,7 +16,8 @@ export async function GET(request: Request) {
     return NextResponse.json({ error: "Logement invalide" }, { status: 400 });
   }
 
-  const result = computeQuote(property, checkIn, checkOut);
+  const rates = await getRates();
+  const result = computeQuote(property, checkIn, checkOut, rates);
   if ("error" in result) {
     return NextResponse.json({ available: false, ...result.error }, { status: 200 });
   }

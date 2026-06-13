@@ -13,6 +13,8 @@ services:
       - MOLLIE_API_KEY=${MOLLIE_API_KEY}
       # URL publique du site (HTTPS en prod) pour les redirect/webhook Mollie
       - NEXT_PUBLIC_SITE_URL=${NEXT_PUBLIC_SITE_URL:-https://blueportel.fr}
+      # Mot de passe de la page d'admin des tarifs (/admin)
+      - ADMIN_PASSWORD=${ADMIN_PASSWORD}
     depends_on:
       db:
         condition: service_healthy

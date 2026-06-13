@@ -1,23 +1,12 @@
 import type { AccommodationId } from "../../data/accommodations";
+import type { RatesMap, Season } from "./rates";
 
 // Tarification des réservations directes.
-// ⚠️ À CONFIRMER PAR LE PROPRIÉTAIRE : tarifs Horizon estimés, à ajuster.
-// Source des tarifs Prestige : page /pages/tarifs (basse 75€, moyenne 100€, haute 130-150€).
+// Les tarifs (prix/nuit + nuits min) sont éditables depuis /admin (table Rate, cf. rates.ts).
 // Politique : acompte 30% à la réservation, solde 30j avant l'arrivée (géré hors-ligne),
 // caution 200€ (empreinte/chèque, NON débitée via Mollie). Ménage non inclus.
 
-export type Season = "basse" | "moyenne" | "haute";
-
 export const DEPOSIT_RATE = 0.3; // acompte 30%
-
-// Tarifs en centimes d'euro par nuit, par logement et par saison
-const NIGHTLY_CENTS: Record<AccommodationId, Record<Season, number>> = {
-  prestige: { basse: 7500, moyenne: 10000, haute: 14000 },
-  horizon: { basse: 6000, moyenne: 8000, haute: 11000 }, // TODO confirmer
-};
-
-// Nuits minimum par saison
-const MIN_NIGHTS: Record<Season, number> = { basse: 2, moyenne: 3, haute: 6 };
 
 // Frais de ménage en centimes (0 = non facturé via le site, réglé sur place)
 const CLEANING_CENTS: Record<AccommodationId, number> = { prestige: 0, horizon: 0 };
@@ -62,10 +51,12 @@ export type Quote = {
 export type QuoteError = { code: string; message: string };
 
 // Calcule le devis nuit par nuit (gère un séjour à cheval sur plusieurs saisons).
+// `rates` provient de getRates() (DB ou valeurs par défaut).
 export function computeQuote(
   property: AccommodationId,
   checkIn: string,
-  checkOut: string
+  checkOut: string,
+  rates: RatesMap
 ): { quote: Quote } | { error: QuoteError } {
   if (!/^\d{4}-\d{2}-\d{2}$/.test(checkIn) || !/^\d{4}-\d{2}-\d{2}$/.test(checkOut)) {
     return { error: { code: "INVALID_DATES", message: "Dates invalides." } };
@@ -77,7 +68,7 @@ export function computeQuote(
   }
 
   const arrivalSeason = seasonForMonth(Number(checkIn.slice(5, 7)));
-  const minNights = MIN_NIGHTS[arrivalSeason];
+  const minNights = rates[property][arrivalSeason].minNights;
   if (nights < minNights) {
     return {
       error: {
@@ -91,7 +82,7 @@ export function computeQuote(
   for (let i = 0; i < nights; i++) {
     const nightIso = addDaysIso(checkIn, i);
     const season = seasonForMonth(Number(nightIso.slice(5, 7)));
-    lodgingCents += NIGHTLY_CENTS[property][season];
+    lodgingCents += rates[property][season].nightlyCents;
   }
 
   const cleaningCents = CLEANING_CENTS[property];
@@ -106,7 +97,7 @@ export function computeQuote(
       nights,
       season: arrivalSeason,
       minNights,
-      nightlyCents: NIGHTLY_CENTS[property][arrivalSeason],
+      nightlyCents: rates[property][arrivalSeason].nightlyCents,
       cleaningCents,
       totalCents,
       depositCents,

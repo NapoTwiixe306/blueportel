@@ -3,6 +3,7 @@ import { NextResponse } from "next/server";
 import { prisma } from "@/src/lib/db";
 import { icalSources, isAccommodationId } from "@/src/lib/availability/sources";
 import { computeQuote, eurosFromCents, MIN_LEAD_DAYS } from "@/src/lib/booking/pricing";
+import { getRates } from "@/src/lib/booking/rates";
 import { isRangeAvailable } from "@/src/lib/booking/availability";
 import { getMollie, siteBaseUrl } from "@/src/lib/mollie";
 
@@ -62,6 +63,11 @@ export async function POST(request: Request) {
   if (!EMAIL_RE.test(guestEmail)) {
     return NextResponse.json({ error: "Email invalide" }, { status: 400 });
   }
+  // Téléphone obligatoire (indicatif + numéro)
+  const guestPhone = (body.guestPhone ?? "").trim();
+  if (!/^\+\d{1,4}\s/.test(guestPhone) || guestPhone.replace(/\D/g, "").length < 8) {
+    return NextResponse.json({ error: "Téléphone invalide (indicatif + numéro requis)" }, { status: 400 });
+  }
 
   // Délai minimum avant arrivée (limite le risque de double-résa via synchro OTA différée)
   const minArrival = new Date(`${todayIso()}T00:00:00Z`);
@@ -77,7 +83,8 @@ export async function POST(request: Request) {
   }
 
   // Prix + règles (nuits min, dates valides)
-  const quoteResult = computeQuote(property, checkIn, checkOut);
+  const rates = await getRates();
+  const quoteResult = computeQuote(property, checkIn, checkOut, rates);
   if ("error" in quoteResult) {
     return NextResponse.json({ error: quoteResult.error.message, code: quoteResult.error.code }, { status: 400 });
   }
@@ -109,7 +116,7 @@ export async function POST(request: Request) {
         guests,
         guestName,
         guestEmail,
-        guestPhone: body.guestPhone?.trim() || null,
+        guestPhone,
         message: body.message?.trim() || null,
         totalCents: quote.totalCents,
         depositCents: quote.depositCents,

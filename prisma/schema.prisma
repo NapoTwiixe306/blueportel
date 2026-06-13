@@ -17,6 +17,18 @@ enum ReservationStatus {
   EXPIRED // délai de paiement dépassé sans règlement
 }
 
+// Tarifs éditables depuis /admin (par logement et saison). Voir src/lib/booking/rates.ts.
+model Rate {
+  id           String   @id @default(cuid())
+  property     String // "horizon" | "prestige"
+  season       String // "basse" | "moyenne" | "haute"
+  nightlyCents Int // prix par nuit en centimes
+  minNights    Int // nuits minimum
+  updatedAt    DateTime @updatedAt
+
+  @@unique([property, season])
+}
+
 model Reservation {
   id       String @id @default(cuid())
   property String // "horizon" | "prestige"
