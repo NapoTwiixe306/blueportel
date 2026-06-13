@@ -56,6 +56,24 @@ export async function GET(
     );
   }
 
+  // Un calendrier iCal sans aucun VEVENT est invalide (RFC 5545) et rejeté par
+  // les importateurs OTA (Booking : « This iCal URL isn't valid »). Tant qu'aucune
+  // réservation directe n'est payée, on émet un événement placeholder dans le passé,
+  // marqué TRANSPARENT, qui ne bloque aucune date réelle.
+  if (reservations.length === 0) {
+    lines.push(
+      "BEGIN:VEVENT",
+      `UID:placeholder-${property}@blueportel.fr`,
+      `DTSTAMP:${now}`,
+      "DTSTART;VALUE=DATE:20200101",
+      "DTEND;VALUE=DATE:20200102",
+      "SUMMARY:Calendrier Blueportel actif",
+      "STATUS:CONFIRMED",
+      "TRANSP:TRANSPARENT",
+      "END:VEVENT"
+    );
+  }
+
   lines.push("END:VCALENDAR");
 
   return new Response(lines.join("\r\n") + "\r\n", {
