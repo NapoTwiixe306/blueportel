@@ -33,43 +33,39 @@ export async function GET(
   }
 
   const now = stamp();
+  // Format aligné sur les exports Airbnb/Google (acceptés par Booking) : en-tête
+  // minimal, PRODID avant VERSION, événements sans STATUS/TRANSP (OPAQUE par défaut).
   const lines = [
     "BEGIN:VCALENDAR",
-    "VERSION:2.0",
     "PRODID:-//Blueportel//Direct Bookings//FR",
     "CALSCALE:GREGORIAN",
-    "METHOD:PUBLISH",
-    `X-WR-CALNAME:Blueportel ${property} (réservations directes)`,
+    "VERSION:2.0",
   ];
 
   for (const r of reservations) {
     lines.push(
       "BEGIN:VEVENT",
-      `UID:${r.id}@blueportel.fr`,
       `DTSTAMP:${now}`,
       `DTSTART;VALUE=DATE:${icsDate(r.checkIn)}`,
       `DTEND;VALUE=DATE:${icsDate(r.checkOut)}`,
       "SUMMARY:Réservé (site Blueportel)",
-      "STATUS:CONFIRMED",
-      "TRANSP:OPAQUE",
+      `UID:${r.id}@blueportel.fr`,
       "END:VEVENT"
     );
   }
 
-  // Un calendrier iCal sans aucun VEVENT est invalide (RFC 5545) et rejeté par
-  // les importateurs OTA (Booking : « This iCal URL isn't valid »). Tant qu'aucune
-  // réservation directe n'est payée, on émet un événement placeholder dans le passé,
-  // marqué TRANSPARENT, qui ne bloque aucune date réelle.
+  // Un calendrier iCal sans VEVENT est invalide (RFC 5545) et rejeté par Booking
+  // (« This iCal URL isn't valid »). Tant qu'aucune réservation directe n'est payée,
+  // on émet un événement occupant placé en 2099 : assez réel pour valider le flux,
+  // assez lointain pour ne bloquer aucune date réservable.
   if (reservations.length === 0) {
     lines.push(
       "BEGIN:VEVENT",
-      `UID:placeholder-${property}@blueportel.fr`,
       `DTSTAMP:${now}`,
-      "DTSTART;VALUE=DATE:20200101",
-      "DTEND;VALUE=DATE:20200102",
-      "SUMMARY:Calendrier Blueportel actif",
-      "STATUS:CONFIRMED",
-      "TRANSP:TRANSPARENT",
+      "DTSTART;VALUE=DATE:20990101",
+      "DTEND;VALUE=DATE:20990102",
+      "SUMMARY:Blueportel",
+      `UID:placeholder-${property}@blueportel.fr`,
       "END:VEVENT"
     );
   }
