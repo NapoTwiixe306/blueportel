@@ -14,7 +14,7 @@ const HORIZON_BOOKING_DEFAULT =
 const HORIZON_AIRBNB_DEFAULT =
   "https://fr.airbnb.be/calendar/ical/1684229209545436081.ics?t=33486bf3d2384c32bd8da4edb9e2091b";
 const PRESTIGE_BOOKING_DEFAULT =
-  "https://ical.booking.com/v1/export?t=00f98fb5-48cd-4cc2-a527-8326bd5cca00";
+  "https://ical.booking.com/v1/export?t=f174095a-5c47-4b16-a4ea-e75143293f5a";
 const PRESTIGE_AIRBNB_DEFAULT =
   "https://fr.airbnb.be/calendar/ical/1389190512266062716.ics?t=5d45b9aa84c8444ab97140c3c2a69537";
 
