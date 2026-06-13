@@ -7,7 +7,7 @@ export const frAvailabilityDictionary: AvailabilityDictionary = {
   metadata: {
     title: "Disponibilités Blueportel | Calendrier de réservation",
     description:
-      "Consultez les disponibilités en temps réel du mobil-home Blueportel à Le Portel. Calendrier synchronisé avec Lodgify, réservation sécurisée face à la mer.",
+      "Consultez les disponibilités en temps réel des mobil-homes Blueportel à Le Portel. Calendrier synchronisé avec Booking et Airbnb, réservation sécurisée face à la mer.",
     alternates: {
       canonical: "/fr/pages/disponibilites",
       languages: {
@@ -45,7 +45,7 @@ export const frAvailabilityDictionary: AvailabilityDictionary = {
     pretitle: "Mobil-home Blueportel",
     title: "Vérifiez nos disponibilités en temps réel",
     description:
-      "Calendrier synchronisé avec Lodgify. Consultez les dates libres pour planifier votre séjour face à la mer, puis confirmez votre réservation en ligne.",
+      "Calendrier synchronisé avec Booking et Airbnb. Consultez les dates libres pour planifier votre séjour face à la mer, puis confirmez votre réservation en ligne.",
   },
   loadingText: "Chargement des disponibilités…",
   error: {
@@ -75,9 +75,9 @@ export const frAvailabilityDictionary: AvailabilityDictionary = {
   cta: {
     title: "Réservez en ligne ou contactez-nous",
     description:
-      "Après avoir choisi vos dates, ouvrez le tunnel de réservation Lodgify ou écrivez-nous pour une demande sur mesure.",
+      "Après avoir choisi vos dates, ouvrez le tunnel de réservation ou écrivez-nous pour une demande sur mesure.",
     primary: {
-      label: "Ouvrir la réservation Lodgify",
+      label: "Réserver en ligne",
       href: "/fr/pages/reserver",
     },
     secondary: {
@@ -86,13 +86,13 @@ export const frAvailabilityDictionary: AvailabilityDictionary = {
     },
   },
   info: [
-    "Calendrier mis à jour toutes les 15 minutes via l’API Lodgify officielle.",
-    "Mobil-home Blueportel – Camping Le Phare d’Opale, Le Portel. Vue mer panoramique, 3 chambres, 2 salles de bain, 6 personnes.",
+    "Calendrier synchronisé automatiquement avec nos plannings Booking et Airbnb (actualisé toutes les heures).",
+    "Mobil-homes Blueportel – Camping Le Phare d’Opale, Le Portel. Vue mer panoramique, accès direct plage.",
   ],
   screenReader: {
     title: "Disponibilités du mobil-home Blueportel",
     paragraphs: [
-      "Calendrier de réservation mis à jour automatiquement via Lodgify. Sélectionnez vos dates pour réserver votre séjour face à la mer.",
+      "Calendrier de réservation synchronisé automatiquement avec Booking et Airbnb. Sélectionnez vos dates pour réserver votre séjour face à la mer.",
       "Pour toute question, contactez info@blueportel.fr ou +32 488 83 20 91.",
     ],
   },

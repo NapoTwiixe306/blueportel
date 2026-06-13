@@ -7,7 +7,7 @@ export const enAvailabilityDictionary: AvailabilityDictionary = {
   metadata: {
     title: "Blueportel Availability | Booking calendar",
     description:
-      "Check real-time availability for the Blueportel mobile home in Le Portel. Lodgify-synced calendar and secure seaside booking.",
+      "Check real-time availability for the Blueportel mobile homes in Le Portel. Calendar synced with Booking and Airbnb, secure seaside booking.",
     alternates: {
       canonical: "/en/pages/disponibilites",
       languages: {
@@ -45,7 +45,7 @@ export const enAvailabilityDictionary: AvailabilityDictionary = {
     pretitle: "Blueportel mobile home",
     title: "Check real-time availability",
     description:
-      "Calendar synced with Lodgify. View available dates, plan your seaside stay and confirm your booking online.",
+      "Calendar synced with Booking and Airbnb. View available dates, plan your seaside stay and confirm your booking online.",
   },
   loadingText: "Fetching availability…",
   error: {
@@ -75,9 +75,9 @@ export const enAvailabilityDictionary: AvailabilityDictionary = {
   cta: {
     title: "Book online or message us",
     description:
-      "Once you’ve selected your dates, open the Lodgify booking flow or reach out for a tailored request.",
+      "Once you’ve selected your dates, open the booking flow or reach out for a tailored request.",
     primary: {
-      label: "Open Lodgify booking",
+      label: "Book online",
       href: "/en/pages/reserver",
     },
     secondary: {
@@ -86,13 +86,13 @@ export const enAvailabilityDictionary: AvailabilityDictionary = {
     },
   },
   info: [
-    "Calendar refreshes every 15 minutes via the official Lodgify API.",
-    "Blueportel mobile home – Camping Le Phare d’Opale, Le Portel. Panoramic sea view, 3 bedrooms, 2 bathrooms, up to 6 guests.",
+    "Calendar synced automatically with our Booking and Airbnb schedules (refreshed hourly).",
+    "Blueportel mobile homes – Camping Le Phare d’Opale, Le Portel. Panoramic sea view, direct beach access.",
   ],
   screenReader: {
     title: "Blueportel availability",
     paragraphs: [
-      "Booking calendar powered by Lodgify. Select your dates to secure the Blueportel seaside rental.",
+      "Booking calendar synced automatically with Booking and Airbnb. Select your dates to secure the Blueportel seaside rental.",
       "Questions? Contact info@blueportel.fr or +32 488 83 20 91.",
     ],
   },

@@ -7,7 +7,7 @@ export const nlAvailabilityDictionary: AvailabilityDictionary = {
   metadata: {
     title: "Blueportel beschikbaarheid | Reservatiekalender",
     description:
-      "Bekijk de real-time beschikbaarheid van de Blueportel mobilhome in Le Portel. Lodgify-kalender en veilige reservering aan zee.",
+      "Bekijk de real-time beschikbaarheid van de Blueportel mobilhomes in Le Portel. Kalender gesynchroniseerd met Booking en Airbnb, veilige reservering aan zee.",
     alternates: {
       canonical: "/nl/pages/disponibilites",
       languages: {
@@ -45,7 +45,7 @@ export const nlAvailabilityDictionary: AvailabilityDictionary = {
     pretitle: "Blueportel mobilhome",
     title: "Controleer de beschikbaarheid in real-time",
     description:
-      "Kalender gesynchroniseerd met Lodgify. Bekijk de vrije data voor uw verblijf aan zee en bevestig uw reservatie online.",
+      "Kalender gesynchroniseerd met Booking en Airbnb. Bekijk de vrije data voor uw verblijf aan zee en bevestig uw reservatie online.",
   },
   loadingText: "Beschikbaarheid wordt geladen…",
   error: {
@@ -75,9 +75,9 @@ export const nlAvailabilityDictionary: AvailabilityDictionary = {
   cta: {
     title: "Boek online of contacteer ons",
     description:
-      "Selecteer uw data en open het Lodgify-reservatieproces of stuur ons een bericht voor een aanvraag op maat.",
+      "Selecteer uw data en open het reservatieproces of stuur ons een bericht voor een aanvraag op maat.",
     primary: {
-      label: "Lodgify-reservatie openen",
+      label: "Online reserveren",
       href: "/nl/pages/reserver",
     },
     secondary: {
@@ -86,13 +86,13 @@ export const nlAvailabilityDictionary: AvailabilityDictionary = {
     },
   },
   info: [
-    "Kalender wordt elke 15 minuten vernieuwd via de officiële Lodgify API.",
-    "Blueportel mobilhome – Camping Le Phare d’Opale, Le Portel. Panoramisch zeezicht, 3 kamers, 2 badkamers, tot 6 personen.",
+    "Kalender automatisch gesynchroniseerd met onze Booking- en Airbnb-planning (elk uur vernieuwd).",
+    "Blueportel mobilhomes – Camping Le Phare d’Opale, Le Portel. Panoramisch zeezicht, directe strandtoegang.",
   ],
   screenReader: {
     title: "Beschikbaarheid Blueportel",
     paragraphs: [
-      "Reservatiekalender gekoppeld aan Lodgify. Kies uw data om de mobilhome Blueportel aan zee vast te leggen.",
+      "Reservatiekalender automatisch gesynchroniseerd met Booking en Airbnb. Kies uw data om de mobilhome Blueportel aan zee vast te leggen.",
       "Vragen? Contacteer info@blueportel.fr of +32 488 83 20 91.",
     ],
   },
