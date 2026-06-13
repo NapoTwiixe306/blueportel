@@ -7,6 +7,33 @@ services:
       - "3000"
     environment:
       - NODE_ENV=production
+      # Connexion à la base MySQL du compose
+      - DATABASE_URL=mysql://${MYSQL_USER:-blueportel}:${MYSQL_PASSWORD:-changeme}@db:3306/${MYSQL_DATABASE:-blueportel}
+      # Paiement Mollie (clé test_... ou live_...) — à définir dans le fichier .env
+      - MOLLIE_API_KEY=${MOLLIE_API_KEY}
+      # URL publique du site (HTTPS en prod) pour les redirect/webhook Mollie
+      - NEXT_PUBLIC_SITE_URL=${NEXT_PUBLIC_SITE_URL:-https://blueportel.fr}
+    depends_on:
+      db:
+        condition: service_healthy
+
+  db:
+    image: mysql:8.4
+    container_name: blueportel_db
+    restart: always
+    environment:
+      - MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD:-rootchangeme}
+      - MYSQL_DATABASE=${MYSQL_DATABASE:-blueportel}
+      - MYSQL_USER=${MYSQL_USER:-blueportel}
+      - MYSQL_PASSWORD=${MYSQL_PASSWORD:-changeme}
+    volumes:
+      - db_data:/var/lib/mysql
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-p${MYSQL_ROOT_PASSWORD:-rootchangeme}"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+      start_period: 30s
 
   caddy:
     image: caddy:latest
@@ -25,3 +52,4 @@ services:
 volumes:
   caddy_data:
   caddy_config:
+  db_data:

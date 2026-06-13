@@ -2,6 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 
 import type { Locale } from "../../i18n/locales";
+import BookingForm from "../booking/BookingForm";
 
 /** Liens externes de réservation par plateforme. */
 export const bookingPlatforms = {
@@ -223,6 +224,27 @@ export default function ReserverPage({ locale }: { locale: Locale }) {
               </div>
             </div>
           </article>
+        </section>
+
+        {/* Réservation directe en ligne — Horizon (Booking/Airbnb du Prestige ci-dessus) */}
+        <section className="w-full max-w-xl mt-12 sm:mt-16">
+          <div className="text-center mb-5">
+            <h2 className="text-xl sm:text-2xl font-bold text-gray-900">
+              {locale === "en"
+                ? "Book the Horizon online"
+                : locale === "nl"
+                  ? "Reserveer de Horizon online"
+                  : "Réserver l'Horizon en ligne"}
+            </h2>
+            <p className="mt-2 text-sm text-gray-600">
+              {locale === "en"
+                ? "Instant booking with secure deposit payment."
+                : locale === "nl"
+                  ? "Direct reserveren met veilige voorschotbetaling."
+                  : "Réservation immédiate avec paiement sécurisé de l'acompte."}
+            </p>
+          </div>
+          <BookingForm property="horizon" locale={locale} />
         </section>
       </main>
     </div>

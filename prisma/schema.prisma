@@ -1,0 +1,48 @@
+// Schéma Prisma — réservations directes Blueportel (paiement Mollie)
+// Voir src/lib/booking/* pour la logique métier.
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+enum ReservationStatus {
+  PENDING // créée, en attente de paiement (verrou temporaire jusqu'à expiresAt)
+  PAID // acompte payé → dates bloquées + exportées vers Booking/Airbnb
+  CANCELLED // paiement échoué/annulé, ou conflit détecté après paiement (remboursé)
+  EXPIRED // délai de paiement dépassé sans règlement
+}
+
+model Reservation {
+  id       String @id @default(cuid())
+  property String // "horizon" | "prestige"
+
+  checkIn  DateTime @db.Date // nuit d'arrivée
+  checkOut DateTime @db.Date // jour de départ (exclu : dernière nuit = checkOut - 1)
+  nights   Int
+  guests   Int
+
+  guestName  String
+  guestEmail String
+  guestPhone String?
+  message    String? @db.Text
+
+  // Montants en centimes d'euro (évite les flottants)
+  totalCents   Int // prix total du séjour
+  depositCents Int // acompte réellement débité via Mollie
+
+  status          ReservationStatus @default(PENDING)
+  molliePaymentId String?           @unique
+  mollieRefundId  String? // si conflit après paiement → remboursement
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  expiresAt DateTime // fin du verrou temporaire pour les PENDING
+
+  @@index([property, status])
+  @@index([checkIn, checkOut])
+}

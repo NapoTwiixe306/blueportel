@@ -2,19 +2,16 @@ import { NextResponse } from "next/server";
 
 import {
   buildDays,
-  mergeBlockedDays,
   nextAvailablePeriod,
-  parseIcsBlockedRanges,
   todayIso,
   type AvailabilityDay,
   type AvailablePeriod,
-  type DateRange,
 } from "@/src/lib/availability/ical";
 import { icalSources, isAccommodationId } from "@/src/lib/availability/sources";
+import { getBlockedDays } from "@/src/lib/booking/availability";
 
-// Fenêtre affichée et mise en cache (1h) — pas de temps réel nécessaire pour un gîte.
+// Fenêtre affichée. Pas de temps réel nécessaire pour un gîte.
 const WINDOW_MONTHS = 14;
-const REVALIDATE_SECONDS = 3600;
 
 type AvailabilityResponse = {
   property: string;
@@ -35,11 +32,11 @@ export async function GET(request: Request) {
     );
   }
 
-  const sources = icalSources[property];
   const from = todayIso();
 
-  // Pas de calendrier configuré (ex. Prestige) : réponse valide mais vide.
-  if (sources.length === 0) {
+  // Pas de calendrier OTA configuré (ex. Prestige) : réponse valide mais vide.
+  // (On ne peut pas afficher de dispo fiable sans lire les dates bloquées des plateformes.)
+  if (icalSources[property].length === 0) {
     const payload: AvailabilityResponse = {
       property,
       updatedAt: new Date().toISOString(),
@@ -51,18 +48,8 @@ export async function GET(request: Request) {
   }
 
   try {
-    const rangesPerSource = await Promise.all(
-      sources.map(async (url): Promise<DateRange[]> => {
-        const res = await fetch(url, {
-          headers: { Accept: "text/calendar" },
-          next: { revalidate: REVALIDATE_SECONDS },
-        });
-        if (!res.ok) throw new Error(`iCal ${res.status}`);
-        return parseIcsBlockedRanges(await res.text());
-      })
-    );
-
-    const blocked = mergeBlockedDays(rangesPerSource);
+    // Fusionne dates bloquées OTA (Booking + Airbnb) + réservations directes du site
+    const blocked = await getBlockedDays(property);
 
     const payload: AvailabilityResponse = {
       property,
