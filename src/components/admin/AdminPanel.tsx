@@ -131,7 +131,7 @@ export default function AdminPanel() {
             value={password}
             onChange={(e) => setPassword(e.target.value)}
             autoFocus
-            className="h-12 w-full rounded-xl border border-gray-200 bg-gray-50 px-4 text-sm outline-none transition focus:border-blue-500 focus:bg-white focus:ring-4 focus:ring-blue-100"
+            className="h-12 w-full rounded-xl border border-gray-200 bg-gray-50 px-4 text-sm text-gray-900 placeholder:text-gray-400 outline-none transition focus:border-blue-500 focus:bg-white focus:ring-4 focus:ring-blue-100"
           />
           {loginError && <p className="mt-3 text-sm font-medium text-red-600">{loginError}</p>}
           <button
