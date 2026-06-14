@@ -5,6 +5,9 @@ import { visiterNausicaa } from "./visiter-nausicaa-guide-complet";
 import { plusBellesPlages } from "./plus-belles-plages-cote-opale";
 import { weekEndFamilleBoulogne } from "./week-end-famille-boulogne-sur-mer";
 import { alternativeHotelBoulogne } from "./alternative-hotel-boulogne-sur-mer";
+import { queFaireLePortel } from "./que-faire-le-portel";
+import { mareesPecheAPied } from "./marees-peche-a-pied-cote-opale";
+import { roadTripCoteOpale } from "./road-trip-cote-opale-itineraire";
 
 export const frArticles: BlogArticle[] = [
   queFaireCoteOpale,
@@ -12,4 +15,7 @@ export const frArticles: BlogArticle[] = [
   plusBellesPlages,
   weekEndFamilleBoulogne,
   alternativeHotelBoulogne,
+  queFaireLePortel,
+  mareesPecheAPied,
+  roadTripCoteOpale,
 ];

@@ -5,6 +5,9 @@ import { nausicaaBezoeken } from "./nausicaa-bezoeken-complete-gids";
 import { mooisteStranden } from "./mooiste-stranden-opaalkust";
 import { gezinsweekendBoulogne } from "./gezinsweekend-boulogne-sur-mer";
 import { alternatiefHotelBoulogne } from "./alternatief-hotel-boulogne-sur-mer";
+import { watTeDoenLePortel } from "./wat-te-doen-le-portel";
+import { getijdenStrandvissen } from "./getijden-strandvissen-opaalkust";
+import { roadtripOpaalkust } from "./roadtrip-opaalkust-route";
 
 export const nlArticles: BlogArticle[] = [
   watTeDoenOpaalkust,
@@ -12,4 +15,7 @@ export const nlArticles: BlogArticle[] = [
   mooisteStranden,
   gezinsweekendBoulogne,
   alternatiefHotelBoulogne,
+  watTeDoenLePortel,
+  getijdenStrandvissen,
+  roadtripOpaalkust,
 ];
