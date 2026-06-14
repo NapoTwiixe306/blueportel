@@ -9,6 +9,8 @@ import { thingsToDoLePortel } from "./things-to-do-le-portel";
 import { tidesForaging } from "./tides-foraging-opal-coast";
 import { opalCoastRoadTrip } from "./opal-coast-road-trip-itinerary";
 import { rentalHautsDeFrance } from "./mobile-home-rental-hauts-de-france-seaside";
+import { familyHolidayOpalCoast } from "./family-holiday-opal-coast";
+import { privateRentalOpalCoast } from "./private-mobile-home-rental-opal-coast";
 
 export const enArticles: BlogArticle[] = [
   thingsToDoOpalCoast,
@@ -20,4 +22,6 @@ export const enArticles: BlogArticle[] = [
   tidesForaging,
   opalCoastRoadTrip,
   rentalHautsDeFrance,
+  familyHolidayOpalCoast,
+  privateRentalOpalCoast,
 ];

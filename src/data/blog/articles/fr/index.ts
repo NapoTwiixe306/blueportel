@@ -9,6 +9,8 @@ import { queFaireLePortel } from "./que-faire-le-portel";
 import { mareesPecheAPied } from "./marees-peche-a-pied-cote-opale";
 import { roadTripCoteOpale } from "./road-trip-cote-opale-itineraire";
 import { locationNordPasDeCalais } from "./location-mobil-home-nord-pas-de-calais-bord-de-mer";
+import { vacancesFamilleCoteOpale } from "./vacances-cote-opale-famille";
+import { locationParticulierCoteOpale } from "./location-mobil-home-particulier-cote-opale";
 
 export const frArticles: BlogArticle[] = [
   queFaireCoteOpale,
@@ -20,4 +22,6 @@ export const frArticles: BlogArticle[] = [
   mareesPecheAPied,
   roadTripCoteOpale,
   locationNordPasDeCalais,
+  vacancesFamilleCoteOpale,
+  locationParticulierCoteOpale,
 ];

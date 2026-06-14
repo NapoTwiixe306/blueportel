@@ -12,6 +12,7 @@ import { equihenPlage } from "./equihen-plage";
 import { calais } from "./calais";
 import { berckSurMer } from "./berck-sur-mer";
 import { montreuilSurMer } from "./montreuil-sur-mer";
+import { etaplesSurMer } from "./etaples-sur-mer";
 
 export const destinations: Destination[] = [
   boulogneSurMer,
@@ -26,4 +27,5 @@ export const destinations: Destination[] = [
   calais,
   berckSurMer,
   montreuilSurMer,
+  etaplesSurMer,
 ];

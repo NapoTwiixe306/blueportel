@@ -9,6 +9,8 @@ import { watTeDoenLePortel } from "./wat-te-doen-le-portel";
 import { getijdenStrandvissen } from "./getijden-strandvissen-opaalkust";
 import { roadtripOpaalkust } from "./roadtrip-opaalkust-route";
 import { stacaravanNoordFrankrijk } from "./stacaravan-huren-noord-frankrijk-kust";
+import { gezinsvakantieOpaalkust } from "./gezinsvakantie-opaalkust";
+import { stacaravanParticulierOpaalkust } from "./stacaravan-particulier-huren-opaalkust";
 
 export const nlArticles: BlogArticle[] = [
   watTeDoenOpaalkust,
@@ -20,4 +22,6 @@ export const nlArticles: BlogArticle[] = [
   getijdenStrandvissen,
   roadtripOpaalkust,
   stacaravanNoordFrankrijk,
+  gezinsvakantieOpaalkust,
+  stacaravanParticulierOpaalkust,
 ];
