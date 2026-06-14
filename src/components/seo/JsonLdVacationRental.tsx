@@ -24,6 +24,16 @@ const JSONLD_DATA = {
 export function JsonLdVacationRental({ locale }: { locale: Locale }) {
   const data = JSONLD_DATA[locale];
 
+  // Origine servant les fichiers statiques (images en /galerie sur les deux domaines).
+  // Attention : data.url pour le nl vaut ".../nl", ce qui ne convient pas aux assets.
+  const assetOrigin = locale === "en" ? "https://blueportel.com" : "https://blueportel.fr";
+  const images = [
+    `${assetOrigin}/galerie/blueportel-hero-vue-mer.png`,
+    `${assetOrigin}/galerie/blueportel-panorama-cote-opale.jpg`,
+    `${assetOrigin}/galerie/blueportel-salon-vue-mer-1040x693.jpg`,
+    `${assetOrigin}/galerie/blueportel-cuisine-equipee-1920x1280.jpg`,
+  ];
+
   const featureLabels = {
     panoramic:
       locale === "nl"
@@ -48,6 +58,7 @@ export function JsonLdVacationRental({ locale }: { locale: Locale }) {
     name: data.name,
     description: data.description,
     url: data.url,
+    image: images,
     telephone: "+33745324836",
     email: "info@blueportel.fr",
     priceRange: "EUR 75-140",
