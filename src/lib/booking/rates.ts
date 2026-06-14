@@ -52,13 +52,18 @@ export async function getRates(): Promise<RatesMap> {
 
 // Fourchette de prix par saison (en euros) à travers tous les logements,
 // pour l'affichage public de la page tarifs. Aligné sur l'ordre de SEASONS.
-export type SeasonPrice = { min: number; max: number };
+export type SeasonPrice = { min: number; max: number; minNights: number };
 
 export async function getSeasonPriceRanges(): Promise<SeasonPrice[]> {
   const rates = await getRates();
   return SEASONS.map((season) => {
     const cents = PROPERTIES.map((property) => rates[property][season].nightlyCents);
-    return { min: Math.min(...cents) / 100, max: Math.max(...cents) / 100 };
+    const nights = PROPERTIES.map((property) => rates[property][season].minNights);
+    return {
+      min: Math.min(...cents) / 100,
+      max: Math.max(...cents) / 100,
+      minNights: Math.min(...nights),
+    };
   });
 }
 

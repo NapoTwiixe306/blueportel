@@ -17,7 +17,7 @@ const iconMap: Record<InfoBlock["icon"], typeof PiggyBank> = {
 type TarifsPageProps = {
   dictionary: TarifsDictionary;
   /** Prix réels par saison (depuis l'admin/DB), alignés sur l'ordre des saisons. */
-  seasonPrices?: { min: number; max?: number }[];
+  seasonPrices?: { min: number; max?: number; minNights?: number }[];
 };
 
 export default function TarifsPage({ dictionary, seasonPrices }: TarifsPageProps) {
@@ -41,6 +41,21 @@ export default function TarifsPage({ dictionary, seasonPrices }: TarifsPageProps
       from: (value) => `vanaf ${value} / nacht`,
       range: (min, max) => `tussen ${min} en ${max} / nacht`,
     },
+  };
+
+  const minStayTemplates: Record<Locale, (n: number) => string> = {
+    fr: (n) => `${n} nuit${n > 1 ? "s" : ""} minimum`,
+    en: (n) => `${n}-night minimum`,
+    nl: (n) => `minimaal ${n} nacht${n > 1 ? "en" : ""}`,
+  };
+
+  const formatMinStay = (
+    season: TarifsDictionary["seasons"][number],
+    index: number
+  ) => {
+    const minNights = seasonPrices?.[index]?.minNights;
+    if (!minNights) return season.minStay;
+    return (minStayTemplates[locale] ?? minStayTemplates.fr)(minNights);
   };
 
   const formatSeasonPrice = (
@@ -114,7 +129,7 @@ export default function TarifsPage({ dictionary, seasonPrices }: TarifsPageProps
                 <p className="text-2xl font-bold text-black mb-2">
                   {formatSeasonPrice(season, index)}
                 </p>
-                <p className="text-xs text-gray-500 mb-4">{season.minStay}</p>
+                <p className="text-xs text-gray-500 mb-4">{formatMinStay(season, index)}</p>
                 <ul className="space-y-2 text-sm text-gray-700">
                   {season.perks.map((perk) => (
                     <li key={perk} className="flex items-start gap-2">
