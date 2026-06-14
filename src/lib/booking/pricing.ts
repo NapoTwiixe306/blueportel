@@ -3,10 +3,10 @@ import type { RatesMap, Season } from "./rates";
 
 // Tarification des réservations directes.
 // Les tarifs (prix/nuit + nuits min) sont éditables depuis /admin (table Rate, cf. rates.ts).
-// Politique : acompte 30% à la réservation, solde 30j avant l'arrivée (géré hors-ligne),
+// Politique : paiement intégral (100%) à la réservation,
 // caution 200€ (empreinte/chèque, NON débitée via Mollie). Ménage non inclus.
 
-export const DEPOSIT_RATE = 0.3; // acompte 30%
+export const DEPOSIT_RATE = 1; // paiement intégral à la réservation
 
 // Frais de ménage en centimes (0 = non facturé via le site, réglé sur place)
 const CLEANING_CENTS: Record<AccommodationId, number> = { prestige: 0, horizon: 0 };

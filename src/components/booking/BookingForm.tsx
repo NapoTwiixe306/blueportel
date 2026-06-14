@@ -44,18 +44,18 @@ const T: Record<Locale, Record<string, string>> = {
     message: "Message (optionnel)",
     nights: "nuits",
     total: "Total séjour",
-    deposit: "Acompte à payer maintenant (30%)",
-    balance: "Solde (30 j avant l'arrivée)",
+    deposit: "Montant à payer maintenant",
+    balance: "",
     available: "Dates disponibles",
     unavailable: "Ces dates ne sont pas disponibles",
-    submit: "Payer l'acompte et réserver",
+    submit: "Payer et réserver",
     submitting: "Redirection vers le paiement…",
-    secure: "Paiement sécurisé Mollie. Caution de 200 € gérée séparément. Solde réglé avant l'arrivée.",
+    secure: "Paiement sécurisé Mollie (séjour réglé en totalité). Caution de 200 € gérée séparément.",
     pickDates: "Choisissez vos dates pour voir le prix.",
     errGeneric: "Une erreur est survenue. Réessayez.",
     datesTitle: "Votre séjour",
     contactTitle: "Vos coordonnées",
-    subtitle: "Acompte 30 % aujourd'hui, solde avant l'arrivée.",
+    subtitle: "Paiement intégral aujourd'hui, réservation confirmée immédiatement.",
     perNight: "/ nuit",
     chooseProperty: "Votre logement",
   },
@@ -70,18 +70,18 @@ const T: Record<Locale, Record<string, string>> = {
     message: "Message (optional)",
     nights: "nights",
     total: "Stay total",
-    deposit: "Deposit due now (30%)",
-    balance: "Balance (30 days before arrival)",
+    deposit: "Amount to pay now",
+    balance: "",
     available: "Dates available",
     unavailable: "These dates are not available",
-    submit: "Pay deposit & book",
+    submit: "Pay & book",
     submitting: "Redirecting to payment…",
-    secure: "Secure Mollie payment. €200 security deposit handled separately. Balance paid before arrival.",
+    secure: "Secure Mollie payment (stay paid in full). €200 security deposit handled separately.",
     pickDates: "Pick your dates to see the price.",
     errGeneric: "Something went wrong. Please try again.",
     datesTitle: "Your stay",
     contactTitle: "Your details",
-    subtitle: "30% deposit today, balance before arrival.",
+    subtitle: "Pay in full today, booking confirmed instantly.",
     perNight: "/ night",
     chooseProperty: "Your accommodation",
   },
@@ -96,18 +96,18 @@ const T: Record<Locale, Record<string, string>> = {
     message: "Bericht (optioneel)",
     nights: "nachten",
     total: "Totaal verblijf",
-    deposit: "Voorschot nu te betalen (30%)",
-    balance: "Saldo (30 dagen voor aankomst)",
+    deposit: "Nu te betalen bedrag",
+    balance: "",
     available: "Data beschikbaar",
     unavailable: "Deze data zijn niet beschikbaar",
-    submit: "Voorschot betalen & reserveren",
+    submit: "Betalen & reserveren",
     submitting: "Doorverwijzen naar betaling…",
-    secure: "Veilige Mollie-betaling. Waarborg van € 200 apart geregeld. Saldo vóór aankomst betaald.",
+    secure: "Veilige Mollie-betaling (verblijf volledig betaald). Waarborg van € 200 apart geregeld.",
     pickDates: "Kies uw data om de prijs te zien.",
     errGeneric: "Er ging iets mis. Probeer opnieuw.",
     datesTitle: "Uw verblijf",
     contactTitle: "Uw gegevens",
-    subtitle: "30% voorschot vandaag, saldo vóór aankomst.",
+    subtitle: "Vandaag volledig betalen, reservatie meteen bevestigd.",
     perNight: "/ nacht",
     chooseProperty: "Uw accommodatie",
   },
@@ -401,17 +401,6 @@ export default function BookingForm({ initialProperty = "horizon", locale }: Pro
               <div className="mt-4 flex items-end justify-between rounded-xl bg-white px-4 py-3 shadow-sm">
                 <span className="text-sm font-medium text-gray-600">{t.deposit}</span>
                 <span className="text-2xl font-extrabold text-blue-600">{quote.eur.deposit} €</span>
-              </div>
-
-              <div className="mt-2 space-y-1 px-1 text-xs text-gray-500">
-                <div className="flex justify-between">
-                  <span>{t.total}</span>
-                  <span className="font-medium text-gray-700">{quote.eur.total} €</span>
-                </div>
-                <div className="flex justify-between">
-                  <span>{t.balance}</span>
-                  <span>{quote.eur.balance} €</span>
-                </div>
               </div>
             </div>
           )}

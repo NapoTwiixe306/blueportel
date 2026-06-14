@@ -224,8 +224,8 @@ export default function AdminPanel() {
         </div>
 
         <p className="mt-6 text-xs text-gray-400">
-          L&apos;acompte (30 %) et le délai minimum de réservation sont fixés dans le code. Les
-          changements de tarifs ici sont pris en compte immédiatement.
+          Le paiement se fait en totalité à la réservation ; le délai minimum de réservation est
+          fixé dans le code. Les changements de tarifs ici sont pris en compte immédiatement.
         </p>
       </div>
     </div>

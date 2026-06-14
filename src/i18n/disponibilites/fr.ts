@@ -51,7 +51,7 @@ export const frAvailabilityDictionary: AvailabilityDictionary = {
   error: {
     title: "Calendrier indisponible pour le moment",
     description:
-      "Nous n’arrivons pas à afficher le calendrier Lodgify. Réessayez dans quelques instants ou contactez-nous directement.",
+      "Nous n’arrivons pas à afficher le calendrier des disponibilités. Réessayez dans quelques instants ou contactez-nous directement.",
     contactCTA: [
       { label: "+32 488 83 20 91", href: "tel:+32488832091" },
       { label: "info@blueportel.fr", href: "mailto:info@blueportel.fr" },

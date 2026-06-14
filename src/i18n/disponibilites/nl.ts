@@ -51,7 +51,7 @@ export const nlAvailabilityDictionary: AvailabilityDictionary = {
   error: {
     title: "Kalender tijdelijk niet beschikbaar",
     description:
-      "De Lodgify-kalender kan niet worden geladen. Probeer het zo dadelijk opnieuw of neem rechtstreeks contact op.",
+      "De beschikbaarheidskalender kan niet worden geladen. Probeer het zo dadelijk opnieuw of neem rechtstreeks contact op.",
     contactCTA: [
       { label: "+32 488 83 20 91", href: "tel:+32488832091" },
       { label: "info@blueportel.fr", href: "mailto:info@blueportel.fr" },

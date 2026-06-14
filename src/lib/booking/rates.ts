@@ -50,6 +50,18 @@ export async function getRates(): Promise<RatesMap> {
   }
 }
 
+// Fourchette de prix par saison (en euros) à travers tous les logements,
+// pour l'affichage public de la page tarifs. Aligné sur l'ordre de SEASONS.
+export type SeasonPrice = { min: number; max: number };
+
+export async function getSeasonPriceRanges(): Promise<SeasonPrice[]> {
+  const rates = await getRates();
+  return SEASONS.map((season) => {
+    const cents = PROPERTIES.map((property) => rates[property][season].nightlyCents);
+    return { min: Math.min(...cents) / 100, max: Math.max(...cents) / 100 };
+  });
+}
+
 // Amorce la table Rate avec les valeurs par défaut si elle est vide.
 export async function ensureRatesSeeded(): Promise<void> {
   const count = await prisma.rate.count();

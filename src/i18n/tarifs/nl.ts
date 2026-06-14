@@ -7,7 +7,7 @@ export const nlTarifsDictionary: TarifsDictionary = {
   metadata: {
     title: "Blueportel tarieven | Mobilhome aan zee",
     description:
-      "Tarieven per seizoen voor de Blueportel mobilhome. 30% voorschot, €500 borg, linnengoed en eindschoonmaak inbegrepen. Boek uw verblijf aan zee.",
+      "Tarieven per seizoen voor de Blueportel mobilhome. Volledige online betaling, €500 borg, linnengoed en eindschoonmaak inbegrepen. Boek uw verblijf aan zee.",
     alternates: {
       canonical: "/nl/pages/tarifs",
       languages: {
@@ -19,7 +19,7 @@ export const nlTarifsDictionary: TarifsDictionary = {
     openGraph: {
       title: "Blueportel tarieven | Mobilhome aan zee",
       description:
-        "Seizoensprijzen, voorschotbeleid en inbegrepen diensten voor uw verblijf in Le Portel.",
+        "Seizoensprijzen, betalingsbeleid en inbegrepen diensten voor uw verblijf in Le Portel.",
       type: "website",
       url: `${siteUrl}/nl/pages/tarifs`,
     },
@@ -40,13 +40,13 @@ export const nlTarifsDictionary: TarifsDictionary = {
     pretitle: "Blueportel mobilhome",
     title: "Tarieven & reservatievoorwaarden",
     description:
-      "Bekijk de seizoensprijzen, wat er inbegrepen is en het voorschot/waarborgbeleid voordat u uw verblijf aan zee boekt.",
+      "Bekijk de seizoensprijzen, wat er inbegrepen is en het betalings-/waarborgbeleid voordat u uw verblijf aan zee boekt.",
   },
   seasons: [
     {
       name: "Laagseizoen",
       period: "Februari • Maart • Oktober",
-      priceEUR: { min: 75 },
+      priceEUR: { min: 60, max: 75 },
       minStay: "minimaal 2 nachten",
       perks: [
         "Winterzonsondergangen",
@@ -57,7 +57,7 @@ export const nlTarifsDictionary: TarifsDictionary = {
     {
       name: "Tussenseizoen",
       period: "April • Mei • Juni • September",
-      priceEUR: { min: 100 },
+      priceEUR: { min: 80, max: 100 },
       minStay: "minimaal 3 nachten",
       perks: [
         "Licht en zacht klimaat",
@@ -68,7 +68,7 @@ export const nlTarifsDictionary: TarifsDictionary = {
     {
       name: "Hoogseizoen",
       period: "Juli • Augustus",
-      priceEUR: { min: 130, max: 150 },
+      priceEUR: { min: 110, max: 140 },
       minStay: "minimaal 6 nachten",
       perks: [
         "Spectaculair zeezicht",
@@ -80,11 +80,11 @@ export const nlTarifsDictionary: TarifsDictionary = {
   infoBlocks: [
     {
       icon: "deposit",
-      title: "Voorschotbeleid",
+      title: "Betalingsbeleid",
       items: [
-        "30% voorschot via Lodgify bij reservatie.",
-        "Saldo 30 dagen voor aankomst.",
-        "Lastminute: volledige betaling bij bevestiging.",
+        "Volledige betaling van het verblijf bij reservatie (veilige Mollie-betaling).",
+        "Reservering meteen bevestigd na betaling.",
+        "Geen agentschaps- of platformkosten bij rechtstreeks boeken.",
       ],
     },
     {
@@ -132,7 +132,7 @@ export const nlTarifsDictionary: TarifsDictionary = {
     title: "Blueportel tarieven",
     content: [
       "Prijzen voor laag-, tussen- en hoogseizoen van de Blueportel mobilhome.",
-      "30% voorschot, €500 waarborg, linnengoed en eindschoonmaak inbegrepen, huisdieren op aanvraag.",
+      "Volledige betaling bij reservatie, €500 waarborg, linnengoed en eindschoonmaak inbegrepen, huisdieren op aanvraag.",
     ],
   },
 };

@@ -147,14 +147,14 @@ export async function POST(request: Request) {
     return NextResponse.json({ error: "Calendrier indisponible, réessayez." }, { status: 503 });
   }
 
-  // Paiement Mollie (acompte)
+  // Paiement Mollie (séjour réglé en totalité)
   const base = siteBaseUrl();
   const isHttps = base.startsWith("https://");
   try {
     const mollie = getMollie();
     const payment = await mollie.payments.create({
       amount: { currency: "EUR", value: eurosFromCents(quote.depositCents) },
-      description: `Acompte séjour Blueportel ${property} ${checkIn} → ${checkOut}`,
+      description: `Séjour Blueportel ${property} ${checkIn} → ${checkOut}`,
       redirectUrl: `${base}/${locale}/pages/reservation/confirmation?id=${reservation.id}`,
       // Mollie refuse les webhooks non publics (localhost) — on l'omet alors en dev
       ...(isHttps ? { webhookUrl: `${base}/api/mollie/webhook` } : {}),

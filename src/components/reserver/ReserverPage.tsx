@@ -238,10 +238,10 @@ export default function ReserverPage({ locale }: { locale: Locale }) {
             </h2>
             <p className="mt-2 text-sm text-gray-600">
               {locale === "en"
-                ? "Instant booking with secure deposit payment."
+                ? "Instant booking with secure full payment."
                 : locale === "nl"
-                  ? "Direct reserveren met veilige voorschotbetaling."
-                  : "Réservation immédiate avec paiement sécurisé de l'acompte."}
+                  ? "Direct reserveren met veilige volledige betaling."
+                  : "Réservation immédiate avec paiement sécurisé intégral."}
             </p>
           </div>
           <BookingForm locale={locale} />

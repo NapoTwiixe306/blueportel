@@ -16,9 +16,11 @@ const iconMap: Record<InfoBlock["icon"], typeof PiggyBank> = {
 
 type TarifsPageProps = {
   dictionary: TarifsDictionary;
+  /** Prix réels par saison (depuis l'admin/DB), alignés sur l'ordre des saisons. */
+  seasonPrices?: { min: number; max?: number }[];
 };
 
-export default function TarifsPage({ dictionary }: TarifsPageProps) {
+export default function TarifsPage({ dictionary, seasonPrices }: TarifsPageProps) {
   const { hero, seasons, infoBlocks, cta, screenReader, structuredData, locale } =
     dictionary;
   const { formatAmount } = useCurrency();
@@ -41,11 +43,16 @@ export default function TarifsPage({ dictionary }: TarifsPageProps) {
     },
   };
 
-  const formatSeasonPrice = (season: TarifsDictionary["seasons"][number]) => {
+  const formatSeasonPrice = (
+    season: TarifsDictionary["seasons"][number],
+    index: number
+  ) => {
     const template = priceTemplates[locale] ?? priceTemplates.fr;
-    const formattedMin = formatAmount(season.priceEUR.min, locale);
-    if (season.priceEUR.max && season.priceEUR.max !== season.priceEUR.min) {
-      const formattedMax = formatAmount(season.priceEUR.max, locale);
+    // Prix réels (admin/DB) prioritaires ; repli sur les valeurs du dictionnaire.
+    const price = seasonPrices?.[index] ?? season.priceEUR;
+    const formattedMin = formatAmount(price.min, locale);
+    if (price.max && price.max !== price.min) {
+      const formattedMax = formatAmount(price.max, locale);
       return template.range(formattedMin, formattedMax);
     }
     return template.from(formattedMin);
@@ -93,7 +100,7 @@ export default function TarifsPage({ dictionary }: TarifsPageProps) {
           </header>
 
           <section className="w-full max-w-6xl grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6 mb-10 sm:mb-14">
-            {seasons.map((season) => (
+            {seasons.map((season, index) => (
               <article
                 key={season.name}
                 className="bg-white border border-gray-200 rounded-2xl p-6 sm:p-7 shadow-sm"
@@ -105,7 +112,7 @@ export default function TarifsPage({ dictionary }: TarifsPageProps) {
                   {season.name}
                 </h2>
                 <p className="text-2xl font-bold text-black mb-2">
-                  {formatSeasonPrice(season)}
+                  {formatSeasonPrice(season, index)}
                 </p>
                 <p className="text-xs text-gray-500 mb-4">{season.minStay}</p>
                 <ul className="space-y-2 text-sm text-gray-700">

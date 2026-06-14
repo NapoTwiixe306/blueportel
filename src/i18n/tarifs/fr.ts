@@ -7,7 +7,7 @@ export const frTarifsDictionary: TarifsDictionary = {
   metadata: {
     title: "Tarifs Mobil-home Blueportel | Location face à la mer",
     description:
-      "Découvrez les tarifs basse, moyenne et haute saison du mobil-home Blueportel. Acompte 30%, caution 500€, linge et ménage inclus. Réservez votre séjour face à la mer.",
+      "Découvrez les tarifs basse, moyenne et haute saison du mobil-home Blueportel. Paiement intégral en ligne, caution 500€, linge et ménage inclus. Réservez votre séjour face à la mer.",
     alternates: {
       canonical: "/fr/pages/tarifs",
       languages: {
@@ -19,7 +19,7 @@ export const frTarifsDictionary: TarifsDictionary = {
     openGraph: {
       title: "Tarifs Blueportel | Mobil-home face à la mer",
       description:
-        "Tarifs par saison, politique d’acompte et prestations incluses pour votre location mobil-home au Portel.",
+        "Tarifs par saison, politique de paiement et prestations incluses pour votre location mobil-home au Portel.",
       type: "website",
       url: `${siteUrl}/fr/pages/tarifs`,
     },
@@ -40,13 +40,13 @@ export const frTarifsDictionary: TarifsDictionary = {
     pretitle: "Mobil-home Blueportel",
     title: "Tarifs & politique de réservation",
     description:
-      "Consultez nos tarifs par saison, les services inclus et la politique d’acompte/caution avant de réserver votre séjour face à la mer.",
+      "Consultez nos tarifs par saison, les services inclus et la politique de paiement/caution avant de réserver votre séjour face à la mer.",
   },
   seasons: [
     {
       name: "Basse saison",
       period: "Février • Mars • Octobre",
-      priceEUR: { min: 75 },
+      priceEUR: { min: 60, max: 75 },
       minStay: "2 nuits minimum",
       perks: [
         "Couchers de soleil d'hiver",
@@ -57,7 +57,7 @@ export const frTarifsDictionary: TarifsDictionary = {
     {
       name: "Moyenne saison",
       period: "Avril • Mai • Juin • Septembre",
-      priceEUR: { min: 100 },
+      priceEUR: { min: 80, max: 100 },
       minStay: "3 nuits minimum",
       perks: [
         "Printemps et arrière-saison lumineux",
@@ -68,7 +68,7 @@ export const frTarifsDictionary: TarifsDictionary = {
     {
       name: "Haute saison",
       period: "Juillet • Août",
-      priceEUR: { min: 130, max: 150 },
+      priceEUR: { min: 110, max: 140 },
       minStay: "6 nuits minimum",
       perks: [
         "Vue mer exceptionnelle",
@@ -80,11 +80,11 @@ export const frTarifsDictionary: TarifsDictionary = {
   infoBlocks: [
     {
       icon: "deposit",
-      title: "Politique d’acompte",
+      title: "Politique de paiement",
       items: [
-        "Acompte de 30% à la réservation (paiement sécurisé Lodgify).",
-        "Solde 30 jours avant l’arrivée.",
-        "Réservation de dernière minute : règlement intégral à la confirmation.",
+        "Paiement intégral du séjour à la réservation (paiement sécurisé Mollie).",
+        "Réservation confirmée immédiatement après le paiement.",
+        "Aucun frais d’agence ni de plateforme en réservant en direct.",
       ],
     },
     {
@@ -132,7 +132,7 @@ export const frTarifsDictionary: TarifsDictionary = {
     title: "Tarifs Blueportel",
     content: [
       "Tarifs basse, moyenne et haute saison pour la location du mobil-home Blueportel.",
-      "Acompte de 30%, caution de 500€, linge de lit et ménage inclus, animaux acceptés sur demande.",
+      "Paiement intégral à la réservation, caution de 500€, linge de lit et ménage inclus, animaux acceptés sur demande.",
     ],
   },
 };

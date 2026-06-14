@@ -7,7 +7,7 @@ export const enTarifsDictionary: TarifsDictionary = {
   metadata: {
     title: "Blueportel Rates | Seafront Mobile Home Rental",
     description:
-      "Seasonal rates for the Blueportel mobile home. 30% deposit, €500 security hold, linen and cleaning included. Book your stay by the sea.",
+      "Seasonal rates for the Blueportel mobile home. Full online payment, €500 security hold, linen and cleaning included. Book your stay by the sea.",
     alternates: {
       canonical: "/en/pages/tarifs",
       languages: {
@@ -46,7 +46,7 @@ export const enTarifsDictionary: TarifsDictionary = {
     {
       name: "Low season",
       period: "February • March • October",
-      priceEUR: { min: 75 },
+      priceEUR: { min: 60, max: 75 },
       minStay: "2-night minimum",
       perks: [
         "Winter sunsets over the sea",
@@ -57,7 +57,7 @@ export const enTarifsDictionary: TarifsDictionary = {
     {
       name: "Mid season",
       period: "April • May • June • September",
-      priceEUR: { min: 100 },
+      priceEUR: { min: 80, max: 100 },
       minStay: "3-night minimum",
       perks: [
         "Bright spring and fall light",
@@ -68,7 +68,7 @@ export const enTarifsDictionary: TarifsDictionary = {
     {
       name: "High season",
       period: "July • August",
-      priceEUR: { min: 130, max: 150 },
+      priceEUR: { min: 110, max: 140 },
       minStay: "6-night minimum",
       perks: [
         "Unforgettable sea view",
@@ -80,11 +80,11 @@ export const enTarifsDictionary: TarifsDictionary = {
   infoBlocks: [
     {
       icon: "deposit",
-      title: "Deposit policy",
+      title: "Payment policy",
       items: [
-        "30% deposit via Lodgify when booking.",
-        "Balance due 30 days before arrival.",
-        "Last-minute stays: full payment at confirmation.",
+        "Full payment for the stay when booking (secure Mollie payment).",
+        "Booking confirmed immediately after payment.",
+        "No agency or platform fees when booking direct.",
       ],
     },
     {
@@ -132,7 +132,7 @@ export const enTarifsDictionary: TarifsDictionary = {
     title: "Blueportel rates",
     content: [
       "Low, mid and high season pricing for the Blueportel mobile home in Le Portel.",
-      "30% deposit, €500 security hold, linen and cleaning included, pets on request.",
+      "Full payment when booking, €500 security hold, linen and cleaning included, pets on request.",
     ],
   },
 };

@@ -51,7 +51,7 @@ export const enAvailabilityDictionary: AvailabilityDictionary = {
   error: {
     title: "Calendar temporarily unavailable",
     description:
-      "We can’t display the Lodgify calendar right now. Please try again shortly or contact us directly.",
+      "We can’t display the availability calendar right now. Please try again shortly or contact us directly.",
     contactCTA: [
       { label: "+32 488 83 20 91", href: "tel:+32488832091" },
       { label: "info@blueportel.fr", href: "mailto:info@blueportel.fr" },
