@@ -12,7 +12,7 @@ export const enHomeDictionary: HomeDictionary = {
   locale: "en",
 
   metadata: {
-    title: "BluePortel — Two seafront mobile homes | Opal Coast, Le Portel",
+    title: "Sea-view mobile home rental in Le Portel, Opal Coast | BluePortel",
     description:
       "Choose your mobile home facing the sea on the Opal Coast. Prestige (6 guests) or Horizon (4 guests): sea view, direct beach access, book directly with no fees.",
     keywords: [
@@ -109,7 +109,7 @@ export const enHomeDictionary: HomeDictionary = {
   },
 
   hero: {
-    title: "Two mobile homes facing the sea on the Opal Coast",
+    title: "Sea-view mobile home rental in Le Portel, Opal Coast",
     subtitle:
       "Choose the accommodation that suits your stay and enjoy an exceptional view over the English Channel.",
     badge: "Le Portel · Opal Coast",

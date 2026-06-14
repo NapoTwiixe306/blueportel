@@ -8,6 +8,7 @@ import { alternatiefHotelBoulogne } from "./alternatief-hotel-boulogne-sur-mer";
 import { watTeDoenLePortel } from "./wat-te-doen-le-portel";
 import { getijdenStrandvissen } from "./getijden-strandvissen-opaalkust";
 import { roadtripOpaalkust } from "./roadtrip-opaalkust-route";
+import { stacaravanNoordFrankrijk } from "./stacaravan-huren-noord-frankrijk-kust";
 
 export const nlArticles: BlogArticle[] = [
   watTeDoenOpaalkust,
@@ -18,4 +19,5 @@ export const nlArticles: BlogArticle[] = [
   watTeDoenLePortel,
   getijdenStrandvissen,
   roadtripOpaalkust,
+  stacaravanNoordFrankrijk,
 ];

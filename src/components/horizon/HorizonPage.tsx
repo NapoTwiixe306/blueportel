@@ -75,8 +75,10 @@ export default function HorizonPage({ locale, labels }: HorizonPageProps) {
                 </div>
                 <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-slate-900 leading-tight">
                   Horizon
+                  <span className="mt-2 block text-base sm:text-lg font-normal text-slate-500">
+                    {horizon.tagline}
+                  </span>
                 </h1>
-                <p className="mt-2 text-base sm:text-lg text-slate-500">{horizon.tagline}</p>
               </div>
 
               {/* Key specs */}

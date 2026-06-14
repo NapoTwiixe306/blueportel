@@ -12,7 +12,7 @@ export const frHomeDictionary: HomeDictionary = {
   locale: "fr",
 
   metadata: {
-    title: "BluePortel — Deux mobil-homes face à la mer | Côte d'Opale, Le Portel",
+    title: "Location mobil-home vue mer à Le Portel, Côte d'Opale | BluePortel",
     description:
       "Choisissez votre mobil-home face à la mer sur la Côte d'Opale. Prestige (6 pers.) ou Horizon (4 pers.) : vue sur la Manche, accès direct plage, réservation directe sans frais.",
     keywords: [
@@ -145,7 +145,7 @@ export const frHomeDictionary: HomeDictionary = {
   },
 
   hero: {
-    title: "Deux mobil-homes face à la mer sur la Côte d'Opale",
+    title: "Location de mobil-homes vue mer à Le Portel, Côte d'Opale",
     subtitle:
       "Choisissez l'hébergement qui correspond à votre séjour et profitez d'une vue exceptionnelle sur la Manche.",
     badge: "Le Portel · Côte d'Opale",

@@ -12,7 +12,7 @@ export const nlHomeDictionary: HomeDictionary = {
   locale: "nl",
 
   metadata: {
-    title: "BluePortel — Twee mobilhomes aan zee | Opaalkust, Le Portel",
+    title: "Stacaravan met zeezicht huren in Le Portel, Opaalkust | BluePortel",
     description:
       "Kies uw mobilhome aan zee op de Opaalkust. Prestige (6 pers.) of Horizon (4 pers.): zeezicht, directe strandtoegang, rechtstreeks boeken zonder kosten.",
     keywords: [
@@ -108,7 +108,7 @@ export const nlHomeDictionary: HomeDictionary = {
   },
 
   hero: {
-    title: "Twee mobilhomes aan zee op de Opaalkust",
+    title: "Stacaravan met zeezicht huren in Le Portel, Opaalkust",
     subtitle:
       "Kies het verblijf dat bij uw reis past en geniet van een uitzonderlijk uitzicht op het Kanaal.",
     badge: "Le Portel · Opaalkust",

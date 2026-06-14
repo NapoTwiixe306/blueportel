@@ -8,6 +8,7 @@ import { alternativeHotelBoulogne } from "./alternative-hotel-boulogne-sur-mer";
 import { queFaireLePortel } from "./que-faire-le-portel";
 import { mareesPecheAPied } from "./marees-peche-a-pied-cote-opale";
 import { roadTripCoteOpale } from "./road-trip-cote-opale-itineraire";
+import { locationNordPasDeCalais } from "./location-mobil-home-nord-pas-de-calais-bord-de-mer";
 
 export const frArticles: BlogArticle[] = [
   queFaireCoteOpale,
@@ -18,4 +19,5 @@ export const frArticles: BlogArticle[] = [
   queFaireLePortel,
   mareesPecheAPied,
   roadTripCoteOpale,
+  locationNordPasDeCalais,
 ];

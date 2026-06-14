@@ -74,8 +74,10 @@ export default function PrestigePage({ locale, labels }: PrestigePageProps) {
                 </div>
                 <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-slate-900 leading-tight">
                   Prestige
+                  <span className="mt-2 block text-base sm:text-lg font-normal text-slate-500">
+                    {prestige.tagline}
+                  </span>
                 </h1>
-                <p className="mt-2 text-base sm:text-lg text-slate-500">{prestige.tagline}</p>
               </div>
 
               {/* Key specs */}
