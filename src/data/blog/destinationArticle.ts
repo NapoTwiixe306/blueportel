@@ -34,7 +34,7 @@ const sharedSections: Record<
       id: "mobil-homes",
       title: "Vos mobil-homes vue mer à {driveMinutes} minutes de {name}",
       paragraphs: [
-        "Blueportel propose deux mobil-homes résidentiels tout équipés au camping Le Phare d'Opale, au sommet de la falaise de Le Portel, avec vue panoramique sur la Manche :",
+        "Blueportel propose deux mobil-homes résidentiels tout équipés au camping Le Phare d'Opale, au sommet de la falaise de [Le Portel](/blog/location-mobil-home-le-portel), avec vue panoramique sur la Manche :",
       ],
       list: {
         items: [
@@ -66,7 +66,7 @@ const sharedSections: Record<
       id: "mobile-homes",
       title: "Your sea-view mobile homes {driveMinutes} minutes from {name}",
       paragraphs: [
-        "Blueportel offers two fully equipped residential mobile homes at Le Phare d'Opale campsite, on top of the Le Portel cliff, with panoramic views over the Channel:",
+        "Blueportel offers two fully equipped residential mobile homes at Le Phare d'Opale campsite, on top of the [Le Portel](/blog/mobile-home-rental-le-portel) cliff, with panoramic views over the Channel:",
       ],
       list: {
         items: [
@@ -98,7 +98,7 @@ const sharedSections: Record<
       id: "stacaravans",
       title: "Uw stacaravans met zeezicht op {driveMinutes} minuten van {name}",
       paragraphs: [
-        "Blueportel biedt twee volledig uitgeruste stacaravans op camping Le Phare d'Opale, boven op de klif van Le Portel, met panoramisch uitzicht over het Kanaal:",
+        "Blueportel biedt twee volledig uitgeruste stacaravans op camping Le Phare d'Opale, boven op de klif van [Le Portel](/blog/stacaravan-huren-le-portel), met panoramisch uitzicht over het Kanaal:",
       ],
       list: {
         items: [
@@ -160,9 +160,9 @@ const sharedFaq: Record<Locale, ArticleFaqItem[]> = {
 };
 
 const pillarRelated: Record<Locale, string[]> = {
-  fr: ["que-faire-cote-opale", "plus-belles-plages-cote-opale"],
-  en: ["things-to-do-opal-coast", "best-beaches-opal-coast"],
-  nl: ["wat-te-doen-opaalkust", "mooiste-stranden-opaalkust"],
+  fr: ["location-mobil-home-le-portel", "que-faire-cote-opale", "plus-belles-plages-cote-opale"],
+  en: ["mobile-home-rental-le-portel", "things-to-do-opal-coast", "best-beaches-opal-coast"],
+  nl: ["stacaravan-huren-le-portel", "wat-te-doen-opaalkust", "mooiste-stranden-opaalkust"],
 };
 
 const publishedDate = "2026-06-11";

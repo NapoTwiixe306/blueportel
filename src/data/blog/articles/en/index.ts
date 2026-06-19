@@ -11,8 +11,16 @@ import { opalCoastRoadTrip } from "./opal-coast-road-trip-itinerary";
 import { rentalHautsDeFrance } from "./mobile-home-rental-hauts-de-france-seaside";
 import { familyHolidayOpalCoast } from "./family-holiday-opal-coast";
 import { privateRentalOpalCoast } from "./private-mobile-home-rental-opal-coast";
+import { mobileHomeRentalLePortel } from "./mobile-home-rental-le-portel";
+import { weekendMobileHomeOpalCoast } from "./weekend-mobile-home-opal-coast";
+import { cheapMobileHomeRentalSeaside } from "./cheap-mobile-home-rental-seaside";
+import { familyMobileHomeRentalOpalCoast } from "./family-mobile-home-rental-opal-coast";
 
 export const enArticles: BlogArticle[] = [
+  mobileHomeRentalLePortel,
+  weekendMobileHomeOpalCoast,
+  cheapMobileHomeRentalSeaside,
+  familyMobileHomeRentalOpalCoast,
   thingsToDoOpalCoast,
   visitNausicaa,
   bestBeachesOpalCoast,

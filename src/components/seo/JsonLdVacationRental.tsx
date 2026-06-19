@@ -104,6 +104,34 @@ export function JsonLdVacationRental({ locale }: { locale: Locale }) {
       "@type": "QuantitativeValue",
       maxValue: 6,
     },
+    checkinTime: "16:00",
+    checkoutTime: "10:00",
+    petsAllowed: true,
+    smokingAllowed: false,
+    containsPlace: [
+      {
+        "@type": "Accommodation",
+        name: "Blueportel Prestige",
+        url: `${assetOrigin}/${locale}/pages/prestige`,
+        numberOfBedrooms: 3,
+        occupancy: { "@type": "QuantitativeValue", maxValue: 6 },
+        amenityFeature: [
+          { "@type": "LocationFeatureSpecification", name: featureLabels.panoramic, value: true },
+          { "@type": "LocationFeatureSpecification", name: featureLabels.beach, value: true },
+        ],
+      },
+      {
+        "@type": "Accommodation",
+        name: "Blueportel Horizon",
+        url: `${assetOrigin}/${locale}/pages/horizon`,
+        numberOfBedrooms: 2,
+        occupancy: { "@type": "QuantitativeValue", maxValue: 4 },
+        amenityFeature: [
+          { "@type": "LocationFeatureSpecification", name: featureLabels.panoramic, value: true },
+          { "@type": "LocationFeatureSpecification", name: featureLabels.beach, value: true },
+        ],
+      },
+    ],
   };
 
   return (

@@ -5,6 +5,8 @@ import AccommodationFeatures from "../accommodations/AccommodationFeatures";
 import { accommodations } from "../../data/accommodations";
 import HomeFAQ from "../home/HomeFAQ";
 import type { FAQItem } from "../home/HomeFAQ";
+import { JsonLdVacationRental } from "../seo/JsonLdVacationRental";
+import type { Locale } from "../../i18n/locales";
 
 type PrestigePageProps = {
   locale: string;
@@ -33,6 +35,7 @@ export default function PrestigePage({ locale, labels }: PrestigePageProps) {
 
   return (
     <div className="w-full overflow-x-hidden bg-white">
+      <JsonLdVacationRental locale={locale as Locale} />
       {/* Breadcrumb */}
       <div className="w-full px-4 sm:px-6 lg:px-8 pt-6">
         <div className="max-w-7xl mx-auto">
