@@ -5,15 +5,19 @@ import type { Locale } from "../../i18n/locales";
 import BookingForm from "../booking/BookingForm";
 
 /** Liens externes de réservation par plateforme. */
-export const bookingPlatforms = {
+export const bookingPlatforms: Record<
+  "prestige" | "horizon",
+  { booking?: string; airbnb?: string }
+> = {
   prestige: {
     booking: "https://www.booking.com/hotel/fr/blueportel.fr.html",
     airbnb: "https://www.airbnb.com/rooms/1389190512266062716",
   },
   horizon: {
-    // Pas encore d'annonce Booking/Airbnb : réservation en direct uniquement.
+    // Fiche Booking commune à la propriété ; pas encore d'annonce Airbnb dédiée.
+    booking: "https://www.booking.com/hotel/fr/blueportel.fr.html",
   },
-} as const;
+};
 
 type ReserverCopy = {
   metaTitle: string;
@@ -23,90 +27,144 @@ type ReserverCopy = {
   pretitle: string;
   title: string;
   description: string;
+  benefits: string[];
+  formTitle: string;
+  formText: string;
   prestigeName: string;
   prestigeDetails: string;
   horizonName: string;
   horizonDetails: string;
+  directCtaLabel: string;
+  alsoOnLabel: string;
   bookingLabel: string;
   airbnbLabel: string;
-  directTitle: string;
-  directText: string;
-  contactLabel: string;
   availabilityLabel: string;
   viewLabel: string;
 };
 
 export const reserverCopy: Record<Locale, ReserverCopy> = {
   fr: {
-    metaTitle: "Réserver | Blueportel — Booking.com ou Airbnb",
+    metaTitle: "Réserver en direct | Blueportel — meilleur prix garanti",
     metaDescription:
-      "Réservez votre mobil-home Blueportel face à la mer à Le Portel : choisissez votre plateforme (Booking.com ou Airbnb) pour le Prestige, ou contactez-nous en direct pour l'Horizon.",
+      "Réservez votre mobil-home Blueportel face à la mer à Le Portel directement sur notre site : meilleur prix sans commission, paiement sécurisé et contact direct avec les propriétaires. Également sur Booking.com et Airbnb.",
     breadcrumbHome: "Accueil",
     breadcrumbCurrent: "Réserver",
     pretitle: "Réservation",
-    title: "Choisissez votre plateforme de réservation",
+    title: "Réservez en direct sur notre site",
     description:
-      "Réservez en toute confiance sur la plateforme de votre choix. Pour toute question avant de réserver (dates, lits bébé, arrivée tardive…), contactez-nous : nous répondons en général dans la journée.",
+      "En réservant ici, vous réservez au meilleur prix, sans commission de plateforme, et directement auprès de Michel et Véronique. Pour toute question avant de réserver (dates, lits bébé, arrivée tardive…), contactez-nous : nous répondons en général dans la journée.",
+    benefits: [
+      "Meilleur prix garanti — aucune commission de plateforme",
+      "Paiement en ligne sécurisé et confirmation immédiate",
+      "Contact direct avec les propriétaires, avant et pendant le séjour",
+    ],
+    formTitle: "Réservez votre séjour",
+    formText: "Réservation immédiate avec paiement sécurisé intégral.",
     prestigeName: "Blueportel Prestige",
     prestigeDetails: "6 personnes · 3 chambres · terrasse couverte vue mer · climatisation",
     horizonName: "Blueportel Horizon",
     horizonDetails: "4 personnes · 2 chambres · même emplacement face à la mer",
-    bookingLabel: "Réserver sur Booking.com",
-    airbnbLabel: "Réserver sur Airbnb",
-    directTitle: "Réservation en direct",
-    directText:
-      "L'Horizon se réserve directement auprès de Michel et Véronique : envoyez vos dates via la page contact ou par téléphone, réponse en général dans la journée.",
-    contactLabel: "Nous contacter",
+    directCtaLabel: "Réserver en direct",
+    alsoOnLabel: "Aussi disponible sur",
+    bookingLabel: "Booking.com",
+    airbnbLabel: "Airbnb",
     availabilityLabel: "Voir les disponibilités",
     viewLabel: "Découvrir l'hébergement",
   },
   en: {
-    metaTitle: "Book your stay | Blueportel — Booking.com or Airbnb",
+    metaTitle: "Book direct | Blueportel — best price guaranteed",
     metaDescription:
-      "Book your Blueportel seafront mobile home in Le Portel: choose your platform (Booking.com or Airbnb) for the Prestige, or contact us directly for the Horizon.",
+      "Book your Blueportel seafront mobile home in Le Portel directly on our website: best price with no platform commission, secure payment and direct contact with the owners. Also on Booking.com and Airbnb.",
     breadcrumbHome: "Home",
     breadcrumbCurrent: "Book",
     pretitle: "Booking",
-    title: "Choose your booking platform",
+    title: "Book directly on our website",
     description:
-      "Book with confidence on the platform of your choice. For any question before booking (dates, cots, late arrival…), contact us — we usually reply within the day.",
+      "By booking here, you get the best price, with no platform commission, directly with Michel and Véronique. For any question before booking (dates, cots, late arrival…), contact us — we usually reply within the day.",
+    benefits: [
+      "Best price guaranteed — no platform commission",
+      "Secure online payment and instant confirmation",
+      "Direct contact with the owners, before and during your stay",
+    ],
+    formTitle: "Book your stay",
+    formText: "Instant booking with secure full payment.",
     prestigeName: "Blueportel Prestige",
     prestigeDetails: "Sleeps 6 · 3 bedrooms · covered sea-view terrace · air conditioning",
     horizonName: "Blueportel Horizon",
     horizonDetails: "Sleeps 4 · 2 bedrooms · same seafront location",
-    bookingLabel: "Book on Booking.com",
-    airbnbLabel: "Book on Airbnb",
-    directTitle: "Direct booking",
-    directText:
-      "The Horizon is booked directly with Michel and Véronique: send your dates via the contact page or by phone — we usually reply within the day.",
-    contactLabel: "Contact us",
+    directCtaLabel: "Book direct",
+    alsoOnLabel: "Also available on",
+    bookingLabel: "Booking.com",
+    airbnbLabel: "Airbnb",
     availabilityLabel: "Check availability",
     viewLabel: "View the accommodation",
   },
   nl: {
-    metaTitle: "Reserveren | Blueportel — Booking.com of Airbnb",
+    metaTitle: "Rechtstreeks reserveren | Blueportel — beste prijs gegarandeerd",
     metaDescription:
-      "Reserveer uw Blueportel-stacaravan aan zee in Le Portel: kies uw platform (Booking.com of Airbnb) voor de Prestige, of contacteer ons rechtstreeks voor de Horizon.",
+      "Reserveer uw Blueportel-stacaravan aan zee in Le Portel rechtstreeks op onze website: beste prijs zonder platformcommissie, veilige betaling en rechtstreeks contact met de eigenaars. Ook op Booking.com en Airbnb.",
     breadcrumbHome: "Home",
     breadcrumbCurrent: "Reserveren",
     pretitle: "Reservering",
-    title: "Kies uw boekingsplatform",
+    title: "Reserveer rechtstreeks op onze website",
     description:
-      "Boek met vertrouwen op het platform van uw keuze. Voor vragen vóór het boeken (data, kinderbedje, late aankomst…) kunt u ons contacteren — we antwoorden meestal binnen de dag.",
+      "Door hier te boeken, boekt u aan de beste prijs, zonder platformcommissie, rechtstreeks bij Michel en Véronique. Voor vragen vóór het boeken (data, kinderbedje, late aankomst…) kunt u ons contacteren — we antwoorden meestal binnen de dag.",
+    benefits: [
+      "Beste prijs gegarandeerd — geen platformcommissie",
+      "Veilige onlinebetaling en onmiddellijke bevestiging",
+      "Rechtstreeks contact met de eigenaars, vóór en tijdens uw verblijf",
+    ],
+    formTitle: "Boek uw verblijf",
+    formText: "Direct reserveren met veilige volledige betaling.",
     prestigeName: "Blueportel Prestige",
     prestigeDetails: "6 personen · 3 slaapkamers · overdekt terras met zeezicht · airco",
     horizonName: "Blueportel Horizon",
     horizonDetails: "4 personen · 2 slaapkamers · dezelfde ligging aan zee",
-    bookingLabel: "Reserveren op Booking.com",
-    airbnbLabel: "Reserveren op Airbnb",
-    directTitle: "Rechtstreeks reserveren",
-    directText:
-      "De Horizon reserveert u rechtstreeks bij Michel en Véronique: stuur uw data via de contactpagina of telefonisch — antwoord meestal binnen de dag.",
-    contactLabel: "Contacteer ons",
+    directCtaLabel: "Rechtstreeks reserveren",
+    alsoOnLabel: "Ook beschikbaar op",
+    bookingLabel: "Booking.com",
+    airbnbLabel: "Airbnb",
     availabilityLabel: "Beschikbaarheid bekijken",
     viewLabel: "Bekijk de accommodatie",
   },
 };
+
+function PlatformLinks({
+  platforms,
+  copy,
+}: {
+  platforms: { booking?: string; airbnb?: string };
+  copy: ReserverCopy;
+}) {
+  if (!platforms.booking && !platforms.airbnb) return null;
+
+  return (
+    <p className="text-xs sm:text-sm text-gray-500 text-center">
+      {copy.alsoOnLabel}{" "}
+      {platforms.booking && (
+        <a
+          href={platforms.booking}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="underline underline-offset-2 hover:text-gray-800 transition-colors"
+        >
+          {copy.bookingLabel}
+        </a>
+      )}
+      {platforms.booking && platforms.airbnb && <span aria-hidden="true"> · </span>}
+      {platforms.airbnb && (
+        <a
+          href={platforms.airbnb}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="underline underline-offset-2 hover:text-gray-800 transition-colors"
+        >
+          {copy.airbnbLabel}
+        </a>
+      )}
+    </p>
+  );
+}
 
 export default function ReserverPage({ locale }: { locale: Locale }) {
   const copy = reserverCopy[locale];
@@ -128,7 +186,7 @@ export default function ReserverPage({ locale }: { locale: Locale }) {
           </ol>
         </nav>
 
-        <header className="w-full max-w-3xl text-center mb-10 sm:mb-14">
+        <header className="w-full max-w-3xl text-center mb-8 sm:mb-10">
           <p className="text-xs sm:text-sm text-blue-500 font-semibold uppercase tracking-wide mb-2">
             {copy.pretitle}
           </p>
@@ -137,6 +195,26 @@ export default function ReserverPage({ locale }: { locale: Locale }) {
           </h1>
           <p className="text-sm sm:text-base text-gray-600">{copy.description}</p>
         </header>
+
+        {/* Réservation directe en ligne — mise en avant principale */}
+        <section id="reservation" className="w-full max-w-xl mb-12 sm:mb-16 scroll-mt-24">
+          <ul className="flex flex-col gap-2 mb-6">
+            {copy.benefits.map((benefit, index) => (
+              <li
+                key={index}
+                className="flex items-start gap-2 text-sm sm:text-base text-gray-700"
+              >
+                <span className="text-blue-500 font-bold mt-0.5" aria-hidden="true">✓</span>
+                <span>{benefit}</span>
+              </li>
+            ))}
+          </ul>
+          <div className="text-center mb-5">
+            <h2 className="text-xl sm:text-2xl font-bold text-gray-900">{copy.formTitle}</h2>
+            <p className="mt-2 text-sm text-gray-600">{copy.formText}</p>
+          </div>
+          <BookingForm locale={locale} />
+        </section>
 
         <section className="w-full max-w-4xl grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
           {/* Prestige */}
@@ -158,20 +236,10 @@ export default function ReserverPage({ locale }: { locale: Locale }) {
               <p className="text-xs sm:text-sm text-gray-600 mb-5">{copy.prestigeDetails}</p>
               <div className="flex flex-col gap-3 mt-auto">
                 <a
-                  href={bookingPlatforms.prestige.booking}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center gap-2 rounded-full bg-[#003580] text-white font-semibold px-5 py-3 text-sm sm:text-base hover:bg-[#00224f] transition-colors"
+                  href="#reservation"
+                  className="inline-flex items-center justify-center gap-2 rounded-full bg-blue-600 text-white font-semibold px-5 py-3 text-sm sm:text-base hover:bg-blue-700 transition-colors"
                 >
-                  {copy.bookingLabel}
-                </a>
-                <a
-                  href={bookingPlatforms.prestige.airbnb}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center gap-2 rounded-full bg-[#FF385C] text-white font-semibold px-5 py-3 text-sm sm:text-base hover:bg-[#d92b4b] transition-colors"
-                >
-                  {copy.airbnbLabel}
+                  {copy.directCtaLabel}
                 </a>
                 <Link
                   href={`/${locale}/pages/prestige`}
@@ -179,6 +247,7 @@ export default function ReserverPage({ locale }: { locale: Locale }) {
                 >
                   {copy.viewLabel} →
                 </Link>
+                <PlatformLinks platforms={bookingPlatforms.prestige} copy={copy} />
               </div>
             </div>
           </article>
@@ -199,16 +268,14 @@ export default function ReserverPage({ locale }: { locale: Locale }) {
               <h2 className="text-lg sm:text-xl font-bold text-gray-900 mb-1">
                 {copy.horizonName}
               </h2>
-              <p className="text-xs sm:text-sm text-gray-600 mb-4">{copy.horizonDetails}</p>
-              <p className="text-sm font-semibold text-gray-900 mb-1">{copy.directTitle}</p>
-              <p className="text-xs sm:text-sm text-gray-600 mb-5">{copy.directText}</p>
+              <p className="text-xs sm:text-sm text-gray-600 mb-5">{copy.horizonDetails}</p>
               <div className="flex flex-col gap-3 mt-auto">
-                <Link
-                  href={`/${locale}/pages/contact`}
+                <a
+                  href="#reservation"
                   className="inline-flex items-center justify-center gap-2 rounded-full bg-blue-600 text-white font-semibold px-5 py-3 text-sm sm:text-base hover:bg-blue-700 transition-colors"
                 >
-                  {copy.contactLabel}
-                </Link>
+                  {copy.directCtaLabel}
+                </a>
                 <Link
                   href={`/${locale}/pages/disponibilites`}
                   className="inline-flex items-center justify-center gap-2 rounded-full border border-blue-600 text-blue-700 font-semibold px-5 py-3 text-sm sm:text-base hover:bg-blue-50 transition-colors"
@@ -221,30 +288,10 @@ export default function ReserverPage({ locale }: { locale: Locale }) {
                 >
                   {copy.viewLabel} →
                 </Link>
+                <PlatformLinks platforms={bookingPlatforms.horizon} copy={copy} />
               </div>
             </div>
           </article>
-        </section>
-
-        {/* Réservation directe en ligne — choix Horizon / Prestige dans le formulaire */}
-        <section className="w-full max-w-xl mt-12 sm:mt-16">
-          <div className="text-center mb-5">
-            <h2 className="text-xl sm:text-2xl font-bold text-gray-900">
-              {locale === "en"
-                ? "Book your stay"
-                : locale === "nl"
-                  ? "Boek uw verblijf"
-                  : "Réservez votre séjour"}
-            </h2>
-            <p className="mt-2 text-sm text-gray-600">
-              {locale === "en"
-                ? "Instant booking with secure full payment."
-                : locale === "nl"
-                  ? "Direct reserveren met veilige volledige betaling."
-                  : "Réservation immédiate avec paiement sécurisé intégral."}
-            </p>
-          </div>
-          <BookingForm locale={locale} />
         </section>
       </main>
     </div>
