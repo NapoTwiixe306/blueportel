@@ -242,6 +242,12 @@ export default function ReserverPage({ locale }: { locale: Locale }) {
                   {copy.directCtaLabel}
                 </a>
                 <Link
+                  href={`/${locale}/pages/disponibilites`}
+                  className="inline-flex items-center justify-center gap-2 rounded-full border border-blue-600 text-blue-700 font-semibold px-5 py-3 text-sm sm:text-base hover:bg-blue-50 transition-colors"
+                >
+                  {copy.availabilityLabel}
+                </Link>
+                <Link
                   href={`/${locale}/pages/prestige`}
                   className="text-sm font-semibold text-blue-600 hover:text-blue-800 text-center transition-colors"
                 >
