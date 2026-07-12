@@ -32,6 +32,8 @@ const dictionaries: Record<Locale, LayoutDictionary> = {
       quickLinks: [
         { href: "/pages/information-marvilla-tohapi", label: "Information Marvilla Tohapi" },
         { href: "/pages/politique-tdm", label: "Politique TDM" },
+        { href: "/pages/conditions-generales-location", label: "Conditions générales de location" },
+        { href: "/pages/contrat-de-confiance", label: "Contrat de confiance" },
         { href: "/pages/contact", label: "Contact" },
       ],
       facebookLabel: "Suivez-nous sur Facebook",
@@ -51,6 +53,8 @@ const dictionaries: Record<Locale, LayoutDictionary> = {
       quickLinks: [
         { href: "/pages/information-marvilla-tohapi", label: "Marvilla Tohapi Info" },
         { href: "/pages/politique-tdm", label: "TDM Policy" },
+        { href: "/pages/conditions-generales-location", label: "Rental terms & conditions" },
+        { href: "/pages/contrat-de-confiance", label: "Trust charter" },
         { href: "/pages/contact", label: "Contact" },
       ],
       facebookLabel: "Follow us on Facebook",
@@ -70,6 +74,8 @@ const dictionaries: Record<Locale, LayoutDictionary> = {
       quickLinks: [
         { href: "/pages/information-marvilla-tohapi", label: "Marvilla Tohapi info" },
         { href: "/pages/politique-tdm", label: "TDM-beleid" },
+        { href: "/pages/conditions-generales-location", label: "Algemene huurvoorwaarden" },
+        { href: "/pages/contrat-de-confiance", label: "Vertrouwenscontract" },
         { href: "/pages/contact", label: "Contact" },
       ],
       facebookLabel: "Volg ons op Facebook",

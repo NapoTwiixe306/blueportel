@@ -34,6 +34,8 @@ const staticPaths: { path: string; priority: number }[] = [
   { path: "/pages/plan", priority: 0.3 },
   { path: "/pages/information-marvilla-tohapi", priority: 0.4 },
   { path: "/pages/politique-tdm", priority: 0.2 },
+  { path: "/pages/conditions-generales-location", priority: 0.3 },
+  { path: "/pages/contrat-de-confiance", priority: 0.3 },
 ];
 
 function staticLanguages(path: string): Record<string, string> {
