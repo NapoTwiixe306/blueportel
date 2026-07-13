@@ -23,6 +23,7 @@ export default function HomePage({ dictionary }: HomePageProps) {
     if (!path || path === "#") return "#";
     if (path.startsWith("http") || path.startsWith("mailto") || path.startsWith("tel")) return path;
     if (path === "/") return `/${locale}`;
+    if (/^\/(fr|en|nl)(\/|$)/.test(path)) return path;
     if (path.startsWith("/")) return `/${locale}${path}`;
     return `/${locale}/${path}`;
   };

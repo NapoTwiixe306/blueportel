@@ -78,6 +78,7 @@ export default function ContactPage({ dictionary }: ContactPageProps) {
       return path;
     }
     if (path === "/") return `/${locale}`;
+    if (/^\/(fr|en|nl)(\/|$)/.test(path)) return path;
     if (path.startsWith("/")) return `/${locale}${path}`;
     return `/${locale}/${path}`;
   };

@@ -101,6 +101,9 @@ export const metadata: Metadata = {
   },
   category: 'Tourisme',
   classification: 'Location de mobil-home',
+  other: {
+    'p:domain_verify': '85b99d60fa6befb7d87bb5dc71d34874',
+  },
 };
 
 export default async function RootLayout({

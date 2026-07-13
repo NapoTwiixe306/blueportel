@@ -324,6 +324,7 @@ export default function Navbar({ locale: initialLocale = "fr" }: NavbarProps) {
     if (!path || path === "#") return "#";
     if (path.startsWith("http")) return path;
     if (path === "/") return `/${currentLocale}`;
+    if (/^\/(fr|en|nl)(\/|$)/.test(path)) return path;
     if (path.startsWith("/")) return `/${currentLocale}${path}`;
     return `/${currentLocale}/${path}`;
   };
